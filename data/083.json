@@ -15,11 +15,11 @@
           "answer": "C",
           "explanation": {
             "translation": "因為張先生最近很忙，所以他是否會來參加派對還很<b>令人懷疑</b>。",
-            "technique": "💡 看到空格後面的 whether (是否)，就知道這件事充滿「不確定性」。選項中只有 doubtful (懷疑的) 帶有不確定的語氣，impossible 語氣太武斷。",
-            "analysis": "(A) unlikely 通常接 to V 或 that 子句。<br>(B) impossible 語氣太絕對。<br>(D) inevitable (無可避免的) 語意不符。",
+            "technique": "看到空格後面的 whether (是否)，就知道這件事充滿「不確定性」。只有 doubtful 帶有不確定的語氣。",
+            "analysis": "(A) unlikely 通常接 to V。<br>(D) inevitable (無可避免的) 語意不符。",
             "roots": "doubt (懷疑) + -ful (充滿...的) → 充滿懷疑的",
             "collocations": ["it is doubtful whether / that... (令人懷疑是否...)"],
-            "sentences": ["It is highly doubtful whether the project will be finished on time. (這項專案能否準時完成令人高度懷疑。)"]
+            "sentences": ["It is highly doubtful whether the project will be finished on time. (專案能否準時完成令人高度懷疑。)", "The doctor is doubtful about his chances of recovery. (醫生對他康復的機會感到不樂觀。)"]
           }
         },
         {
@@ -29,24 +29,128 @@
           "answer": "D",
           "explanation": {
             "translation": "我相當<b>習慣</b>台灣的天氣，所以我想我會在這裡多待一年。",
-            "technique": "💡 觀察空格後的介系詞 to，以及語意「所以想多待一年」，推斷出是對天氣「習慣」。",
-            "analysis": "(D) <b>be accustomed to + N/Ving</b>，表示「習慣於...」。<br>(A) devoted to (致力於)，不能說奉獻給天氣。<br>(B) satisfied 搭配 with。<br>(C) pleased 搭配 with。",
+            "technique": "觀察空格後的介系詞 to，以及語意「想多待一年」，推斷出是對天氣「習慣」。",
+            "analysis": "(D) <b>be accustomed to + N/Ving</b>，表示「習慣於...」。<br>(A) devoted to (致力於)，不能說奉獻給天氣。",
             "roots": "ac- (朝向) + custom (習慣) + -ed (形容詞字尾) → 習慣於...",
             "collocations": ["become/get accustomed to (漸漸習慣於...)"],
-            "sentences": ["She quickly became accustomed to his strange sleeping schedule. (她很快就習慣了他奇怪的睡眠作息。)"]
+            "sentences": ["She quickly became accustomed to his strange sleeping schedule. (她很快就習慣了他奇怪的睡眠作息。)", "I am not accustomed to being treated like this. (我不習慣被這樣對待。)"]
           }
-        }
+        },
+        {
+          "q_num": "3",
+          "q_text": "Mr. Smith won't <span class='lvl3-word' data-word='tolerate' data-pron='/ˈtɑː.lə.reɪt/' data-def='v. 容忍；忍受'>tolerate</span> talking during class; he says it _______ others.",
+          "options": {"A": "disturbs", "B": "deserves", "C": "destroys", "D": "dismisses"},
+          "answer": "A",
+          "explanation": {
+            "translation": "Smith 先生不容許上課講話；他說這會<b>打擾</b>到其他人。",
+            "technique": "上課講話會對別人造成什麼影響？自然是「打擾 (disturb)」。",
+            "analysis": "(A) <b>disturb (打擾)</b>，符合語境。<br>(D) dismiss (解散/解僱)。",
+            "roots": "dis- (完全) + turb (攪亂) → 完全攪亂 → 打擾",
+            "collocations": ["disturb the peace (擾亂安寧)", "do not disturb (請勿打擾)"],
+            "sentences": ["Please do not disturb me while I am studying. (我讀書時請勿打擾我。)", "The loud music disturbed the neighbors. (大聲的音樂打擾了鄰居。)"]
+          }
+        },
+        { "q_num": "4", "q_text": "On the basis of the clues, can you predict the _______ of the story?", "options": {"A": "outcome", "B": "headline", "C": "cause", "D": "performance"}, "answer": "A", "explanation": { "translation": "根據這些線索，你能預測故事的結局嗎？", "analysis": "(A) outcome (結局/結果)。(B) headline (新聞標題)。" } },
+        { "q_num": "5", "q_text": "A good reader can often figure out what new words mean by using _______.", "options": {"A": "contact", "B": "context", "C": "content", "D": "contest"}, "answer": "B", "explanation": { "translation": "一個好的閱讀者通常能透過使用上下文來推斷新單字的意思。", "analysis": "(B) context (上下文)。" } },
+        { "q_num": "6", "q_text": "I wonder why she _______ turned up the radio when I was studying.", "options": {"A": "sympathetically", "B": "primarily", "C": "deliberately", "D": "thoroughly"}, "answer": "C", "explanation": { "translation": "我想知道為什麼當我在讀書時，她要故意把收音機開大聲。", "analysis": "(C) deliberately (故意地)。" } },
+        { "q_num": "7", "q_text": "It suddenly _______ me that I had to get to the airport to meet a friend.", "options": {"A": "took", "B": "struck", "C": "occurred", "D": "surprised"}, "answer": "B", "explanation": { "translation": "我突然想起我必須去機場接朋友。", "analysis": "It strikes someone that... (某人突然想起...)。" } },
+        { "q_num": "8", "q_text": "Being a very careful person, he is quite _______ in giving his comments.", "options": {"A": "reserved", "B": "melancholy", "C": "complicated", "D": "generous"}, "answer": "A", "explanation": { "translation": "身為一個非常謹慎的人，他在給予評論時相當保留/拘謹。", "analysis": "(A) reserved (保留的/謹言慎行的)。" } },
+        { "q_num": "9", "q_text": "Most viewers agreed that the movie _______ was not as good as the book.", "options": {"A": "routine", "B": "version", "C": "copy", "D": "issue"}, "answer": "B", "explanation": { "translation": "大多數觀眾同意這部電影版本不如原著小說好看。", "analysis": "(B) movie version (電影版本)。" } },
+        { "q_num": "10", "q_text": "The native greeted the travelers in a _______ language which was strange to them.", "options": {"A": "contrary", "B": "relative", "C": "peculiar", "D": "spiral"}, "answer": "C", "explanation": { "translation": "當地人用一種對旅客來說很陌生的奇怪語言向他們打招呼。", "analysis": "(C) peculiar (奇怪的/特有的)。" } }
+      ]
+    },
+    {
+      "group_id": "cloze_11_20",
+      "type": "cloze",
+      "tags": ["綜合測驗"],
+      "passage": "The umbrella is not a new invention. The Chinese [BLANK_11] umbrellas in the eleventh century B.C. [BLANK_12] China they traveled to India, Persia, and Egypt. But in Greece and Rome, men [BLANK_13] use them. They believed umbrellas were [BLANK_14] for women.<br><br>When the Spanish explorers went to Mexico, they saw the Aztec kings [BLANK_15] umbrellas. English explorers found out that Indian princes also carried umbrellas on the east coast of North America. It [BLANK_16] that people in different parts of the world invented umbrellas at different times.<br><br>England was probably the first country in Europe [BLANK_17] ordinary people used umbrellas [BLANK_18] the rain. England has a rainy climate, and umbrellas are very useful there.<br><br>The umbrella is now a very ordinary [BLANK_19]. Everybody uses it today. It keeps the rain and the sun off people. Some umbrellas fold up, [BLANK_20] it is easy to carry them.",
+      "passage_translation": "雨傘並不是一項新發明。中國人在西元前十一世紀就已經有了雨傘。從中國，雨傘傳到了印度、波斯和埃及。但是在希臘和羅馬，男人是不會使用雨傘的。他們認為雨傘只是給女人用的... (後略)",
+      "questions": [
+        { "q_num": "11", "options": {"A": "have had", "B": "had", "C": "have", "D": "having"}, "answer": "B", "explanation": { "translation": "中國人在西元前十一世紀就<b>有</b>了雨傘。", "analysis": "有明確的過去時間，使用<b>過去簡單式 had</b>。" } },
+        { "q_num": "12", "options": {"A": "From", "B": "In", "C": "For", "D": "Around"}, "answer": "A", "explanation": { "translation": "<b>從</b>中國，它們傳播到了印度...", "analysis": "<b>From A to B (從A傳到B)</b>。" } },
+        { "q_num": "13", "options": {"A": "would", "B": "could", "C": "wouldn't", "D": "won't"}, "answer": "C", "explanation": { "translation": "但在希臘和羅馬，男人<b>不會</b>使用它們。", "analysis": "全文為<b>過去式</b>，配合語意選 <b>wouldn't</b>。" } },
+        { "q_num": "14", "options": {"A": "likely", "B": "only", "C": "nearly", "D": "possibly"}, "answer": "B", "explanation": { "translation": "他們認為雨傘<b>只</b>是給女人用的。", "analysis": "配合上文男人不用，代表雨傘是<b>唯一 (only)</b> 給女人用的。" } },
+        { "q_num": "15", "options": {"A": "used", "B": "to use", "C": "used to", "D": "using"}, "answer": "D", "explanation": { "translation": "他們看到阿茲特克國王<b>正在使用</b>雨傘。", "analysis": "<b>感官動詞 saw + 受詞 + Ving</b> (強調看到正在進行的動作)。" } },
+        { "q_num": "16", "options": {"A": "seems", "B": "likes", "C": "looks", "D": "maybe"}, "answer": "A", "explanation": { "translation": "<b>似乎</b>世界各地的人...", "analysis": "<b>It seems that + 子句</b> (似乎...) 為固定句型。" } },
+        { "q_num": "17", "options": {"A": "what", "B": "when", "C": "which", "D": "where"}, "answer": "D", "explanation": { "translation": "英國可能是歐洲第一個普通人撐傘的國家（<b>在那裡</b>普通人撐傘）。", "analysis": "先行詞為 country，需用<b>關係副詞 where</b>。" } },
+        { "q_num": "18", "options": {"A": "below", "B": "of", "C": "against", "D": "from"}, "answer": "C", "explanation": { "translation": "普通人使用雨傘來<b>抵擋</b>雨水。", "analysis": "介系詞 <b>against</b> 有「防禦、抵抗」之意。" } },
+        { "q_num": "19", "options": {"A": "subject", "B": "object", "C": "matter", "D": "element"}, "answer": "B", "explanation": { "translation": "雨傘現在是非常普通的<b>物品</b>。", "analysis": "<b>object</b> 在此指「物品、東西」。" } },
+        { "q_num": "20", "options": {"A": "so", "B": "for", "C": "unless", "D": "but"}, "answer": "A", "explanation": { "translation": "有些雨傘可以折疊，<b>所以</b>很容易攜帶。", "analysis": "前句為因，後句為果，故選 <b>so (所以)</b>。" } }
+      ]
+    },
+    {
+      "group_id": "cloze_21_30",
+      "type": "cloze",
+      "tags": ["綜合測驗"],
+      "passage": "A person's self-concept is reflected in the way he or she behaves, and the way a person behaves affects other people's reactions. [BLANK_21], the way people think about themselves [BLANK_22] a profound effect on all areas of their lives. For instance, people who have a [BLANK_23] sense of self-esteem usually act with confidence. [BLANK_24] they have self-assurance, they do not need constant praise and encouragement from others to feel [BLANK_25] about themselves. Self-confident people are their own best friends. They participate [BLANK_26] life enthusiastically and spontaneously. They are not affected by [BLANK_27] others think they \"should\" do. People [BLANK_28] high self-esteem are not hurt by criticism; they do not [BLANK_29] criticism as personal rejection. [BLANK_30], they tend to believe criticism to be suggestion for improvement.",
+      "passage_translation": "一個人的自我概念反映在他或她的行為方式上... (中略) 相反地，他們傾向於相信批評是為了改進的建議。",
+      "questions": [
+        { "q_num": "21", "options": {"A": "By and by", "B": "Luckily", "C": "In general", "D": "Even so"}, "answer": "C", "explanation": { "translation": "<b>總的來說</b>，人們對自己的看法...", "analysis": "(C) In general (總的來說)。" } },
+        { "q_num": "22", "options": {"A": "have", "B": "having", "C": "to have", "D": "has"}, "answer": "D", "explanation": { "translation": "對他們的生活<b>有</b>深遠的影響。", "analysis": "主詞為 the way (單數)，動詞用單數 has。" } },
+        { "q_num": "23", "options": {"A": "positive", "B": "common", "C": "weak", "D": "normal"}, "answer": "A", "explanation": { "translation": "有著<b>正面</b>自尊感的人...", "analysis": "與充滿自信呼應，選 positive。" } },
+        { "q_num": "24", "options": {"A": "Until", "B": "Because", "C": "Unless", "D": "However"}, "answer": "B", "explanation": { "translation": "<b>因為</b>他們有自信...", "analysis": "前後為因果關係，選 Because。" } },
+        { "q_num": "25", "options": {"A": "best", "B": "correct", "C": "well", "D": "good"}, "answer": "D", "explanation": { "translation": "對自己感覺<b>良好</b>。", "analysis": "feel good about oneself 為慣用語。" } },
+        { "q_num": "26", "options": {"A": "to", "B": "at", "C": "in", "D": "on"}, "answer": "C", "explanation": { "translation": "他們<b>參與</b>生活...", "analysis": "participate in (參與) 為固定搭配。" } },
+        { "q_num": "27", "options": {"A": "which", "B": "how", "C": "why", "D": "what"}, "answer": "D", "explanation": { "translation": "做<b>什麼</b>的影響。", "analysis": "do 缺受詞，需用複合關代 what。" } },
+        { "q_num": "28", "options": {"A": "losing", "B": "by", "C": "with", "D": "have"}, "answer": "C", "explanation": { "translation": "<b>擁有</b>高自尊的人...", "analysis": "介系詞 with 表「擁有、帶有」。" } },
+        { "q_num": "29", "options": {"A": "like", "B": "look", "C": "watch", "D": "regard"}, "answer": "D", "explanation": { "translation": "不會把批評<b>視為</b>個人拒絕。", "analysis": "regard A as B (把 A 視為 B)。" } },
+        { "q_num": "30", "options": {"A": "Instead", "B": "In addition", "C": "Thus", "D": "In case"}, "answer": "A", "explanation": { "translation": "<b>相反地</b>，他們傾向於相信批評是建議。", "analysis": "前句否定，後句提出相反態度，選 Instead。" } }
+      ]
+    },
+    {
+      "group_id": "reading_31_33",
+      "type": "reading",
+      "tags": ["閱讀測驗"],
+      "passage": "<p class='mb-4'>Most heroes are people like you. But what makes them heroes? They find special courage when they need it. They are brave enough to help in an emergency while others may stand by. A hero sees what needs to be done and does it.</p><p class='mb-4'>Sometimes heroes are rewarded for their brave acts. One such reward is the Carnegie Medal. It is given to people who act bravely and face danger to save the lives of others.</p><p class='mb-4'>The medal was named after Andrew Carnegie. In 1886, Carnegie heard about a young man by the name of William Hunter who lost his life trying to save two other boys from drowning. Carnegie became a very rich businessman and set aside money to honor heroes like William.</p>",
+      "passage_translation": "大多數的英雄都是像你我一樣的普通人。但到底是什麼讓他們成為英雄呢？他們在需要的時候會找到特別的勇氣... (略)",
+      "questions": [
+        { "q_num": "31", "q_text": "The Carnegie Medal is given to those who are _______", "options": {"A": "sick and poor.", "B": "rich and famous.", "C": "young and brave.", "D": "unselfish and courageous."}, "answer": "D", "explanation": { "translation": "卡內基獎章頒給無私且有勇氣的人。", "analysis": "(D) 根據第二段，獎章頒給冒險拯救他人生命的人。" } },
+        { "q_num": "32", "q_text": "What is the main idea of the passage?", "options": {"A": "William Hunter was a very brave boy.", "B": "Hunter saved Carnegie from drowning.", "C": "Some heroes have been rewarded for their bravery.", "D": "Carnegie was a rich businessman and liked to help people."}, "answer": "C", "explanation": { "translation": "主旨是什麼？", "analysis": "(C) 貫穿全文，介紹卡內基獎章如何獎勵英雄。" } },
+        { "q_num": "33", "q_text": "Which of the following statements is NOT true?", "options": {"A": "Carnegie knew Hunter in person.", "B": "Brave deeds can take many different forms.", "C": "Over 6,000 people are Carnegie Medal recipients.", "D": "Some heroes have received money as well as the Medal."}, "answer": "A", "explanation": { "translation": "何者為非？", "analysis": "(A) 文章說 Carnegie 'heard about' William Hunter，代表他們不認識。" } }
+      ]
+    },
+    {
+      "group_id": "reading_34_36",
+      "type": "reading",
+      "tags": ["閱讀測驗"],
+      "passage": "<p class='mb-4'>On May 26, 1977, George Willig traveled to the top of the 1,350-foot-tall World Trade Center in New York City. He did not take the elevator, however. Instead, like a human fly, George Willig climbed the outside of the immense 110-story building. His climb, which began at 6:30 a.m., took three and a half hours to finish.</p><p class='mb-4'>At the top, Willig was greeted by both police and reporters. Some of the police officers asked him for his autograph. Then they wanted to put him in jail and charged him with violation of law for climbing the building without a permit...</p>",
+      "passage_translation": "1977年5月26日，喬治·威利格到了紐約市1350英尺高的世貿中心頂樓。然而，他沒有搭乘電梯... (略)",
+      "questions": [
+        { "q_num": "34", "q_text": "George Willig reached the top of the World Trade Center in New York at", "options": {"A": "six thirty in the morning.", "B": "six thirty in the evening.", "C": "ten o'clock in the morning.", "D": "ten o'clock in the evening."}, "answer": "C", "explanation": { "translation": "到達時間是？", "analysis": "(C) 早上 6:30 開始爬，花了三個半小時，所以是早上 10 點。" } },
+        { "q_num": "35", "q_text": "This passage is a story about", "options": {"A": "a man who enjoys dangers and risks.", "B": "a human being who can fly like a fly.", "C": "a man who has escaped from the jail.", "D": "a fly which climbs like a human being."}, "answer": "A", "explanation": { "translation": "這篇文章是關於？", "analysis": "(A) 關於一個享受危險與冒險的男人。" } },
+        { "q_num": "36", "q_text": "According to the passage, which of the following statements is true?", "options": {"A": "Willig was fined $250,000.", "B": "Willig was sent to prison for a year.", "C": "Willig was honored in a party and fined only $1.10.", "D": "Willig climbed the World Trade Center with permission."}, "answer": "C", "explanation": { "translation": "何者為真？", "analysis": "(C) 市長不但沒懲罰他，反而每層樓只罰一便士(共$1.10)並表揚他。" } }
+      ]
+    },
+    {
+      "group_id": "reading_37_40",
+      "type": "reading",
+      "tags": ["閱讀測驗"],
+      "passage": "<p class='mb-4'>Printing is one of the most important means of communication. Without it you would not now be reading this passage. Even the development of radio and television has not diminished the importance of printing.</p><p class='mb-4'>The first printing was done from wood blocks one letter at a time by hand. This was a slow process, requiring much skill and patience... A great step forward was the use of movable type. The Chinese discovered this in the 11th century...</p><p class='mb-4'>One of the first European books to be printed in movable type was Johannes Gutenberg's 42-line Bible. The first book to be printed likewise in English was about the history of Troy. It was printed in Flanders in 1474 by an Englishman, William Caxton...</p>",
+      "passage_translation": "印刷術是最重要的通訊方式之一。沒有它，你現在就不會讀到這篇文章... (略)",
+      "questions": [
+        { "q_num": "37", "q_text": "Printing is important because", "options": {"A": "it is a Chinese invention.", "B": "it has made reading books possible.", "C": "it has helped to develop radio and television.", "D": "William Caxton printed 80 books in English."}, "answer": "B", "explanation": { "translation": "為何重要？", "analysis": "(B) 根據第一段，沒有印刷術就無法閱讀文章，意即它讓閱讀書籍成為可能。" } },
+        { "q_num": "38", "q_text": "The use of movable type was first introduced by", "options": {"A": "William Caxton.", "B": "the Europeans.", "C": "Johannes Gutenberg.", "D": "The Chinese."}, "answer": "D", "explanation": { "translation": "活字印刷術最早由誰引進？", "analysis": "(D) 第二段指出 The Chinese discovered this in the 11th century。" } },
+        { "q_num": "39", "q_text": "According to the passage, the use of movable type was considered as a \"great step forward\" because", "options": {"A": "it did not need a lot of wood.", "B": "it required less skill and patience.", "C": "the printing letters could be reused.", "D": "every page of every book required individual carving."}, "answer": "C", "explanation": { "translation": "為何是一大進步？", "analysis": "(C) 因為舊方法每頁都要獨立雕刻，而活字印刷可以重新排列字母(reused)。" } },
+        { "q_num": "40", "q_text": "The first English book printed in movable type was", "options": {"A": "done from wood blocks one letter at a time.", "B": "done in a printing press at Westminster.", "C": "Johannes Gutenberg's 42-line Bible.", "D": "about the history of Troy."}, "answer": "D", "explanation": { "translation": "第一本用活字印刷的英文書是？", "analysis": "(D) 第三段提到 The first book to be printed likewise in English was about the history of Troy。" } }
       ]
     },
     {
       "group_id": "matching_41_50",
       "type": "matching",
       "tags": ["文意選填"],
-      "passage": "<div class='bg-purple-50 border border-purple-200 p-4 mb-5 rounded-lg grid grid-cols-2 md:grid-cols-5 gap-3 text-sm font-bold text-purple-900 shadow-sm'><div>(A) activated</div><div>(B) cough</div><div>(C) breathing</div><div>(D) adopting</div><div>(E) indicated</div><div>(F) symptoms</div><div>(G) near</div><div>(H) harmful</div><div>(I) damages</div><div>(J) limited</div><div>(K) to</div><div>(L) by</div><div>(M) weak</div><div>(N) teenage</div><div>(O) public</div></div>For many years, people thought the [BLANK_41] of smoking were [BLANK_42] to smokers. But new studies have found that smoke from cigarettes can be [BLANK_43] to non-smokers too.<br><br>In December 1987, a U.S. Government report [BLANK_44] that non-smokers could risk getting lung cancer from [BLANK_45] in other people's cigarette smoke.",
-      "passage_translation": "多年來，人們認為吸菸的<b>損害(damages)</b>僅<b>限於(limited)</b>吸菸者。但新的研究發現，香菸的煙霧對非吸菸者也可能是有<b>害的(harmful)</b>。<br><br>在1987年12月，一份美國政府報告<b>指出(indicated)</b>，非吸菸者可能會因為<b>吸入(breathing)</b>他人香菸的煙霧而有罹患肺癌的風險。",
+      "passage": "<div id='matching-options-block' class='bg-purple-50 border border-purple-200 p-4 mb-5 rounded-lg grid grid-cols-2 md:grid-cols-5 gap-3 text-sm font-bold text-purple-900 shadow-sm'><div>(A) activated</div><div>(B) cough</div><div>(C) breathing</div><div>(D) adopting</div><div>(E) indicated</div><div>(F) symptoms</div><div>(G) near</div><div>(H) harmful</div><div>(I) damages</div><div>(J) limited</div><div>(K) to</div><div>(L) by</div><div>(M) weak</div><div>(N) teenage</div><div>(O) public</div></div>For many years, people thought the [BLANK_41] of smoking were [BLANK_42] to smokers. But new studies have found that smoke from cigarettes can be [BLANK_43] to non-smokers too.<br><br>In December 1987, a U.S. Government report [BLANK_44] that non-smokers could risk getting lung cancer from [BLANK_45] in other people's cigarette smoke.<br><br>Another study looked at non-smoking [BLANK_46] athletes who had smoking parents or friends. Being [BLANK_47] cigarette smoke hurt the athletes' lungs, and made them [BLANK_48] more than athletes who did not have smokers close [BLANK_49], the study said. Studies like these have promoted the banning of smoking in [BLANK_50] places.",
+      "passage_translation": "多年來，人們認為吸菸的損害僅限於吸菸者。但新的研究發現，香菸的煙霧對非吸菸者也可能是有害的... (略)",
       "questions": [
-        { "q_num": "41", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "I", "explanation": { "translation": "吸菸的<b>損害 (damages)</b>...", "analysis": "需要名詞作為 thought 之後子句的主詞，且語意符合。" } },
-        { "q_num": "42", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "J", "explanation": { "translation": "僅<b>限於 (limited)</b> 吸菸者。", "analysis": "be limited to 為固定搭配 (侷限於...)。" } }
+        { "q_num": "41", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "I", "explanation": { "translation": "吸菸的<b>損害 (damages)</b>...", "analysis": "需要名詞作為 thought 之後子句的主詞。" } },
+        { "q_num": "42", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "J", "explanation": { "translation": "僅<b>限於 (limited)</b> 吸菸者。", "analysis": "be limited to 為固定搭配 (侷限於...)。" } },
+        { "q_num": "43", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "H", "explanation": { "translation": "對非吸菸者也有<b>害 (harmful)</b>。", "analysis": "be harmful to (對...有害)。" } },
+        { "q_num": "44", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "E", "explanation": { "translation": "報告<b>指出 (indicated)</b>...", "analysis": "動詞過去式，帶出 that 子句。" } },
+        { "q_num": "45", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "C", "explanation": { "translation": "因為<b>吸入 (breathing)</b> 二手菸...", "analysis": "介系詞 from 後接 Ving。" } },
+        { "q_num": "46", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "N", "explanation": { "translation": "非吸菸的<b>青少年 (teenage)</b> 運動員...", "analysis": "形容詞修飾 athletes。" } },
+        { "q_num": "47", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "G", "explanation": { "translation": "<b>靠近 (near)</b> 香菸煙霧...", "analysis": "介系詞，表示位置。" } },
+        { "q_num": "48", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "B", "explanation": { "translation": "使他們更容易<b>咳嗽 (cough)</b>。", "analysis": "make + 受詞 + 原形動詞。" } },
+        { "q_num": "49", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "L", "explanation": { "translation": "身邊沒有吸菸者 (close <b>by</b>)。", "analysis": "close by 為地方副詞片語，表示「在附近」。" } },
+        { "q_num": "50", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "O", "explanation": { "translation": "在<b>公共 (public)</b> 場所禁止吸菸。", "analysis": "public places (公共場所) 為固定搭配。" } }
       ]
     },
     {
@@ -55,12 +159,27 @@
       "tags": ["非選擇題"],
       "passage": null,
       "questions": [
+        { "q_num": "51", "q_disp": "譯1", "q_text": "對於什麼是最佳的渡假方式，大家都有不同的看法。", "answer": "People have different opinions on what is the best way to spend a vacation.", "explanation": { "analysis": "<b>【句型分析】</b><br>1. 「對...有不同看法」：have different opinions on/about...<br>2. 疑問詞 what 引導名詞子句當作 on 的受詞。" } },
+        { "q_num": "52", "q_disp": "譯2", "q_text": "有些人喜歡到寧靜的森林中去，在那兒他們可以暫時遠離人群。", "answer": "Some people like to go to a quiet forest, where they can temporarily stay away from crowds.", "explanation": { "analysis": "<b>【句型分析】</b><br>1. 「在那兒...」：使用關係副詞 where 引導形容詞子句。<br>2. 「暫時遠離人群」：temporarily stay away from crowds." } },
+        { "q_num": "53", "q_disp": "譯3", "q_text": "有些人卻寧願到大都市去，因為他們可以參觀博物館或購物。", "answer": "Some, however, would rather go to big cities because they can visit museums or go shopping.", "explanation": { "analysis": "<b>【句型分析】</b><br>1. 「寧願...」：would rather + 原形動詞" } },
+        { "q_num": "54", "q_disp": "譯4", "q_text": "還有一些人喜歡到海邊去，讓海浪沖走他們的煩惱。", "answer": "Still others like to go to the beach and let the waves wash away their worries.", "explanation": { "analysis": "<b>【句型分析】</b><br>1. 「讓海浪沖走煩惱」：let (使役動詞) + the waves + wash away (原形動詞) + their worries." } },
+        { "q_num": "55", "q_disp": "譯5", "q_text": "有少數人則決定留在家裡，做一些像打掃屋子之類的事。", "answer": "A few people decide to stay at home and do things like cleaning the house.", "explanation": { "analysis": "<b>【句型分析】</b><br>1. 「像...之類的事」：things like + V-ing" } }
+      ]
+    },
+    {
+      "group_id": "essay_1",
+      "type": "essay",
+      "tags": ["非選擇題"],
+      "passage": "<div class='bg-teal-50 border border-teal-200 p-5 rounded-lg text-teal-900 leading-relaxed shadow-sm'><h3 class='text-lg font-bold border-b border-teal-200 pb-2 mb-3'>📝 英文作文寫作提示</h3><b>【題目】</b><br>Things Are Not As Difficult As They Appear (事情不如表面看起來困難)<br><br><b>【說明】</b><br>在成長的過程中，有些事情在開始的時候你可能覺得很難，但經過一番努力後就不再認為因難了。請寫一篇至少一百二十個單字的英文作文，描述一個親身的經驗。<br><br><span class='text-red-600 font-bold'>⚠️ 文章的頭兩句必須是：</span><br>Things are not as difficult as they appear. I have a personal experience to prove this.</div>",
+      "questions": [
         {
-          "q_num": "51",
-          "q_disp": "譯1",
-          "q_text": "對於什麼是最佳的渡假方式，大家都有不同的看法。",
-          "answer": "People have different opinions on what is the best way to spend a vacation.",
-          "explanation": { "analysis": "<b>【句型分析】</b><br>1. 「對...有不同看法」：have different opinions on/about...<br>2. 疑問詞 what 引導名詞子句當作 on 的受詞。" }
+          "q_num": "56",
+          "q_disp": "作文",
+          "q_text": "請在右側作答區輸入您的作文，系統將為您統計字數。",
+          "answer": "Things are not as difficult as they appear. I have a personal experience to prove this. When I first started learning how to swim, I was terrified of the water. Every time I stepped into the pool, my heart would race, and I felt like I was going to sink. It seemed impossible for me to float, let alone swim across the pool.\n\nHowever, I didn't give up. I enrolled in a swimming class and practiced breathing underwater. My coach taught me how to relax my muscles. Gradually, after weeks of swallowing water and struggling, I finally managed to swim my first lap. Now, swimming is my favorite sport. This experience taught me that with persistence, any difficulty can be overcome.",
+          "explanation": {
+            "analysis": "<b>【寫作指引】</b><br>1. <b>第一段：</b>依照題目要求抄寫前兩句。接著描述「當初遇到什麼困難」。<br>2. <b>第二段：</b>描述「努力的過程」。最後以「成功克服」作為結尾，並呼應首句。"
+          }
         }
       ]
     }
