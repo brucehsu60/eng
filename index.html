@@ -10,28 +10,29 @@
         .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         
-        /* Level 4 單字樣式 */
+        /* Level 4 單字樣式 (帶藍色虛線) */
         .lvl4-word { 
-            cursor: pointer; 
+            cursor: help; 
             border-bottom: 2px dashed #3b82f6; 
             color: #1d4ed8; 
-            font-weight: 500;
-            transition: all 0.2s;
+            font-weight: bold;
+            transition: background-color 0.2s;
+            padding: 0 2px;
         }
-        .lvl4-word:hover { background-color: #dbeafe; }
+        .lvl4-word:hover { background-color: #dbeafe; border-radius: 4px; }
 
-        /* 懸浮字典樣式 */
+        /* 超高速本地字典懸浮框 */
         #dict-tooltip {
             position: absolute; z-index: 9999; background: #1e293b; color: white;
-            padding: 12px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            width: 260px; display: none; font-size: 0.9rem; line-height: 1.5;
-            pointer-events: none; /* 讓滑鼠不會卡在 tooltip 上 */
+            padding: 12px 16px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 260px; display: none; font-size: 0.95rem; line-height: 1.5;
+            pointer-events: none; /* 讓滑鼠不會干擾 */
         }
         
         /* 克漏字下拉選單 */
         .cloze-select {
             appearance: none; background: #e0f2fe; border: 2px solid #38bdf8;
-            border-radius: 4px; padding: 2px 24px 2px 8px; font-weight: bold;
+            border-radius: 6px; padding: 2px 24px 2px 8px; font-weight: bold;
             color: #0369a1; cursor: pointer; outline: none; margin: 0 4px;
             background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%230369a1%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
             background-repeat: no-repeat; background-position: right 6px top 55%; background-size: 10px auto;
@@ -45,12 +46,12 @@
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col">
 
-    <!-- 隨點即查字典 Tooltip -->
+    <!-- 本地瞬間字典 Tooltip -->
     <div id="dict-tooltip"></div>
 
     <header class="bg-white shadow-sm border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 py-3">
-            <h1 id="exam-title" class="text-2xl font-bold text-gray-800 tracking-wide">載入中...</h1>
+            <h1 id="exam-title" class="text-2xl font-bold text-blue-700 tracking-wide">載入中...</h1>
         </div>
     </header>
 
@@ -60,9 +61,9 @@
             <div class="flex flex-wrap items-center gap-3 text-sm mb-3">
                 <span class="font-bold text-gray-700 w-20">題型：</span>
                 <button class="filter-btn bg-blue-600 text-white px-4 py-1.5 rounded-full" onclick="filterTags('全部', this)">全部</button>
-                <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full" onclick="filterTags('詞彙', this)">詞彙</button>
-                <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full" onclick="filterTags('綜合測驗', this)">綜合測驗 (克漏字)</button>
-                <button class="filter-btn bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full" onclick="filterTags('閱讀測驗', this)">閱讀測驗</button>
+                <button class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-1.5 rounded-full transition" onclick="filterTags('詞彙', this)">詞彙</button>
+                <button class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-1.5 rounded-full transition" onclick="filterTags('綜合測驗', this)">綜合測驗 (克漏字)</button>
+                <button class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-1.5 rounded-full transition" onclick="filterTags('閱讀測驗', this)">閱讀測驗</button>
             </div>
             <div class="flex flex-wrap items-center gap-3 text-sm">
                 <span class="font-bold text-gray-700 w-20">題號：</span>
@@ -70,30 +71,29 @@
             </div>
         </div>
 
-        <!-- 主要作答區 (Split-Screen View) -->
+        <!-- 主要作答區 -->
         <div class="flex flex-col lg:flex-row gap-6 h-[65vh]">
             
             <!-- 左欄：文章區 -->
             <div id="passage-section" class="w-full lg:w-1/2 bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col h-full hidden">
-                <div class="bg-gray-100 px-4 py-2 border-b border-gray-200 font-bold text-gray-700 flex justify-between items-center">
+                <div class="bg-blue-50 px-4 py-3 border-b border-blue-100 font-bold text-blue-800 flex justify-between items-center">
                     <span id="part-name">文章閱讀</span>
                     <div class="flex gap-2">
-                        <button onclick="readPassageAloud()" class="text-xs bg-blue-100 text-blue-700 border border-blue-300 px-2 py-1 rounded shadow-sm hover:bg-blue-200">🗣️ 朗讀文章</button>
-                        <button onclick="toggleTranslation()" class="text-xs bg-white border border-gray-300 px-2 py-1 rounded shadow-sm hover:bg-gray-50">顯示翻譯</button>
+                        <button onclick="readPassageAloud()" class="text-xs bg-white text-blue-600 border border-blue-300 px-3 py-1.5 rounded shadow-sm hover:bg-blue-100 transition font-bold">🗣️ 朗讀文章</button>
+                        <button onclick="toggleTranslation()" class="text-xs bg-gray-700 text-white border border-gray-700 px-3 py-1.5 rounded shadow-sm hover:bg-gray-800 transition">顯示翻譯</button>
                     </div>
                 </div>
                 <div class="p-6 overflow-y-auto custom-scrollbar flex-1 text-lg leading-relaxed text-gray-800" id="passage-content"></div>
-                <div id="passage-translation" class="hidden p-4 bg-yellow-50 border-t-2 border-yellow-200 text-base text-gray-700 h-1/3 overflow-y-auto custom-scrollbar"></div>
+                <div id="passage-translation" class="hidden p-5 bg-yellow-50 border-t-2 border-yellow-300 text-base text-gray-700 h-1/3 overflow-y-auto custom-scrollbar"></div>
             </div>
 
             <!-- 右欄：題目與詳解區 -->
             <div id="question-section" class="w-full lg:w-1/2 bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col h-full mx-auto">
-                <div class="bg-gray-100 px-4 py-2 border-b border-gray-200 font-bold text-gray-700 flex justify-between">
+                <div class="bg-gray-100 px-4 py-3 border-b border-gray-200 font-bold text-gray-700 flex justify-between">
                     <span>題目與作答區</span>
                 </div>
                 <!-- 這裡會「一次渲染該群組的所有題目」 -->
                 <div class="p-6 overflow-y-auto custom-scrollbar flex-1 relative space-y-10" id="questions-container">
-                    
                 </div>
             </div>
         </div>
@@ -102,17 +102,16 @@
     <script>
         let examData = {};
         let activeGroup = null;
-        const dictCache = {}; // 字典快取，避免重複發送 API 請求
 
         window.onload = async () => {
             try {
                 const res = await fetch('data/083.json');
                 if(!res.ok) throw new Error();
                 examData = await res.json();
-                document.getElementById('exam-title').innerText = `${examData.exam_year} ${examData.subject} 歷屆題庫`;
+                document.getElementById('exam-title').innerText = `📖 ${examData.exam_year} ${examData.subject}歷屆題庫`;
                 renderNavigator('全部'); 
             } catch(e) {
-                alert("無法讀取 data/083.json");
+                alert("無法讀取 data/083.json，請確認檔案位置。");
             }
         };
 
@@ -126,7 +125,7 @@
             renderNavigator(tag);
         }
 
-        // ================= 功能 1: 導覽按鈕群組連動 =================
+        // ================= 重點 1: 導覽按鈕群組智慧連動 =================
         function renderNavigator(filterTag) {
             const nav = document.getElementById('nav-container');
             nav.innerHTML = '';
@@ -137,39 +136,50 @@
                         const btn = document.createElement('button');
                         btn.className = 'nav-btn w-10 h-10 rounded-full border border-gray-300 font-bold text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition shadow-sm bg-white';
                         btn.innerText = q.q_num;
-                        btn.dataset.groupId = group.group_id; // 綁定群組 ID
+                        btn.dataset.groupId = group.group_id; 
+                        btn.dataset.type = group.type;
                         btn.onclick = () => loadGroup(group, q.q_num);
                         nav.appendChild(btn);
                     });
                 }
             });
             
-            // 預設載入第一個
             const firstGroup = examData.groups.find(g => filterTag === '全部' || g.tags.includes(filterTag));
             if(firstGroup) loadGroup(firstGroup, firstGroup.questions[0].q_num);
         }
 
-        // ================= 功能 3: 題組全覽與渲染 =================
-        function loadGroup(group, scrollQNum) {
+        function loadGroup(group, clickedQNum) {
             activeGroup = group;
 
-            // 1. 處理上方導覽列的群組高亮 (同群組一起亮藍色)
+            // ★ 群組亮燈邏輯 ★
             document.querySelectorAll('.nav-btn').forEach(btn => {
-                if (btn.dataset.groupId === group.group_id) {
-                    btn.classList.add('bg-blue-600', 'text-white');
-                    btn.classList.remove('bg-gray-100', 'text-gray-700');
-                } else {
-                    btn.classList.remove('bg-blue-600', 'text-white');
-                    btn.classList.add('bg-gray-100', 'text-gray-700');
+                // 如果是單字題 (vocabulary)，只亮自己這顆按鈕
+                if (group.type === 'vocabulary') {
+                    if (btn.innerText === clickedQNum.toString()) {
+                        btn.classList.add('bg-blue-600', 'text-white');
+                        btn.classList.remove('bg-gray-100', 'text-gray-700');
+                    } else {
+                        btn.classList.remove('bg-blue-600', 'text-white');
+                        btn.classList.add('bg-gray-100', 'text-gray-700');
+                    }
+                } 
+                // 如果是克漏字或閱讀 (cloze/reading)，整組一起亮
+                else {
+                    if (btn.dataset.groupId === group.group_id) {
+                        btn.classList.add('bg-blue-600', 'text-white');
+                        btn.classList.remove('bg-gray-100', 'text-gray-700');
+                    } else {
+                        btn.classList.remove('bg-blue-600', 'text-white');
+                        btn.classList.add('bg-gray-100', 'text-gray-700');
+                    }
                 }
             });
 
             const passageSec = document.getElementById('passage-section');
             const questionSec = document.getElementById('question-section');
             const container = document.getElementById('questions-container');
-            container.innerHTML = ''; // 清空右側題目
+            container.innerHTML = ''; 
 
-            // 2. 處理左側文章與克漏字
             if (group.type === 'cloze') {
                 passageSec.classList.remove('hidden');
                 questionSec.className = 'w-full lg:w-1/3 bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col h-full mx-auto';
@@ -179,7 +189,6 @@
                 group.questions.forEach(q => {
                     let optionsHtml = `<option value="" disabled selected>題 ${q.q_num}</option>`;
                     for (let key in q.options) optionsHtml += `<option value="${key}">${key}) ${q.options[key]}</option>`;
-                    // 當克漏字被選擇，立刻觸發 checkAnswer (即時回饋)
                     let selectHtml = `<select class="cloze-select" id="cloze-${q.q_num}" onchange="checkAnswer(${q.q_num}, this.value)">${optionsHtml}</select>`;
                     html = html.replace(`[BLANK_${q.q_num}]`, selectHtml);
                 });
@@ -198,39 +207,37 @@
             document.getElementById('passage-translation').innerHTML = group.passage_translation || '';
             document.getElementById('passage-translation').classList.add('hidden');
 
-            // 3. 處理右側題目區 (一次渲染該群組的所有題目)
+            // 渲染該群組所有題目
             group.questions.forEach(q => {
                 let block = document.createElement('div');
                 block.id = `q-block-${q.q_num}`;
                 
-                let html = `<h3 class="text-lg font-bold text-gray-800 mb-3 border-b-2 border-blue-200 pb-2">第 ${q.q_num} 題</h3>`;
+                let html = `<h3 class="text-lg font-bold text-blue-800 mb-3 border-b-2 border-blue-200 pb-2">第 ${q.q_num} 題</h3>`;
                 
                 if (group.type !== 'cloze') {
-                    html += `<div class="text-lg font-medium text-gray-800 mb-4">${q.q_text}</div><div class="space-y-2 mb-4">`;
+                    html += `<div class="text-lg font-medium text-gray-800 mb-4">${q.q_text}</div><div class="space-y-3 mb-4">`;
                     for (let key in q.options) {
-                        // 當 radio 被點擊，立刻觸發 checkAnswer (即時回饋)
                         html += `
                         <label class="block p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50 transition" id="label-${q.q_num}-${key}">
-                            <input type="radio" name="opt-${q.q_num}" value="${key}" class="mr-2" onclick="checkAnswer(${q.q_num}, '${key}')"> 
-                            (${key}) ${q.options[key]}
+                            <input type="radio" name="opt-${q.q_num}" value="${key}" class="mr-3 w-4 h-4 text-blue-600" onclick="checkAnswer(${q.q_num}, '${key}')"> 
+                            <span class="font-bold mr-1">(${key})</span> ${q.options[key]}
                         </label>`;
                     }
                     html += `</div>`;
                 } else {
-                    html += `<div class="text-gray-500 mb-4">👉 請在左側文章中的下拉選單作答。</div>`;
+                    html += `<div class="text-gray-500 mb-4 bg-gray-100 p-3 rounded">👉 請在左側文章中的下拉選單作答，系統將立即為您批改。</div>`;
                 }
 
-                // 每題專屬的詳解框 (預設隱藏)
                 html += `
                 <div id="exp-box-${q.q_num}" class="hidden bg-gray-50 border border-gray-200 rounded-lg p-5 fade-in shadow-inner mt-4">
-                    <h4 class="font-bold text-lg mb-3" id="status-${q.q_num}"></h4>
-                    <div class="mb-3">
-                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold">翻譯/句型</span>
-                        <p class="text-gray-700 mt-2">${q.explanation.translation}</p>
+                    <h4 class="font-bold text-lg mb-4" id="status-${q.q_num}"></h4>
+                    <div class="mb-4">
+                        <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold shadow-sm">翻譯 / 句型</span>
+                        <p class="text-gray-800 mt-2 text-base">${q.explanation.translation}</p>
                     </div>
                     <div>
-                        <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded font-bold">解析</span>
-                        <p class="text-gray-600 text-sm mt-2 leading-relaxed">${q.explanation.analysis}</p>
+                        <span class="text-sm bg-red-100 text-red-800 px-2 py-1 rounded font-bold shadow-sm">選項解析</span>
+                        <p class="text-gray-700 text-base mt-2 leading-relaxed">${q.explanation.analysis}</p>
                     </div>
                 </div>`;
                 
@@ -238,60 +245,53 @@
                 container.appendChild(block);
             });
 
-            // 自動滾動到點擊的題號
             setTimeout(() => {
-                const targetBlock = document.getElementById(`q-block-${scrollQNum}`);
+                const targetBlock = document.getElementById(`q-block-${clickedQNum}`);
                 if (targetBlock) targetBlock.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 100);
             
-            // 綁定 Level 4 單字事件
+            // 綁定字典事件
             bindVocabEvents();
         }
 
-        // ================= 功能 2: 選取答案「即時」對答案 =================
+        // ================= 重點 3: 單選題即選即顯詳解 =================
         function checkAnswer(qNum, selectedValue) {
             const question = activeGroup.questions.find(q => q.q_num === qNum);
             const statusTitle = document.getElementById(`status-${qNum}`);
             const expBox = document.getElementById(`exp-box-${qNum}`);
-
-            // 判斷對錯
             const isCorrect = selectedValue === question.answer;
 
             if (activeGroup.type === 'cloze') {
                 let sel = document.getElementById(`cloze-${qNum}`);
-                sel.disabled = true; // 鎖定選單
+                sel.disabled = true; 
                 if(isCorrect) {
                     sel.classList.add('correct');
                     statusTitle.innerHTML = `✅ 答對了！`;
-                    statusTitle.className = 'font-bold text-green-600 text-lg mb-3';
+                    statusTitle.className = 'font-bold text-green-600 text-xl mb-3';
                 } else {
                     sel.classList.add('wrong');
                     sel.options[sel.selectedIndex].text = `❌ 改為 ${question.answer}) ${question.options[question.answer]}`;
                     statusTitle.innerHTML = `❌ 答錯了！正確答案為：(${question.answer})`;
-                    statusTitle.className = 'font-bold text-red-600 text-lg mb-3';
+                    statusTitle.className = 'font-bold text-red-600 text-xl mb-3';
                 }
             } else {
-                // 鎖定該題的所有 Radio Buttons
                 document.querySelectorAll(`input[name="opt-${qNum}"]`).forEach(i => i.disabled = true);
                 
                 if (isCorrect) {
                     statusTitle.innerHTML = `✅ 答對了！正確答案：(${question.answer})`;
-                    statusTitle.className = 'font-bold text-green-600 text-lg mb-3';
+                    statusTitle.className = 'font-bold text-green-600 text-xl mb-3';
                     document.getElementById(`label-${qNum}-${selectedValue}`).classList.add('bg-green-100', 'border-green-500');
                 } else {
                     statusTitle.innerHTML = `❌ 答錯了！正確答案為：(${question.answer})`;
-                    statusTitle.className = 'font-bold text-red-600 text-lg mb-3';
+                    statusTitle.className = 'font-bold text-red-600 text-xl mb-3';
                     document.getElementById(`label-${qNum}-${selectedValue}`).classList.add('bg-red-50', 'border-red-400');
                     document.getElementById(`label-${qNum}-${question.answer}`).classList.add('bg-green-100', 'border-green-500');
                 }
             }
 
-            // 展開該題詳解
             expBox.classList.remove('hidden');
 
-            // 觸發文章高光 (如果有設定 clue_ref)
             if (question.explanation.clue_ref) {
-                // 先清除舊高光
                 document.querySelectorAll('.bg-yellow-300').forEach(el => el.classList.remove('bg-yellow-300', 'shadow-sm'));
                 const clueEl = document.getElementById(question.explanation.clue_ref);
                 if(clueEl) {
@@ -306,14 +306,14 @@
             el.classList.toggle('hidden');
         }
 
-        // ================= 功能 4: 朗讀功能 (Web Speech API) =================
+        // ================= 重點 4: 語音朗讀 =================
         function readPassageAloud() {
-            window.speechSynthesis.cancel(); // 停止先前的朗讀
-            // 抓取文章內容，過濾掉 HTML 標籤
+            window.speechSynthesis.cancel(); 
             const textToRead = document.getElementById('passage-content').innerText; 
+            if(!textToRead) return;
             const utterance = new SpeechSynthesisUtterance(textToRead);
             utterance.lang = 'en-US';
-            utterance.rate = 0.9; // 語速稍微放慢
+            utterance.rate = 0.9; 
             window.speechSynthesis.speak(utterance);
         }
 
@@ -324,49 +324,30 @@
             window.speechSynthesis.speak(utterance);
         }
 
-        // ================= 功能 5: Level 4 單字懸浮發音字典 =================
+        // ================= 重點 2: 本地超高速懸浮字典 =================
         function bindVocabEvents() {
             const words = document.querySelectorAll('.lvl4-word');
             const tooltip = document.getElementById('dict-tooltip');
 
             words.forEach(el => {
-                el.addEventListener('mouseenter', async (e) => {
+                el.addEventListener('mouseenter', (e) => {
                     const word = e.target.dataset.word;
+                    const pron = e.target.dataset.pron || '';
+                    const def = e.target.dataset.def || '無解釋';
                     
-                    // 1. 滑鼠靠過去即刻朗讀
                     speakWord(word); 
                     
-                    // 2. 顯示懸浮字典
                     tooltip.style.display = 'block';
                     tooltip.style.left = (e.pageX + 15) + 'px';
                     tooltip.style.top = (e.pageY + 15) + 'px';
-                    tooltip.innerHTML = `<span class="text-gray-400">正在查詢 ${word}...</span>`;
-
-                    // 檢查快取
-                    if (dictCache[word]) {
-                        tooltip.innerHTML = dictCache[word];
-                        return;
-                    }
-
-                    try {
-                        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-                        const data = await res.json();
-                        
-                        if (data.title === "No Definitions Found") {
-                            tooltip.innerHTML = `<b class="text-red-400">${word}</b><br>找不到單字解釋`;
-                        } else {
-                            const phonetic = data[0].phonetic || '';
-                            const meaning = data[0].meanings[0].definitions[0].definition;
-                            const html = `
-                                <div class="font-bold text-blue-300 text-lg border-b border-gray-600 pb-1 mb-2">${word} <span class="text-sm font-normal text-gray-400">${phonetic}</span></div>
-                                <div class="text-sm text-gray-100">${meaning}</div>
-                            `;
-                            dictCache[word] = html; // 存入快取
-                            tooltip.innerHTML = html;
-                        }
-                    } catch (err) {
-                        tooltip.innerHTML = "字典連線失敗";
-                    }
+                    
+                    // 從 data 屬性直接讀取，0 延遲，絕不卡頓
+                    tooltip.innerHTML = `
+                        <div class="font-bold text-blue-300 text-lg border-b border-gray-500 pb-2 mb-2">
+                            ${word} <span class="text-sm font-normal text-gray-400 ml-1">${pron}</span>
+                        </div>
+                        <div class="text-gray-100">${def}</div>
+                    `;
                 });
 
                 el.addEventListener('mouseleave', () => {
