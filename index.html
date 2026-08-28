@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高中英文歷屆題庫系統 (Prototype)</title>
+    <!-- 引入 Tailwind CSS 快速排版 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 自訂卷軸樣式，讓雙欄閱讀體驗更好 */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        
+        /* 隱藏/顯示動畫 */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- 頂部導航 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-blue-600 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                高中英文歷屆題庫系統
+            </h1>
+            <div class="text-sm text-gray-500">
+                目前模式：閱讀測驗雙欄模式
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        
+        <!-- 篩選器區塊 (仿造您的數學系統) -->
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-6 border border-gray-200">
+            <div class="flex flex-wrap items-center gap-4 text-sm">
+                <span class="font-bold text-gray-700 w-20">考試類別：</span>
+                <button class="bg-blue-500 text-white px-3 py-1 rounded-full">全部</button>
+                <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full transition">學測</button>
+                <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full transition">指考/分科</button>
+            </div>
+            <div class="flex flex-wrap items-center gap-4 text-sm mt-3">
+                <span class="font-bold text-gray-700 w-20">題型：</span>
+                <button class="bg-blue-500 text-white px-3 py-1 rounded-full">閱讀測驗</button>
+                <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full transition">詞彙題</button>
+                <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full transition">綜合測驗</button>
+                <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full transition">文意選填</button>
+                <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full transition">篇章結構</button>
+            </div>
+        </div>
+
+        <!-- 主要作答區：雙欄設計 (Split-Screen) -->
+        <div class="flex flex-col lg:flex-row gap-6 h-[70vh]">
+            
+            <!-- 左欄：文章區 -->
+            <div class="w-full lg:w-1/2 bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col h-full">
+                <div class="bg-gray-100 px-4 py-2 border-b border-gray-200 font-bold text-gray-700 flex justify-between">
+                    <span>Reading Passage (文章閱讀)</span>
+                    <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">112學測</span>
+                </div>
+                <!-- 文章內容 -->
+                <div class="p-6 overflow-y-auto custom-scrollbar flex-1 text-lg leading-relaxed text-gray-800" id="article-content">
+                    <p class="mb-4">
+                        Tea is an aromatic beverage commonly prepared by pouring hot or boiling water over cured or fresh leaves of the <i>Camellia sinensis</i>, an evergreen shrub native to East Asia. After water, it is the most widely consumed drink in the world.
+                    </p>
+                    <p class="mb-4">
+                        The history of tea is long and complex, spreading across multiple cultures over thousands of years. According to legend, tea was first discovered by the Chinese emperor Shennong in 2737 BC. It is said that the emperor liked his drinking water boiled before he drank it so it would be clean, so that is what his servants did. One day, on a trip to a distant region, he and his army stopped to rest. A servant began boiling water for him to drink, and a dead leaf from the wild tea bush fell into the water.
+                    </p>
+                    <p>
+                        The emperor drank it and found it very refreshing. This sparked a cultural phenomenon, leading to tea ceremonies, international trade routes, and eventually, the global beverage industry we know today.
+                    </p>
+                    
+                    <!-- 展開全文翻譯按鈕 -->
+                    <button onclick="toggleTranslation()" class="mt-6 text-sm text-blue-600 hover:text-blue-800 flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" /></svg>
+                        顯示全文翻譯
+                    </button>
+                    <!-- 全文翻譯內容 (預設隱藏) -->
+                    <div id="article-translation" class="hidden mt-4 p-4 bg-gray-50 border-l-4 border-blue-400 text-base text-gray-700">
+                        茶是一種香氣四溢的飲料，通常是將熱水或沸水倒在原產於東亞的常綠灌木「茶樹」的熟葉或鮮葉上泡製而成。在水之後，它是世界上被消耗最廣泛的飲料。<br><br>
+                        茶的歷史悠久且複雜，幾千年來跨越了多個文化。根據傳說，茶最早是由中國皇帝神農氏在西元前2737年發現的。據說這位皇帝喜歡把飲用水煮沸後再喝，以保持清潔，所以他的僕人們都是這麼做的。有一天，在前往偏遠地區的旅途中，他和他的軍隊停下來休息。一名僕人開始為他煮水喝，一片來自野生茶樹的枯葉掉進了水裡。<br><br>
+                        皇帝喝了之後覺得非常清爽。這引發了一種文化現象，帶來了茶道、國際貿易路線，以及最終我們今天所熟知的全球飲料產業。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右欄：題目與作答區 -->
+            <div class="w-full lg:w-1/2 bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col h-full">
+                <div class="bg-gray-100 px-4 py-2 border-b border-gray-200 font-bold text-gray-700 flex justify-between">
+                    <span>Questions (第41題)</span>
+                    <div class="flex gap-1">
+                        <span class="w-3 h-3 rounded-full bg-green-500 mt-1"></span>
+                        <span class="w-3 h-3 rounded-full bg-gray-300 mt-1"></span>
+                        <span class="w-3 h-3 rounded-full bg-gray-300 mt-1"></span>
+                    </div>
+                </div>
+                
+                <!-- 題目內容 -->
+                <div class="p-6 overflow-y-auto custom-scrollbar flex-1">
+                    <h3 class="text-lg font-medium text-gray-800 mb-4">
+                        41. What is the main idea of the passage?
+                    </h3>
+                    
+                    <!-- 選項區 (模擬單選題互動) -->
+                    <div class="space-y-3 mb-6" id="options-container">
+                        <label class="block p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50 transition peer-checked:border-blue-500 peer-checked:bg-blue-50" id="label-A">
+                            <input type="radio" name="q41" value="A" class="mr-2" onclick="selectOption('A')"> 
+                            (A) The health benefits of drinking tea daily.
+                        </label>
+                        <label class="block p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50 transition" id="label-B">
+                            <input type="radio" name="q41" value="B" class="mr-2" onclick="selectOption('B')"> 
+                            (B) The origins and historical spread of tea.
+                        </label>
+                        <label class="block p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50 transition" id="label-C">
+                            <input type="radio" name="q41" value="C" class="mr-2" onclick="selectOption('C')"> 
+                            (C) How to prepare the perfect cup of tea.
+                        </label>
+                        <label class="block p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50 transition" id="label-D">
+                            <input type="radio" name="q41" value="D" class="mr-2" onclick="selectOption('D')"> 
+                            (D) Different types of tea leaves found in East Asia.
+                        </label>
+                    </div>
+
+                    <button id="submit-btn" onclick="checkAnswer()" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        送出答案並查看詳解
+                    </button>
+
+                    <!-- 詳解區 (預設隱藏) -->
+                    <div id="explanation-box" class="hidden mt-8 fade-in">
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                            <p class="font-bold text-yellow-800 flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" /></svg>
+                                破題關鍵：主旨題
+                            </p>
+                            <p class="text-sm text-yellow-900 mt-1">文章第一段介紹茶是什麼，第二段與第三段詳述茶被發現的傳說以及其後續在歷史與文化上的發展。因此本文主旨為茶的起源與歷史。</p>
+                        </div>
+
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 text-sm">
+                            <h4 class="font-bold text-green-600 text-lg mb-2 flex items-center gap-2" id="result-status">
+                                <!-- 這裡會用 JS 注入 正確/錯誤 圖示 -->
+                            </h4>
+                            
+                            <!-- 選項分析 -->
+                            <div class="mb-4">
+                                <p class="font-bold text-gray-700 mb-2">【選項解析】</p>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li><span class="font-bold">(A)</span> 每天喝茶的健康益處。 (文章未提及健康益處)</li>
+                                    <li><span class="font-bold text-green-600">(B) 茶的起源與歷史傳播。 (正確答案)</span></li>
+                                    <li><span class="font-bold">(C)</span> 如何泡製一杯完美的茶。 (僅第一段略微提及泡製方式，非主旨)</li>
+                                    <li><span class="font-bold">(D)</span> 東亞發現的不同茶葉種類。 (僅提及 Camellia sinensis，屬細節)</li>
+                                </ul>
+                            </div>
+
+                            <hr class="my-4 border-gray-200">
+
+                            <!-- 單字重點 -->
+                            <div>
+                                <p class="font-bold text-gray-700 mb-2">【必背單字】</p>
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600">
+                                    <li><span class="font-semibold text-blue-600">aromatic</span> (adj.) 芳香的</li>
+                                    <li><span class="font-semibold text-blue-600">beverage</span> (n.) 飲料</li>
+                                    <li><span class="font-semibold text-blue-600">shrub</span> (n.) 灌木</li>
+                                    <li><span class="font-semibold text-blue-600">phenomenon</span> (n.) 現象</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 互動邏輯腳本 -->
+    <script>
+        const correctAnswer = 'B';
+        let userSelected = null;
+
+        // 選擇選項時的UI變化
+        function selectOption(val) {
+            userSelected = val;
+            
+            // 啟用送出按鈕
+            document.getElementById('submit-btn').disabled = false;
+
+            // 重置所有選項的外觀
+            ['A', 'B', 'C', 'D'].forEach(opt => {
+                let label = document.getElementById('label-' + opt);
+                label.classList.remove('bg-blue-50', 'border-blue-500');
+            });
+
+            // 標記選中的選項
+            let selectedLabel = document.getElementById('label-' + val);
+            selectedLabel.classList.add('bg-blue-50', 'border-blue-500');
+        }
+
+        // 檢查答案並顯示詳解
+        function checkAnswer() {
+            if (!userSelected) return;
+
+            // 鎖定所有選項不讓使用者再改
+            const inputs = document.querySelectorAll('input[type="radio"]');
+            inputs.forEach(input => input.disabled = true);
+            document.getElementById('submit-btn').style.display = 'none';
+
+            // 顯示詳解區塊
+            const explanationBox = document.getElementById('explanation-box');
+            explanationBox.classList.remove('hidden');
+
+            // 判斷對錯並顯示對應UI
+            const statusTitle = document.getElementById('result-status');
+            const selectedLabel = document.getElementById('label-' + userSelected);
+            const correctLabel = document.getElementById('label-' + correctAnswer);
+
+            if (userSelected === correctAnswer) {
+                // 答對了
+                statusTitle.innerHTML = '✅ 正確答案：(B)';
+                statusTitle.className = 'font-bold text-green-600 text-lg mb-2 flex items-center gap-2';
+                selectedLabel.classList.add('bg-green-100', 'border-green-500');
+                selectedLabel.classList.remove('bg-blue-50', 'border-blue-500');
+            } else {
+                // 答錯了
+                statusTitle.innerHTML = '❌ 答錯了！正確答案為：(B)';
+                statusTitle.className = 'font-bold text-red-600 text-lg mb-2 flex items-center gap-2';
+                
+                // 標示錯誤的選項 (紅)
+                selectedLabel.classList.add('bg-red-50', 'border-red-400');
+                selectedLabel.classList.remove('bg-blue-50', 'border-blue-500');
+                
+                // 標示正確的選項 (綠)
+                correctLabel.classList.add('bg-green-100', 'border-green-500');
+            }
+        }
+
+        // 切換顯示文章翻譯
+        function toggleTranslation() {
+            const transDiv = document.getElementById('article-translation');
+            if (transDiv.classList.contains('hidden')) {
+                transDiv.classList.remove('hidden');
+                transDiv.classList.add('fade-in');
+            } else {
+                transDiv.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
