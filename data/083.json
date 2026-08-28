@@ -74,21 +74,33 @@
           "q_text": "The Carnegie Medal is given to those who are _______",
           "options": {"A": "sick and poor.", "B": "rich and famous.", "C": "young and brave.", "D": "<span class='lvl3-word' data-word='unselfish' data-pron='/ʌnˈsel.fɪʃ/' data-def='adj. 無私的'>unselfish</span> and courageous."},
           "answer": "D",
-          "explanation": { "translation": "卡內基獎章頒給那些無私且有勇氣的人。", "analysis": "(D) 根據第二段，獎章頒給「冒險拯救他人生命的人」，即<b>無私(unselfish)</b>與<b>勇敢(courageous)</b>。", "clue_ref": "clue-31" }
+          "explanation": {
+            "translation": "卡內基獎章頒給那些無私且有勇氣的人。",
+            "analysis": "(D) 根據第二段，獎章頒給「冒險拯救他人生命的人」，即<b>無私(unselfish)</b>與<b>勇敢(courageous)</b>。",
+            "clue_ref": "clue-31"
+          }
         },
         {
           "q_num": "32",
           "q_text": "What is the main idea of the passage?",
           "options": {"A": "William Hunter was a very brave boy.", "B": "Hunter saved Carnegie from drowning.", "C": "Some heroes have been rewarded for their bravery.", "D": "Carnegie was a rich businessman and liked to help people."},
           "answer": "C",
-          "explanation": { "translation": "這篇文章的主旨是什麼？", "analysis": "(C) 貫穿全文，首段講英雄特質，後段介紹卡內基獎章如何<b>「獎勵英雄的勇敢」</b>。", "clue_ref": "clue-32" }
+          "explanation": {
+            "translation": "這篇文章的主旨是什麼？",
+            "analysis": "(C) 貫穿全文，首段講英雄特質，後段介紹卡內基獎章如何<b>「獎勵英雄的勇敢」</b>。",
+            "clue_ref": "clue-32"
+          }
         },
         {
           "q_num": "33",
           "q_text": "Which of the following statements is NOT true?",
           "options": {"A": "Carnegie knew Hunter in person.", "B": "Brave deeds can take many different forms.", "C": "Over 6,000 people are Carnegie Medal recipients.", "D": "Some heroes have received money as well as the Medal."},
           "answer": "A",
-          "explanation": { "translation": "下列哪項敘述是錯誤的？", "analysis": "(A) 文章第三段說 Carnegie <b>'heard about' (聽說過)</b> William Hunter，代表他們<b>並不認識 (not in person)</b>。此為錯誤敘述，故選A。", "clue_ref": "clue-33" }
+          "explanation": {
+            "translation": "下列哪項敘述是錯誤的？",
+            "analysis": "(A) 文章第三段說 Carnegie <b>'heard about' (聽說過)</b> William Hunter，代表他們<b>並不認識 (not in person)</b>。此為錯誤敘述，故選A。",
+            "clue_ref": "clue-33"
+          }
         }
       ]
     },
@@ -100,4 +112,50 @@
       "passage_translation": "多年來，人們認為吸菸的<b>損害(damages)</b>僅<b>限於(limited)</b>吸菸者。但新的研究發現，香菸的煙霧對非吸菸者也可能是有<b>害的(harmful)</b>。<br><br>在1987年12月，一份美國政府報告<b>指出(indicated)</b>，非吸菸者可能會因為<b>吸入(breathing)</b>他人香菸的煙霧而有罹患肺癌的風險。<br><br>另一項研究觀察了有吸菸父母或朋友的非吸菸<b>青少年(teenage)</b>運動員。研究指出，<b>靠近(near)</b>香菸煙霧會傷害這些運動員的肺部，並使他們比身邊沒有吸菸者(close <b>by</b>)的運動員更容易<b>咳嗽(cough)</b>。像這樣的究促成了在<b>公共(public)</b>場所禁止吸菸的規定。",
       "questions": [
         { "q_num": "41", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "I", "explanation": { "translation": "吸菸的<b>損害 (damages)</b>...", "analysis": "需要名詞作為 thought 之後子句的主詞，且語意符合。" } },
-        { "q_num": "42", "options": {"A": "(A) activated","B": "(B) c
+        { "q_num": "42", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "J", "explanation": { "translation": "僅<b>限於 (limited)</b> 吸菸者。", "analysis": "be limited to 為固定搭配 (侷限於...)。" } },
+        { "q_num": "43", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "H", "explanation": { "translation": "對非吸菸者也有<b>害 (harmful)</b>。", "analysis": "be harmful to (對...有害)。" } },
+        { "q_num": "44", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "E", "explanation": { "translation": "報告<b>指出 (indicated)</b>...", "analysis": "動詞過去式，帶出 that 子句。" } },
+        { "q_num": "45", "options": {"A": "(A) activated","B": "(B) cough","C": "(C) breathing","D": "(D) adopting","E": "(E) indicated","F": "(F) symptoms","G": "(G) near","H": "(H) harmful","I": "(I) damages","J": "(J) limited","K": "(K) to","L": "(L) by","M": "(M) weak","N": "(N) teenage","O": "(O) public"}, "answer": "C", "explanation": { "translation": "因為<b>吸入 (breathing)</b> 二手菸...", "analysis": "介系詞 from 後接 Ving。" } }
+      ]
+    },
+    {
+      "group_id": "translation_1",
+      "type": "translation",
+      "tags": ["非選擇題"],
+      "passage": null,
+      "questions": [
+        {
+          "q_num": "51",
+          "q_disp": "譯1",
+          "q_text": "對於什麼是最佳的渡假方式，大家都有不同的看法。",
+          "answer": "People have different opinions on what is the best way to spend a vacation.",
+          "explanation": { "analysis": "<b>【句型分析】</b><br>1. 「對...有不同看法」：have different opinions on/about...<br>2. 「最佳的渡假方式」：the best way to spend a vacation<br>3. 疑問詞 what 引導名詞子句當作 on 的受詞。" }
+        },
+        {
+          "q_num": "52",
+          "q_disp": "譯2",
+          "q_text": "有些人喜歡到寧靜的森林中去，在那兒他們可以暫時遠離人群。",
+          "answer": "Some people like to go to a quiet forest, where they can temporarily stay away from crowds.",
+          "explanation": { "analysis": "<b>【句型分析】</b><br>1. 「寧靜的森林」：a quiet/peaceful forest<br>2. 「在那兒...」：使用關係副詞 where 引導形容詞子句。<br>3. 「暫時遠離人群」：temporarily stay away from crowds." }
+        }
+      ]
+    },
+    {
+      "group_id": "essay_1",
+      "type": "essay",
+      "tags": ["非選擇題"],
+      "passage": "<div class='bg-teal-50 border border-teal-200 p-5 rounded-lg text-teal-900 leading-relaxed shadow-sm'><h3 class='text-lg font-bold border-b border-teal-200 pb-2 mb-3'>📝 英文作文寫作提示</h3><b>【題目】</b><br>Things Are Not As Difficult As They Appear (事情不如表面看起來困難)<br><br><b>【說明】</b><br>在成長的過程中，有些事情在開始的時候你可能覺得很難，但經過一番努力後就不再認為因難了。請寫一篇至少一百二十個單字的英文作文，描述一個親身的經驗。<br><br><span class='text-red-600 font-bold'>⚠️ 文章的頭兩句必須是：</span><br>Things are not as difficult as they appear. I have a personal experience to prove this.</div>",
+      "questions": [
+        {
+          "q_num": "56",
+          "q_disp": "作文",
+          "q_text": "請在右側作答區輸入您的作文，系統將為您統計字數。",
+          "answer": "Things are not as difficult as they appear. I have a personal experience to prove this. When I first started learning how to swim, I was terrified of the water. Every time I stepped into the pool, my heart would race, and I felt like I was going to sink. It seemed impossible for me to float, let alone swim across the pool.\n\nHowever, I didn't give up. I enrolled in a swimming class and practiced breathing underwater. My coach taught me how to relax my muscles. Gradually, after weeks of swallowing water and struggling, I finally managed to swim my first lap. Now, swimming is my favorite sport. This experience taught me that with persistence, any difficulty can be overcome.",
+          "explanation": {
+            "analysis": "<b>【寫作指引】</b><br>1. <b>第一段：</b>依照題目要求抄寫前兩句。接著描述「當初遇到什麼困難」。<br>2. <b>第二段：</b>描述「努力的過程」。最後以「成功克服」作為結尾，並呼應首句。<br><br><b>【加分字彙】</b><br>• terrified (adj. 極度恐懼的)<br>• let alone (phr. 更不用說)<br>• persistence (n. 堅持不懈)"
+          }
+        }
+      ]
+    }
+  ]
+}
