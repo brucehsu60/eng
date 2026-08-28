@@ -15,7 +15,7 @@
           "answer": "C",
           "explanation": {
             "translation": "因為張先生最近很忙，所以他是否會來參加派對還很<b>令人懷疑</b>。",
-            "analysis": "空格後接 whether (是否)，表示<b>不確定的事情</b>。<b>it is doubtful whether...</b> 為常見句型，表示「對...感到懷疑」。<br>(A) unlikely 通常接 to V 或 that 子句。<br>(B) impossible 語氣太絕對。<br>(D) inevitable (無可避免的) 語意不符。"
+            "analysis": "空格後接 whether (是否)，表示<b>不確定的事情</b>。<b>it is doubtful whether...</b> 為常見句型，表示「對...感到懷疑」。<br>(A) unlikely 通常接 to V。<br>(B) impossible 語氣太絕對。<br>(D) inevitable (無可避免的) 語意不符。"
           }
         },
         {
@@ -45,7 +45,7 @@
           "answer": "A",
           "explanation": {
             "translation": "根據這些線索，你能預測故事的<b>結局</b>嗎？",
-            "analysis": "(A) <b>outcome (結局/結果)</b>，符合語境。<br>(B) headline (標題)。<br>(C) cause (原因)。<br>(D) performance (表現)。"
+            "analysis": "(A) <b>outcome (結局/結果)</b>，符合語意。<br>(B) headline (新聞標題)。<br>(C) cause (原因)。<br>(D) performance (表現)。"
           }
         },
         {
@@ -55,7 +55,7 @@
           "answer": "B",
           "explanation": {
             "translation": "一個好的閱讀者通常能透過使用<b>上下文</b>來推斷新單字的意思。",
-            "analysis": "(B) <b>context (上下文)</b>，這是閱讀測驗的核心技巧。<br>(A) contact (接觸/聯絡)。<br>(C) content (內容)。<br>(D) contest (比賽)。"
+            "analysis": "(B) <b>context (上下文)</b>，這是閱讀測驗的核心技巧。<br>(A) contact (接觸)。<br>(C) content (內容)。<br>(D) contest (比賽)。"
           }
         }
       ]
@@ -65,66 +65,46 @@
       "type": "cloze",
       "tags": ["綜合測驗"],
       "passage": "The umbrella is not a new invention. The Chinese [BLANK_11] umbrellas in the eleventh century B.C. [BLANK_12] China they traveled to India, Persia, and Egypt. But in Greece and Rome, men [BLANK_13] use them. They believed umbrellas were [BLANK_14] for women.<br><br>When the Spanish explorers went to Mexico, they saw the Aztec kings [BLANK_15] umbrellas. English explorers found out that Indian princes also carried umbrellas on the east coast of North America. It [BLANK_16] that people in different parts of the world invented umbrellas at different times.<br><br>England was probably the first country in Europe [BLANK_17] ordinary people used umbrellas [BLANK_18] the rain. England has a rainy climate, and umbrellas are very useful there.<br><br>The umbrella is now a very ordinary [BLANK_19]. Everybody uses it today. It keeps the rain and the sun off people. Some umbrellas fold up, [BLANK_20] it is easy to carry them.",
-      "passage_translation": "雨傘不是新發明。中國人在西元前十一世紀就已經有雨傘了。從中國，它們傳播到了印度、波斯和埃及。但在希臘和羅馬，男人不會使用它們。他們認為雨傘只是給女人用的... (後略)",
+      "passage_translation": "雨傘並不是一項新發明。中國人在西元前十一世紀就已經有了雨傘。從中國，雨傘傳到了印度、波斯和埃及。但是在希臘和羅馬，男人是不會使用雨傘的。他們認為雨傘只是給女人用的。<br><br>當西班牙探險家前往墨西哥時，他們看到阿茲特克的國王正在使用雨傘。英國探險家也發現在北美洲東岸的印第安王子也會攜帶雨傘。似乎世界各地的人們在不同的時間都發明了雨傘。<br><br>英國可能是歐洲第一個由普通百姓撐傘來擋雨的國家。英國的氣候多雨，所以雨傘在那裡非常實用。<br><br>雨傘現在是一件非常普遍的物品。今天每個人都在使用它。它可以為人們擋雨遮陽。有些雨傘可以折疊，所以很容易攜帶。",
       "questions": [
         {
-          "q_num": 11,
-          "options": {"A": "have had", "B": "had", "C": "have", "D": "having"},
-          "answer": "B",
+          "q_num": 11, "options": {"A": "have had", "B": "had", "C": "have", "D": "having"}, "answer": "B",
           "explanation": { "translation": "中國人在西元前十一世紀就<b>有</b>了雨傘。", "analysis": "有 <b>in the eleventh century B.C.</b> 這個明確的過去時間，必須使用<b>過去簡單式 had</b>。" }
         },
         {
-          "q_num": 12,
-          "options": {"A": "From", "B": "In", "C": "For", "D": "Around"},
-          "answer": "A",
+          "q_num": 12, "options": {"A": "From", "B": "In", "C": "For", "D": "Around"}, "answer": "A",
           "explanation": { "translation": "<b>從</b>中國，它們傳播到了印度...", "analysis": "<b>From A to B (從A傳到B)</b>，後文有 to India，故選 From。" }
         },
         {
-          "q_num": 13,
-          "options": {"A": "would", "B": "could", "C": "wouldn't", "D": "won't"},
-          "answer": "C",
+          "q_num": 13, "options": {"A": "would", "B": "could", "C": "wouldn't", "D": "won't"}, "answer": "C",
           "explanation": { "translation": "但在希臘和羅馬，男人<b>不會</b>使用它們。", "analysis": "後一句提到「他們認為雨傘是給女人用的」，代表男人「不會」用，且全文為<b>過去式</b>，故選 <b>wouldn't</b>。" }
         },
         {
-          "q_num": 14,
-          "options": {"A": "likely", "B": "only", "C": "nearly", "D": "possibly"},
-          "answer": "B",
+          "q_num": 14, "options": {"A": "likely", "B": "only", "C": "nearly", "D": "possibly"}, "answer": "B",
           "explanation": { "translation": "他們認為雨傘<b>只</b>是給女人用的。", "analysis": "配合上文男人不用，代表雨傘是<b>唯一 (only)</b> 給女人用的。" }
         },
         {
-          "q_num": 15,
-          "options": {"A": "used", "B": "to use", "C": "used to", "D": "using"},
-          "answer": "D",
+          "q_num": 15, "options": {"A": "used", "B": "to use", "C": "used to", "D": "using"}, "answer": "D",
           "explanation": { "translation": "他們看到阿茲特克國王<b>正在使用</b>雨傘。", "analysis": "<b>感官動詞 saw + 受詞 + Ving</b> (強調看到正在進行的動作)。" }
         },
         {
-          "q_num": 16,
-          "options": {"A": "seems", "B": "likes", "C": "looks", "D": "maybe"},
-          "answer": "A",
+          "q_num": 16, "options": {"A": "seems", "B": "likes", "C": "looks", "D": "maybe"}, "answer": "A",
           "explanation": { "translation": "<b>似乎</b>世界各地的人在不同時間發明了雨傘。", "analysis": "<b>It seems that + 子句</b> (似乎...) 為固定句型。" }
         },
         {
-          "q_num": 17,
-          "options": {"A": "what", "B": "when", "C": "which", "D": "where"},
-          "answer": "D",
+          "q_num": 17, "options": {"A": "what", "B": "when", "C": "which", "D": "where"}, "answer": "D",
           "explanation": { "translation": "英國可能是歐洲第一個普通人撐傘的國家（<b>在那裡</b>普通人撐傘）。", "analysis": "先行詞為 country，後面的子句結構完整，需用<b>關係副詞 where</b> (= in which)。" }
         },
         {
-          "q_num": 18,
-          "options": {"A": "below", "B": "of", "C": "against", "D": "from"},
-          "answer": "C",
+          "q_num": 18, "options": {"A": "below", "B": "of", "C": "against", "D": "from"}, "answer": "C",
           "explanation": { "translation": "普通人使用雨傘來<b>抵擋</b>雨水。", "analysis": "介系詞 <b>against</b> 有「防禦、抵抗」之意，use umbrellas against the rain 即撐傘擋雨。" }
         },
         {
-          "q_num": 19,
-          "options": {"A": "subject", "B": "object", "C": "matter", "D": "element"},
-          "answer": "B",
+          "q_num": 19, "options": {"A": "subject", "B": "object", "C": "matter", "D": "element"}, "answer": "B",
           "explanation": { "translation": "雨傘現在是非常普通的<b>物品</b>。", "analysis": "<b>object</b> 在此指「物品、東西」。" }
         },
         {
-          "q_num": 20,
-          "options": {"A": "so", "B": "for", "C": "unless", "D": "but"},
-          "answer": "A",
+          "q_num": 20, "options": {"A": "so", "B": "for", "C": "unless", "D": "but"}, "answer": "A",
           "explanation": { "translation": "有些雨傘可以折疊，<b>所以</b>很容易攜帶。", "analysis": "前句為因，後句為果，故選 <b>so (所以)</b>。" }
         }
       ]
@@ -133,17 +113,17 @@
       "group_id": "reading_31_33",
       "type": "reading",
       "tags": ["閱讀測驗"],
-      "passage": "<p class='mb-4'>Most heroes are people like you. But what makes them heroes? They find special courage when they need it. They are brave enough to help in an emergency while others may <span class='lvl4-word' data-word='stand by' data-pron='/stænd baɪ/' data-def='phr. 袖手旁觀；準備行動'>stand by</span>. A hero sees what needs to be done and does it.</p><p class='mb-4'>Sometimes heroes are rewarded for their brave acts. One such reward is the Carnegie Medal. <span id='clue-31' class='transition-colors duration-500 rounded'>It is given to people who act bravely and face danger to save the lives of others.</span></p><p class='mb-4'>The medal was named after Andrew Carnegie. In 1886, <span id='clue-33' class='transition-colors duration-500 rounded'>Carnegie heard about a young man by the name of William Hunter</span> who lost his life trying to save two other boys from drowning. Carnegie became a very rich businessman and set aside money to honor heroes like William.</p>",
-      "passage_translation": "大多數英雄就像你我。但在需要時他們能找到特別的勇氣。在緊急情況下，當其他人可能袖手旁觀時，他們夠勇敢去幫忙... (略)",
+      "passage": "<p class='mb-4'>Most heroes are people like you. But what makes them heroes? They find special courage when they need it. They are brave enough to help in an emergency while others may <span class='lvl4-word' data-word='stand by' data-pron='/stænd baɪ/' data-def='phr. 袖手旁觀'>stand by</span>. A hero sees what needs to be done and does it.</p><p class='mb-4'>Sometimes heroes are rewarded for their brave acts. One such reward is the Carnegie Medal. <span id='clue-31' class='transition-colors duration-500 rounded'>It is given to people who act bravely and face danger to save the lives of others.</span></p><p class='mb-4'>The medal was named after Andrew Carnegie. In 1886, <span id='clue-33' class='transition-colors duration-500 rounded'>Carnegie heard about a young man by the name of William Hunter</span> who lost his life trying to save two other boys from drowning. Carnegie became a very rich businessman and set aside money to honor heroes like William.</p>",
+      "passage_translation": "大多數的英雄都是像你我一樣的普通人。但到底是什麼讓他們成為英雄呢？他們在需要的時候會找到特別的勇氣。在緊急情況下，當其他人可能只會袖手旁觀時，他們卻夠勇敢去幫忙。英雄看見需要被完成的事情，並且付諸實行。<br><br>有時候，英雄們會因為他們的勇敢行為而獲得獎勵。其中一項獎勵就是卡內基獎章。它是頒發給那些勇敢行動，並面對危險以拯救他人生命的人。<br><br>這枚獎章是以安德魯·卡內基的名字命名的。在1886年，卡內基聽說了一位名叫威廉·亨特的年輕人，他為了救另外兩個快溺水的男孩而失去了自己的生命。卡內基後來成為了一位非常富有的商人，並撥出一筆錢來表揚像威廉這樣的英雄。",
       "questions": [
         {
           "q_num": 31,
           "q_text": "The Carnegie Medal is given to those who are _______",
-          "options": {"A": "sick and poor.", "B": "rich and famous.", "C": "young and brave.", "D": "<span class='lvl4-word' data-word='unselfish' data-pron='/ʌnˈsel.fɪʃ/' data-def='adj. 無私的；慷慨的'>unselfish</span> and courageous."},
+          "options": {"A": "sick and poor.", "B": "rich and famous.", "C": "young and brave.", "D": "<span class='lvl4-word' data-word='unselfish' data-pron='/ʌnˈsel.fɪʃ/' data-def='adj. 無私的'>unselfish</span> and courageous."},
           "answer": "D",
           "explanation": {
             "translation": "卡內基獎章頒給那些無私且有勇氣的人。",
-            "analysis": "(D) 根據第二段，獎章頒給「冒險拯救他人生命的人」，即<b>無私(unselfish)</b>與<b>勇敢(courageous)</b>。<br>(A) 沒提生病。<br>(C) 雖然 Hunter 年輕，但獎章標準不僅限於年輕。",
+            "analysis": "(D) 根據第二段，獎章頒給「冒險拯救他人生命的人」，即<b>無私(unselfish)</b>與<b>勇敢(courageous)</b>。",
             "clue_ref": "clue-31"
           }
         },
@@ -154,7 +134,7 @@
           "answer": "C",
           "explanation": {
             "translation": "這篇文章的主旨是什麼？",
-            "analysis": "(C) 貫穿全文，首段講英雄特質，後段介紹卡內基獎章如何<b>「獎勵英雄的勇敢」</b>。<br>(A) 這是細節。<br>(B) Hunter 救的是男孩，不是卡內基。",
+            "analysis": "(C) 貫穿全文，首段講英雄特質，後段介紹卡內基獎章如何<b>「獎勵英雄的勇敢」</b>。",
             "clue_ref": "clue-32"
           }
         },
@@ -175,8 +155,8 @@
       "group_id": "reading_34_36",
       "type": "reading",
       "tags": ["閱讀測驗"],
-      "passage": "<p class='mb-4'>On May 26, 1977, George Willig traveled to the top of the 1,350-foot-tall World Trade Center in New York City. He did not take the elevator, however. Instead, like a human fly, George Willig climbed the outside of the <span class='lvl4-word' data-word='immense' data-pron='/ɪˈmens/' data-def='adj. 巨大的；廣大的'>immense</span> 110-story building. His climb, which began at 6:30 a.m., took three and a half hours to finish.</p><p class='mb-4'>At the top, Willig was greeted by both police and reporters. Some of the police officers asked him for his autograph. Then they wanted to put him in jail and charged him with violation of law for climbing the building without a permit...</p>",
-      "passage_translation": "1977年5月26日，喬治·威利格到了紐約市1350英尺高的世貿中心頂樓。然而，他沒有搭電梯。相反地，像一隻人蠅一樣，他從外面攀爬了這棟巨大的110層建築... (略)",
+      "passage": "<p class='mb-4'>On May 26, 1977, George Willig traveled to the top of the 1,350-foot-tall World Trade Center in New York City. He did not take the elevator, however. Instead, like a human fly, George Willig climbed the outside of the <span class='lvl4-word' data-word='immense' data-pron='/ɪˈmens/' data-def='adj. 巨大的'>immense</span> 110-story building. His climb, which began at 6:30 a.m., took three and a half hours to finish.</p><p class='mb-4'>At the top, Willig was greeted by both police and reporters. Some of the police officers asked him for his autograph. Then they wanted to put him in jail and charged him with violation of law for climbing the building without a permit...</p>",
+      "passage_translation": "1977年5月26日，喬治·威利格到了紐約市1350英尺高的世貿中心頂樓。然而，他沒有搭乘電梯。相反地，他就像一隻「人蠅」一樣，徒手攀爬了這棟高達110層樓的巨大建築的外部。他的攀登行動從早上6點30分開始，花了三個半小時才完成。<br><br>到達頂樓時，迎接威利格的是警察和記者。有些警察甚至向他要了簽名。但隨後他們就想把他關進監獄，並以無照攀爬建築物而指控他違法...",
       "questions": [
         {
           "q_num": 34,
@@ -205,7 +185,7 @@
           "answer": "C",
           "explanation": {
             "translation": "根據文章，下列哪項敘述為真？",
-            "analysis": "(C) 文章最後一段指出，市長舉辦了表揚他的儀式，並且<b>110層樓每層只罰他一便士 (共 $1.10)</b>。"
+            "analysis": "(C) 文章最後指出，市長不但沒有懲罰他，反而<b>110層樓每層只象徵性罰他一便士 (共 $1.10)</b>，並表揚他。"
           }
         }
       ]
