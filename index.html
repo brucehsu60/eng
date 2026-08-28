@@ -6,23 +6,19 @@
     <title>高中英文歷屆題庫系統</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 捲軸美化 */
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        /* 漸顯動畫 */
         .fade-in { animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- 頂部導航列 -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
             <h1 id="exam-title" class="text-xl font-bold text-blue-600">📖 英文歷屆題庫系統 - 載入中...</h1>
-            <!-- 題目快速導航按鈕，會由 JS 動態生成 -->
             <div class="flex flex-wrap gap-2" id="question-navigator">
                 <span class="text-sm text-gray-400">正在讀取題庫資料...</span>
             </div>
@@ -30,55 +26,46 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-4 py-6">
-        <!-- 主要容器 -->
         <div class="flex flex-col lg:flex-row gap-6 h-[75vh]" id="main-container">
             
-            <!-- ================= 左欄：文章區 (無文章時會自動隱藏) ================= -->
+            <!-- 左欄：文章區 -->
             <div id="passage-section" class="w-full lg:w-1/2 bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col h-full hidden">
                 <div class="bg-blue-50 px-4 py-2 border-b border-blue-100 font-bold text-blue-800 flex justify-between items-center">
                     <span id="part-name">大題名稱</span>
                     <button onclick="toggleTranslation()" class="text-xs bg-white border border-blue-200 px-2 py-1 rounded hover:bg-blue-100 transition">中英對照</button>
                 </div>
                 <div class="p-6 overflow-y-auto custom-scrollbar flex-1 text-lg leading-relaxed">
-                    <!-- 文章內容與圖片 -->
                     <div id="passage-content" class="text-gray-800"></div>
-                    <!-- 文章翻譯 -->
                     <div id="passage-translation" class="hidden mt-6 p-4 bg-gray-50 border-l-4 border-blue-400 text-base text-gray-700"></div>
                 </div>
             </div>
 
-            <!-- ================= 右欄：題目與作答區 ================= -->
+            <!-- 右欄：題目與作答區 -->
             <div id="question-section" class="w-full lg:w-1/2 bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col h-full mx-auto">
                 <div class="bg-gray-100 px-4 py-2 border-b border-gray-200 font-bold text-gray-700">
                     <span id="q-title">Question</span>
                 </div>
                 
                 <div class="p-6 overflow-y-auto custom-scrollbar flex-1">
-                    <!-- 題目文字與圖片 -->
                     <div id="q-text" class="text-lg font-medium text-gray-800 mb-6 leading-relaxed"></div>
                     
-                    <!-- 選項區 -->
                     <div class="space-y-3 mb-6" id="options-container"></div>
 
-                    <!-- 送出按鈕 -->
                     <button id="submit-btn" onclick="checkAnswer()" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition disabled:opacity-50" disabled>
                         送出答案
                     </button>
 
-                    <!-- ================= 詳解區 ================= -->
+                    <!-- 詳解區 -->
                     <div id="explanation-box" class="hidden mt-8 fade-in bg-gray-50 border border-gray-200 rounded-lg p-5">
                         <h4 class="font-bold text-lg mb-4" id="result-status"></h4>
-                        
                         <div class="mb-4">
                             <p class="font-bold text-gray-700 mb-1">【整句/題目翻譯】</p>
                             <p id="exp-translation" class="text-gray-600"></p>
                         </div>
-                        
                         <div class="mb-4">
                             <p class="font-bold text-gray-700 mb-1">【選項解析】</p>
                             <p id="exp-analysis" class="text-gray-600 whitespace-pre-line"></p>
                         </div>
-                        
                         <div id="vocab-section">
                             <p class="font-bold text-gray-700 mb-1">【必背單字】</p>
                             <ul id="exp-vocab" class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600 text-sm"></ul>
@@ -86,11 +73,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
 
-    <!-- ================= JavaScript 邏輯區 ================= -->
     <script>
         let examDatabase = {};
         let currentPartIndex = 0;
@@ -98,24 +83,21 @@
         let currentQuestionData = null;
         let userSelected = null;
 
-        // 網頁載入完成後，自動去抓資料
+        // 【修改點】網頁載入時，改為讀取 '083'
         window.onload = async () => {
-            await loadExamData('83'); // 預設讀取 data/83.json
+            await loadExamData('083'); 
         };
 
-        // 1. 從 data 資料夾讀取 JSON 的函數
         async function loadExamData(year) {
             try {
+                // 這裡會去抓 data/083.json
                 const response = await fetch(`data/${year}.json`);
-                if (!response.ok) {
-                    throw new Error(`找不到檔案 (HTTP ${response.status})`);
-                }
+                if (!response.ok) throw new Error(`找不到檔案 (HTTP ${response.status})`);
+                
                 examDatabase = await response.json();
                 
-                // 更新標題
                 document.getElementById('exam-title').innerText = `📖 英文歷屆題庫系統 - ${examDatabase.exam_year}`;
                 
-                // 渲染導航按鈕，並預設載入第一題
                 renderNavigator();
                 loadQuestion(0, 0); 
 
@@ -128,17 +110,15 @@
                         <hr class="my-4 border-red-200">
                         <p><b>解決方法：</b><br>
                            1. 請確認 GitHub Repository 裡是否有 <code>data</code> 資料夾，且裡面有 <code>${year}.json</code><br>
-                           2. 如果您是在自己的電腦上連點兩下直接開啟 <code>index.html</code>，瀏覽器會阻擋 fetch 讀取本地檔案。<b>請上傳到 GitHub，並用 GitHub Pages 的網址觀看就會正常了！</b></p>
+                           2. 按下 Ctrl + F5 強制重新整理網頁。</p>
                     </div>`;
             }
         }
 
-        // 2. 渲染上方題目按鈕
         function renderNavigator() {
             const nav = document.getElementById('question-navigator');
-            nav.innerHTML = ''; // 清空預設文字
+            nav.innerHTML = ''; 
 
-            // 尋訪整個 JSON，把每一題的按鈕做出來
             examDatabase.parts.forEach((part, pIndex) => {
                 part.questions.forEach((q, qIndex) => {
                     const btn = document.createElement('button');
@@ -150,7 +130,6 @@
             });
         }
 
-        // 3. 載入指定題目的畫面
         function loadQuestion(pIndex, qIndex) {
             currentPartIndex = pIndex;
             currentQuestionIndex = qIndex;
@@ -158,47 +137,32 @@
             currentQuestionData = partData.questions[qIndex];
             userSelected = null;
 
-            // 處理左欄 (文章區)
             const passageSection = document.getElementById('passage-section');
             const questionSection = document.getElementById('question-section');
             
             if (partData.has_passage) {
-                // 有文章：左邊文章，右邊題目
                 passageSection.classList.remove('hidden');
                 questionSection.className = 'w-full lg:w-1/2 bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col h-full mx-auto';
-                
                 document.getElementById('part-name').innerText = partData.part_name;
 
-                // 處理文章內的圖片 (若 JSON 有 passage_image 才顯示)
                 let passageHtml = '';
-                if (partData.passage_image) {
-                    passageHtml += `<img src="${partData.passage_image}" alt="文章配圖" class="w-full h-auto mb-4 rounded shadow-sm">`;
-                }
-                if (partData.passage) {
-                    passageHtml += partData.passage;
-                }
+                if (partData.passage_image) passageHtml += `<img src="${partData.passage_image}" alt="文章配圖" class="w-full h-auto mb-4 rounded shadow-sm">`;
+                if (partData.passage) passageHtml += partData.passage;
                 document.getElementById('passage-content').innerHTML = passageHtml;
                 
-                // 翻譯
                 document.getElementById('passage-translation').innerHTML = partData.passage_translation || '暫無翻譯資料。';
                 document.getElementById('passage-translation').classList.add('hidden');
             } else {
-                // 無文章 (單字/文法)：隱藏左欄，題目區置中放大
                 passageSection.classList.add('hidden');
                 questionSection.className = 'w-full lg:w-3/5 bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col h-full mx-auto';
             }
 
-            // 處理右欄 (題目區)
             document.getElementById('q-title').innerText = `Question ${currentQuestionData.q_num}`;
             
-            // 處理題目內的圖片 (若 JSON 有 question_image 才顯示)
             let qTextHtml = `<div class="mb-2">${currentQuestionData.q_num}. ${currentQuestionData.question}</div>`;
-            if (currentQuestionData.question_image) {
-                qTextHtml += `<img src="${currentQuestionData.question_image}" alt="題目配圖" class="max-w-full h-auto mt-4 mb-4 rounded border">`;
-            }
+            if (currentQuestionData.question_image) qTextHtml += `<img src="${currentQuestionData.question_image}" alt="題目配圖" class="max-w-full h-auto mt-4 mb-4 rounded border">`;
             document.getElementById('q-text').innerHTML = qTextHtml;
 
-            // 產生選項 (A, B, C, D)
             const optionsHtml = Object.entries(currentQuestionData.options).map(([key, value]) => `
                 <label class="block p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50 transition" id="label-${key}">
                     <input type="radio" name="q_option" value="${key}" class="mr-2" onclick="selectOption('${key}')"> 
@@ -207,38 +171,31 @@
             `).join('');
             document.getElementById('options-container').innerHTML = optionsHtml;
 
-            // 重置按鈕與詳解區狀態
             const submitBtn = document.getElementById('submit-btn');
             submitBtn.disabled = true;
             submitBtn.style.display = 'block';
             document.getElementById('explanation-box').classList.add('hidden');
         }
 
-        // 4. 使用者點擊選項
         function selectOption(val) {
             userSelected = val;
             document.getElementById('submit-btn').disabled = false;
             
-            // 移除所有選項的藍色高光
             Object.keys(currentQuestionData.options).forEach(key => {
                 document.getElementById(`label-${key}`).classList.remove('bg-blue-50', 'border-blue-500');
             });
-            // 為選中的選項加上藍色高光
             document.getElementById(`label-${val}`).classList.add('bg-blue-50', 'border-blue-500');
         }
 
-        // 5. 送出答案對答案
         function checkAnswer() {
             if (!userSelected) return;
 
-            // 鎖定所有選項不讓改
             document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
             document.getElementById('submit-btn').style.display = 'none';
 
             const correctAns = currentQuestionData.correct_answer;
             const statusTitle = document.getElementById('result-status');
             
-            // 判斷對錯並上色
             if (userSelected === correctAns) {
                 statusTitle.innerHTML = `✅ 答對了！正確答案：(${correctAns})`;
                 statusTitle.className = 'font-bold text-green-600 text-lg mb-4';
@@ -250,12 +207,10 @@
                 document.getElementById(`label-${correctAns}`).classList.add('bg-green-100', 'border-green-500');
             }
 
-            // 填入詳解資料
             const exp = currentQuestionData.explanation;
             document.getElementById('exp-translation').innerHTML = exp.translation || '';
             document.getElementById('exp-analysis').innerHTML = exp.analysis || '';
             
-            // 處理單字表 (如果沒有單字就隱藏單字區)
             const vocabSection = document.getElementById('vocab-section');
             if (exp.vocab && exp.vocab.length > 0) {
                 vocabSection.style.display = 'block';
@@ -265,11 +220,9 @@
                 vocabSection.style.display = 'none';
             }
 
-            // 展開詳解區
             document.getElementById('explanation-box').classList.remove('hidden');
         }
 
-        // 6. 展開/隱藏左欄文章翻譯
         function toggleTranslation() {
             const trans = document.getElementById('passage-translation');
             trans.classList.toggle('hidden');
