@@ -24,6 +24,7 @@
             width: 250px; display: none; font-size: 0.9rem; line-height: 1.4; pointer-events: none;
         }
         
+        /* 克漏字與文意選填下拉選單 */
         .cloze-select {
             appearance: none; background: rgba(255,255,255,0.8); border: 2px solid #38bdf8;
             border-radius: 6px; padding: 2px 22px 2px 6px; font-weight: bold; color: #0369a1; cursor: pointer; outline: none; margin: 0 4px;
@@ -43,7 +44,7 @@
 
     <header class="bg-white shadow-sm border-b border-gray-200 z-10">
         <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-start gap-8">
-            <h1 id="exam-title" class="text-xl font-bold text-blue-700 tracking-wide whitespace-nowrap">載入中...</h1>
+            <h1 id="exam-title" class="text-xl font-bold text-blue-700 tracking-wide whitespace-nowrap">高中英文歷屆題庫</h1>
             <div class="flex gap-3 text-sm font-bold" id="category-filters">
                 <button class="filter-btn bg-blue-600 text-white border border-blue-600 px-4 py-1 rounded-full transition shadow-sm" data-color="blue" onclick="filterTags('全部', this)">全部</button>
                 <button class="filter-btn bg-white text-green-600 border border-green-500 hover:bg-green-50 px-4 py-1 rounded-full transition shadow-sm" data-color="green" onclick="filterTags('詞彙', this)">詞彙</button>
@@ -52,10 +53,23 @@
                 <button class="filter-btn bg-white text-orange-600 border border-orange-500 hover:bg-orange-50 px-4 py-1 rounded-full transition shadow-sm" data-color="orange" onclick="filterTags('閱讀測驗', this)">閱讀測驗</button>
             </div>
         </div>
+        
+        <!-- 考試類別與年份過濾區 -->
+        <div class="max-w-7xl mx-auto px-4 py-2 bg-white flex flex-col gap-2 border-t border-gray-100">
+            <div class="flex items-center gap-2 text-sm">
+                <span class="font-bold text-gray-500 w-16">考試：</span>
+                <div class="flex flex-wrap gap-1" id="filter-exam"></div>
+            </div>
+            <div class="flex items-center gap-2 text-sm">
+                <span class="font-bold text-gray-500 w-16">年份：</span>
+                <div class="flex flex-wrap gap-1 max-h-20 overflow-y-auto custom-scrollbar pr-2" id="filter-year"></div>
+            </div>
+        </div>
+
         <div class="max-w-7xl mx-auto px-4 py-2 bg-gray-50 flex flex-wrap gap-1.5 border-t border-gray-200" id="nav-container"></div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-4 flex-1 w-full h-[calc(100vh-120px)] flex flex-col lg:flex-row gap-4">
+    <main class="max-w-7xl mx-auto px-4 py-4 flex-1 w-full h-[calc(100vh-160px)] flex flex-col lg:flex-row gap-4">
         <!-- 左欄 (60%) -->
         <div id="passage-section" class="w-full bg-white rounded-lg shadow flex flex-col h-full hidden transition-colors duration-300">
             <div class="px-4 py-2 border-b flex justify-between items-center bg-white/50">
@@ -79,7 +93,17 @@
     </main>
 
     <script>
-        let examData = {};
+        const config = {
+            exams: ['學測', '指考', '分科'],
+            years: {
+                '學測': { min: 83, max: 115 },
+                '指考': { min: 91, max: 110 },
+                '分科': { min: 111, max: 113 }
+            }
+        };
+
+        let state = { exam: '學測', year: 83, type: '全部' };
+        let examData = null;
         let activeGroup = null;
         let isSpeaking = false;
         let speechUtterance = new SpeechSynthesisUtterance();
@@ -92,15 +116,59 @@
             });
         };
 
-        window.onload = async () => {
+        window.onload = () => {
+            renderDashboard();
+            fetchData();
+        };
+
+        function renderDashboard() {
+            const examHTML = config.exams.map(ex => `
+                <button onclick="setExam('${ex}')" class="px-3 py-0.5 text-xs font-bold rounded-full border transition ${state.exam === ex ? 'bg-blue-500 text-white border-blue-500' : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'}">${ex}</button>
+            `).join('');
+            document.getElementById('filter-exam').innerHTML = examHTML;
+
+            let yearHTML = '';
+            const range = config.years[state.exam];
+            for (let y = range.max; y >= range.min; y--) {
+                yearHTML += `<button onclick="setYear(${y})" class="px-3 py-0.5 text-xs font-bold rounded-full border transition ${state.year === y ? 'bg-blue-500 text-white border-blue-500' : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'}">${y}</button>`;
+            }
+            document.getElementById('filter-year').innerHTML = yearHTML;
+        }
+
+        function setExam(exam) { state.exam = exam; state.year = config.years[exam].max; renderDashboard(); fetchData(); }
+        function setYear(year) { state.year = year; renderDashboard(); fetchData(); }
+
+        // ================= 智慧檔案讀取邏輯 (修正版) =================
+        async function fetchData() {
+            const paddedYear = state.year.toString().padStart(3, '0');
+            
+            // 判斷邏輯：學測直接用數字，指考分科加前綴
+            let targetFile = "";
+            if (state.exam === '學測') {
+                targetFile = `${paddedYear}.json`;
+            } else {
+                targetFile = `${state.exam}_${paddedYear}.json`;
+            }
+
+            const container = document.getElementById('questions-container');
+            const nav = document.getElementById('nav-container');
+
             try {
-                const res = await fetch('data/學測_083.json');
-                if(!res.ok) throw new Error();
+                let res = await fetch(`data/${targetFile}`);
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                
                 examData = await res.json();
                 document.getElementById('exam-title').innerText = `${examData.exam_year} ${examData.subject} 歷屆題庫`;
-                renderNavigator('全部'); 
-            } catch(e) { alert("無法讀取 data/學測_083.json"); }
-        };
+                renderNavigator(state.type);
+            } catch(e) {
+                examData = null;
+                // 溫和的紅色提示文字，不再使用 Alert 彈窗
+                nav.innerHTML = `<span class="text-red-500 text-sm mt-1 font-bold">⚠️ 無法讀取檔案：data/${targetFile}</span>`;
+                container.innerHTML = `<div class="text-center text-gray-400 mt-10">尚無此年份 (${state.exam} ${state.year}) 的資料檔案</div>`;
+                document.getElementById('passage-section').classList.add('hidden');
+                document.getElementById('exam-title').innerText = `${state.year} ${state.exam} (無資料)`;
+            }
+        }
 
         function filterTags(tag, btnElement) {
             document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -117,6 +185,8 @@
             if (btnElement.dataset.color === 'green') btnElement.classList.add('bg-green-600');
             if (btnElement.dataset.color === 'purple') btnElement.classList.add('bg-purple-600');
             if (btnElement.dataset.color === 'orange') btnElement.classList.add('bg-orange-600');
+            
+            state.type = tag;
             renderNavigator(tag);
         }
 
@@ -131,10 +201,14 @@
         function renderNavigator(filterTag) {
             const nav = document.getElementById('nav-container');
             nav.innerHTML = '';
+            if(!examData) return;
             
+            let firstGroupToLoad = null;
+
             examData.groups.forEach(group => {
                 if (filterTag === '全部' || group.tags.includes(filterTag)) {
-                    // 大題標籤 (如: [詞彙])
+                    if (!firstGroupToLoad) firstGroupToLoad = group;
+
                     const tagLabel = document.createElement('span');
                     tagLabel.className = 'text-sm font-bold text-gray-500 mr-1 ml-3 mt-1.5 whitespace-nowrap';
                     tagLabel.innerText = `[${group.tags[0]}]`;
@@ -143,7 +217,6 @@
                     const theme = getThemeColors(group.type);
                     group.questions.forEach(q => {
                         const btn = document.createElement('button');
-                        // 讓文意選填的 II-10 按鈕寬度可以自適應 (min-w-[2rem] px-1)
                         btn.className = `nav-btn min-w-[2rem] px-1.5 h-8 text-sm rounded-full border ${theme.border} font-bold transition shadow-sm ${theme.bg} ${theme.text}`;
                         btn.innerText = q.q_disp || q.q_num;
                         btn.dataset.groupId = group.group_id; 
@@ -154,8 +227,7 @@
                     });
                 }
             });
-            const firstGroup = examData.groups.find(g => filterTag === '全部' || g.tags.includes(filterTag));
-            if(firstGroup) loadGroup(firstGroup, firstGroup.questions[0].q_num);
+            if(firstGroupToLoad) loadGroup(firstGroupToLoad, firstGroupToLoad.questions[0].q_num);
         }
 
         function loadGroup(group, clickedQNum) {
@@ -163,7 +235,6 @@
             window.speechSynthesis.cancel(); 
             isSpeaking = false;
 
-            // 題號亮燈
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 const type = btn.dataset.type;
                 const theme = getThemeColors(type);
@@ -202,7 +273,6 @@
                 passageSec.classList.add('bg-orange-50/40', 'border-orange-200'); questionSec.classList.add('bg-orange-50/40', 'border-orange-200');
             }
 
-            // 版面分割 60:40
             if (group.type === 'cloze' || group.type === 'matching' || group.passage) {
                 passageSec.classList.remove('hidden');
                 passageSec.className = passageSec.className.replace(/lg:w-[^\s]+/g, 'lg:w-[60%]');
@@ -277,7 +347,6 @@
                 container.appendChild(block);
             });
 
-            // 取消自動捲動
             bindVocabEvents();
         }
 
