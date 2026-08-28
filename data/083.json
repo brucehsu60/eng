@@ -3,7 +3,7 @@
   "subject": "英文",
   "groups": [
     {
-      "group_id": "vocab_1",
+      "group_id": "vocab",
       "type": "vocabulary",
       "tags": ["詞彙"],
       "passage": null,
@@ -11,47 +11,51 @@
         {
           "q_num": 1,
           "q_text": "Because Mr. Chang has been busy these days, it's _______ whether he will come to the party.",
-          "options": {"A": "unlikely", "B": "impossible", "C": "doubtful", "D": "<span class='lvl4-word' data-word='inevitable'>inevitable</span>"},
+          "options": {"A": "unlikely", "B": "impossible", "C": "doubtful", "D": "<span class='lvl4-word' data-word='inevitable' data-pron='/ɪnˈev.ə.t̬ə.bəl/' data-def='adj. 無可避免的；必然發生的'>inevitable</span>"},
           "answer": "C",
           "explanation": {
             "translation": "因為張先生最近很忙，所以他是否會來參加派對還很<b>令人懷疑</b>。",
             "analysis": "空格後接 whether (是否)，表示<b>不確定的事情</b>。<b>it is doubtful whether...</b> 為常見句型，表示「對...感到懷疑」。<br>(A) unlikely 通常接 to V 或 that 子句。<br>(B) impossible 語氣太絕對。<br>(D) inevitable (無可避免的) 語意不符。"
           }
-        }
-      ]
-    },
-    {
-      "group_id": "vocab_2",
-      "type": "vocabulary",
-      "tags": ["詞彙"],
-      "passage": null,
-      "questions": [
+        },
         {
           "q_num": 2,
           "q_text": "I'm quite _______ to the weather in Taiwan, so I think I'll stay here for another year.",
-          "options": {"A": "devoted", "B": "satisfied", "C": "pleased", "D": "<span class='lvl4-word' data-word='accustomed'>accustomed</span>"},
+          "options": {"A": "devoted", "B": "satisfied", "C": "pleased", "D": "<span class='lvl4-word' data-word='accustomed' data-pron='/əˈkʌs.təmd/' data-def='adj. 習慣的；適應了的'>accustomed</span>"},
           "answer": "D",
           "explanation": {
             "translation": "我相當<b>習慣</b>台灣的天氣，所以我想我會在這裡多待一年。",
             "analysis": "(D) <b>be accustomed to + N/Ving</b>，表示「習慣於...」。<br>(A) devoted to (致力於)，不能說奉獻給天氣。<br>(B) satisfied with (滿意...)。<br>(C) pleased with (高興...)。"
           }
-        }
-      ]
-    },
-    {
-      "group_id": "vocab_3",
-      "type": "vocabulary",
-      "tags": ["詞彙"],
-      "passage": null,
-      "questions": [
+        },
         {
           "q_num": 3,
-          "q_text": "Mr. Smith won't <span class='lvl4-word' data-word='tolerate'>tolerate</span> talking during class; he says it _______ others.",
+          "q_text": "Mr. Smith won't <span class='lvl4-word' data-word='tolerate' data-pron='/ˈtɑː.lə.reɪt/' data-def='v. 容忍；忍受'>tolerate</span> talking during class; he says it _______ others.",
           "options": {"A": "disturbs", "B": "deserves", "C": "destroys", "D": "dismisses"},
           "answer": "A",
           "explanation": {
             "translation": "Smith 先生不容許上課講話；他說這會<b>打擾</b>到其他人。",
             "analysis": "(A) <b>disturb (打擾)</b>，符合上課講話影響他人的語境。<br>(B) deserve (應得)。<br>(C) destroy (摧毀)。<br>(D) dismiss (解散/解僱)。"
+          }
+        },
+        {
+          "q_num": 4,
+          "q_text": "On the basis of the clues, can you predict the _______ of the story?",
+          "options": {"A": "<span class='lvl4-word' data-word='outcome' data-pron='/ˈaʊt.kʌm/' data-def='n. 結果；結局'>outcome</span>", "B": "headline", "C": "cause", "D": "performance"},
+          "answer": "A",
+          "explanation": {
+            "translation": "根據這些線索，你能預測故事的<b>結局</b>嗎？",
+            "analysis": "(A) <b>outcome (結局/結果)</b>，符合語境。<br>(B) headline (標題)。<br>(C) cause (原因)。<br>(D) performance (表現)。"
+          }
+        },
+        {
+          "q_num": 5,
+          "q_text": "A good reader can often figure out what new words mean by using _______.",
+          "options": {"A": "contact", "B": "<span class='lvl4-word' data-word='context' data-pron='/ˈkɑːn.tekst/' data-def='n. 上下文；語境'>context</span>", "C": "content", "D": "contest"},
+          "answer": "B",
+          "explanation": {
+            "translation": "一個好的閱讀者通常能透過使用<b>上下文</b>來推斷新單字的意思。",
+            "analysis": "(B) <b>context (上下文)</b>，這是閱讀測驗的核心技巧。<br>(A) contact (接觸/聯絡)。<br>(C) content (內容)。<br>(D) contest (比賽)。"
           }
         }
       ]
@@ -60,26 +64,26 @@
       "group_id": "cloze_11_20",
       "type": "cloze",
       "tags": ["綜合測驗"],
-      "passage": "The umbrella is not a new invention. The Chinese [BLANK_11] umbrellas in the eleventh century B.C. [BLANK_12] China they traveled to India, Persia, and Egypt. But in Greece and Rome, men [BLANK_13] use them. They believed umbrellas were [BLANK_14] for women.<br><br>When the Spanish explorers went to Mexico, they saw the Aztec kings [BLANK_15] umbrellas. English explorers found out that Indian princes also carried umbrellas on the east coast of North America. It [BLANK_16] that people in different parts of the world invented umbrellas at different times.<br><br>England was probably the first country in Europe [BLANK_17] ordinary people used umbrellas [BLANK_18] the rain. England has a rainy climate, and umbrellas are very useful there.<br><br>The umbrella is now a very ordinary [BLANK_19] . Everybody uses it today. It keeps the rain and the sun off people. Some umbrellas fold up, [BLANK_20] it is easy to carry them.",
+      "passage": "The umbrella is not a new invention. The Chinese [BLANK_11] umbrellas in the eleventh century B.C. [BLANK_12] China they traveled to India, Persia, and Egypt. But in Greece and Rome, men [BLANK_13] use them. They believed umbrellas were [BLANK_14] for women.<br><br>When the Spanish explorers went to Mexico, they saw the Aztec kings [BLANK_15] umbrellas. English explorers found out that Indian princes also carried umbrellas on the east coast of North America. It [BLANK_16] that people in different parts of the world invented umbrellas at different times.<br><br>England was probably the first country in Europe [BLANK_17] ordinary people used umbrellas [BLANK_18] the rain. England has a rainy climate, and umbrellas are very useful there.<br><br>The umbrella is now a very ordinary [BLANK_19]. Everybody uses it today. It keeps the rain and the sun off people. Some umbrellas fold up, [BLANK_20] it is easy to carry them.",
       "passage_translation": "雨傘不是新發明。中國人在西元前十一世紀就已經有雨傘了。從中國，它們傳播到了印度、波斯和埃及。但在希臘和羅馬，男人不會使用它們。他們認為雨傘只是給女人用的... (後略)",
       "questions": [
         {
           "q_num": 11,
           "options": {"A": "have had", "B": "had", "C": "have", "D": "having"},
           "answer": "B",
-          "explanation": { "translation": "中國人在西元前十一世紀就<b>有</b>了雨傘。", "analysis": "因為有 <b>in the eleventh century B.C.</b> 這個明確的過去時間，必須使用<b>過去簡單式 had</b>。" }
+          "explanation": { "translation": "中國人在西元前十一世紀就<b>有</b>了雨傘。", "analysis": "有 <b>in the eleventh century B.C.</b> 這個明確的過去時間，必須使用<b>過去簡單式 had</b>。" }
         },
         {
           "q_num": 12,
           "options": {"A": "From", "B": "In", "C": "For", "D": "Around"},
           "answer": "A",
-          "explanation": { "translation": "<b>從</b>中國，它們傳播到了印度...", "analysis": "<b>From A to B (從A地傳到B地)</b>，後文有 to India，故選 From。" }
+          "explanation": { "translation": "<b>從</b>中國，它們傳播到了印度...", "analysis": "<b>From A to B (從A傳到B)</b>，後文有 to India，故選 From。" }
         },
         {
           "q_num": 13,
           "options": {"A": "would", "B": "could", "C": "wouldn't", "D": "won't"},
           "answer": "C",
-          "explanation": { "translation": "但在希臘和羅馬，男人<b>不會</b>使用它們。", "analysis": "後一句提到「他們認為雨傘是給女人用的」，代表男人「不會」用，且全文為<b>過去式</b>描述歷史，故選 <b>wouldn't</b>。" }
+          "explanation": { "translation": "但在希臘和羅馬，男人<b>不會</b>使用它們。", "analysis": "後一句提到「他們認為雨傘是給女人用的」，代表男人「不會」用，且全文為<b>過去式</b>，故選 <b>wouldn't</b>。" }
         },
         {
           "q_num": 14,
@@ -91,7 +95,7 @@
           "q_num": 15,
           "options": {"A": "used", "B": "to use", "C": "used to", "D": "using"},
           "answer": "D",
-          "explanation": { "translation": "他們看到阿茲特克國王<b>正在使用</b>雨傘。", "analysis": "<b>感官動詞 see + O + Ving</b> (強調看到正在進行的動作)，故選 using。" }
+          "explanation": { "translation": "他們看到阿茲特克國王<b>正在使用</b>雨傘。", "analysis": "<b>感官動詞 saw + 受詞 + Ving</b> (強調看到正在進行的動作)。" }
         },
         {
           "q_num": 16,
@@ -103,7 +107,7 @@
           "q_num": 17,
           "options": {"A": "what", "B": "when", "C": "which", "D": "where"},
           "answer": "D",
-          "explanation": { "translation": "英國可能是歐洲第一個普通人撐傘的國家（<b>在那裡</b>普通人撐傘）。", "analysis": "先行詞為 country (地方)，後面的子句結構完整，需用<b>關係副詞 where</b> (= in which) 來修飾。" }
+          "explanation": { "translation": "英國可能是歐洲第一個普通人撐傘的國家（<b>在那裡</b>普通人撐傘）。", "analysis": "先行詞為 country，後面的子句結構完整，需用<b>關係副詞 where</b> (= in which)。" }
         },
         {
           "q_num": 18,
@@ -121,7 +125,7 @@
           "q_num": 20,
           "options": {"A": "so", "B": "for", "C": "unless", "D": "but"},
           "answer": "A",
-          "explanation": { "translation": "有些雨傘可以折疊，<b>所以</b>很容易攜帶。", "analysis": "前句為因 (可折疊)，後句為果 (容易攜帶)，故選 <b>so (所以)</b>。" }
+          "explanation": { "translation": "有些雨傘可以折疊，<b>所以</b>很容易攜帶。", "analysis": "前句為因，後句為果，故選 <b>so (所以)</b>。" }
         }
       ]
     },
@@ -129,17 +133,17 @@
       "group_id": "reading_31_33",
       "type": "reading",
       "tags": ["閱讀測驗"],
-      "passage": "<p class='mb-4'>Most heroes are people like you. But what makes them heroes? They find special courage when they need it. They are brave enough to help in an emergency while others may <span class='lvl4-word' data-word='standby'>stand by</span>. A hero sees what needs to be done and does it.</p><p class='mb-4'>Sometimes heroes are rewarded for their brave acts. One such reward is the Carnegie Medal. <span id='clue-31' class='transition-colors duration-500 rounded'>It is given to people who act bravely and face danger to save the lives of others.</span></p><p class='mb-4'>The medal was named after Andrew Carnegie. In 1886, <span id='clue-33' class='transition-colors duration-500 rounded'>Carnegie heard about a young man by the name of William Hunter</span> who lost his life trying to save two other boys from drowning. <span id='clue-32' class='transition-colors duration-500 rounded'>Carnegie became a very rich businessman and set aside money to honor heroes like William.</span></p>",
+      "passage": "<p class='mb-4'>Most heroes are people like you. But what makes them heroes? They find special courage when they need it. They are brave enough to help in an emergency while others may <span class='lvl4-word' data-word='stand by' data-pron='/stænd baɪ/' data-def='phr. 袖手旁觀；準備行動'>stand by</span>. A hero sees what needs to be done and does it.</p><p class='mb-4'>Sometimes heroes are rewarded for their brave acts. One such reward is the Carnegie Medal. <span id='clue-31' class='transition-colors duration-500 rounded'>It is given to people who act bravely and face danger to save the lives of others.</span></p><p class='mb-4'>The medal was named after Andrew Carnegie. In 1886, <span id='clue-33' class='transition-colors duration-500 rounded'>Carnegie heard about a young man by the name of William Hunter</span> who lost his life trying to save two other boys from drowning. Carnegie became a very rich businessman and set aside money to honor heroes like William.</p>",
       "passage_translation": "大多數英雄就像你我。但在需要時他們能找到特別的勇氣。在緊急情況下，當其他人可能袖手旁觀時，他們夠勇敢去幫忙... (略)",
       "questions": [
         {
           "q_num": 31,
           "q_text": "The Carnegie Medal is given to those who are _______",
-          "options": {"A": "sick and poor.", "B": "rich and famous.", "C": "young and brave.", "D": "<span class='lvl4-word' data-word='unselfish'>unselfish</span> and courageous."},
+          "options": {"A": "sick and poor.", "B": "rich and famous.", "C": "young and brave.", "D": "<span class='lvl4-word' data-word='unselfish' data-pron='/ʌnˈsel.fɪʃ/' data-def='adj. 無私的；慷慨的'>unselfish</span> and courageous."},
           "answer": "D",
           "explanation": {
             "translation": "卡內基獎章頒給那些無私且有勇氣的人。",
-            "analysis": "(D) 根據第二段，獎章頒給「冒險拯救他人生命的人」，即<b>無私(unselfish)</b>與<b>勇敢(courageous)</b>。<br>(A) 沒提生病。<br>(C) 雖然 Hunter 年輕，但獎章的標準不僅限於「年輕」。",
+            "analysis": "(D) 根據第二段，獎章頒給「冒險拯救他人生命的人」，即<b>無私(unselfish)</b>與<b>勇敢(courageous)</b>。<br>(A) 沒提生病。<br>(C) 雖然 Hunter 年輕，但獎章標準不僅限於年輕。",
             "clue_ref": "clue-31"
           }
         },
@@ -161,8 +165,47 @@
           "answer": "A",
           "explanation": {
             "translation": "下列哪項敘述是錯誤的？",
-            "analysis": "(A) 文章第三段說 Carnegie <b>'heard about' (聽說過)</b> William Hunter，代表他們並不認識(not in person)。此為錯誤敘述，故選A。",
+            "analysis": "(A) 文章第三段說 Carnegie <b>'heard about' (聽說過)</b> William Hunter，代表他們<b>並不認識 (not in person)</b>。此為錯誤敘述，故選A。",
             "clue_ref": "clue-33"
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "reading_34_36",
+      "type": "reading",
+      "tags": ["閱讀測驗"],
+      "passage": "<p class='mb-4'>On May 26, 1977, George Willig traveled to the top of the 1,350-foot-tall World Trade Center in New York City. He did not take the elevator, however. Instead, like a human fly, George Willig climbed the outside of the <span class='lvl4-word' data-word='immense' data-pron='/ɪˈmens/' data-def='adj. 巨大的；廣大的'>immense</span> 110-story building. His climb, which began at 6:30 a.m., took three and a half hours to finish.</p><p class='mb-4'>At the top, Willig was greeted by both police and reporters. Some of the police officers asked him for his autograph. Then they wanted to put him in jail and charged him with violation of law for climbing the building without a permit...</p>",
+      "passage_translation": "1977年5月26日，喬治·威利格到了紐約市1350英尺高的世貿中心頂樓。然而，他沒有搭電梯。相反地，像一隻人蠅一樣，他從外面攀爬了這棟巨大的110層建築... (略)",
+      "questions": [
+        {
+          "q_num": 34,
+          "q_text": "George Willig reached the top of the World Trade Center in New York at",
+          "options": {"A": "six thirty in the morning of May 26, 1977.", "B": "six thirty in the evening of May 26, 1977.", "C": "ten o'clock in the morning of May 26, 1977.", "D": "ten o'clock in the evening of May 26, 1977."},
+          "answer": "C",
+          "explanation": {
+            "translation": "喬治·威利格到達世貿中心頂樓的時間是？",
+            "analysis": "(C) 文章說他早上 6:30 開始爬，花了<b>三個半小時</b>，所以到達頂樓的時間是 <b>早上 10 點 (ten o'clock in the morning)</b>。"
+          }
+        },
+        {
+          "q_num": 35,
+          "q_text": "This passage is a story about",
+          "options": {"A": "a man who enjoys dangers and risks.", "B": "a human being who can fly like a fly.", "C": "a man who has escaped from the jail.", "D": "a fly which climbs like a human being."},
+          "answer": "A",
+          "explanation": {
+            "translation": "這篇文章是關於？",
+            "analysis": "(A) 關於一個<b>享受危險與冒險的男人</b>。他徒手攀爬世貿中心大樓。"
+          }
+        },
+        {
+          "q_num": 36,
+          "q_text": "According to the passage, which of the following statements is true?",
+          "options": {"A": "Willig was fined $250,000.", "B": "Willig was sent to prison for a year.", "C": "Willig was honored in a party and fined only $1.10.", "D": "Willig climbed the World Trade Center with permission."},
+          "answer": "C",
+          "explanation": {
+            "translation": "根據文章，下列哪項敘述為真？",
+            "analysis": "(C) 文章最後一段指出，市長舉辦了表揚他的儀式，並且<b>110層樓每層只罰他一便士 (共 $1.10)</b>。"
           }
         }
       ]
