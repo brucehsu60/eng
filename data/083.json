@@ -3,7 +3,7 @@
   "subject": "英文",
   "groups": [
     {
-      "group_id": "vocab_1_3",
+      "group_id": "vocab_1",
       "type": "vocabulary",
       "tags": ["詞彙"],
       "passage": null,
@@ -11,98 +11,117 @@
         {
           "q_num": 1,
           "q_text": "Because Mr. Chang has been busy these days, it's _______ whether he will come to the party.",
-          "options": {"A": "unlikely", "B": "impossible", "C": "doubtful", "D": "inevitable"},
+          "options": {"A": "unlikely", "B": "impossible", "C": "doubtful", "D": "<span class='lvl4-word' data-word='inevitable'>inevitable</span>"},
           "answer": "C",
           "explanation": {
-            "translation": "因為張先生最近很忙，所以他是否會來參加派對還很令人懷疑。",
-            "analysis": {
-              "A": "(錯) unlikely 通常接 to V 或 that 子句，不接 whether。",
-              "B": "(錯) impossible 語氣太絕對，且通常配 that 子句。",
-              "C": "(對) it is doubtful whether... 為常見句型，表示「對...感到懷疑/不確定」。",
-              "D": "(錯) inevitable (無可避免的) 填入後語意不通順。"
-            },
-            "clue_ref": null
-          }
-        },
-        {
-          "q_num": 2,
-          "q_text": "I'm quite _______ to the weather in Taiwan, so I think I'll stay here for another year.",
-          "options": {"A": "devoted", "B": "satisfied", "C": "pleased", "D": "accustomed"},
-          "answer": "D",
-          "explanation": {
-            "translation": "我相當習慣台灣的天氣，所以我想我會在這裡多待一年。",
-            "analysis": {
-              "A": "(誘答) devoted to 是「致力於/奉獻於」，不能說奉獻給天氣。",
-              "B": "(錯) satisfied 搭配介系詞 with，不是 to。",
-              "C": "(錯) pleased 搭配介系詞 with 或 about。",
-              "D": "(對) be accustomed to + N/Ving，表示「習慣於...」。"
-            },
-            "clue_ref": null
-          }
-        },
-        {
-          "q_num": 3,
-          "q_text": "Mr. Smith won't tolerate talking during class; he says it _______ others.",
-          "options": {"A": "disturbs", "B": "deserves", "C": "destroys", "D": "dismisses"},
-          "answer": "A",
-          "explanation": {
-            "translation": "Smith 先生不容許上課講話；他說這會打擾到其他人。",
-            "analysis": {
-              "A": "(對) disturb (打擾)，符合上課講話影響他人的語境。",
-              "B": "(錯) deserve (應得)，語意不符。",
-              "C": "(錯) destroy (摧毀)，語氣過重且語意不符。",
-              "D": "(錯) dismiss (解散/屏除)，語意不符。"
-            },
-            "clue_ref": null
+            "translation": "因為張先生最近很忙，所以他是否會來參加派對還很<b>令人懷疑</b>。",
+            "analysis": "空格後接 whether (是否)，表示<b>不確定的事情</b>。<b>it is doubtful whether...</b> 為常見句型，表示「對...感到懷疑」。<br>(A) unlikely 通常接 to V 或 that 子句。<br>(B) impossible 語氣太絕對。<br>(D) inevitable (無可避免的) 語意不符。"
           }
         }
       ]
     },
     {
-      "group_id": "cloze_11_13",
+      "group_id": "vocab_2",
+      "type": "vocabulary",
+      "tags": ["詞彙"],
+      "passage": null,
+      "questions": [
+        {
+          "q_num": 2,
+          "q_text": "I'm quite _______ to the weather in Taiwan, so I think I'll stay here for another year.",
+          "options": {"A": "devoted", "B": "satisfied", "C": "pleased", "D": "<span class='lvl4-word' data-word='accustomed'>accustomed</span>"},
+          "answer": "D",
+          "explanation": {
+            "translation": "我相當<b>習慣</b>台灣的天氣，所以我想我會在這裡多待一年。",
+            "analysis": "(D) <b>be accustomed to + N/Ving</b>，表示「習慣於...」。<br>(A) devoted to (致力於)，不能說奉獻給天氣。<br>(B) satisfied with (滿意...)。<br>(C) pleased with (高興...)。"
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "vocab_3",
+      "type": "vocabulary",
+      "tags": ["詞彙"],
+      "passage": null,
+      "questions": [
+        {
+          "q_num": 3,
+          "q_text": "Mr. Smith won't <span class='lvl4-word' data-word='tolerate'>tolerate</span> talking during class; he says it _______ others.",
+          "options": {"A": "disturbs", "B": "deserves", "C": "destroys", "D": "dismisses"},
+          "answer": "A",
+          "explanation": {
+            "translation": "Smith 先生不容許上課講話；他說這會<b>打擾</b>到其他人。",
+            "analysis": "(A) <b>disturb (打擾)</b>，符合上課講話影響他人的語境。<br>(B) deserve (應得)。<br>(C) destroy (摧毀)。<br>(D) dismiss (解散/解僱)。"
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "cloze_11_20",
       "type": "cloze",
       "tags": ["綜合測驗"],
-      "passage": "The umbrella is not a new invention. The Chinese [BLANK_11] umbrellas in the eleventh century B.C. [BLANK_12] China they traveled to India, Persia, and Egypt. But in Greece and Rome, men [BLANK_13] use them. They believed umbrellas were only for women.",
-      "passage_translation": "雨傘不是新發明。中國人在西元前十一世紀就已經有雨傘了。從中國，它們傳播到了印度、波斯和埃及。但在希臘和羅馬，男人不會使用它們。他們認為雨傘只是給女人用的。",
+      "passage": "The umbrella is not a new invention. The Chinese [BLANK_11] umbrellas in the eleventh century B.C. [BLANK_12] China they traveled to India, Persia, and Egypt. But in Greece and Rome, men [BLANK_13] use them. They believed umbrellas were [BLANK_14] for women.<br><br>When the Spanish explorers went to Mexico, they saw the Aztec kings [BLANK_15] umbrellas. English explorers found out that Indian princes also carried umbrellas on the east coast of North America. It [BLANK_16] that people in different parts of the world invented umbrellas at different times.<br><br>England was probably the first country in Europe [BLANK_17] ordinary people used umbrellas [BLANK_18] the rain. England has a rainy climate, and umbrellas are very useful there.<br><br>The umbrella is now a very ordinary [BLANK_19] . Everybody uses it today. It keeps the rain and the sun off people. Some umbrellas fold up, [BLANK_20] it is easy to carry them.",
+      "passage_translation": "雨傘不是新發明。中國人在西元前十一世紀就已經有雨傘了。從中國，它們傳播到了印度、波斯和埃及。但在希臘和羅馬，男人不會使用它們。他們認為雨傘只是給女人用的... (後略)",
       "questions": [
         {
           "q_num": 11,
           "options": {"A": "have had", "B": "had", "C": "have", "D": "having"},
           "answer": "B",
-          "explanation": {
-            "translation": "中國人在西元前十一世紀就有了雨傘。",
-            "analysis": {
-              "A": "(錯) have had 是現在完成式，不能配明確的過去時間。",
-              "B": "(對) in the eleventh century B.C. 為明確過去時間，需使用過去簡單式 had。",
-              "C": "(錯) have 是現在式。",
-              "D": "(錯) having 是分詞，無法作為主要動詞。"
-            }
-          }
+          "explanation": { "translation": "中國人在西元前十一世紀就<b>有</b>了雨傘。", "analysis": "因為有 <b>in the eleventh century B.C.</b> 這個明確的過去時間，必須使用<b>過去簡單式 had</b>。" }
         },
         {
           "q_num": 12,
           "options": {"A": "From", "B": "In", "C": "For", "D": "Around"},
           "answer": "A",
-          "explanation": {
-            "translation": "從中國，它們傳播到了印度...",
-            "analysis": {
-              "A": "(對) From A to B (從A地傳到B地)，後文有 to India，故選 From。",
-              "B": "(錯) In China (在中國) 無法與後面的 traveled to 連結方向性。",
-              "C": "(錯) For (為了) 語意不符。",
-              "D": "(錯) Around (圍繞) 語意不符。"
-            }
-          }
+          "explanation": { "translation": "<b>從</b>中國，它們傳播到了印度...", "analysis": "<b>From A to B (從A地傳到B地)</b>，後文有 to India，故選 From。" }
         },
         {
           "q_num": 13,
           "options": {"A": "would", "B": "could", "C": "wouldn't", "D": "won't"},
           "answer": "C",
-          "explanation": {
-            "translation": "但在希臘和羅馬，男人不會使用它們。",
-            "analysis": {
-              "C": "(對) 後一句提到「他們認為雨傘是給女人用的」，代表男人「不會」用，且全文為過去式描述歷史，故選 wouldn't。"
-            }
-          }
+          "explanation": { "translation": "但在希臘和羅馬，男人<b>不會</b>使用它們。", "analysis": "後一句提到「他們認為雨傘是給女人用的」，代表男人「不會」用，且全文為<b>過去式</b>描述歷史，故選 <b>wouldn't</b>。" }
+        },
+        {
+          "q_num": 14,
+          "options": {"A": "likely", "B": "only", "C": "nearly", "D": "possibly"},
+          "answer": "B",
+          "explanation": { "translation": "他們認為雨傘<b>只</b>是給女人用的。", "analysis": "配合上文男人不用，代表雨傘是<b>唯一 (only)</b> 給女人用的。" }
+        },
+        {
+          "q_num": 15,
+          "options": {"A": "used", "B": "to use", "C": "used to", "D": "using"},
+          "answer": "D",
+          "explanation": { "translation": "他們看到阿茲特克國王<b>正在使用</b>雨傘。", "analysis": "<b>感官動詞 see + O + Ving</b> (強調看到正在進行的動作)，故選 using。" }
+        },
+        {
+          "q_num": 16,
+          "options": {"A": "seems", "B": "likes", "C": "looks", "D": "maybe"},
+          "answer": "A",
+          "explanation": { "translation": "<b>似乎</b>世界各地的人在不同時間發明了雨傘。", "analysis": "<b>It seems that + 子句</b> (似乎...) 為固定句型。" }
+        },
+        {
+          "q_num": 17,
+          "options": {"A": "what", "B": "when", "C": "which", "D": "where"},
+          "answer": "D",
+          "explanation": { "translation": "英國可能是歐洲第一個普通人撐傘的國家（<b>在那裡</b>普通人撐傘）。", "analysis": "先行詞為 country (地方)，後面的子句結構完整，需用<b>關係副詞 where</b> (= in which) 來修飾。" }
+        },
+        {
+          "q_num": 18,
+          "options": {"A": "below", "B": "of", "C": "against", "D": "from"},
+          "answer": "C",
+          "explanation": { "translation": "普通人使用雨傘來<b>抵擋</b>雨水。", "analysis": "介系詞 <b>against</b> 有「防禦、抵抗」之意，use umbrellas against the rain 即撐傘擋雨。" }
+        },
+        {
+          "q_num": 19,
+          "options": {"A": "subject", "B": "object", "C": "matter", "D": "element"},
+          "answer": "B",
+          "explanation": { "translation": "雨傘現在是非常普通的<b>物品</b>。", "analysis": "<b>object</b> 在此指「物品、東西」。" }
+        },
+        {
+          "q_num": 20,
+          "options": {"A": "so", "B": "for", "C": "unless", "D": "but"},
+          "answer": "A",
+          "explanation": { "translation": "有些雨傘可以折疊，<b>所以</b>很容易攜帶。", "analysis": "前句為因 (可折疊)，後句為果 (容易攜帶)，故選 <b>so (所以)</b>。" }
         }
       ]
     },
@@ -110,22 +129,17 @@
       "group_id": "reading_31_33",
       "type": "reading",
       "tags": ["閱讀測驗"],
-      "passage": "<p class='mb-4'>Most heroes are people like you. But what makes them heroes? They find special courage when they need it. They are brave enough to help in an emergency while others may stand by. A hero sees what needs to be done and does it.</p><p class='mb-4'>Sometimes heroes are rewarded for their brave acts. One such reward is the Carnegie Medal. <span id='clue-31' class='transition-colors duration-500 rounded'>It is given to people who act bravely and face danger to save the lives of others.</span></p><p class='mb-4'>The medal was named after Andrew Carnegie. In 1886, <span id='clue-33' class='transition-colors duration-500 rounded'>Carnegie heard about a young man by the name of William Hunter</span> who lost his life trying to save two other boys from drowning. <span id='clue-32' class='transition-colors duration-500 rounded'>Carnegie became a very rich businessman and set aside money to honor heroes like William.</span></p>",
-      "passage_translation": "大多數英雄就像你我。但在需要時他們能找到特別的勇氣... (省略部分翻譯)",
+      "passage": "<p class='mb-4'>Most heroes are people like you. But what makes them heroes? They find special courage when they need it. They are brave enough to help in an emergency while others may <span class='lvl4-word' data-word='standby'>stand by</span>. A hero sees what needs to be done and does it.</p><p class='mb-4'>Sometimes heroes are rewarded for their brave acts. One such reward is the Carnegie Medal. <span id='clue-31' class='transition-colors duration-500 rounded'>It is given to people who act bravely and face danger to save the lives of others.</span></p><p class='mb-4'>The medal was named after Andrew Carnegie. In 1886, <span id='clue-33' class='transition-colors duration-500 rounded'>Carnegie heard about a young man by the name of William Hunter</span> who lost his life trying to save two other boys from drowning. <span id='clue-32' class='transition-colors duration-500 rounded'>Carnegie became a very rich businessman and set aside money to honor heroes like William.</span></p>",
+      "passage_translation": "大多數英雄就像你我。但在需要時他們能找到特別的勇氣。在緊急情況下，當其他人可能袖手旁觀時，他們夠勇敢去幫忙... (略)",
       "questions": [
         {
           "q_num": 31,
           "q_text": "The Carnegie Medal is given to those who are _______",
-          "options": {"A": "sick and poor.", "B": "rich and famous.", "C": "young and brave.", "D": "unselfish and courageous."},
+          "options": {"A": "sick and poor.", "B": "rich and famous.", "C": "young and brave.", "D": "<span class='lvl4-word' data-word='unselfish'>unselfish</span> and courageous."},
           "answer": "D",
           "explanation": {
             "translation": "卡內基獎章頒給那些無私且有勇氣的人。",
-            "analysis": {
-              "A": "(錯) 文章未提生病與貧窮。",
-              "B": "(錯) 富有且有名的是卡內基，不是得獎者條件。",
-              "C": "(誘答) 雖然 Hunter 年輕且勇敢，但獎章的標準不僅限於「年輕」。",
-              "D": "(對) 根據第二段，獎章頒給「冒險拯救他人生命的人」，即無私(unselfish)與勇敢(courageous)。"
-            },
+            "analysis": "(D) 根據第二段，獎章頒給「冒險拯救他人生命的人」，即<b>無私(unselfish)</b>與<b>勇敢(courageous)</b>。<br>(A) 沒提生病。<br>(C) 雖然 Hunter 年輕，但獎章的標準不僅限於「年輕」。",
             "clue_ref": "clue-31"
           }
         },
@@ -136,12 +150,7 @@
           "answer": "C",
           "explanation": {
             "translation": "這篇文章的主旨是什麼？",
-            "analysis": {
-              "A": "(錯) 這是細節，並非全文主旨。",
-              "B": "(錯) Hunter 救的是兩個男孩，不是卡內基。",
-              "C": "(對) 貫穿全文，首段講英雄特質，後段介紹卡內基獎章如何「獎勵英雄的勇敢」。",
-              "D": "(錯) 卡內基有錢是事實，但本文主軸是「獎勵英雄」，而非卡內基的傳記。"
-            },
+            "analysis": "(C) 貫穿全文，首段講英雄特質，後段介紹卡內基獎章如何<b>「獎勵英雄的勇敢」</b>。<br>(A) 這是細節。<br>(B) Hunter 救的是男孩，不是卡內基。",
             "clue_ref": "clue-32"
           }
         },
@@ -152,12 +161,7 @@
           "answer": "A",
           "explanation": {
             "translation": "下列哪項敘述是錯誤的？",
-            "analysis": {
-              "A": "(對-這是錯的敘述) 文章第三段說 Carnegie 'heard about' (聽說過) William Hunter，代表他們並不認識。",
-              "B": "(錯) 敘述正確。",
-              "C": "(錯) 敘述正確 (原試卷第四段有寫)。",
-              "D": "(錯) 敘述正確。"
-            },
+            "analysis": "(A) 文章第三段說 Carnegie <b>'heard about' (聽說過)</b> William Hunter，代表他們並不認識(not in person)。此為錯誤敘述，故選A。",
             "clue_ref": "clue-33"
           }
         }
