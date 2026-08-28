@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高中英文歷屆題庫系統 (Pro)</title>
+    <title>高中英文歷屆題庫系統 (旗艦版)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { margin: 0; padding: 0; min-height: 100vh; background-color: #f8fafc; }
@@ -138,7 +138,6 @@
             renderDashboard();
             fetchData();
             
-            // 點擊空白處關閉字典
             document.addEventListener('click', (e) => {
                 const tooltip = document.getElementById('dict-tooltip');
                 if (!e.target.classList.contains('lvl3-word') && !tooltip.contains(e.target)) {
@@ -164,7 +163,7 @@
 
             let yearHTML = '';
             const range = config.years[state.exam];
-            // 修正：年份改為由小到大
+            // 年份改為由小到大 (83 -> 115)
             for (let y = range.min; y <= range.max; y++) {
                 yearHTML += `<button onclick="setYear(${y})" class="px-3 py-0.5 text-sm font-bold rounded-full border transition ${state.year === y ? 'bg-blue-500 text-white border-blue-500' : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'}">${y}</button>`;
             }
@@ -243,7 +242,7 @@
             return { bg: 'bg-gray-100', text: 'text-gray-700', border: 'border-gray-300', actBg: 'bg-gray-600', actText: 'text-white' };
         }
 
-        // ================= 修正：讓 "全部" 能顯示所有題目的按鈕 =================
+        // ================= 修正：全部按鈕正確顯示所有題號 =================
         function renderNavigator(filterTag) {
             const nav = document.getElementById('nav-container');
             nav.innerHTML = '';
@@ -268,7 +267,8 @@
                         btn.dataset.groupId = group.group_id; 
                         btn.dataset.type = group.type;
                         btn.dataset.qNum = q.q_num;
-                        btn.onclick = () => loadGroup(group, q.q_num, true); // 點擊時才會滾動
+                        // 點擊「全部」時產生的大量按鈕，點擊不自動往下捲
+                        btn.onclick = () => loadGroup(group, q.q_num, true);
                         nav.appendChild(btn);
                     });
                 }
@@ -335,8 +335,13 @@
                         let optionsHtml = `<option value="" disabled selected>題 ${q.q_disp || q.q_num}</option>`;
                         for (let key in q.options) {
                             let optText = q.options[key].replace(/<[^>]+>/g, '');
-                            let display = optText.startsWith('(') ? optText : `${key}) ${optText}`;
-                            optionsHtml += `<option value="${key}">${display}</option>`;
+                            // 取消選單裡的 A) (A) 重複字眼
+                            if (group.type === 'matching' && optText.length < 15) {
+                                optionsHtml += `<option value="${key}">${optText}</option>`;
+                            } else {
+                                let display = optText.startsWith('(') ? optText : `${key}) ${optText}`;
+                                optionsHtml += `<option value="${key}">${display}</option>`;
+                            }
                         }
                         let selectHtml = `<select class="cloze-select shadow-sm" id="cloze-${q.q_num}" onchange="checkAnswer('${q.q_num}', this.value)">${optionsHtml}</select>`;
                         html = html.replace(`[BLANK_${q.q_num}]`, selectHtml);
@@ -396,7 +401,7 @@
                     html += `<button class="w-full bg-teal-600 text-white font-bold py-2 rounded shadow hover:bg-teal-700 transition" onclick="showNonChoiceAnswer('${q.q_num}')">查看參考解答與解析</button>`;
                 }
 
-                // 詳解區塊
+                // ================= 詳解區塊 (加入 解題技巧、字根字首、搭配詞) =================
                 html += `
                 <div id="exp-box-${q.q_num}" class="hidden bg-white/95 border border-gray-300 rounded p-5 fade-in shadow-sm mt-3">
                     <h4 class="font-bold text-base mb-3 hidden" id="status-${q.q_num}"></h4>`; 
@@ -427,9 +432,15 @@
                         <span class="text-gray-700">${q.explanation.analysis}</span>
                     </div>`;
                     
-                if (q.explanation.roots) html += `<div class="text-[0.9rem] mb-2"><span class="font-bold text-indigo-700">🧬 字根字首：</span> <span class="text-gray-700">${q.explanation.roots}</span></div>`;
-                if (q.explanation.collocations) html += `<div class="text-[0.9rem] mb-2"><span class="font-bold text-indigo-700">📚 常見搭配：</span> <ul class="list-disc pl-5 text-gray-700 mt-1">${q.explanation.collocations.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
-                if (q.explanation.sentences) html += `<div class="text-[0.9rem]"><span class="font-bold text-indigo-700">📝 示範造句：</span> <ul class="list-disc pl-5 text-gray-700 mt-1">${q.explanation.sentences.map(s=>`<li>${s}</li>`).join('')}</ul></div>`;
+                if (q.explanation.roots) {
+                    html += `<div class="text-[0.9rem] mb-2"><span class="font-bold text-indigo-700">🧬 字根字首：</span> <span class="text-gray-700">${q.explanation.roots}</span></div>`;
+                }
+                if (q.explanation.collocations) {
+                    html += `<div class="text-[0.9rem] mb-2"><span class="font-bold text-indigo-700">📚 常見搭配：</span> <ul class="list-disc pl-5 text-gray-700 mt-1">${q.explanation.collocations.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
+                }
+                if (q.explanation.sentences) {
+                    html += `<div class="text-[0.9rem]"><span class="font-bold text-indigo-700">📝 示範造句：</span> <ul class="list-disc pl-5 text-gray-700 mt-1">${q.explanation.sentences.map(s=>`<li>${s}</li>`).join('')}</ul></div>`;
+                }
 
                 html += `</div>`;
                 block.innerHTML = html;
@@ -486,6 +497,7 @@
             }
 
             expBox.classList.remove('hidden');
+
             if (question.explanation.clue_ref) {
                 document.querySelectorAll('.bg-yellow-300').forEach(el => el.classList.remove('bg-yellow-300', 'shadow-sm'));
                 const clueEl = document.getElementById(question.explanation.clue_ref);
@@ -529,24 +541,28 @@
             localStorage.setItem('vocabBook', JSON.stringify(vocabs));
         }
 
-        // ======= 全新功能：重點摘要 / 單字庫 / 錯題本 渲染 =======
+        // ======= 重點摘要 / 單字庫 / 錯題本 渲染 =======
         function renderToolsView(mode) {
             const titleEl = document.getElementById('tools-title');
             const contentEl = document.getElementById('tools-content');
             contentEl.innerHTML = '';
 
             if (mode === 'summary') {
-                titleEl.innerHTML = `📋 ${state.year} ${state.exam} - 本卷重點摘要`;
+                titleEl.innerHTML = `📋 ${state.year} ${state.exam} - 考前衝刺秘笈 (重點摘要)`;
                 if (!examData) return contentEl.innerHTML = '<p class="text-gray-500">請先選擇一份有效的試卷。</p>';
                 
                 let summaryHtml = '<div class="space-y-6">';
                 examData.groups.forEach(group => {
                     group.questions.forEach(q => {
                         const exp = q.explanation;
-                        if(exp.roots || exp.collocations || exp.sentences) {
+                        if(exp.roots || exp.collocations || exp.sentences || exp.technique) {
                             summaryHtml += `
-                            <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
-                                <h3 class="font-bold text-lg text-blue-800 mb-2 border-b border-blue-100 pb-1">第 ${q.q_num} 題重點</h3>
+                            <div class="bg-white p-5 rounded-lg shadow-sm border border-indigo-200 border-l-4">
+                                <h3 class="font-bold text-lg text-indigo-800 mb-3 border-b border-indigo-100 pb-2 flex justify-between">
+                                    <span>第 ${q.q_disp || q.q_num} 題重點</span>
+                                    <span class="text-sm bg-indigo-50 px-2 py-1 rounded">${group.tags[0]}</span>
+                                </h3>
+                                ${exp.technique ? `<p class="text-[0.95rem] mb-3 bg-yellow-50 p-2 rounded"><span class="font-bold text-yellow-700">💡 解題技巧：</span> ${exp.technique.replace('💡', '')}</p>` : ''}
                                 ${exp.roots ? `<p class="text-[0.95rem] mb-2"><span class="font-bold text-indigo-700">🧬 字根字首：</span> ${exp.roots}</p>` : ''}
                                 ${exp.collocations ? `<div class="text-[0.95rem] mb-2"><span class="font-bold text-indigo-700">📚 常見搭配：</span> <ul class="list-disc pl-5 mt-1 text-gray-700">${exp.collocations.map(c=>`<li>${c}</li>`).join('')}</ul></div>` : ''}
                                 ${exp.sentences ? `<div class="text-[0.95rem]"><span class="font-bold text-indigo-700">📝 示範造句：</span> <ul class="list-disc pl-5 mt-1 text-gray-700">${exp.sentences.map(s=>`<li>${s}</li>`).join('')}</ul></div>` : ''}
@@ -555,24 +571,24 @@
                     });
                 });
                 summaryHtml += '</div>';
-                contentEl.innerHTML = summaryHtml === '<div class="space-y-6"></div>' ? '<p class="text-gray-500">此份試卷目前尚無特別標註的重點摘要資料。</p>' : summaryHtml;
+                contentEl.innerHTML = summaryHtml === '<div class="space-y-6"></div>' ? '<p class="text-gray-500">此份試卷目前尚無標註重點資料。</p>' : summaryHtml;
 
             } else if (mode === 'vocabBook') {
                 titleEl.innerHTML = `⭐ 我的專屬單字庫`;
                 const vocabs = JSON.parse(localStorage.getItem('vocabBook') || '[]');
-                if (vocabs.length === 0) return contentEl.innerHTML = '<p class="text-gray-500">您的單字庫目前是空的。在閱讀測驗中點擊單字即可加入！</p>';
+                if (vocabs.length === 0) return contentEl.innerHTML = '<p class="text-gray-500">您的單字庫目前是空的。在閱讀文章時點擊單字即可加入收藏！</p>';
                 
                 let html = '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">';
                 vocabs.forEach(v => {
                     html += `
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 relative">
-                        <button onclick="toggleVocabWord('${v.word}'); renderToolsView('vocabBook')" class="absolute top-2 right-2 text-gray-400 hover:text-red-500">✖</button>
-                        <div class="font-bold text-blue-700 text-lg flex items-center gap-2">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-yellow-300 border-t-4 relative">
+                        <button onclick="toggleVocabWord('${v.word}'); renderToolsView('vocabBook')" class="absolute top-2 right-2 text-gray-400 hover:text-red-500 font-bold">✖</button>
+                        <div class="font-bold text-blue-700 text-lg flex items-center gap-2 mb-1">
                             ${v.word} <button onclick="speakWord('${v.word}')" class="text-gray-400 hover:text-blue-500 text-sm">🔊</button>
                         </div>
-                        <div class="text-xs text-gray-400 mb-2">${v.pron}</div>
-                        <div class="text-sm text-gray-700">${v.def}</div>
-                        <div class="text-xs text-gray-400 mt-3 text-right">加入日期: ${v.addedAt}</div>
+                        <div class="text-xs text-gray-500 mb-2">${v.pron}</div>
+                        <div class="text-sm text-gray-700 font-medium">${v.def}</div>
+                        <div class="text-xs text-gray-400 mt-4 text-right">收藏日期: ${v.addedAt}</div>
                     </div>`;
                 });
                 contentEl.innerHTML = html + '</div>';
@@ -582,17 +598,17 @@
                 const mistakes = JSON.parse(localStorage.getItem('mistakeBook') || '[]');
                 if (mistakes.length === 0) return contentEl.innerHTML = '<p class="text-gray-500">太棒了！您目前沒有任何錯題記錄。</p>';
                 
-                let html = '<div class="space-y-4">';
+                let html = '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
                 mistakes.reverse().forEach((m, idx) => {
                     html += `
-                    <div class="bg-white p-5 rounded-lg shadow-sm border border-red-200">
-                        <div class="flex justify-between items-center mb-2">
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-red-300 border-l-4">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="font-bold text-red-700 bg-red-50 px-2 py-1 rounded text-sm">${m.year} ${m.exam} - 第 ${m.q_num} 題</span>
-                            <button onclick="removeMistake(${idx})" class="text-xs text-gray-400 hover:text-red-500 border border-gray-200 px-2 py-1 rounded">刪除紀錄</button>
+                            <button onclick="removeMistake(${idx})" class="text-xs text-gray-400 hover:text-red-500 border border-gray-200 px-2 py-1 rounded shadow-sm">🗑 刪除紀錄</button>
                         </div>
-                        <div class="text-gray-800 font-medium mb-3">${m.q_text}</div>
-                        <div class="flex gap-4 text-sm">
-                            <span class="text-red-600 font-bold">❌ 您的答案: (${m.wrong_ans})</span>
+                        <div class="text-gray-800 font-medium mb-4 text-sm leading-relaxed">${m.q_text}</div>
+                        <div class="flex flex-col gap-1 text-sm bg-gray-50 p-3 rounded">
+                            <span class="text-red-600 font-bold">❌ 您的作答: (${m.wrong_ans})</span>
                             <span class="text-green-600 font-bold">✅ 正確答案: (${m.correct_ans})</span>
                         </div>
                     </div>`;
@@ -622,21 +638,16 @@
             
             let textToRead = activeGroup.passage;
             if (activeGroup.type === 'cloze' || activeGroup.type === 'matching') {
+                // ================= 修正：過濾文意選填的選項區塊 =================
+                textToRead = textToRead.replace(/<div id=['"]matching-options-block.*?<\/div>/s, '');
+                
                 activeGroup.questions.forEach(q => {
+                    // 自動填入答案
                     let correctWord = q.options[q.answer].replace(/<[^>]+>/g, '').replace(/^\([A-Z]\)\s*/, '');
                     textToRead = textToRead.replace(`[BLANK_${q.q_num}]`, correctWord);
                 });
             }
-
-            // ================= 修正：精準過濾選項區塊 =================
-            let tempDiv = document.createElement('div');
-            tempDiv.innerHTML = textToRead;
-            // 如果有文意選填的選項區塊，直接在 DOM 樹中刪除它
-            let optionsBlock = tempDiv.querySelector('#matching-options-block');
-            if (optionsBlock) optionsBlock.remove();
-            
-            // 使用 innerText 獲取最乾淨的純文字 (瀏覽器會自動去除所有 HTML 標籤)
-            textToRead = tempDiv.innerText;
+            textToRead = textToRead.replace(/<[^>]+>/g, ''); // 移除所有剩餘 HTML 標籤
             
             speechUtterance.text = textToRead; speechUtterance.lang = 'en-US'; speechUtterance.rate = 0.9;
             window.speechSynthesis.speak(speechUtterance);
