@@ -289,11 +289,12 @@
                         });
                     }
 
+                    // 修改：確保朗讀與翻譯按鈕樣式完全一致
                     passageContent = `
                         <div class="lg:w-[55%] p-6 border-b lg:border-b-0 lg:border-r border-gray-200 bg-gray-50/40 relative">
                             <div class="flex gap-2 mb-4">
                                 <button type="button" id="btn-read-passage-${group.group_id}" onclick="readPassageAloud('${group.group_id}')" class="btn-speak text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold">🗣️ 朗讀文章</button>
-                                <button type="button" onclick="toggleTranslation('${group.group_id}')" class="text-xs bg-gray-800 text-white border border-gray-800 px-3 py-1.5 rounded-md shadow-sm hover:bg-black transition font-bold">顯示翻譯</button>
+                                <button type="button" onclick="toggleTranslation('${group.group_id}')" class="text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold">📝 顯示翻譯</button>
                             </div>
                             <div class="text-[1.08rem] leading-loose text-gray-800 tracking-wide" id="passage-content-${group.group_id}">${html}</div>
                             <div id="passage-translation-${group.group_id}" style="display: none;" class="mt-6 p-5 bg-amber-50 border-t-2 border-amber-200 text-[0.95rem] text-gray-800 leading-relaxed rounded-b-lg shadow-inner">${group.passage_translation || '暫無翻譯提供。'}</div>
@@ -393,7 +394,7 @@
             bindVocabEvents();
         }
 
-        // 完美修復「顯示翻譯」按鈕切換邏輯
+        // 強制穩定切換翻譯顯示
         function toggleTranslation(groupId) { 
             const el = document.getElementById(`passage-translation-${groupId}`);
             if (el) {
