@@ -6,7 +6,7 @@
     <title>高中英文歷屆題庫系統 (名師旗艦版)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 移除所有內層捲軸限制，讓整個 body 自然滾動 */
+        /* 移除所有內層捲軸限制，讓整個 body 自然滾動 (一頁到底) */
         body { margin: 0; padding: 0; min-height: 100vh; background-color: #f1f5f9; scroll-behavior: smooth; }
         
         .lvl3-word { 
@@ -41,8 +41,8 @@
     <!-- 互動式字典 -->
     <div id="dict-tooltip"></div>
 
-    <!-- 頂部導航 (固定在頂部方便隨時操作) -->
-    <header class="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50">
+    <!-- 頂部導航 (已移除 sticky top-0，網頁捲動時自然跟著滑動) -->
+    <header class="bg-white shadow-md border-b border-gray-200 relative z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center gap-6">
                 <h1 id="exam-title" class="text-xl font-extrabold text-blue-800 tracking-wide whitespace-nowrap">高中英文歷屆題庫</h1>
@@ -122,7 +122,7 @@
         speechUtterance.onend = () => {
             isSpeaking = false;
             document.querySelectorAll('.btn-speak').forEach(b => {
-                if(b.id.startsWith('btn-read-passage')) b.innerText = '🗣️ 朗讀文章';
+                if(b.id && b.id.startsWith('btn-read-passage')) b.innerText = '🗣️ 朗讀文章';
                 else b.innerText = '🗣️ 朗讀題目';
             });
         };
@@ -223,14 +223,12 @@
                     const theme = getThemeColors(group.type);
                     group.questions.forEach(q => {
                         const btn = document.createElement('button');
-                        // 導航按鈕樣式
                         btn.className = `nav-btn min-w-[2.2rem] px-2 h-8 text-sm rounded border ${theme.border} font-bold transition shadow-sm ${theme.bg} ${theme.text} hover:opacity-80 mt-1`;
                         btn.innerText = q.q_disp || q.q_num;
                         btn.onclick = () => {
-                            // 點擊後平滑滾動至該題，實現一頁到底的導航體驗
                             const target = document.getElementById(`q-block-${q.q_num}`);
                             if(target) {
-                                const y = target.getBoundingClientRect().top + window.scrollY - 150; // 扣除 header 高度
+                                const y = target.getBoundingClientRect().top + window.scrollY - 80;
                                 window.scrollTo({ top: y, behavior: 'smooth' });
                             }
                         };
@@ -240,7 +238,6 @@
             });
         }
 
-        // 核心邏輯：將所有的題目依照 Group 生成，全部塞入 main 之中，形成一頁式試卷
         function renderExamPaper(filterTag) {
             const container = document.getElementById('main-content-area');
             container.innerHTML = '';
@@ -253,12 +250,10 @@
                 if (filterTag !== '全部' && !group.tags.includes(filterTag)) return;
                 hasContent = true;
 
-                // 建立 Group 外框
                 const groupWrapper = document.createElement('div');
                 groupWrapper.className = 'w-full bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col';
                 groupWrapper.id = `group-${group.group_id}`;
 
-                // Header
                 const headerHtml = `
                     <div class="px-5 py-3 border-b flex justify-between items-center bg-gray-50/80">
                         <span class="font-extrabold text-gray-800 text-[1.1rem]">📖 ${group.tags[0]}</span>
@@ -267,9 +262,9 @@
 
                 let bodyHtml = `<div class="flex flex-col lg:flex-row w-full">`;
 
-                // 左半部：文章區 (如果有 passage)
                 let passageContent = '';
-                if (group.passage) {
+                // 只有不是作文時，才把 passage 放在左側的分割畫面
+                if (group.passage && group.type !== 'essay') {
                     let html = group.passage;
                     if(group.type === 'cloze' || group.type === 'matching'){
                         group.questions.forEach(q => {
@@ -290,26 +285,29 @@
 
                     passageContent = `
                         <div class="lg:w-[55%] p-6 border-b lg:border-b-0 lg:border-r border-gray-200 bg-gray-50/40 relative">
-                            ${group.type !== 'essay' ? `
                             <div class="flex gap-2 mb-4">
-                                <button id="btn-read-passage-${group.group_id}" onclick="readPassageAloud('${group.group_id}')" class="text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold">🗣️ 朗讀文章</button>
+                                <button id="btn-read-passage-${group.group_id}" onclick="readPassageAloud('${group.group_id}')" class="btn-speak text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold">🗣️ 朗讀文章</button>
                                 <button onclick="toggleTranslation('${group.group_id}')" class="text-xs bg-gray-800 text-white border border-gray-800 px-3 py-1.5 rounded-md shadow-sm hover:bg-black transition font-bold">顯示翻譯</button>
-                            </div>` : ''}
+                            </div>
                             <div class="text-[1.08rem] leading-loose text-gray-800 tracking-wide" id="passage-content-${group.group_id}">${html}</div>
                             <div id="passage-translation-${group.group_id}" class="hidden mt-6 p-5 bg-amber-50 border-t-2 border-amber-200 text-[0.95rem] text-gray-800 leading-relaxed">${group.passage_translation || ''}</div>
                         </div>
                     `;
                 }
 
-                // 右半部 (或全部)：題目區
-                let qWidthClass = group.passage ? 'lg:w-[45%]' : 'w-full';
+                // 右半部 (如果沒 passage 或是 essay，就佔滿 100% 寬度)
+                let qWidthClass = (group.passage && group.type !== 'essay') ? 'lg:w-[45%]' : 'w-full';
                 let questionsHtml = `<div class="${qWidthClass} p-6 space-y-10 bg-white">`;
+
+                // 英文作文的題目排版 (上下層疊)
+                if (group.type === 'essay' && group.passage) {
+                    questionsHtml += `<div class="mb-6">${group.passage}</div>`;
+                }
 
                 group.questions.forEach(q => {
                     let dispNum = q.q_disp || q.q_num;
-                    questionsHtml += `<div id="q-block-${q.q_num}" class="scroll-mt-32">`; // scroll-mt 確保平滑滾動時不會被 header 遮擋
+                    questionsHtml += `<div id="q-block-${q.q_num}" class="scroll-mt-32">`;
                     
-                    // 題號標題
                     questionsHtml += `<div class="flex items-center justify-between mb-4 border-b-2 border-slate-100 pb-2">
                         <h3 class="text-lg font-extrabold text-slate-700 bg-slate-100 px-3 py-1 rounded-md shadow-sm">${group.type === 'essay' ? '英文作文' : '第 ' + dispNum + ' 題'}</h3>`;
                     
@@ -320,7 +318,6 @@
                     }
                     questionsHtml += `</div>`;
 
-                    // 題目內容
                     if (group.type === 'vocabulary' || group.type === 'reading') {
                         questionsHtml += `<div class="text-[1.05rem] font-medium text-gray-800 mb-4 leading-relaxed">${q.q_text}</div><div class="space-y-2 mb-3">`;
                         for (let key in q.options) {
@@ -341,7 +338,6 @@
                         questionsHtml += `<button class="w-full bg-teal-600 text-white font-bold py-3 rounded-lg shadow-md hover:bg-teal-700 transition" onclick="showNonChoiceAnswer('${q.q_num}')">✨ 點我查看名師參考解答與詳解 ✨</button>`;
                     }
 
-                    // 名師解析區塊
                     questionsHtml += `<div id="exp-box-${q.q_num}" class="hidden bg-slate-50 border border-slate-200 rounded-xl p-5 fade-in shadow-md mt-4">
                         <h4 class="font-extrabold text-[1.1rem] mb-4 pb-2 border-b border-gray-200 hidden" id="status-${q.q_num}"></h4>`; 
                     
@@ -383,11 +379,9 @@
                 container.innerHTML = '<div class="text-center text-gray-400 mt-20 text-xl font-bold">此分類無題目</div>';
             }
 
-            // 綁定字典 Hover 事件
             bindVocabEvents();
         }
 
-        // ================= 檢查答案與狀態更新 =================
         function checkAnswer(groupId, qNum, selectedValue) {
             const group = examData.groups.find(g => g.group_id === groupId);
             const question = group.questions.find(q => q.q_num === qNum.toString());
@@ -457,7 +451,6 @@
             }
         }
 
-        // ================= 重點摘要與工具區 =================
         function renderToolsView(mode) {
             const titleEl = document.getElementById('tools-title');
             const contentEl = document.getElementById('tools-content');
@@ -539,6 +532,7 @@
             localStorage.setItem('mistakeBook', JSON.stringify(mistakes));
             renderToolsView('mistakes');
         }
+
         function toggleVocabWord(word, pron, def) {
             let vocabs = JSON.parse(localStorage.getItem('vocabBook') || '[]');
             const exists = vocabs.some(v => v.word === word);
@@ -553,40 +547,64 @@
             localStorage.setItem('vocabBook', JSON.stringify(vocabs));
         }
 
-        // ================= UI 互動功能 =================
         function showNonChoiceAnswer(qNum) { document.getElementById(`exp-box-${qNum}`).classList.remove('hidden'); }
         function updateWordCount(qNum) {
             const text = document.getElementById(`ta-${qNum}`).value.trim();
             document.getElementById(`wc-${qNum}`).innerText = text ? text.split(/\s+/).length : 0;
         }
-        function toggleTranslation(groupId) { document.getElementById(`passage-translation-${groupId}`).classList.toggle('hidden'); }
 
+        // 修改：使用穩固的 ID 找尋與 toggle
+        function toggleTranslation(groupId) { 
+            const el = document.getElementById(`passage-translation-${groupId}`);
+            if (el) el.classList.toggle('hidden'); 
+        }
+
+        // 修改：使用 DOM 解析移除文意選填的選項區塊，朗讀出最純淨的文章
         function readPassageAloud(groupId) {
             const btn = document.getElementById(`btn-read-passage-${groupId}`);
             if (isSpeaking) { window.speechSynthesis.cancel(); isSpeaking = false; btn.innerText = '🗣️ 朗讀文章'; return; } 
             
             const group = examData.groups.find(g => g.group_id === groupId);
-            let textToRead = group.passage;
+            
+            let tempDiv = document.createElement('div');
+            tempDiv.innerHTML = group.passage;
+            
+            // 拔除文意選填的 (A)~(O) 區塊
+            let optBlock = tempDiv.querySelector('#matching-options-block');
+            if(optBlock) optBlock.remove();
+
+            let textHtml = tempDiv.innerHTML;
             if (group.type === 'cloze' || group.type === 'matching') {
-                textToRead = textToRead.replace(/<div id=['"]matching-options-block.*?<\/div>/s, '');
                 group.questions.forEach(q => {
                     let correctWord = q.options[q.answer].replace(/<[^>]+>/g, '').replace(/^\([A-Z]\)\s*/, '');
-                    textToRead = textToRead.replace(`[BLANK_${q.q_num}]`, correctWord);
+                    textHtml = textHtml.replace(`[BLANK_${q.q_num}]`, correctWord);
                 });
             }
-            textToRead = textToRead.replace(/<[^>]+>/g, ''); 
             
-            speechUtterance.text = textToRead; speechUtterance.lang = 'en-US'; speechUtterance.rate = 0.9;
+            tempDiv.innerHTML = textHtml;
+            // 轉成純文字朗讀
+            let textToRead = tempDiv.innerText || tempDiv.textContent; 
+            
+            speechUtterance.text = textToRead; 
+            speechUtterance.lang = 'en-US'; 
+            speechUtterance.rate = 0.9;
             window.speechSynthesis.speak(speechUtterance);
-            isSpeaking = true; btn.innerText = '⏹️ 停止朗讀';
+            isSpeaking = true; 
+            btn.innerText = '⏹️ 停止朗讀';
         }
 
         function toggleSpeakQuestion(btn, text) {
             if (isSpeaking) {
                 window.speechSynthesis.cancel(); isSpeaking = false;
-                document.querySelectorAll('.btn-speak').forEach(b => b.innerText = '🗣️ 朗讀題目');
+                document.querySelectorAll('.btn-speak').forEach(b => {
+                    if(b.id && b.id.startsWith('btn-read-passage')) b.innerText = '🗣️ 朗讀文章';
+                    else b.innerText = '🗣️ 朗讀題目';
+                });
             } else {
-                document.querySelectorAll('.btn-speak').forEach(b => b.innerText = '🗣️ 朗讀題目');
+                document.querySelectorAll('.btn-speak').forEach(b => {
+                    if(b.id && b.id.startsWith('btn-read-passage')) b.innerText = '🗣️ 朗讀文章';
+                    else b.innerText = '🗣️ 朗讀題目';
+                });
                 speechUtterance.text = text; speechUtterance.lang = 'en-US'; speechUtterance.rate = 0.9;
                 window.speechSynthesis.speak(speechUtterance);
                 isSpeaking = true; btn.innerText = '⏹️ 停止';
@@ -599,7 +617,6 @@
             isSpeaking = false; 
         }
 
-        // ================= 字典 Hover 觸發 =================
         function bindVocabEvents() {
             const words = document.querySelectorAll('.lvl3-word');
             const tooltip = document.getElementById('dict-tooltip');
