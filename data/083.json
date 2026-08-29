@@ -5,13 +5,13 @@
     {
       "group_id": "vocab",
       "type": "vocabulary",
-      "tags": ["詞彙"],
+      "tags": ["詞彙題"],
       "passage": null,
       "questions": [
         {
           "q_num": "1",
           "q_text": "Because Mr. Chang has been busy these days, it's _______ whether he will come to the party.",
-          "options": {"A": "unlikely", "B": "impossible", "C": "doubtful", "D": "<span class='lvl3-word' data-word='inevitable' data-pron='/ɪnˈev.ə.t̬ə.bəl/' data-def='adj. 無可避免的；必然發生的' data-colloc='inevitable result (必然的結果); inevitable consequence (不可避免的後果); an inevitable outcome (必然的結局); accept the inevitable (接受不可避免的事實)'>inevitable</span>"},
+          "options": {"A": "unlikely", "B": "impossible", "C": "doubtful", "D": "<span class='lvl3-word' data-word='inevitable' data-pron='/ɪnˈev.ə.t̬ə.bəl/' data-def='adj. 無可避免的；必然發生的' data-colloc='inevitable result (必然的結果); inevitable consequence (不可避免的後果); an inevitable outcome (必然的結局); accept the inevitable (接受不可避免的事實); it is inevitable that (…是不可避免的); inevitable decline (必然的衰退)'>inevitable</span>"},
           "answer": "C",
           "explanation": {
             "translation": "因為張先生最近很忙，所以他是否會來參加派對還很令人懷疑。",
@@ -26,7 +26,7 @@
         {
           "q_num": "2",
           "q_text": "I'm quite _______ to the weather in Taiwan, so I think I'll stay here for another year.",
-          "options": {"A": "devoted", "B": "satisfied", "C": "pleased", "D": "<span class='lvl3-word' data-word='accustomed' data-pron='/əˈkʌs.təmd/' data-def='adj. 習慣的；適應了的' data-colloc='become accustomed to (漸漸習慣於); fully accustomed (完全習慣); grow accustomed to (逐漸適應)'>accustomed</span>"},
+          "options": {"A": "devoted", "B": "satisfied", "C": "pleased", "D": "<span class='lvl3-word' data-word='accustomed' data-pron='/əˈkʌs.təmd/' data-def='adj. 習慣的；適應了的' data-colloc='become accustomed to (漸漸習慣於); fully accustomed (完全習慣); grow accustomed to (逐漸適應); perfectly accustomed (完全適應); look accustomed to (看起來習慣於)'>accustomed</span>"},
           "answer": "D",
           "explanation": {
             "translation": "我相當習慣台灣的天氣，所以我想我會在這裡多待一年。",
@@ -40,8 +40,8 @@
         },
         {
           "q_num": "3",
-          "q_text": "Mr. Smith won't <span class='lvl3-word' data-word='tolerate' data-pron='/ˈtɑː.lə.reɪt/' data-def='v. 容忍；忍受' data-colloc='tolerate the pain (忍受痛苦); tolerate differences (包容差異); refuse to tolerate (拒絕容忍); tolerate poor behavior (容忍不良行為)'>tolerate</span> talking during class; he says it _______ others.",
-          "options": {"A": "<span class='lvl3-word' data-word='disturb' data-pron='/dɪˈstɝːb/' data-def='v. 打擾；干擾' data-colloc='disturb the peace (擾亂安寧); Do Not Disturb (請勿打擾); deeply disturbed (深感不安的); disturb the balance (破壞平衡)'>disturbs</span>", "B": "deserves", "C": "destroys", "D": "dismisses"},
+          "q_text": "Mr. Smith won't <span class='lvl3-word' data-word='tolerate' data-pron='/ˈtɑː.lə.reɪt/' data-def='v. 容忍；忍受' data-colloc='tolerate the pain (忍受痛苦); tolerate differences (包容差異); refuse to tolerate (拒絕容忍); tolerate poor behavior (容忍不良行為); cannot tolerate (無法忍受); tolerate ambiguity (容忍模糊)'>tolerate</span> talking during class; he says it _______ others.",
+          "options": {"A": "<span class='lvl3-word' data-word='disturb' data-pron='/dɪˈstɝːb/' data-def='v. 打擾；干擾' data-colloc='disturb the peace (擾亂安寧); Do Not Disturb (請勿打擾); deeply disturbed (深感不安的); disturb the balance (破壞平衡); severely disturb (嚴重干擾); sorry to disturb you (抱歉打擾你)'>disturbs</span>", "B": "deserves", "C": "destroys", "D": "dismisses"},
           "answer": "A",
           "explanation": {
             "translation": "Smith 先生不容許上課講話；他說這會打擾到其他人。",
@@ -55,8 +55,8 @@
         },
         {
           "q_num": "4",
-          "q_text": "On the basis of the <span class='lvl3-word' data-word='clue' data-pron='/kluː/' data-def='n. 線索；提示' data-colloc='give a clue (給提示); vital clue (重要線索); not have a clue (毫無頭緒); search for clues (尋找線索)'>clues</span>, can you <span class='lvl3-word' data-word='predict' data-pron='/prɪˈdɪkt/' data-def='v. 預測；預言' data-colloc='predict the future (預測未來); hard to predict (難以預測); accurately predict (準確預測); predict the outcome (預測結果)'>predict</span> the _______ of the story?",
-          "options": {"A": "<span class='lvl3-word' data-word='outcome' data-pron='/ˈaʊt.kʌm/' data-def='n. 結果；結局' data-colloc='final outcome (最終結果); unexpected outcome (意外的結果); likely outcome (可能的結果); successful outcome (成功的結果)'>outcome</span>", "B": "headline", "C": "cause", "D": "performance"},
+          "q_text": "On the basis of the <span class='lvl3-word' data-word='clue' data-pron='/kluː/' data-def='n. 線索；提示' data-colloc='give a clue (給提示); vital clue (重要線索); not have a clue (毫無頭緒); search for clues (尋找線索); look for a clue (尋找線索); provide a crucial clue (提供關鍵線索)'>clues</span>, can you <span class='lvl3-word' data-word='predict' data-pron='/prɪˈdɪkt/' data-def='v. 預測；預言' data-colloc='predict the future (預測未來); hard to predict (難以預測); accurately predict (準確預測); predict the outcome (預測結果); confidently predict (充滿信心地預測); impossible to predict (無法預測)'>predict</span> the _______ of the story?",
+          "options": {"A": "<span class='lvl3-word' data-word='outcome' data-pron='/ˈaʊt.kʌm/' data-def='n. 結果；結局' data-colloc='final outcome (最終結果); unexpected outcome (意外的結果); likely outcome (可能的結果); successful outcome (成功的結果); favorable outcome (有利的結果); await the outcome (等待結果)'>outcome</span>", "B": "headline", "C": "cause", "D": "performance"},
           "answer": "A",
           "explanation": {
             "translation": "根據這些線索，你能預測故事的結果(結局)嗎？",
@@ -71,7 +71,7 @@
         {
           "q_num": "5",
           "q_text": "A good reader can often figure out what new words mean by using _______.",
-          "options": {"A": "contact", "B": "<span class='lvl3-word' data-word='context' data-pron='/ˈkɑːn.tekst/' data-def='n. 上下文；語境' data-colloc='out of context (斷章取義); historical context (歷史背景); social context (社會背景); in the context of (在...的背景下)'>context</span>", "C": "content", "D": "contest"},
+          "options": {"A": "contact", "B": "<span class='lvl3-word' data-word='context' data-pron='/ˈkɑːn.tekst/' data-def='n. 上下文；語境' data-colloc='out of context (斷章取義); historical context (歷史背景); social context (社會背景); in the context of (在...的背景下); broader context (更廣泛的背景); cultural context (文化背景)'>context</span>", "C": "content", "D": "contest"},
           "answer": "B",
           "explanation": {
             "translation": "一個好的閱讀者通常能透過使用上下文來推斷新單字的意思。",
@@ -86,7 +86,7 @@
         {
           "q_num": "6",
           "q_text": "I wonder why she _______ turned up the radio when I was studying.",
-          "options": {"A": "<span class='lvl3-word' data-word='sympathetically' data-pron='/ˌsɪm.pəˈθet̬.ɪ.kəl.i/' data-def='adv. 同情地' data-colloc='smile sympathetically (同情地微笑); listen sympathetically (同情地傾聽); nod sympathetically (同情地點頭)'>sympathetically</span>", "B": "primarily", "C": "<span class='lvl3-word' data-word='deliberately' data-pron='/dɪˈlɪb.ɚ.ət.li/' data-def='adv. 故意地；謹慎地' data-colloc='deliberately ignore (故意忽略); deliberately misleading (蓄意誤導); deliberately slow (刻意放慢); deliberately choose (刻意選擇)'>deliberately</span>", "D": "<span class='lvl3-word' data-word='thoroughly' data-pron='/ˈθɝː.ə.li/' data-def='adv. 徹底地；完全地' data-colloc='thoroughly check (徹底檢查); thoroughly enjoy (非常享受); thoroughly understand (徹底了解); thoroughly clean (徹底清潔)'>thoroughly</span>"},
+          "options": {"A": "<span class='lvl3-word' data-word='sympathetically' data-pron='/ˌsɪm.pəˈθet̬.ɪ.kəl.i/' data-def='adv. 同情地' data-colloc='smile sympathetically (同情地微笑); listen sympathetically (同情地傾聽); nod sympathetically (同情地點頭); look sympathetically (同情地看著); respond sympathetically (充滿同情地回應)'>sympathetically</span>", "B": "primarily", "C": "<span class='lvl3-word' data-word='deliberately' data-pron='/dɪˈlɪb.ɚ.ət.li/' data-def='adv. 故意地；謹慎地' data-colloc='deliberately ignore (故意忽略); deliberately misleading (蓄意誤導); deliberately slow (刻意放慢); deliberately choose (刻意選擇); step deliberately (從容不迫地走); deliberately provoke (蓄意挑釁)'>deliberately</span>", "D": "<span class='lvl3-word' data-word='thoroughly' data-pron='/ˈθɝː.ə.li/' data-def='adv. 徹底地；完全地' data-colloc='thoroughly check (徹底檢查); thoroughly enjoy (非常享受); thoroughly understand (徹底了解); thoroughly clean (徹底清潔); thoroughly investigate (徹底調查); thoroughly familiar (非常熟悉)'>thoroughly</span>"},
           "answer": "C",
           "explanation": {
             "translation": "我想知道為什麼當我在讀書時，她要故意把收音機開大聲。",
@@ -101,7 +101,7 @@
         {
           "q_num": "7",
           "q_text": "It suddenly _______ me that I had to get to the airport to meet a friend.",
-          "options": {"A": "took", "B": "<span class='lvl3-word' data-word='struck' data-pron='/strʌk/' data-def='v. 突然想起 (strike的過去式)' data-colloc='it struck me that (我突然想到); strike a balance (取得平衡); be struck by (被...打動); strike a match (劃火柴)'>struck</span>", "C": "occurred", "D": "surprised"},
+          "options": {"A": "took", "B": "<span class='lvl3-word' data-word='struck' data-pron='/strʌk/' data-def='v. 突然想起 (strike的過去式)' data-colloc='it struck me that (我突然想到); strike a balance (取得平衡); be struck by (被...打動); strike a match (劃火柴); strike a chord (引起共鳴); disaster struck (災難降臨)'>struck</span>", "C": "occurred", "D": "surprised"},
           "answer": "B",
           "explanation": {
             "translation": "我突然想起我必須去機場接朋友。",
@@ -116,7 +116,7 @@
         {
           "q_num": "8",
           "q_text": "Being a very careful person, he is quite _______ in giving his comments.",
-          "options": {"A": "<span class='lvl3-word' data-word='reserved' data-pron='/rɪˈzɝːvd/' data-def='adj. 拘謹的；保留的' data-colloc='reserved personality (拘謹的個性); highly reserved (非常保留的); naturally reserved (天生拘謹的); a reserved seat (保留座)'>reserved</span>", "B": "<span class='lvl3-word' data-word='melancholy' data-pron='/ˈmel.ən.kɑː.li/' data-def='adj./n. 憂鬱的；悲傷' data-colloc='melancholy mood (憂鬱的心情); a melancholy song (悲傷的歌); feel melancholy (感到憂鬱)'>melancholy</span>", "C": "complicated", "D": "generous"},
+          "options": {"A": "<span class='lvl3-word' data-word='reserved' data-pron='/rɪˈzɝːvd/' data-def='adj. 拘謹的；保留的' data-colloc='reserved personality (拘謹的個性); highly reserved (非常保留的); naturally reserved (天生拘謹的); a reserved seat (保留座); keep reserved (保持矜持); remain reserved (保持緘默)'>reserved</span>", "B": "<span class='lvl3-word' data-word='melancholy' data-pron='/ˈmel.ən.kɑː.li/' data-def='adj./n. 憂鬱的；悲傷' data-colloc='melancholy mood (憂鬱的心情); a melancholy song (悲傷的歌); feel melancholy (感到憂鬱); an air of melancholy (憂鬱的氣氛); deep melancholy (深深的哀愁)'>melancholy</span>", "C": "complicated", "D": "generous"},
           "answer": "A",
           "explanation": {
             "translation": "身為一個非常謹慎的人，他在給予評論時相當保留(謹言慎行)。",
@@ -131,7 +131,7 @@
         {
           "q_num": "9",
           "q_text": "Most viewers agreed that the movie _______ was not as good as the book.",
-          "options": {"A": "routine", "B": "<span class='lvl3-word' data-word='version' data-pron='/ˈvɝː.ʒən/' data-def='n. 版本' data-colloc='movie version (電影版); original version (原版); updated version (更新版); a modified version (修改版)'>version</span>", "C": "copy", "D": "issue"},
+          "options": {"A": "routine", "B": "<span class='lvl3-word' data-word='version' data-pron='/ˈvɝː.ʒən/' data-def='n. 版本' data-colloc='movie version (電影版); original version (原版); updated version (更新版); a modified version (修改版); final version (最終版本); print version (印刷版)'>version</span>", "C": "copy", "D": "issue"},
           "answer": "B",
           "explanation": {
             "translation": "大多數觀眾同意這部電影版本不如原著小說好看。",
@@ -146,7 +146,7 @@
         {
           "q_num": "10",
           "q_text": "The native greeted the travelers in a _______ language which was strange to them.",
-          "options": {"A": "contrary", "B": "relative", "C": "<span class='lvl3-word' data-word='peculiar' data-pron='/pɪˈkjuːl.jɚ/' data-def='adj. 奇怪的；特有的' data-colloc='peculiar behavior (奇怪的行為); peculiar to (某地所特有的); feel peculiar (感到不舒服/奇怪); a peculiar smell (奇怪的氣味)'>peculiar</span>", "D": "spiral"},
+          "options": {"A": "contrary", "B": "relative", "C": "<span class='lvl3-word' data-word='peculiar' data-pron='/pɪˈkjuːl.jɚ/' data-def='adj. 奇怪的；特有的' data-colloc='peculiar behavior (奇怪的行為); peculiar to (某地所特有的); feel peculiar (感到不舒服/奇怪); a peculiar smell (奇怪的氣味); look peculiar (看起來很奇怪); peculiar habit (怪癖)'>peculiar</span>", "D": "spiral"},
           "answer": "C",
           "explanation": {
             "translation": "當地人用一種對旅客來說很陌生的奇怪語言向他們打招呼。",
@@ -164,7 +164,7 @@
       "group_id": "cloze_11_20",
       "type": "cloze",
       "tags": ["綜合測驗"],
-      "passage": "The umbrella is not a new <span class='lvl3-word' data-word='invention' data-pron='/ɪnˈven.ʃən/' data-def='n. 發明；創造' data-colloc='a great invention (偉大的發明); modern invention (現代發明); necessity is the mother of invention (需要為發明之母)'>invention</span>. The Chinese [BLANK_11] umbrellas in the eleventh century B.C. [BLANK_12] China they traveled to India, Persia, and Egypt. But in Greece and Rome, men [BLANK_13] use them. They believed umbrellas were [BLANK_14] for women.<br><br>When the Spanish explorers went to Mexico, they saw the Aztec kings [BLANK_15] umbrellas. English explorers found out that Indian princes also carried umbrellas on the east coast of North America. It [BLANK_16] that people in different parts of the world invented umbrellas at different times.<br><br>England was probably the first country in Europe [BLANK_17] ordinary people used umbrellas [BLANK_18] the rain. England has a rainy climate, and umbrellas are very useful there.<br><br>The umbrella is now a very ordinary [BLANK_19]. Everybody uses it today. It keeps the rain and the sun off people. Some umbrellas fold up, [BLANK_20] it is easy to carry them.",
+      "passage": "The umbrella is not a new <span class='lvl3-word' data-word='invention' data-pron='/ɪnˈven.ʃən/' data-def='n. 發明；創造' data-colloc='a great invention (偉大的發明); modern invention (現代發明); necessity is the mother of invention (需要為發明之母); scientific invention (科學發明); latest invention (最新發明)'>invention</span>. The Chinese [BLANK_11] umbrellas in the eleventh century B.C. [BLANK_12] China they traveled to India, Persia, and Egypt. But in Greece and Rome, men [BLANK_13] use them. They believed umbrellas were [BLANK_14] for women.<br><br>When the Spanish explorers went to Mexico, they saw the Aztec kings [BLANK_15] umbrellas. English explorers found out that Indian princes also carried umbrellas on the east coast of North America. It [BLANK_16] that people in different parts of the world invented umbrellas at different times.<br><br>England was probably the first country in Europe [BLANK_17] ordinary people used umbrellas [BLANK_18] the rain. England has a rainy climate, and umbrellas are very useful there.<br><br>The umbrella is now a very ordinary [BLANK_19]. Everybody uses it today. It keeps the rain and the sun off people. Some umbrellas fold up, [BLANK_20] it is easy to carry them.",
       "passage_translation": "雨傘並不是一項新發明。中國人在西元前十一世紀就已經有了雨傘。從中國，雨傘傳到了印度、波斯和埃及。但是在希臘和羅馬，男人是不會使用雨傘的。他們認為雨傘只是給女人用的。<br><br>當西班牙探險家前往墨西哥時，他們看到阿茲特克的國王正在使用雨傘。英國探險家也發現在北美洲東岸的印第安王子也會攜帶雨傘。似乎世界各地的人們在不同的時間都發明了雨傘。<br><br>英國可能是歐洲第一個由普通百姓撐傘來擋雨的國家。英國的氣候多雨，所以雨傘在那裡非常實用。<br><br>雨傘現在是一件非常普遍的物品。今天每個人都在使用它。它可以為人們擋雨遮陽。有些雨傘可以折疊，所以很容易攜帶。",
       "questions": [
         { "q_num": "11", "options": {"A": "have had", "B": "had", "C": "have", "D": "having"}, "answer": "B", "explanation": { "technique": "看到 in the eleventh century B.C. 這種「明確的過去時間」，動詞必須秒選「過去簡單式」。", "analysis": "❌ (A) have had：現在完成式，需搭配 for/since。\n✅ (B) had：過去簡單式，精準表達過去的事實。\n❌ (C) have：現在簡單式，時態不對。", "summary": "時間副詞決定時態！只要看到 in + 過去時間 (如 in 1990)，動詞 100% 選過去式。" } },
@@ -183,7 +183,7 @@
       "group_id": "cloze_21_30",
       "type": "cloze",
       "tags": ["綜合測驗"],
-      "passage": "A person's self-concept is reflected in the way he or she behaves, and the way a person behaves affects other people's reactions. [BLANK_21], the way people think about themselves [BLANK_22] a <span class='lvl3-word' data-word='profound' data-pron='/prəˈfaʊnd/' data-def='adj. 深遠的；深刻的' data-colloc='profound effect (深遠的影響); profound impact (深刻的衝擊); profound knowledge (淵博的知識); profound silence (死寂)'>profound</span> effect on all areas of their lives. For instance, people who have a [BLANK_23] sense of self-esteem usually act with confidence. [BLANK_24] they have self-assurance, they do not need constant praise and encouragement from others to feel [BLANK_25] about themselves. Self-confident people are their own best friends. They participate [BLANK_26] life <span class='lvl3-word' data-word='enthusiastically' data-pron='/ɪnˌθuː.ziˈæs.tɪ.kəl.i/' data-def='adv. 熱情地' data-colloc='participate enthusiastically (熱情參與); enthusiastically support (熱情支持); greet enthusiastically (熱情地迎接)'>enthusiastically</span> and <span class='lvl3-word' data-word='spontaneously' data-pron='/spɑːnˈteɪ.ni.əs.li/' data-def='adv. 自發地；自然地' data-colloc='react spontaneously (自發地反應); spontaneously occur (自然發生); act spontaneously (隨性而為)'>spontaneously</span>. They are not affected by [BLANK_27] others think they \"should\" do. People [BLANK_28] high self-esteem are not hurt by criticism; they do not [BLANK_29] criticism as personal rejection. [BLANK_30], they tend to believe criticism to be suggestion for improvement.",
+      "passage": "A person's self-concept is reflected in the way he or she behaves, and the way a person behaves affects other people's reactions. [BLANK_21], the way people think about themselves [BLANK_22] a <span class='lvl3-word' data-word='profound' data-pron='/prəˈfaʊnd/' data-def='adj. 深遠的；深刻的' data-colloc='profound effect (深遠的影響); profound impact (深刻的衝擊); profound knowledge (淵博的知識); profound silence (死寂); profound change (巨大的改變); profound understanding (深刻的理解)'>profound</span> effect on all areas of their lives. For instance, people who have a [BLANK_23] sense of self-esteem usually act with confidence. [BLANK_24] they have self-assurance, they do not need constant praise and encouragement from others to feel [BLANK_25] about themselves. Self-confident people are their own best friends. They participate [BLANK_26] life <span class='lvl3-word' data-word='enthusiastically' data-pron='/ɪnˌθuː.ziˈæs.tɪ.kəl.i/' data-def='adv. 熱情地' data-colloc='participate enthusiastically (熱情參與); enthusiastically support (熱情支持); greet enthusiastically (熱情地迎接); applaud enthusiastically (熱情地鼓掌); respond enthusiastically (熱烈響應)'>enthusiastically</span> and <span class='lvl3-word' data-word='spontaneously' data-pron='/spɑːnˈteɪ.ni.əs.li/' data-def='adv. 自發地；自然地' data-colloc='react spontaneously (自發地反應); spontaneously occur (自然發生); act spontaneously (隨性而為); applaud spontaneously (自發地鼓掌); spontaneously generate (自發產生)'>spontaneously</span>. They are not affected by [BLANK_27] others think they \"should\" do. People [BLANK_28] high self-esteem are not hurt by criticism; they do not [BLANK_29] criticism as personal rejection. [BLANK_30], they tend to believe criticism to be suggestion for improvement.",
       "passage_translation": "一個人的自我概念反映在他或她的行為方式上，而一個人的行為方式又會影響其他人的反應。總的來說，人們對自己的看法對他們生活的各個領域都有深遠的影響。例如，具有正面自尊感的人通常表現得很有自信。因為他們有自信，所以不需要別人不斷的讚美和鼓勵就能對自己感覺良好。自信的人是自己最好的朋友。他們熱情且自發地參與生活。他們不會受到別人認為他們「應該」做什麼的影響。擁有高自尊的人不會被批評傷害；他們不會把批評視為對個人的拒絕。相反地，他們傾向於相信批評是為了改進的建議。",
       "questions": [
         { "q_num": "21", "options": {"A": "By and by", "B": "Luckily", "C": "In general", "D": "Even so"}, "answer": "C", "explanation": { "technique": "前面講了兩句客觀心理學事實，此處需要一個副詞片語來做「總結」，故選 In general。", "analysis": "✅ (C) In general：一般而言 / 總的來說。非常適合作為引言後的總結。\n❌ (D) Even so：即使如此 (表讓步轉折)。", "summary": "作文神兵利器 In general = Generally speaking (總的來說)，放在句首可讓語氣看起來極具權威感。" } },
@@ -257,7 +257,7 @@
     {
       "group_id": "translation_1",
       "type": "translation",
-      "tags": ["非選擇題"],
+      "tags": ["中譯英"],
       "passage": null,
       "questions": [
         { "q_num": "51", "q_disp": "譯1", "q_text": "對於什麼是最佳的渡假方式，大家都有不同的看法。", "answer": "People have different opinions on what is the best way to spend a vacation.", "explanation": { "technique": "「對...有不同看法」：have different opinions on/about...；「什麼是...」：疑問詞 what 引導名詞子句當作 on 的受詞。", "analysis": "標準的「名詞子句當介系詞受詞」用法，這是大考翻譯必考重點。" } },
@@ -270,8 +270,8 @@
     {
       "group_id": "essay_1",
       "type": "essay",
-      "tags": ["非選擇題"],
-      "passage": "<div class='bg-teal-50 border border-teal-200 p-5 rounded-lg text-teal-900 leading-relaxed shadow-sm'><h3 class='text-lg font-bold border-b border-teal-200 pb-2 mb-3'>📝 英文作文寫作提示</h3><b>【題目】</b><br>Things Are Not As Difficult As They Appear (事情不如表面看起來困難)<br><br><b>【說明】</b><br>在成長的過程中，有些事情在開始的時候你可能覺得很難，但經過一番努力後就不再認為因難了。請寫一篇至少一百二十個單字的英文作文，描述一個親身的經驗。<br><br><span class='text-red-600 font-bold'>⚠️ 文章的頭兩句必須是：</span><br>Things are not as difficult as they appear. I have a personal experience to prove this.</div>",
+      "tags": ["英文作文"],
+      "passage": "<div class='bg-teal-50 border border-teal-200 p-6 rounded-xl text-teal-900 leading-relaxed shadow-sm'><h3 class='text-xl font-extrabold border-b-2 border-teal-200 pb-3 mb-4 flex items-center gap-2'>📝 英文作文寫作提示</h3><b>【題目】</b><br>Things Are Not As Difficult As They Appear (事情不如表面看起來困難)<br><br><b>【說明】</b><br>在成長的過程中，有些事情在開始的時候你可能覺得很難，但經過一番努力後就不再認為因難了。請寫一篇至少一百二十個單字的英文作文，描述一個親身的經驗。<br><br><span class='text-red-600 font-bold bg-red-50 px-2 py-1 rounded inline-block mt-2'>⚠️ 規定：文章的頭兩句必須是：</span><br><span class='font-bold text-[1.05rem]'>Things are not as difficult as they appear. I have a personal experience to prove this.</span></div>",
       "questions": [
         {
           "q_num": "56",
