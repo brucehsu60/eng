@@ -41,10 +41,11 @@
     <!-- 互動式字典 -->
     <div id="dict-tooltip"></div>
 
-    <!-- 頂部導航 (移除 sticky top-0，網頁捲動時自然滑動) -->
+    <!-- 頂部導航 -->
     <header class="bg-white shadow-md border-b border-gray-200 relative z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center gap-6">
+                <!-- 移除了年份的顯示，只留下考試類別與科目 -->
                 <h1 id="exam-title" class="text-xl font-extrabold text-blue-800 tracking-wide whitespace-nowrap">高中英文歷屆題庫</h1>
                 <div class="flex flex-wrap gap-2 text-sm font-bold" id="category-filters">
                     <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-blue-600 text-white border border-blue-600" data-color="blue" onclick="changeMode('practice', '全部', this)">全部</button>
@@ -75,7 +76,7 @@
             </div>
         </div>
 
-        <!-- 題號導航區 (點擊平滑滾動到該題) -->
+        <!-- 題號導航區 -->
         <div class="max-w-7xl mx-auto px-4 py-3 bg-white flex flex-wrap items-center gap-2 border-t border-gray-200 shadow-sm" id="nav-container"></div>
     </header>
 
@@ -153,7 +154,9 @@
                 let res = await fetch(`data/${targetFile}`);
                 if (!res.ok) throw new Error();
                 examData = await res.json();
-                document.getElementById('exam-title').innerText = `${examData.exam_year} ${examData.subject} 歷屆題庫`;
+                
+                // 【修改點】不再顯示具體的年分，只顯示考試類別與科目
+                document.getElementById('exam-title').innerText = `${state.exam} ${examData.subject} 歷屆題庫`;
                 
                 if(state.mode === 'practice') {
                     renderNavigator(state.type);
@@ -230,7 +233,6 @@
                         btn.onclick = () => {
                             const target = document.getElementById(`q-block-${q.q_num}`);
                             if(target) {
-                                // 移除 sticky 後，導航列會捲走，不用扣太多高度
                                 const y = target.getBoundingClientRect().top + window.scrollY - 30;
                                 window.scrollTo({ top: y, behavior: 'smooth' });
                             }
@@ -289,12 +291,12 @@
                         });
                     }
 
-                    // 修改：確保朗讀與翻譯按鈕樣式完全一致
+                    // 【修改點】為翻譯按鈕加上專屬 ID
                     passageContent = `
                         <div class="lg:w-[55%] p-6 border-b lg:border-b-0 lg:border-r border-gray-200 bg-gray-50/40 relative">
                             <div class="flex gap-2 mb-4">
                                 <button type="button" id="btn-read-passage-${group.group_id}" onclick="readPassageAloud('${group.group_id}')" class="btn-speak text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold">🗣️ 朗讀文章</button>
-                                <button type="button" onclick="toggleTranslation('${group.group_id}')" class="text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold">📝 顯示翻譯</button>
+                                <button type="button" id="btn-translate-${group.group_id}" onclick="toggleTranslation('${group.group_id}')" class="text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold">📝 顯示翻譯</button>
                             </div>
                             <div class="text-[1.08rem] leading-loose text-gray-800 tracking-wide" id="passage-content-${group.group_id}">${html}</div>
                             <div id="passage-translation-${group.group_id}" style="display: none;" class="mt-6 p-5 bg-amber-50 border-t-2 border-amber-200 text-[0.95rem] text-gray-800 leading-relaxed rounded-b-lg shadow-inner">${group.passage_translation || '暫無翻譯提供。'}</div>
@@ -394,14 +396,23 @@
             bindVocabEvents();
         }
 
-        // 強制穩定切換翻譯顯示
+        // 【修改點】強化顯示翻譯按鈕的樣式切換邏輯
         function toggleTranslation(groupId) { 
             const el = document.getElementById(`passage-translation-${groupId}`);
+            const btn = document.getElementById(`btn-translate-${groupId}`);
             if (el) {
                 if (el.style.display === 'none' || el.style.display === '') {
                     el.style.display = 'block';
+                    if (btn) {
+                        btn.innerHTML = '📝 隱藏翻譯';
+                        btn.className = 'text-xs bg-blue-600 text-white border border-blue-600 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-700 transition font-bold';
+                    }
                 } else {
                     el.style.display = 'none';
+                    if (btn) {
+                        btn.innerHTML = '📝 顯示翻譯';
+                        btn.className = 'text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold';
+                    }
                 }
             }
         }
@@ -481,7 +492,7 @@
             contentEl.innerHTML = '';
 
             if (mode === 'summary') {
-                titleEl.innerHTML = `📋 ${state.year} ${state.exam} - 考前衝刺大補帖`;
+                titleEl.innerHTML = `📋 ${state.exam} - 考前衝刺大補帖`;
                 if (!examData) return contentEl.innerHTML = '<p class="text-gray-500">請先選擇一份有效的試卷。</p>';
                 
                 let summaryHtml = '<div class="space-y-6">';
@@ -537,7 +548,7 @@
                     html += `
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-rose-300 border-l-8 hover:shadow-md transition">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="font-extrabold text-rose-800 bg-rose-50 px-3 py-1 rounded-full text-sm shadow-sm">${m.year} ${m.exam} - 第 ${m.q_num} 題</span>
+                            <span class="font-extrabold text-rose-800 bg-rose-50 px-3 py-1 rounded-full text-sm shadow-sm">${m.exam} - 第 ${m.q_num} 題</span>
                             <button onclick="removeMistake(${idx})" class="text-xs text-gray-500 hover:text-white hover:bg-red-500 border border-gray-300 px-3 py-1.5 rounded-full transition shadow-sm font-bold">🗑 刪除紀錄</button>
                         </div>
                         <div class="text-gray-800 font-medium mb-5 text-[1.05rem] leading-relaxed">${m.q_text}</div>
@@ -587,7 +598,6 @@
             document.getElementById(`wc-${qNum}`).innerText = text ? text.split(/\s+/).length : 0;
         }
 
-        // 朗讀文章功能：DOM 解析自動拔除 (A)~(O) 選項，填入答案朗讀純淨版
         function readPassageAloud(groupId) {
             const btn = document.getElementById(`btn-read-passage-${groupId}`);
             if (isSpeaking) { window.speechSynthesis.cancel(); isSpeaking = false; btn.innerText = '🗣️ 朗讀文章'; return; } 
@@ -596,7 +606,6 @@
             let tempDiv = document.createElement('div');
             tempDiv.innerHTML = group.passage;
             
-            // 完美拔除文意選填的頂部選項區塊
             let optBlock = tempDiv.querySelector('#matching-options-block');
             if(optBlock) optBlock.remove();
 
@@ -664,7 +673,6 @@
                     const isAdded = vocabs.some(v => v.word === word);
                     const btnText = isAdded ? '★ 已收藏' : '☆ 收藏';
                     
-                    // 確保引號不會破壞 HTML 結構
                     const safeDef = def.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                     const safeColloc = colloc.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                     
