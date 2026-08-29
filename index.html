@@ -19,7 +19,7 @@
         #dict-tooltip {
             position: absolute; z-index: 9999; background: #0f172a; color: white;
             padding: 16px; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5);
-            width: 320px; display: none; font-size: 0.95rem; line-height: 1.6;
+            width: 340px; display: none; font-size: 0.95rem; line-height: 1.6;
             border: 1px solid #334155; pointer-events: auto;
         }
         
@@ -41,18 +41,19 @@
     <!-- 互動式字典 -->
     <div id="dict-tooltip"></div>
 
-    <!-- 頂部導航 (移除 sticky，網頁捲動時自然滑動) -->
+    <!-- 頂部導航 (移除 sticky top-0，網頁捲動時自然滑動) -->
     <header class="bg-white shadow-md border-b border-gray-200 relative z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center gap-6">
                 <h1 id="exam-title" class="text-xl font-extrabold text-blue-800 tracking-wide whitespace-nowrap">高中英文歷屆題庫</h1>
                 <div class="flex flex-wrap gap-2 text-sm font-bold" id="category-filters">
                     <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-blue-600 text-white border border-blue-600" data-color="blue" onclick="changeMode('practice', '全部', this)">全部</button>
-                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-green-600 border border-green-500 hover:bg-green-50" data-color="green" onclick="changeMode('practice', '詞彙', this)">詞彙</button>
-                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-blue-600 border border-blue-500 hover:bg-blue-50" data-color="blue" onclick="changeMode('practice', '綜合測驗', this)">克漏字</button>
-                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-orange-600 border border-orange-500 hover:bg-orange-50" data-color="orange" onclick="changeMode('practice', '閱讀測驗', this)">閱讀測驗</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-green-600 border border-green-500 hover:bg-green-50" data-color="green" onclick="changeMode('practice', '詞彙題', this)">詞彙題</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-blue-600 border border-blue-500 hover:bg-blue-50" data-color="blue" onclick="changeMode('practice', '綜合測驗', this)">綜合測驗</button>
                     <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-purple-600 border border-purple-500 hover:bg-purple-50" data-color="purple" onclick="changeMode('practice', '文意選填', this)">文意選填</button>
-                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-teal-600 border border-teal-500 hover:bg-teal-50" data-color="teal" onclick="changeMode('practice', '非選擇題', this)">非選擇題</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-orange-600 border border-orange-500 hover:bg-orange-50" data-color="orange" onclick="changeMode('practice', '閱讀測驗', this)">閱讀測驗</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-teal-600 border border-teal-500 hover:bg-teal-50" data-color="teal" onclick="changeMode('practice', '中譯英', this)">中譯英</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-pink-600 border border-pink-500 hover:bg-pink-50" data-color="pink" onclick="changeMode('practice', '英文作文', this)">英文作文</button>
                 </div>
             </div>
             
@@ -74,7 +75,7 @@
             </div>
         </div>
 
-        <!-- 題號導航區 -->
+        <!-- 題號導航區 (點擊平滑滾動到該題) -->
         <div class="max-w-7xl mx-auto px-4 py-3 bg-white flex flex-wrap items-center gap-2 border-t border-gray-200 shadow-sm" id="nav-container"></div>
     </header>
 
@@ -204,7 +205,8 @@
             if (type === 'cloze') return { bg: 'bg-blue-100', text: 'text-blue-800', border: 'border-blue-300', actBg: 'bg-blue-600', actText: 'text-white' };
             if (type === 'matching') return { bg: 'bg-purple-100', text: 'text-purple-800', border: 'border-purple-300', actBg: 'bg-purple-600', actText: 'text-white' };
             if (type === 'reading') return { bg: 'bg-orange-100', text: 'text-orange-800', border: 'border-orange-300', actBg: 'bg-orange-600', actText: 'text-white' };
-            if (type === 'translation' || type === 'essay') return { bg: 'bg-teal-100', text: 'text-teal-800', border: 'border-teal-300', actBg: 'bg-teal-600', actText: 'text-white' };
+            if (type === 'translation') return { bg: 'bg-teal-100', text: 'text-teal-800', border: 'border-teal-300', actBg: 'bg-teal-600', actText: 'text-white' };
+            if (type === 'essay') return { bg: 'bg-pink-100', text: 'text-pink-800', border: 'border-pink-300', actBg: 'bg-pink-600', actText: 'text-white' };
             return { bg: 'bg-gray-100', text: 'text-gray-700', border: 'border-gray-300', actBg: 'bg-gray-600', actText: 'text-white' };
         }
 
@@ -228,7 +230,7 @@
                         btn.onclick = () => {
                             const target = document.getElementById(`q-block-${q.q_num}`);
                             if(target) {
-                                // 導航列已無 sticky，因此不需扣除太多 padding
+                                // 移除 sticky 後，導航列會捲走，不用扣太多高度
                                 const y = target.getBoundingClientRect().top + window.scrollY - 30;
                                 window.scrollTo({ top: y, behavior: 'smooth' });
                             }
@@ -261,14 +263,14 @@
                     </div>
                 `;
 
-                // 判斷作文題 (essay)，排版全寬度顯示，題幹在上，題目在下
-                let isFullWidthLayout = (group.type === 'essay' || !group.passage);
+                // 翻譯與作文 (非選擇題) 採用全寬度上下排版
+                let isFullWidthLayout = (!group.passage || group.type === 'essay' || group.type === 'translation');
                 
                 let bodyHtml = `<div class="${isFullWidthLayout ? 'flex flex-col' : 'flex flex-col lg:flex-row'} w-full">`;
 
                 let passageContent = '';
                 if (group.passage && !isFullWidthLayout) {
-                    // 非作文的文章區 (佔 55% 寬)
+                    // 選擇題文章區 (佔 55% 寬)
                     let html = group.passage;
                     if(group.type === 'cloze' || group.type === 'matching'){
                         group.questions.forEach(q => {
@@ -298,7 +300,7 @@
                         </div>
                     `;
                 } else if (group.passage && isFullWidthLayout) {
-                    // 作文的提示區 (佔 100% 寬)
+                    // 作文的提示區 (佔 100% 寬，題目在上)
                     passageContent = `
                         <div class="w-full p-6 border-b border-gray-200 bg-gray-50/40 relative">
                             <div class="text-[1.08rem] leading-loose text-gray-800 tracking-wide" id="passage-content-${group.group_id}">${group.passage}</div>
@@ -306,7 +308,7 @@
                     `;
                 }
 
-                // 右半部或下方題目區
+                // 題目作答區
                 let qWidthClass = isFullWidthLayout ? 'w-full' : 'lg:w-[45%]';
                 let questionsHtml = `<div class="${qWidthClass} p-6 space-y-10 bg-white">`;
 
@@ -391,7 +393,7 @@
             bindVocabEvents();
         }
 
-        // 強制穩定切換翻譯顯示
+        // 完美修復「顯示翻譯」按鈕切換邏輯
         function toggleTranslation(groupId) { 
             const el = document.getElementById(`passage-translation-${groupId}`);
             if (el) {
@@ -593,7 +595,7 @@
             let tempDiv = document.createElement('div');
             tempDiv.innerHTML = group.passage;
             
-            // 拔除文意選填的頂部選項區塊
+            // 完美拔除文意選填的頂部選項區塊
             let optBlock = tempDiv.querySelector('#matching-options-block');
             if(optBlock) optBlock.remove();
 
@@ -606,7 +608,6 @@
             }
             
             tempDiv.innerHTML = textHtml;
-            // 取得最純淨的文字來朗讀
             let textToRead = tempDiv.innerText || tempDiv.textContent; 
             
             speechUtterance.text = textToRead; 
@@ -662,7 +663,7 @@
                     const isAdded = vocabs.some(v => v.word === word);
                     const btnText = isAdded ? '★ 已收藏' : '☆ 收藏';
                     
-                    // 防呆處理跳脫字元
+                    // 確保引號不會破壞 HTML 結構
                     const safeDef = def.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                     const safeColloc = colloc.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                     
