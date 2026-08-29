@@ -1,396 +1,257 @@
 {
-  "exam_year": "84學測",
+  "exam_year": "83學測",
   "subject": "英文",
   "groups": [
     {
-      "group_id": "dialogue_1_10",
-      "type": "vocabulary",
-      "tags": ["對話題"],
-      "passage": null,
-      "questions": [
-        {
-          "q_num": "1",
-          "q_text": "Julia: Would you excuse me for a moment? My mom is on the line.<br>May: _______.",
-          "options": {"A": "Certainly.", "B": "Not at all.", "C": "What's the matter?", "D": "All right."},
-          "answer": "A",
-          "explanation": {
-            "translation": "Julia: 可以失陪一下嗎？我媽打電話來了。<br>May: 當然可以。",
-            "technique": "【語氣對應法】：回答「Would you excuse me? (能容我失陪一下嗎？)」時，最適當且有禮貌的同意用法是 Certainly (當然)。",
-            "analysis": "✅ (A) Certainly：當然可以，表達同意對方暫時離開。\n❌ (B) Not at all：一點也不。通常用來回答 Do you mind...? (你介意嗎？)。\n❌ (C) What's the matter?：怎麼了？對方已經說明原因了，所以不需要再問。\n❌ (D) All right：好吧。語氣較勉強，不如 Certainly 有禮貌。",
-            "roots": "certain (確定的) + ly (副詞字尾) ➔ 當然",
-            "collocations": ["excuse me for a moment (失陪一下)", "on the line (在講電話/在線上)"],
-            "sentences": ["Would you excuse me for a moment? I need to make a quick phone call. (能容我失陪一下嗎？我需要打通簡短的電話。)"],
-            "summary": "在英文對話中，遇到請求許可 (Would you / Could you) 時，最標準的正面回應就是 Certainly 或 Sure。"
-          }
-        },
-        {
-          "q_num": "2",
-          "q_text": "(twenty minutes later)<br>Julia: Sorry to keep you waiting. Now, _______.",
-          "options": {"A": "Shall we continue our discussion?", "B": "What are you going to say?", "C": "What did you say?", "D": "Where were we?"},
-          "answer": "D",
-          "explanation": {
-            "translation": "(二十分鐘後)<br>Julia: 抱歉讓你久等了。剛剛，我們聊到哪裡了？",
-            "technique": "【生活慣用語】：對話中斷後重新開始，想詢問「剛剛我們聊到哪裡了？」最道地的口語說法是 Where were we?。",
-            "analysis": "❌ (A) Shall we continue our discussion?：語氣太過正式，像是在開商務會議。\n❌ (B) What are you going to say?：你要說什麼？語氣太直接。\n❌ (C) What did you say?：你剛剛說什麼？(用於聽不清楚對方說話時)。\n✅ (D) Where were we?：我們剛剛聊到哪了？(中斷後接續話題的標準說法)。",
-            "roots": "",
-            "collocations": ["keep someone waiting (讓某人久等)"],
-            "sentences": ["Sorry for the interruption. Now, where were we? (抱歉打斷了。我們剛剛聊到哪裡了？)"],
-            "summary": "必背口語句型：Where were we? 是「我們剛剛談到哪？」的最常見口語，千萬不要直翻成 What did we talk about just now?。"
-          }
-        },
-        {
-          "q_num": "3",
-          "q_text": "May: We were just talking about going out to a show, _______ we might have to do it some other time.",
-          "options": {"A": "but I'm afraid", "B": "so I think", "C": "unless it seems", "D": "as you know"},
-          "answer": "A",
-          "explanation": {
-            "translation": "May: 我們剛剛在聊要不要出去看表演，但恐怕我們得改天再去了。",
-            "technique": "【邏輯轉折法】：前半句說「原本要出去看表演」，後半句卻說「必須改天(some other time)」，兩者是明顯的轉折語氣，必須選 but。",
-            "analysis": "✅ (A) but I'm afraid：但我恐怕... (表委婉拒絕或轉折)。\n❌ (B) so I think：所以我認為 (表因果，邏輯不通)。\n❌ (C) unless it seems：除非似乎 (文法與語意不通)。\n❌ (D) as you know：如你所知 (不符語境)。",
-            "roots": "",
-            "collocations": ["some other time (改天/下一次)", "go out to a show (出去看表演)"],
-            "sentences": ["I would love to help you, but I'm afraid I don't have the time right now. (我很樂意幫忙，但我恐怕現在沒時間。)"],
-            "summary": "I'm afraid (that)... 常用於委婉地表達壞消息或拒絕，等於中文的「恐怕...」。"
-          }
-        },
-        {
-          "q_num": "4",
-          "q_text": "John: Where do you work, Bill?<br>Bill: I'm in foreign trade. _______.<br>John: I'm an English teacher.",
-          "options": {"A": "Do you speak English?", "B": "Are you a worker, too?", "C": "How do you like it?", "D": "How about you?"},
-          "answer": "D",
-          "explanation": {
-            "translation": "John: Bill, 你在哪裡工作？<br>Bill: 我從事國際貿易。那你呢？<br>John: 我是一位英文老師。",
-            "technique": "【上下文推敲】：John 接著回答了自己的職業 (I'm an English teacher.)，這代表 Bill 前一句必定是反問對方「那你呢？」。",
-            "analysis": "❌ (A) Do you speak English?：你會說英文嗎？(答非所問)。\n❌ (B) Are you a worker, too?：你也是個工人嗎？(不自然)。\n❌ (C) How do you like it?：你覺得它怎麼樣？(用來問別人對某事物的看法)。\n✅ (D) How about you?：那你呢？(反問對方的經典句)。",
-            "roots": "",
-            "collocations": ["foreign trade (國際貿易)"],
-            "sentences": ["I'm going to grab some lunch. How about you? (我要去吃點午餐。你呢？)"],
-            "summary": "How about you? / What about you? / And you? 都是口語中非常實用的反問句式。"
-          }
-        },
-        {
-          "q_num": "5",
-          "q_text": "Bill: And you, Sue? _______.<br>Sue: I'm a flight attendant.",
-          "options": {"A": "Do you know each other?", "B": "Where have you been?", "C": "What do you do?", "D": "How are you?"},
-          "answer": "C",
-          "explanation": {
-            "translation": "Bill: 那妳呢，Sue？妳是做什麼工作的？<br>Sue: 我是一位空服員。",
-            "technique": "【職業問法】：Sue 回答了職業 (flight attendant 空服員)，代表 Bill 正在詢問她的職業。",
-            "analysis": "❌ (A) Do you know each other?：你們認識彼此嗎？\n❌ (B) Where have you been?：你最近去哪了？\n✅ (C) What do you do?：你是做什麼工作的？(詢問職業的標準說法)。\n❌ (D) How are you?：你好嗎？",
-            "roots": "",
-            "collocations": ["flight attendant (空服員/空姐/空少)"],
-            "sentences": ["A: What do you do for a living? B: I'm a software engineer. (A: 你是做什麼工作的？ B: 我是軟體工程師。)"],
-            "summary": "【詢問職業三大句型】：What do you do? / What is your job? / What do you do for a living?"
-          }
-        },
-        {
-          "q_num": "6",
-          "q_text": "Maria: Hello. May I speak to Eric Sung?<br>Jane: _______.<br>Maria: I see. When do you expect him back?",
-          "options": {"A": "Hold on. I'll connect you.", "B": "Sure. Wait a moment, please.", "C": "I'm sorry, he's not come yet.", "D": "I'm sorry, he's out at this moment."},
-          "answer": "D",
-          "explanation": {
-            "translation": "Maria: 喂，請找 Eric Sung。<br>Jane: 抱歉，他現在出去了。<br>Maria: 了解。你預計他什麼時候回來？",
-            "technique": "【後文找線索】：從 Maria 後面的回覆「你預計他何時回來？(When do you expect him back?)」推斷，Eric 目前必定是不在辦公室的。",
-            "analysis": "❌ (A) Hold on. I'll connect you.：請稍候，我幫你轉接 (代表人在)。\n❌ (B) Sure. Wait a moment, please.：好的，請等一下 (代表人在)。\n❌ (C) he's not come yet：文法有誤，應為 he hasn't come yet。\n✅ (D) I'm sorry, he's out at this moment.：抱歉，他現在出去了 (完美契合後續的「何時回來」)。",
-            "roots": "",
-            "collocations": ["at this moment (現在/此刻)", "expect someone back (預計某人回來)"],
-            "sentences": ["I'm sorry, Mr. Smith is out at this moment. Would you like to leave a message? (抱歉，Smith 先生現在出去了。您要留言嗎？)"],
-            "summary": "電話對話必考句型：Is someone in? (某人在嗎？) / He is out at the moment. (他現在出去了。)"
-          }
-        },
-        {
-          "q_num": "7",
-          "q_text": "Jane: _______.<br>Maria: Yes. Just tell him Maria Moskovik called.",
-          "options": {"A": "I'm not sure. May I leave a message?", "B": "Any moment. Do you want to talk to him?", "C": "I'm not sure. Can I take a message?", "D": "I'm sorry, his line is busy."},
-          "answer": "C",
-          "explanation": {
-            "translation": "Jane: 我不確定。需要我幫您留言嗎？<br>Maria: 好的。請告訴他 Maria Moskovik 打來過。",
-            "technique": "【角色對應法】：Maria 接著留下了自己的名字並請對方轉告 (Just tell him...)，代表接電話的 Jane 詢問了「是否要留言？」。",
-            "analysis": "❌ (A) May I leave a message?：是我(Jane)要留言嗎？(角色錯亂，Jane是接電話的人，不可能自己留言)。\n❌ (B) Do you want to talk to him?：他不在，無法講話。\n✅ (C) Can I take a message?：需要我幫您留言(記下訊息)嗎？(接聽者的標準用語)。\n❌ (D) his line is busy.：電話佔線中。",
-            "roots": "",
-            "collocations": ["take a message (幫忙記下留言)", "leave a message (留下訊息)"],
-            "sentences": ["He's in a meeting right now. Can I take a message? (他現在在開會。需要我幫您留言嗎？)"],
-            "summary": "大考必考陷阱！打電話的人說：May I **leave** a message?；接電話的人說：Can I **take** a message?。"
-          }
-        },
-        {
-          "q_num": "8",
-          "q_text": "Jane: I'm sorry, I didn't catch your last name.<br>Maria: _______.",
-          "options": {"A": "That's all right.", "B": "Moskovik, M-O-S-K-O-V-I-K.", "C": "It's an unusual name.", "D": "Don't worry. Eric and I are old friends."},
-          "answer": "B",
-          "explanation": {
-            "translation": "Jane: 抱歉，我沒聽清楚您的姓氏。<br>Maria: Moskovik，拼法是 M-O-S-K-O-V-I-K。",
-            "technique": "【情境直覺】：當對方說「沒聽清楚姓氏 (didn't catch your last name)」時，自然是要把名字「拼給對方聽」。",
-            "analysis": "❌ (A) That's all right.：沒關係 (答非所問)。\n✅ (B) Moskovik, M-O-S-K-O-V-I-K.：清楚拼出姓氏，完全符合語境。\n❌ (C) It's an unusual name.：這是一個罕見的名字 (沒有解決對方聽不懂的問題)。\n❌ (D) Don't worry.：不用擔心，我們是老朋友 (接電話的人還是不知道怎麼拼)。",
-            "roots": "",
-            "collocations": ["catch your name (聽清楚你的名字)"],
-            "sentences": ["I'm sorry, I didn't quite catch your name. Could you repeat it? (抱歉，我沒聽清楚你的名字。可以請你重複一次嗎？)"],
-            "summary": "catch 在對話中常當作「聽懂、聽清楚」的意思，例如：I didn't catch what you said. (我沒聽清楚你說什麼。)"
-          }
-        },
-        {
-          "q_num": "9",
-          "q_text": "Tom: Well, it looks like we're lost.<br>Jack: _______.<br>Tom: Who do you ask in a strange town?",
-          "options": {"A": "Don't worry. All we have to do is ask.", "B": "What should we see next?", "C": "I'm scared. Let's go home.", "D": "Yes, we just lost a tire."},
-          "answer": "A",
-          "explanation": {
-            "translation": "Tom: 嗯，看來我們迷路了。<br>Jack: 別擔心。我們只要找人問路就好了。<br>Tom: 在一個陌生的城鎮你要問誰啊？",
-            "technique": "【後文找線索】：從 Tom 後面的回答「你要問誰？ (Who do you ask?)」可以反推，Jack 必定提出了「開口問路 (ask)」的建議。",
-            "analysis": "✅ (A) Don't worry. All we have to do is ask.：別擔心，只要問人就好 (完美對接)。\n❌ (B) What should we see next?：迷路了還想著看下一個景點，不合邏輯。\n❌ (C) Let's go home.：我們回家吧 (沒有提到問路)。\n❌ (D) we just lost a tire.：我們剛掉了一個輪胎 (跟 lost 迷路的語意搞混)。",
-            "roots": "",
-            "collocations": ["get lost (迷路)"],
-            "sentences": ["If you don't know how to use the machine, all you have to do is ask. (如果你不知道怎麼用這台機器，只要開口問就行了。)"],
-            "summary": "【All S have to do is (to) V】是一個超強句型，表示「某人所必須做的只有...」。後方的 to 通常會省略。"
-          }
-        },
-        {
-          "q_num": "10",
-          "q_text": "Jack: _______.<br>Tom: Where can we find one?<br>Jack: See, there is one over there.",
-          "options": {"A": "Who knows!", "B": "You ask a policeman.", "C": "There is a police station there.", "D": "I don't see any police station."},
-          "answer": "B",
-          "explanation": {
-            "translation": "Jack: 你可以問警察啊。<br>Tom: 我們要去哪裡找警察？<br>Jack: 看，那邊就有一個。",
-            "technique": "【代名詞還原法】：Tom 接著問「我們要去哪裡找一個 (one)？」，而 Jack 回答「那邊就有一個 (one)」。代名詞 one 代替的是可數名詞單數，因此只能選 policeman (警察)。",
-            "analysis": "❌ (A) Who knows!：誰知道啊！(不負責任的回答)。\n✅ (B) You ask a policeman.：問警察啊 (policeman 完美對應後文的 one)。\n❌ (C) There is a police station there.：若選此項，Tom 不會再問「去哪找？」。\n❌ (D) I don't see any police station.：語意不合。",
-            "roots": "",
-            "collocations": ["ask for directions (問路)"],
-            "sentences": ["If you get lost, you can always ask a policeman for help. (如果你迷路了，隨時可以找警察幫忙。)"],
-            "summary": "代名詞 one 用來代替前面提過的「同種類、但非同一個」的可數名詞單數；如果是同一個，必須用 it。"
-          }
-        }
-      ]
-    },
-    {
-      "group_id": "vocab_11_20",
+      "group_id": "vocab",
       "type": "vocabulary",
       "tags": ["詞彙題"],
       "passage": null,
       "questions": [
         {
-          "q_num": "11",
-          "q_text": "I sometimes take John's coat for my own, because the two of them look so _______.",
-          "options": {"A": "<span class='lvl3-word' data-word='original' data-pron='/əˈrɪdʒ.ən.əl/' data-def='adj. 原本的；原創的' data-colloc='original design (原創設計); original idea (原創想法); highly original (極具原創性); original version (原版); original plan (原訂計畫)'>original</span>", "B": "cheerful", "C": "<span class='lvl3-word' data-word='curious' data-pron='/ˈkjʊr.i.əs/' data-def='adj. 好奇的' data-colloc='curious about (對...好奇); naturally curious (天生好奇); curious glance (好奇的目光); purely out of curiosity (純粹出於好奇); extremely curious (非常好奇)'>curious</span>", "D": "similar"},
-          "answer": "D",
-          "explanation": {
-            "translation": "我有時候會把約翰的外套誤認成我自己的，因為它們兩件看起來太相似了。",
-            "technique": "【語境推導】：會把別人的東西誤認 (take A for B) 成自己的，原因必然是因為兩者長得太「相似 (similar)」。",
-            "analysis": "❌ (A) original (原創的/原本的)：與語境不符。\n❌ (B) cheerful (愉快的)：衣服不會是愉快的。\n❌ (C) curious (好奇的)：衣服無法好奇。\n✅ (D) similar (相似的)：完美解釋誤認的原因。",
-            "roots": "similar: sim- (相同) + -ilar (形容詞) ➔ 相似的",
-            "collocations": ["be similar to... (與...相似)", "take A for B (把A誤認為B)"],
-            "sentences": ["The two brothers look so similar that it is hard to tell them apart. (這對兄弟長得太相似了，很難分辨他們。)"],
-            "summary": "必背片語：take A for B (把A誤認為B)，等於 mistake A for B。"
-          }
-        },
-        {
-          "q_num": "12",
-          "q_text": "George at first had difficulty swimming across the pool, but he finally succeeded on his fourth _______.",
-          "options": {"A": "<span class='lvl3-word' data-word='attempt' data-pron='/əˈtempt/' data-def='n./v. 嘗試；企圖' data-colloc='make an attempt (試圖做...); successful attempt (成功的嘗試); brave attempt (勇敢的嘗試); an attempt to escape (企圖逃跑); first attempt (第一次嘗試)'>attempt</span>", "B": "<span class='lvl3-word' data-word='process' data-pron='/ˈprɑː.ses/' data-def='n. 過程；步驟' data-colloc='in the process of (在...過程中); learning process (學習過程); step-by-step process (循序漸進的過程); slow process (緩慢的過程)'>process</span>", "C": "<span class='lvl3-word' data-word='instance' data-pron='/ˈɪn.stəns/' data-def='n. 例子；實例' data-colloc='for instance (例如); in this instance (在這個例子中); rare instance (罕見的例子); isolated instance (單一事件)'>instance</span>", "D": "display"},
-          "answer": "A",
-          "explanation": {
-            "translation": "喬治一開始要游過泳池有困難，但他終於在第四次嘗試時成功了。",
-            "technique": "【搭配詞直覺】：前面說他一開始有困難 (had difficulty)，後面說他終於成功，可見中間經過了多次的「嘗試 (attempt)」。",
-            "analysis": "✅ (A) attempt (嘗試)：符合反覆挑戰終於成功的語境。\n❌ (B) process (過程)：不搭配序數 (fourth)。\n❌ (C) instance (例子)：與游泳情境無關。\n❌ (D) display (展示)：on display (展示中)。",
-            "roots": "attempt: ad- (朝向) + tempt (嘗試) ➔ 企圖/嘗試",
-            "collocations": ["succeed on the first/second attempt (在第幾次嘗試中成功)"],
-            "sentences": ["She passed her driving test on her first attempt. (她第一次嘗試就通過了駕照考試。)"],
-            "summary": "attempt 當動詞時，用法是 attempt to V (試圖做某事)。"
-          }
-        },
-        {
-          "q_num": "13",
-          "q_text": "Several motorists were _______ waiting for the light to change.",
-          "options": {"A": "<span class='lvl3-word' data-word='impossibly' data-pron='/ɪmˈpɑː.sə.bli/' data-def='adv. 不可能地' data-colloc='impossibly difficult (不可能這麼難); impossibly high (高得不可思議); virtually impossible (幾乎不可能)'>impossibly</span>", "B": "impracticably", "C": "importantly", "D": "<span class='lvl3-word' data-word='impatiently' data-pron='/ɪmˈpeɪ.ʃənt.li/' data-def='adv. 不耐煩地' data-colloc='wait impatiently (不耐煩地等); sigh impatiently (不耐煩地嘆氣); tap impatiently (不耐煩地敲擊); grow impatiently (變得不耐煩)'>impatiently</span>"},
-          "answer": "D",
-          "explanation": {
-            "translation": "幾位開車的駕駛正不耐煩地等待紅綠燈變換。",
-            "technique": "【情境推理法】：想像一下塞車等紅綠燈 (waiting for the light to change) 時，駕駛們的心情！通常是「不耐煩的 (impatiently)」。",
-            "analysis": "❌ (A) impossibly (不可能地)：語意不通。\n❌ (B) impracticably (不切實際地)：修飾計畫，不修飾等待。\n❌ (C) importantly (重要地)：通常放句首 (More importantly,...)。\n✅ (D) impatiently (不耐煩地)：修飾 wait 極為生動自然。",
-            "roots": "impatiently: im- (否定) + patient (耐心的) + -ly (副詞) ➔ 不耐煩地",
-            "collocations": ["wait impatiently for... (不耐煩地等待...)"],
-            "sentences": ["The passengers waited impatiently for the delayed train to arrive. (乘客們不耐煩地等待誤點的火車抵達。)"],
-            "summary": "patient 除了當形容詞「有耐心的」，當名詞時是「病人」，務必熟記其雙重身分！"
-          }
-        },
-        {
-          "q_num": "14",
-          "q_text": "Mary wrote a letter of _______ to the manufacturer after her new car broke down three times in the same week.",
-          "options": {"A": "<span class='lvl3-word' data-word='complaint' data-pron='/kəmˈpleɪnt/' data-def='n. 抱怨；投訴' data-colloc='letter of complaint (投訴信); make a complaint (提出客訴); customer complaint (客訴); formal complaint (正式投訴); deal with complaints (處理客訴)'>complaint</span>", "B": "repair", "C": "<span class='lvl3-word' data-word='depression' data-pron='/dɪˈpreʃ.ən/' data-def='n. 憂鬱；不景氣' data-colloc='suffer from depression (罹患憂鬱症); economic depression (經濟大蕭條); deep depression (嚴重的憂鬱); fall into depression (陷入憂鬱)'>depression</span>", "D": "madness"},
-          "answer": "A",
-          "explanation": {
-            "translation": "瑪麗的新車在同一週內拋錨了三次，於是她寫了一封投訴信給製造商。",
-            "technique": "【常識判斷】：新車狂拋錨 (broke down)，消費者寫信給廠商，自然是寫「客訴信 / 抱怨信 (letter of complaint)」。",
-            "analysis": "✅ (A) complaint (抱怨/投訴)：a letter of complaint 是正式的投訴信。\n❌ (B) repair (維修)：不能寫維修信給製造商，是送修。\n❌ (C) depression (憂鬱/蕭條)：不合語意。\n❌ (D) madness (瘋狂)：不會寫瘋狂信。",
-            "roots": "complaint: complain (抱怨，動詞) + -t (名詞字尾) ➔ 抱怨",
-            "collocations": ["write a letter of complaint (寫投訴信)"],
-            "sentences": ["If you are not satisfied with the service, you can write a letter of complaint to the manager. (如果你對服務不滿意，可以寫投訴信給經理。)"],
-            "summary": "動詞 complain 搭配詞：complain about N (抱怨某事)。"
-          }
-        },
-        {
-          "q_num": "15",
-          "q_text": "John's poor math score must have _______ him a lot, because he is not attending the class any more.",
-          "options": {"A": "<span class='lvl3-word' data-word='expelled' data-pron='/ɪkˈspeld/' data-def='v. 驅逐；開除' data-colloc='be expelled from school (被退學); expel a student (開除學生); legally expelled (被合法驅逐)'>expelled</span>", "B": "<span class='lvl3-word' data-word='discouraged' data-pron='/dɪsˈkɝː.ɪdʒd/' data-def='v./adj. 使氣餒；灰心的' data-colloc='feel discouraged (感到氣餒); be easily discouraged (容易受挫); discourage someone from Ving (勸阻某人做...); deeply discouraged (深感氣餒)'>discouraged</span>", "C": "<span class='lvl3-word' data-word='impressed' data-pron='/ɪmˈprest/' data-def='v./adj. 使印象深刻' data-colloc='be impressed by (對...印象深刻); deeply impressed (深受感動的); greatly impressed (極為讚賞的)'>impressed</span>", "D": "finished"},
-          "answer": "B",
-          "explanation": {
-            "translation": "約翰糟糕的數學成績一定讓他感到非常氣餒，因為他再也不去上這堂課了。",
-            "technique": "【因果推理】：因為成績差 (poor score)，導致他不願意再去上課，可見成績使他「感到氣餒/受挫 (discourage)」。",
-            "analysis": "❌ (A) expelled (開除)：成績差不會開除他，且 expelled 不接 him a lot。\n✅ (B) discouraged (使氣餒)：完美解釋他不再去上課的心理狀態。\n❌ (C) impressed (使印象深刻)：通常指正面的驚豔，與 poor score 矛盾。\n❌ (D) finished (完成/結束)：不符合情緒動詞用法。",
-            "roots": "discouraged: dis- (否定) + courage (勇氣) + -ed ➔ 使失去勇氣 ➔ 使氣餒",
-            "collocations": ["must have + p.p. (過去一定...)"],
-            "sentences": ["The repeated failures discouraged him from trying again. (接連的失敗讓他氣餒，不敢再嘗試。)"],
-            "summary": "must have + P.P. 是極常考的「對過去事實的肯定推測」語氣，表示「當時一定...」。"
-          }
-        },
-        {
-          "q_num": "16",
-          "q_text": "The issue of environmental protection has not received much attention until very _______.",
-          "options": {"A": "seriously", "B": "recently", "C": "<span class='lvl3-word' data-word='amazingly' data-pron='/əˈmeɪ.zɪŋ.li/' data-def='adv. 驚人地；令人訝異地' data-colloc='amazingly fast (驚人地快); amazingly well (非常好); amazingly beautiful (美得驚人)'>amazingly</span>", "D": "dangerously"},
-          "answer": "B",
-          "explanation": {
-            "translation": "環境保護的議題直到最近才受到廣泛的重視。",
-            "technique": "【必考句型秒殺】：搭配句型 not... until... (直到...才)，until 後面必須接「時間點」。選項中只有 recently (最近) 是時間副詞。",
-            "analysis": "❌ (A) seriously (嚴肅地)：take it seriously (認真看待)，非時間。\n✅ (B) recently (最近)：until very recently (直到最近) 是標準片語。\n❌ (C) amazingly (驚人地)：不搭配 until。\n❌ (D) dangerously (危險地)：不搭配 until。",
-            "roots": "",
-            "collocations": ["until very recently (直到最近才...)"],
-            "sentences": ["He didn't realize the importance of health until very recently. (他直到最近才體會到健康的重要性。)"],
-            "summary": "【not ... until ...】是高中英文必考的三大句型之一，意思是「直到...才...」。"
-          }
-        },
-        {
-          "q_num": "17",
-          "q_text": "The old man could _______ swallow because his throat was too dry.",
-          "options": {"A": "actually", "B": "strictly", "C": "exactly", "D": "hardly"},
-          "answer": "D",
-          "explanation": {
-            "translation": "那位老人喉嚨太乾了，以至於幾乎無法吞嚥。",
-            "technique": "【語意轉折】：因為喉嚨太乾 (too dry)，所以產生的結果是「無法/幾乎不能」吞嚥。hardly 是帶有否定意味的頻率副詞。",
-            "analysis": "❌ (A) actually (實際上)：語意不合。\n❌ (B) strictly (嚴格地)：strictly speaking (嚴格來說)。\n❌ (C) exactly (精確地)：exactly the same (完全一樣)。\n✅ (D) hardly (幾乎不)：等於 almost not，符合喉嚨痛無法吞嚥的邏輯。",
-            "roots": "",
-            "collocations": ["can hardly + V (幾乎無法做某事)"],
-            "sentences": ["It was so dark that I could hardly see anything. (天太黑了，我幾乎什麼都看不見。)"],
-            "summary": "hardly 是非常強大的陷阱字！它跟 hard (困難/努力) 完全無關，hardly = barely = almost not (幾乎不)，本身自帶否定！"
-          }
-        },
-        {
-          "q_num": "18",
-          "q_text": "We are more than willing to _______ our ties with those countries that are friendly to us.",
-          "options": {"A": "<span class='lvl3-word' data-word='appeal' data-pron='/əˈpiːl/' data-def='v./n. 呼籲；吸引' data-colloc='appeal to the public (呼籲大眾); lose its appeal (失去吸引力); strong appeal (強大的吸引力); make an appeal (提出上訴)'>appeal</span>", "B": "<span class='lvl3-word' data-word='strengthen' data-pron='/ˈstreŋ.θən/' data-def='v. 強化；鞏固' data-colloc='strengthen the relationship (強化關係); strengthen the muscles (強化肌肉); significantly strengthen (顯著增強); strengthen the immune system (強化免疫系統)'>strengthen</span>", "C": "expect", "D": "connect"},
-          "answer": "B",
-          "explanation": {
-            "translation": "我們非常樂意去強化與那些對我們友好國家的關係(連結)。",
-            "technique": "【名詞找動詞】：看到受詞 ties (關係/連結)，動詞最常搭配的是「強化(strengthen)關係」。",
-            "analysis": "❌ (A) appeal (呼籲/吸引)：必須加 to (appeal to sb.)。\n✅ (B) strengthen (強化)：strengthen ties/relationships 是國際關係的標準用詞。\n❌ (C) expect (期望)：期望關係，語意不精準。\n❌ (D) connect (連結)：通常用 connect A with B，此處已是 ties，不會說連結連結。",
-            "roots": "strengthen: strong (強壯的) ➔ strength (力量，名詞) + -en (使成為，動詞字尾) ➔ 使變強 / 強化",
-            "collocations": ["strengthen our ties (強化我們的關係)", "be more than willing to (非常樂意...)"],
-            "sentences": ["The agreement will help to strengthen the economic ties between the two nations. (這項協議將有助於強化兩國間的經濟關係。)"],
-            "summary": "字尾 -en 是一個「魔法動詞棒」，加在名詞或形容詞後會變成動詞。如：length ➔ lengthen (加長)、wide ➔ widen (變寬)。"
-          }
-        },
-        {
-          "q_num": "19",
-          "q_text": "The artist is famous for his genius and great _______.",
-          "options": {"A": "<span class='lvl3-word' data-word='fragrance' data-pron='/ˈfreɪ.ɡrəns/' data-def='n. 香氣；芳香' data-colloc='sweet fragrance (甜美的香氣); subtle fragrance (淡淡的幽香); floral fragrance (花香)'>fragrance</span>", "B": "<span class='lvl3-word' data-word='originality' data-pron='/əˌrɪdʒ.ənˈæl.ə.t̬i/' data-def='n. 原創性；獨創性' data-colloc='lack originality (缺乏原創性); show great originality (展現極大的獨創性); true originality (真正的原創性); creative originality (創意的獨創性)'>originality</span>", "C": "<span class='lvl3-word' data-word='sculptor' data-pron='/ˈskʌlp.tɚ/' data-def='n. 雕塑家' data-colloc='famous sculptor (著名的雕塑家); talented sculptor (才華洋溢的雕塑家)'>sculptor</span>", "D": "<span class='lvl3-word' data-word='therapy' data-pron='/ˈθer.ə.pi/' data-def='n. 治療；療法' data-colloc='physical therapy (物理治療); group therapy (團體治療); undergo therapy (接受治療); cognitive behavioral therapy (認知行為療法)'>therapy</span>"},
-          "answer": "B",
-          "explanation": {
-            "translation": "這位藝術家因為他的天賦與極高的原創性而聞名。",
-            "technique": "【詞性對等法】：對等連接詞 and 連接兩個性質相似的詞。前面是 genius (天賦/才華)，後面要接藝術家必備的另一種特質。",
-            "analysis": "❌ (A) fragrance (香氣)：藝術家通常不以香氣聞名。\n✅ (B) originality (原創性/獨創性)：與 genius 完美對稱，都是藝術家極高的讚譽。\n❌ (C) sculptor (雕塑家)：藝術家本身就是人，不會因「雕塑家」而聞名。\n❌ (D) therapy (治療)：與藝術無關。",
-            "roots": "originality: origin (起源) + -al (形容詞) + -ity (名詞) ➔ 源自自己的能力 ➔ 原創性",
-            "collocations": ["be famous for... (因...而聞名)", "great originality (極高的原創性)"],
-            "sentences": ["The design is praised for its great originality and beauty. (這項設計因其極高的原創性與美感而備受讚譽。)"],
-            "summary": "be famous for (因為某個特色而聞名)；若要說「以什麼身分聞名」，要用 be famous as (例如: famous as a singer)。"
-          }
-        },
-        {
-          "q_num": "20",
-          "q_text": "Although some things are _______, they nevertheless exist.",
-          "options": {"A": "important", "B": "<span class='lvl3-word' data-word='intelligible' data-pron='/ɪnˈtel.ə.dʒə.bəl/' data-def='adj. 可理解的；明瞭的' data-colloc='intelligible explanation (可理解的解釋); highly intelligible (非常清楚的); barely intelligible (勉強聽得懂的)'>intelligible</span>", "C": "<span class='lvl3-word' data-word='invisible' data-pron='/ɪnˈvɪz.ə.bəl/' data-def='adj. 看不見的；無形的' data-colloc='invisible to the naked eye (肉眼看不見的); invisible barrier (無形的障礙); almost invisible (幾乎看不見的); become invisible (變得隱形)'>invisible</span>", "D": "interesting"},
+          "q_num": "1",
+          "q_text": "Because Mr. Chang has been busy these days, it's _______ whether he will come to the party.",
+          "options": {"A": "unlikely", "B": "impossible", "C": "doubtful", "D": "<span class='lvl3-word' data-word='inevitable' data-pron='/ɪnˈev.ə.t̬ə.bəl/' data-def='adj. 無可避免的；必然發生的' data-colloc='inevitable result (必然的結果); inevitable consequence (不可避免的後果); an inevitable outcome (必然的結局); accept the inevitable (接受不可避免的事實); it is inevitable that (…是不可避免的)'>inevitable</span>"},
           "answer": "C",
           "explanation": {
-            "translation": "雖然有些事物是看不見的，但它們依然存在。",
-            "technique": "【反義對比法】：轉折連接詞 Although 帶出對比。「存在 (exist)」的相反概念是「看不見 / 摸不到」。",
-            "analysis": "❌ (A) important (重要的)：與存在無直接對比。\n❌ (B) intelligible (可理解的)：與存在不構成雖然...但是的邏輯。\n✅ (C) invisible (看不見的)：完美對比「雖然看不見，但依然存在(如空氣、愛)」。\n❌ (D) interesting (有趣的)：語意不符。",
-            "roots": "invisible: in- (否定) + vis (看) + -ible (可...的) ➔ 不可看見的 ➔ 無形的",
-            "collocations": ["invisible to the naked eye (肉眼看不見的)"],
-            "sentences": ["The germs are invisible to the naked eye, but they exist everywhere. (細菌是肉眼看不見的，但它們無所不在。)"],
-            "summary": "字根 vis/vid 是「看」的意思。同源必背字：vision (視力/願景)、visible (看得見的)、video (影片)。"
+            "translation": "因為張先生最近很忙，所以他是否會來參加派對還很令人懷疑。",
+            "technique": "【語氣判斷法】：看到空格後面的 whether (是否)，就知道這件事充滿「不確定性」。選項中只有 doubtful (懷疑的) 帶有不確定的語氣。",
+            "analysis": "❌ (A) unlikely (不太可能的)：通常接 to V 或 that 子句，文法上不會接 whether。\n❌ (B) impossible (不可能的)：語氣太絕對，與 whether (是否) 的不確定性矛盾。\n✅ (C) doubtful (令人懷疑的)：完美契合 whether 表達的未知狀態。\n❌ (D) inevitable (無可避免的)：語意完全相反。",
+            "roots": "inevitable: in- (否定) + evit (避免) + -able (可以...的) ➔ 無可避免的",
+            "collocations": ["it is doubtful whether / that... (令人懷疑是否...)"],
+            "sentences": ["It is highly doubtful whether the project will be finished on time. (專案能否準時完成令人高度懷疑。)"],
+            "summary": "【It is doubtful whether/if + S + V】是超級常考句型，表示對某事的發生抱持懷疑態度。"
+          }
+        },
+        {
+          "q_num": "2",
+          "q_text": "I'm quite _______ to the weather in Taiwan, so I think I'll stay here for another year.",
+          "options": {"A": "<span class='lvl3-word' data-word='devote' data-pron='/dɪˈvoʊt/' data-def='v. 奉獻；致力於' data-colloc='devote oneself to (致力於); devote time to (把時間花在); fully devoted (完全奉獻的)'>devoted</span>", "B": "satisfied", "C": "pleased", "D": "<span class='lvl3-word' data-word='accustomed' data-pron='/əˈkʌs.təmd/' data-def='adj. 習慣的；適應了的' data-colloc='become accustomed to (漸漸習慣於); fully accustomed (完全習慣); grow accustomed to (逐漸適應)'>accustomed</span>"},
+          "answer": "D",
+          "explanation": {
+            "translation": "我相當習慣台灣的天氣，所以我想我會在這裡多待一年。",
+            "technique": "【介系詞搭配法】：觀察空格後的介系詞 to，搭配後半句「所以想多待一年」，推斷出是對當地的天氣「習慣了」。",
+            "analysis": "❌ (A) devoted to (致力於/奉獻於)：人不可能「奉獻給天氣」，邏輯不通。\n❌ (B) satisfied (滿意的)：情緒形容詞，介系詞需搭配 with (satisfied with)。\n❌ (C) pleased (高興的)：介系詞同樣需搭配 with (pleased with)。\n✅ (D) accustomed to (習慣於...)：符合文法與語境。",
+            "roots": "accustomed: ac- (朝向) + custom (習慣) + -ed (形容詞) ➔ 習慣於...",
+            "collocations": ["be / get accustomed to + N/Ving (漸漸習慣於...)"],
+            "sentences": ["She quickly became accustomed to his strange sleeping schedule. (她很快就習慣了他的睡眠作息。)"],
+            "summary": "【be accustomed to + V-ing/N】與【be used to + V-ing/N】為同義詞，兩者的 to 都是「介系詞」，後方千萬不能接原形動詞！"
+          }
+        },
+        {
+          "q_num": "3",
+          "q_text": "Mr. Smith won't <span class='lvl3-word' data-word='tolerate' data-pron='/ˈtɑː.lə.reɪt/' data-def='v. 容忍；忍受' data-colloc='tolerate the pain (忍受痛苦); tolerate differences (包容差異); refuse to tolerate (拒絕容忍); cannot tolerate (無法忍受)'>tolerate</span> talking during class; he says it _______ others.",
+          "options": {"A": "<span class='lvl3-word' data-word='disturb' data-pron='/dɪˈstɝːb/' data-def='v. 打擾；干擾' data-colloc='disturb the peace (擾亂安寧); Do Not Disturb (請勿打擾); severely disturb (嚴重干擾)'>disturbs</span>", "B": "<span class='lvl3-word' data-word='deserve' data-pron='/dɪˈzɝːv/' data-def='v. 值得；應得' data-colloc='deserve attention (值得注意); well deserved (實至名歸的); deserve a second chance (值得第二次機會)'>deserves</span>", "C": "destroys", "D": "dismisses"},
+          "answer": "A",
+          "explanation": {
+            "translation": "Smith 先生不容許上課講話；他說這會打擾到其他人。",
+            "technique": "【語意邏輯推演】：上課講話 (talking during class) 對別人會造成什麼負面影響？自然是「打擾 (disturb)」。",
+            "analysis": "✅ (A) disturb (打擾)：完美符合上課吵鬧造成的影響。\n❌ (B) deserve (應得)：指值得獎賞或懲罰，放此處語意不通。\n❌ (C) destroy (摧毀)：語氣過於強烈，講話不會把別人「摧毀」。\n❌ (D) dismiss (解散/解僱)：下課叫做 class dismissed，但講話不會解散別人。",
+            "roots": "disturb: dis- (完全) + turb (攪亂) ➔ 完全攪亂 ➔ 打擾",
+            "collocations": ["do not disturb (請勿打擾)"],
+            "sentences": ["He worked hard and deserves a promotion. (他工作努力，理應獲得升職。)"],
+            "summary": "必背單字 tolerate (容忍) 後面喜歡接動名詞 (V-ing)。例如：I won't tolerate your being late. (我無法容忍你遲到。)"
+          }
+        },
+        {
+          "q_num": "4",
+          "q_text": "On the basis of the <span class='lvl3-word' data-word='clue' data-pron='/kluː/' data-def='n. 線索；提示' data-colloc='give a clue (給提示); vital clue (重要線索); not have a clue (毫無頭緒); search for clues (尋找線索)'>clues</span>, can you <span class='lvl3-word' data-word='predict' data-pron='/prɪˈdɪkt/' data-def='v. 預測；預言' data-colloc='predict the future (預測未來); hard to predict (難以預測); accurately predict (準確預測); predict the outcome (預測結果)'>predict</span> the _______ of the story?",
+          "options": {"A": "<span class='lvl3-word' data-word='outcome' data-pron='/ˈaʊt.kʌm/' data-def='n. 結果；結局' data-colloc='final outcome (最終結果); unexpected outcome (意外的結果); likely outcome (可能的結果); successful outcome (成功的結果)'>outcome</span>", "B": "<span class='lvl3-word' data-word='headline' data-pron='/ˈhed.laɪn/' data-def='n. 頭條新聞' data-colloc='hit the headlines (登上頭條); front-page headline (頭版頭條)'>headline</span>", "C": "cause", "D": "performance"},
+          "answer": "A",
+          "explanation": {
+            "translation": "根據這些線索，你能預測故事的結果(結局)嗎？",
+            "technique": "【搭配詞直覺】：能針對「故事 (story)」去「預測 (predict)」的，通常是「結局或結果 (outcome)」。",
+            "analysis": "✅ (A) outcome (結果/結局)：與 predict 及 story 完美搭配。\n❌ (B) headline (新聞標題)：故事沒有新聞標題。\n❌ (C) cause (原因)：通常是根據結果去推導原因，而不是根據線索預測原因。\n❌ (D) performance (表現/表演)：與故事推斷無關。",
+            "roots": "predict: pre- (在...之前) + dict (說) ➔ 預言/預測",
+            "collocations": ["predict the outcome (預測結果)"],
+            "sentences": ["It is difficult to predict the final outcome of the election. (很難預測選舉的最終結果。)"],
+            "summary": "【字首延伸】：dict 是「說」的字根，延伸字必背：dictator (獨裁者)、dictionary (字典)、addict (上癮者，一直對自己說要繼續)。"
+          }
+        },
+        {
+          "q_num": "5",
+          "q_text": "A good reader can often figure out what new words mean by using _______.",
+          "options": {"A": "contact", "B": "<span class='lvl3-word' data-word='context' data-pron='/ˈkɑːn.tekst/' data-def='n. 上下文；語境' data-colloc='out of context (斷章取義); historical context (歷史背景); social context (社會背景)'>context</span>", "C": "<span class='lvl3-word' data-word='content' data-pron='/ˈkɑːn.tent/' data-def='n. 內容；目錄' data-colloc='table of contents (目錄); rich in content (內容豐富); digital content (數位內容)'>content</span>", "D": "contest"},
+          "answer": "B",
+          "explanation": {
+            "translation": "一個好的閱讀者通常能透過使用上下文來推斷新單字的意思。",
+            "technique": "【形近字辨析】：推斷單字意思 (figure out what new words mean) 唯一的方法就是看「上下文 (context)」。這題考的是 con- 開頭的形近字。",
+            "analysis": "❌ (A) contact (接觸/聯絡)：keep in contact (保持聯絡)。\n✅ (B) context (上下文/語境)：閱讀測驗必備技巧，完美符合句意。\n❌ (C) content (內容/滿足的)：指書本的目錄或內文，但無法用來推敲單字。\n❌ (D) contest (比賽)：如 speech contest (演講比賽)。",
+            "roots": "context: con- (共同) + text (編織) ➔ 共同編織成的文章 ➔ 上下文",
+            "collocations": ["out of context (脫離上下文/斷章取義)"],
+            "sentences": ["You shouldn't quote my words out of context. (你不該斷章取義地引用我的話。)"],
+            "summary": "請把 figure out 牢牢記住！它等於 understand / comprehend (推斷出/理解)。"
+          }
+        },
+        {
+          "q_num": "6",
+          "q_text": "I wonder why she _______ turned up the radio when I was studying.",
+          "options": {"A": "<span class='lvl3-word' data-word='sympathetically' data-pron='/ˌsɪm.pəˈθet̬.ɪ.kəl.i/' data-def='adv. 同情地' data-colloc='smile sympathetically (同情地微笑); listen sympathetically (同情地傾聽); nod sympathetically (同情地點頭)'>sympathetically</span>", "B": "<span class='lvl3-word' data-word='primarily' data-pron='/praɪˈmer.əl.i/' data-def='adv. 主要地' data-colloc='primarily responsible for (主要負責...); primarily composed of (主要由...組成)'>primarily</span>", "C": "<span class='lvl3-word' data-word='deliberately' data-pron='/dɪˈlɪb.ɚ.ət.li/' data-def='adv. 故意地；謹慎地' data-colloc='deliberately ignore (故意忽略); deliberately misleading (蓄意誤導); deliberately slow (刻意放慢)'>deliberately</span>", "D": "<span class='lvl3-word' data-word='thoroughly' data-pron='/ˈθɝː.ə.li/' data-def='adv. 徹底地；完全地' data-colloc='thoroughly check (徹底檢查); thoroughly enjoy (非常享受); thoroughly understand (徹底了解); thoroughly clean (徹底清潔)'>thoroughly</span>"},
+          "answer": "C",
+          "explanation": {
+            "translation": "我想知道為什麼當我在讀書時，她要故意把收音機開大聲。",
+            "technique": "【情境推導】：「我在讀書」，別人卻「把收音機開大聲 (turn up)」，這是一種帶有惡意、故意的干擾行為。",
+            "analysis": "❌ (A) sympathetically (同情地)：不可能同情地開大聲吵人。\n❌ (B) primarily (主要地)：與語意不符。\n✅ (C) deliberately (故意地)：等於 on purpose，符合故意吵人的情境。\n❌ (D) thoroughly (徹底地)：修飾打掃或檢查，不修飾 turn up。",
+            "roots": "deliberately: de- (加強) + liber (秤/衡量) + -ate (動詞) ➔ 仔細衡量過才做 ➔ 故意地",
+            "collocations": ["deliberately ignore (故意忽略)"],
+            "sentences": ["The house was thoroughly cleaned before the guests arrived. (客房在客人到達前被徹底打掃過了。)"],
+            "summary": "「故意地」三兄弟必背：deliberately = intentionally = on purpose。"
+          }
+        },
+        {
+          "q_num": "7",
+          "q_text": "It suddenly _______ me that I had to get to the airport to meet a friend.",
+          "options": {"A": "took", "B": "<span class='lvl3-word' data-word='struck' data-pron='/strʌk/' data-def='v. 突然想起 (strike的過去式)' data-colloc='it struck me that (我突然想到); strike a balance (取得平衡); be struck by (被...打動); strike a match (劃火柴)'>struck</span>", "C": "<span class='lvl3-word' data-word='occur' data-pron='/əˈkɝː/' data-def='v. 發生；突然想起' data-colloc='occur to someone (某人突然想到); naturally occur (自然發生); frequently occur (頻繁發生)'>occurred</span>", "D": "surprised"},
+          "answer": "B",
+          "explanation": {
+            "translation": "我突然想起我必須去機場接朋友。",
+            "technique": "【句型秒殺法】：學測超級常考句型辨析！表示「突然想起」有兩種說法，空格後「直接接 me」的是 strike；如果選 occur，後面必須加 to。",
+            "analysis": "❌ (A) took：It took me (花費我...)，後面需接時間或金錢，不接 that 子句。\n✅ (B) struck：strike 的過去式，It strikes sb. that... (某人突然想起)。\n❌ (C) occurred：若要選此項，必須寫成 It occurred **to** me that...，因為 occur 是不及物動詞。\n❌ (D) surprised (使驚訝)：語意不對，忘記接機突然想起來並不是「驚訝」。",
+            "roots": "strike (打擊) ➔ 腦袋像被雷打到一樣 ➔ 突然想起",
+            "collocations": ["It strikes/hit someone that... (某人突然想到...)"],
+            "sentences": ["It never occurred to him to ask for help. (他從未想過要求救。)"],
+            "summary": "【某人突然想到某事】的三大神句：\n1. It strikes / hits someone that...\n2. It occurs to someone that...\n3. Someone suddenly remembers that..."
+          }
+        },
+        {
+          "q_num": "8",
+          "q_text": "Being a very careful person, he is quite _______ in giving his comments.",
+          "options": {"A": "<span class='lvl3-word' data-word='reserved' data-pron='/rɪˈzɝːvd/' data-def='adj. 拘謹的；保留的' data-colloc='reserved personality (拘謹的個性); highly reserved (非常保留的); naturally reserved (天生拘謹的); a reserved seat (保留座)'>reserved</span>", "B": "<span class='lvl3-word' data-word='melancholy' data-pron='/ˈmel.ən.kɑː.li/' data-def='adj./n. 憂鬱的；悲傷' data-colloc='melancholy mood (憂鬱的心情); a melancholy song (悲傷的歌); feel melancholy (感到憂鬱)'>melancholy</span>", "C": "<span class='lvl3-word' data-word='complicated' data-pron='/ˈkɑːm.plə.keɪ.t̬ɪd/' data-def='adj. 複雜的' data-colloc='highly complicated (非常複雜的); complicated process (複雜的過程); complicated issue (複雜的議題)'>complicated</span>", "D": "<span class='lvl3-word' data-word='generous' data-pron='/ˈdʒen.ɚ.əs/' data-def='adj. 慷慨的' data-colloc='generous donation (慷慨的捐款); be generous with (對...很慷慨); generous portion (大份量)'>generous</span>"},
+          "answer": "A",
+          "explanation": {
+            "translation": "身為一個非常謹慎的人，他在給予評論時相當保留(謹言慎行)。",
+            "technique": "【分詞構句找線索】：前半句的 careful person (謹慎的人) 就是唯一的線索。謹慎的人講話自然會比較「保留/拘謹 (reserved)」。",
+            "analysis": "✅ (A) reserved (保留的/寡言的)：符合謹慎之人的說話特質。\n❌ (B) melancholy (憂鬱的)：謹慎不代表憂鬱。\n❌ (C) complicated (複雜的)：用來形容事情，少形容人的說話態度。\n❌ (D) generous (慷慨的)：慷慨指給予金錢或時間，不搭配 comments (評論)。",
+            "roots": "reserved: re- (向後) + serve (保持) ➔ 把話留在後面不說 ➔ 謹言慎行",
+            "collocations": ["give comments (給予評論/意見)"],
+            "sentences": ["English people are often thought of as being quite reserved. (英國人常被認為相當拘謹。)"],
+            "summary": "reserve 當動詞是「預約/保留」的意思，因此加上 ed 變形容詞，引申為人的個性「內向的、有所保留的」。"
+          }
+        },
+        {
+          "q_num": "9",
+          "q_text": "Most viewers agreed that the movie _______ was not as good as the book.",
+          "options": {"A": "<span class='lvl3-word' data-word='routine' data-pron='/ruːˈtiːn/' data-def='n./adj. 例行公事；日常的' data-colloc='daily routine (日常作息); break the routine (打破常規); routine check (例行檢查)'>routine</span>", "B": "<span class='lvl3-word' data-word='version' data-pron='/ˈvɝː.ʒən/' data-def='n. 版本' data-colloc='movie version (電影版); original version (原版); updated version (更新版); final version (最終版本)'>version</span>", "C": "copy", "D": "issue"},
+          "answer": "B",
+          "explanation": {
+            "translation": "大多數觀眾同意這部電影版本不如原著小說好看。",
+            "technique": "【生活搭配詞】：比較「電影 (movie)」和「小說(the book)」，我們會說 movie version (電影改編版本)。",
+            "analysis": "❌ (A) routine (例行公事)：無 movie routine 這種說法。\n✅ (B) version (版本)：專指軟體、書籍、電影改編的「版本」。\n❌ (C) copy (複製品/副本)：書的一本叫 a copy，但電影改編不能叫 copy。\n❌ (D) issue (議題/期號)：雜誌的一期叫 issue，不適用於電影。",
+            "roots": "version: vers (轉) + -ion (名詞) ➔ 從原著轉換出來的東西 ➔ 改編版本",
+            "collocations": ["a controversial issue (具爭議的議題)"],
+            "sentences": ["I prefer the original version of this song. (我比較喜歡這首歌的原唱版本。)"],
+            "summary": "as + 形容詞原級 + as ... 是一個必考比較句型，意為「和...一樣好/不好」。"
+          }
+        },
+        {
+          "q_num": "10",
+          "q_text": "The native greeted the travelers in a _______ language which was strange to them.",
+          "options": {"A": "<span class='lvl3-word' data-word='contrary' data-pron='/ˈkɑːn.tre.ri/' data-def='n./adj. 相反(的)' data-colloc='on the contrary (相反地); contrary to expectations (與預期相反); exact contrary (完全相反)'>contrary</span>", "B": "relative", "C": "<span class='lvl3-word' data-word='peculiar' data-pron='/pɪˈkjuːl.jɚ/' data-def='adj. 奇怪的；特有的' data-colloc='peculiar behavior (奇怪的行為); peculiar to (某地所特有的); feel peculiar (感到不舒服/奇怪); a peculiar smell (奇怪的氣味)'>peculiar</span>", "D": "spiral"},
+          "answer": "C",
+          "explanation": {
+            "translation": "當地人用一種對旅客來說很陌生的奇怪語言向他們打招呼。",
+            "technique": "【同義詞對應法】：後面的關代子句 which was strange to them 提供了直接線索。strange (奇怪的) 的高階同義詞就是 peculiar。",
+            "analysis": "❌ (A) contrary (相反的)：常接 to (contrary to)。\n❌ (B) relative (相對的/親戚)：無法修飾 strange 的語言。\n✅ (C) peculiar (奇怪的/特有的)：與 strange 同義，完美契合語境。\n❌ (D) spiral (螺旋的)：語言不會是螺旋的。",
+            "roots": "peculiar: pecul (私有財產) + -iar (形容詞) ➔ 只有某地區自己有的 ➔ 特有的/奇怪的",
+            "collocations": ["peculiar to... (...所特有的)"],
+            "sentences": ["This type of building is peculiar to the south of the country. (這種建築是該國南部所特有的。)"],
+            "summary": "當作「特有的」解釋時，必背片語：be peculiar to (某地所獨有的)。"
           }
         }
+      ]
+    },
+    {
+      "group_id": "cloze_11_20",
+      "type": "cloze",
+      "tags": ["綜合測驗"],
+      "passage": "The umbrella is not a new <span class='lvl3-word' data-word='invention' data-pron='/ɪnˈven.ʃən/' data-def='n. 發明；創造' data-colloc='a great invention (偉大的發明); modern invention (現代發明); necessity is the mother of invention (需要為發明之母)'>invention</span>. The Chinese [BLANK_11] umbrellas in the eleventh century B.C. [BLANK_12] China they traveled to India, Persia, and Egypt. But in Greece and Rome, men [BLANK_13] use them. They believed umbrellas were [BLANK_14] for women.<br><br>When the Spanish <span class='lvl3-word' data-word='explorer' data-pron='/ɪkˈsplɔːr.ɚ/' data-def='n. 探險家' data-colloc='early explorer (早期探險家); space explorer (太空探險家); polar explorer (極地探險家)'>explorers</span> went to Mexico, they saw the Aztec kings [BLANK_15] umbrellas. English explorers found out that Indian princes also carried umbrellas on the east coast of North America. It [BLANK_16] that people in different parts of the world invented umbrellas at different times.<br><br>England was probably the first country in Europe [BLANK_17] ordinary people used umbrellas [BLANK_18] the rain. England has a rainy <span class='lvl3-word' data-word='climate' data-pron='/ˈklaɪ.mət/' data-def='n. 氣候' data-colloc='climate change (氣候變遷); harsh climate (惡劣的氣候); tropical climate (熱帶氣候)'>climate</span>, and umbrellas are very useful there.<br><br>The umbrella is now a very ordinary [BLANK_19]. Everybody uses it today. It keeps the rain and the sun off people. Some umbrellas fold up, [BLANK_20] it is easy to carry them.",
+      "passage_translation": "雨傘並不是一項新發明。中國人在西元前十一世紀就已經有了雨傘。從中國，雨傘傳到了印度、波斯和埃及。但是在希臘和羅馬，男人是不會使用雨傘的。他們認為雨傘只是給女人用的。<br><br>當西班牙探險家前往墨西哥時，他們看到阿茲特克的國王正在使用雨傘。英國探險家也發現在北美洲東岸的印第安王子也會攜帶雨傘。似乎世界各地的人們在不同的時間都發明了雨傘。<br><br>英國可能是歐洲第一個由普通百姓撐傘來擋雨的國家。英國的氣候多雨，所以雨傘在那裡非常實用。<br><br>雨傘現在是一件非常普遍的物品。今天每個人都在使用它。它可以為人們擋雨遮陽。有些雨傘可以折疊，所以很容易攜帶。",
+      "questions": [
+        { "q_num": "11", "options": {"A": "have had", "B": "had", "C": "have", "D": "having"}, "answer": "B", "explanation": { "technique": "【時態判斷】：看到 in the eleventh century B.C. 這種「明確的過去時間」，動詞必須秒選「過去簡單式」。", "analysis": "❌ (A) have had：現在完成式，需搭配 for/since 一段時間。\n✅ (B) had：過去簡單式，精準表達過去的事實。\n❌ (C) have：現在簡單式，時態不對。\n❌ (D) having：分詞不能當主要動詞。", "summary": "時間副詞決定時態！只要看到 in + 過去時間 (如 in 1990)，動詞 100% 選過去簡單式。" } },
+        { "q_num": "12", "options": {"A": "From", "B": "In", "C": "For", "D": "Around"}, "answer": "A", "explanation": { "technique": "【介系詞邏輯】：觀察後面的動詞 traveled to India (傳播/旅行到印度)，得知有一個出發的起點，故選 From。", "analysis": "✅ (A) From：表示起點，「從中國出發」。\n❌ (B) In：表示在中國內，無法對應後面的 to。\n❌ (C) For：表示為了...。\n❌ (D) Around：在...周圍。", "summary": "【From A to B】從A到B，是表達事物傳播、位移的最基本介系詞搭配。" } },
+        { "q_num": "13", "options": {"A": "would", "B": "could", "C": "wouldn't", "D": "won't"}, "answer": "C", "explanation": { "technique": "【助動詞語氣】：後一句說「他們認為雨傘是給女人用的」，代表這是一種刻板印象，因此男人是「絕對不肯/不會」用傘的。且全文在講歷史(過去式)，所以選 wouldn't。", "analysis": "❌ (A) would：與邏輯相反。\n❌ (B) could：表能力，他們不是不能撐傘，是不肯。\n✅ (C) wouldn't：will not 的過去式，表示過去的「強烈拒絕」或「不肯」。\n❌ (D) won't：時態錯誤。", "summary": "助動詞 would 除了表示「將會」，在否定時 wouldn't 常帶有「死都不肯 / 拒絕」的強烈語氣。" } },
+        { "q_num": "14", "options": {"A": "likely", "B": "only", "C": "nearly", "D": "possibly"}, "answer": "B", "explanation": { "technique": "【語意連貫】：配合上文男人不用傘，代表在當時的觀念裡，雨傘是「唯一 (only)」女性專屬的物品。", "analysis": "✅ (B) only：僅僅、只有 (only for women 專屬於女性)。\n❌ (A/C/D)：likely (可能)、nearly (幾乎)、possibly (可能)，皆無法表達排他性的強烈語氣。", "summary": "only 常用來強調唯一性，only for + 族群 也是極為常見的搭配。" } },
+        { "q_num": "15", "options": {"A": "used", "B": "to use", "C": "used to", "D": "using"}, "answer": "D", "explanation": { "technique": "【感官動詞必考句型】：看到 saw，就要想到「看見某人正在做某事」的鐵則：saw + O + Ving (強調正在進行) 或 原形V (看見事實)。", "analysis": "❌ (A) used：過去式，不合感官動詞文法。\n❌ (B) to use：感官動詞後方絕對不能接 to V。\n✅ (D) using：符合感官動詞 + O + Ving 的文法，表達「看到國王『正在』撐傘」。", "summary": "三大感官動詞 see, hear, watch 必背：後方受詞補語只能接 原形V 或 V-ing。" } },
+        { "q_num": "16", "options": {"A": "seems", "B": "likes", "C": "looks", "D": "maybe"}, "answer": "A", "explanation": { "technique": "【固定句型】：看到 It _______ that... 的句型，第一個要反射性想到 It seems that... (似乎/看起來...) 的虛主詞句型。", "analysis": "✅ (A) seems：It seems that S+V 是鐵則句型。\n❌ (C) looks：look 通常接 like (It looks like...)。\n❌ (D) maybe：為副詞，不能放在動詞位置。", "summary": "寫作超級好用的句型：It seems that + 子句 (似乎...)，可讓語氣更客觀。" } },
+        { "q_num": "17", "options": {"A": "what", "B": "when", "C": "which", "D": "where"}, "answer": "D", "explanation": { "technique": "【關代與關副判斷】：先行詞為 country (地方)，且後面的子句結構非常完整 (ordinary people used umbrellas 沒有缺主詞或受詞)，因此必須用「關係副詞 where (= in which)」。", "analysis": "✅ (D) where：修飾地方，且引導完整子句。\n❌ (C) which：若用 which，後方子句必須不完整 (缺主詞或受詞)。\n❌ (A) what：what 前面不能有先行詞。", "summary": "判斷關代 which 和關副 where 的不二法門：看後方子句是否完整！完整選 where，不完整選 which。" } },
+        { "q_num": "18", "options": {"A": "below", "B": "of", "C": "against", "D": "from"}, "answer": "C", "explanation": { "technique": "【介系詞語意】：普通人使用雨傘來「抵擋」雨水。介系詞 against 有「防禦、對抗」的意思。", "analysis": "✅ (C) against：use umbrellas against the rain (撐傘禦雨/抵擋雨水)。\n❌ (A) below：在...之下。\n❌ (D) from：若用 from，通常搭配 protect (protect us from the rain)。", "summary": "against 是一個充滿戰鬥氣息的介系詞，表示「對抗、防禦」，例如 fight against (對抗)。" } },
+        { "q_num": "19", "options": {"A": "subject", "B": "object", "C": "matter", "D": "element"}, "answer": "B", "explanation": { "technique": "【單字辨析】：雨傘是一個具體的實體「物品」，選項中只有 object 適合指稱實體物。", "analysis": "❌ (A) subject：主題/科目/主詞。\n✅ (B) object：物體/物品。\n❌ (C) matter：物質/事件。\n❌ (D) element：元素。", "summary": "object 在高中英文有兩大意思：1. 物品 (實體)；2. 反對 (動詞, object to + N)。" } },
+        { "q_num": "20", "options": {"A": "so", "B": "for", "C": "unless", "D": "but"}, "answer": "A", "explanation": { "technique": "【連接詞邏輯】：前句為「原因」(可折疊)，後句為「結果」(容易攜帶)，表因果關係的對等連接詞秒選 so。", "analysis": "✅ (A) so：所以，表達順暢的因果邏輯。\n❌ (B) for：當連接詞表「因為」，放這裡邏輯顛倒。\n❌ (D) but：表語氣轉折。", "summary": "不要小看 so (所以) 和 for (因為) 這兩個對等連接詞，在克漏字中它們是判斷邏輯方向的明燈。" } }
       ]
     },
     {
       "group_id": "cloze_21_30",
       "type": "cloze",
       "tags": ["綜合測驗"],
-      "passage": "America <span class='lvl3-word' data-word='encourage' data-pron='/ɪnˈkɝː.ɪdʒ/' data-def='v. 鼓勵' data-colloc='encourage sb to V (鼓勵某人做); strongly encourage (強烈鼓勵); encourage learning (促進學習)'>encourages</span> its young people to drink. [BLANK_21], our society makes drinking a part of every <span class='lvl3-word' data-word='celebration' data-pron='/ˌsel.əˈbreɪ.ʃən/' data-def='n. 慶祝；慶典' data-colloc='wedding celebration (婚禮慶祝); national celebration (國慶); in celebration of (以慶祝...)'>celebration</span>. Our personal celebrations, [BLANK_22] weddings, <span class='lvl3-word' data-word='promotion' data-pron='/prəˈmoʊ.ʃən/' data-def='n. 晉升；促銷' data-colloc='get a promotion (獲得升職); sales promotion (促銷活動); job promotion (職位晉升)'>promotions</span>, graduations, and <span class='lvl3-word' data-word='anniversary' data-pron='/ˌæn.əˈvɝː.sɚ.i/' data-def='n. 週年紀念日' data-colloc='wedding anniversary (結婚週年); 10th anniversary (十週年); celebrate an anniversary (慶祝週年)'>anniversaries</span>, are [BLANK_23] linked with drinking. [BLANK_24] children can attend any family affair without seeing the adults enjoying their <span class='lvl3-word' data-word='liquor' data-pron='/ˈlɪk.ɚ/' data-def='n. 烈酒；酒類' data-colloc='hard liquor (烈酒); liquor store (賣酒的商店); consume liquor (飲用烈酒)'>liquor</span>. Drinking is part of our national celebrations as well. The Fourth of July means beer and New Year's Eve is an entire night <span class='lvl3-word' data-word='dedicate' data-pron='/ˈded.ə.keɪt/' data-def='v. 奉獻；致力於' data-colloc='dedicate to (致力於); dedicate one\\'s life to (將一生奉獻給); fully dedicated (完全奉獻的)'>dedicated</span> to the <span class='lvl3-word' data-word='proposition' data-pron='/ˌprɑː.pəˈzɪʃ.ən/' data-def='n. 主張；提議' data-colloc='business proposition (商業提案); attractive proposition (具吸引力的提議); reject a proposition (拒絕提議)'>proposition</span> that everyone must get [BLANK_25]. Secondly, the shows young people watch on television encourage them to drink. On [BLANK_26] every soap opera, the characters drink <span class='lvl3-word' data-word='casually' data-pron='/ˈkæʒ.u.ə.li/' data-def='adv. 隨意地；非正式地' data-colloc='dress casually (穿著休閒); casually mention (隨口提到); chat casually (閒聊)'>casually</span> and often. The rock videos young people watch over and over again <span class='lvl3-word' data-word='feature' data-pron='/ˈfiː.tʃɚ/' data-def='v./n. 以...為特色；特徵' data-colloc='feature prominently (顯著地以...為特色); main feature (主要特色); safety feature (安全功能)'>feature</span> <span class='lvl3-word' data-word='alcohol' data-pron='/ˈæl.kə.hɑːl/' data-def='n. 酒精' data-colloc='consume alcohol (飲酒); alcohol abuse (酒精濫用); blood alcohol level (血液酒精濃度)'>alcohol</span>, too. [BLANK_27] on the videos sit in bars, nightclubs, and roadhouses. Drinking, the message goes, is cool. The strongest encouragement to drink that young people receive, [BLANK_28], comes from <span class='lvl3-word' data-word='advertiser' data-pron='/ˈæd.vɚ.taɪ.zɚ/' data-def='n. 廣告商' data-colloc='major advertiser (主要廣告商); attract advertisers (吸引廣告商)'>advertisers</span>. Beer companies often <span class='lvl3-word' data-word='sponsor' data-pron='/ˈspɑːn.sɚ/' data-def='v./n. 贊助；贊助商' data-colloc='corporate sponsor (企業贊助商); officially sponsor (官方贊助); sponsor an event (贊助活動)'>sponsor</span> the sports events young people watch. In addition, advertisements for liquor, on TV and in print, show situations that are [BLANK_29] to the young. People <span class='lvl3-word' data-word='hoist' data-pron='/hɔɪst/' data-def='v. 舉起；升起' data-colloc='hoist a flag (升旗); hoist a glass (舉杯); slowly hoist (緩慢升起)'>hoist</span> their glasses [BLANK_30] they are sitting around ski lodges, sailing, dancing, or enjoying a football game. We may say we don't want our children to drink, but our messages say just the <span class='lvl3-word' data-word='opposite' data-pron='/ˈɑː.pə.zɪt/' data-def='n./adj. 相反(的)' data-colloc='exact opposite (完全相反); go the opposite direction (走反方向); do the opposite (做相反的事)'>opposite</span>.",
-      "passage_translation": "美國鼓勵它的年輕人喝酒。首先，我們的社會將喝酒視為每個慶祝活動的一部分。我們的私人慶祝活動，例如婚禮、升職、畢業和結婚紀念日，都與喝酒緊密相連。幾乎沒有孩子參加任何家庭聚會時，不會看到大人們在享受美酒。喝酒也是我們國家慶典的一部分。七月四日獨立紀念日意味著啤酒，而跨年夜則是整個晚上都致力於每個人都必須喝醉的主張。其次，年輕人在電視上看的節目也在鼓勵他們喝酒。在幾乎每一部肥皂劇中，角色們都隨意且頻繁地喝酒。年輕人一遍又一遍觀看的搖滾影片也以酒精為特色。影片中的角色坐在酒吧、夜總會和路邊客棧裡。傳達出的訊息是：喝酒很酷。然而，年輕人收到最強烈的喝酒鼓勵，是來自廣告商。啤酒公司經常贊助年輕人觀看的體育賽事。此外，電視上和平面媒體上的酒類廣告，展示了對年輕人極具吸引力的情境。人們在滑雪小屋旁坐著、航海、跳舞或欣賞足球比賽時，都會高舉酒杯。我們或許會說我們不希望孩子喝酒，但我們傳達的訊息卻恰恰相反。",
+      "passage": "A person's self-concept is <span class='lvl3-word' data-word='reflect' data-pron='/rɪˈflekt/' data-def='v. 反映；反射' data-colloc='reflect reality (反映現實); accurately reflect (準確反映); reflect on (反思)'>reflected</span> in the way he or she behaves, and the way a person behaves affects other people's <span class='lvl3-word' data-word='reaction' data-pron='/riˈæk.ʃən/' data-def='n. 反應' data-colloc='immediate reaction (立即的反應); allergic reaction (過敏反應); initial reaction (初步反應)'>reactions</span>. [BLANK_21], the way people think about themselves [BLANK_22] a <span class='lvl3-word' data-word='profound' data-pron='/prəˈfaʊnd/' data-def='adj. 深遠的；深刻的' data-colloc='profound effect (深遠的影響); profound impact (深刻的衝擊); profound knowledge (淵博的知識)'>profound</span> effect on all areas of their lives. For instance, people who have a [BLANK_23] sense of self-esteem usually act with <span class='lvl3-word' data-word='confidence' data-pron='/ˈkɑːn.fə.dəns/' data-def='n. 信心' data-colloc='boost confidence (提升信心); lack of confidence (缺乏信心); self confidence (自信)'>confidence</span>. [BLANK_24] they have self-assurance, they do not need constant praise and encouragement from others to feel [BLANK_25] about themselves. Self-confident people are their own best friends. They participate [BLANK_26] life <span class='lvl3-word' data-word='enthusiastically' data-pron='/ɪnˌθuː.ziˈæs.tɪ.kəl.i/' data-def='adv. 熱情地' data-colloc='participate enthusiastically (熱情參與); enthusiastically support (熱情支持); respond enthusiastically (熱烈響應)'>enthusiastically</span> and <span class='lvl3-word' data-word='spontaneously' data-pron='/spɑːnˈteɪ.ni.əs.li/' data-def='adv. 自發地；自然地' data-colloc='react spontaneously (自發地反應); spontaneously occur (自然發生); act spontaneously (隨性而為)'>spontaneously</span>. They are not affected by [BLANK_27] others think they \"should\" do. People [BLANK_28] high self-esteem are not hurt by <span class='lvl3-word' data-word='criticism' data-pron='/ˈkrɪt̬.ɪ.sɪ.zəm/' data-def='n. 批評' data-colloc='harsh criticism (嚴厲的批評); constructive criticism (建設性的批評); face criticism (面臨批評)'>criticism</span>; they do not [BLANK_29] criticism as personal <span class='lvl3-word' data-word='rejection' data-pron='/rɪˈdʒek.ʃən/' data-def='n. 拒絕' data-colloc='fear of rejection (害怕被拒絕); flat rejection (斷然拒絕); letter of rejection (拒絕信)'>rejection</span>. [BLANK_30], they tend to believe criticism to be suggestion for improvement.",
+      "passage_translation": "一個人的自我概念反映在他或她的行為方式上，而一個人的行為方式又會影響其他人的反應。總的來說，人們對自己的看法對他們生活的各個領域都有深遠的影響。例如，具有正面自尊感的人通常表現得很有自信。因為他們有自信，所以不需要別人不斷的讚美和鼓勵就能對自己感覺良好。自信的人是自己最好的朋友。他們熱情且自發地參與生活。他們不會受到別人認為他們「應該」做什麼的影響。擁有高自尊的人不會被批評傷害；他們不會把批評視為對個人的拒絕。相反地，他們傾向於相信批評是為了改進的建議。",
       "questions": [
-        { "q_num": "21", "options": {"A": "For example", "B": "Afterwards", "C": "For one thing", "D": "On the whole"}, "answer": "C", "explanation": { "technique": "【文章架構邏輯】：觀察後文出現了 Secondly, the shows young people watch... (其次，年輕人看的節目...)。對應 Secondly 的第一點起手式，必然是 For one thing (首先 / 一方面)。", "analysis": "❌ (A) For example：舉例來說，但無法與後文的 Secondly 形成條理呼應。\n❌ (B) Afterwards：然後 (表時間順序)。\n✅ (C) For one thing：首先 / 其一 (用來列舉多個理由的第一個)。\n❌ (D) On the whole：總而言之 (放在結論)。", "summary": "寫作必背神句型：要列舉兩個原因時，使用【For one thing, ... For another, ...】會比 First / Second 更顯得高級。" } },
-        { "q_num": "22", "options": {"A": "so as", "B": "such as", "C": "as such", "D": "such that"}, "answer": "B", "explanation": { "technique": "【舉例片語】：空格前是 personal celebrations (私人慶祝活動)，空格後是 weddings, promotions 等具體項目，這是一個標準的「舉例」用法。", "analysis": "❌ (A) so as：後面接 to V (so as to 為了...)。\n✅ (B) such as：例如 / 像...這樣，用來舉例。\n❌ (C) as such：就其本身而論。\n❌ (D) such that：如此一來以致於... (引導子句)。", "summary": "such as = like = for example (但 for example 通常後面接完整句子或用逗號隔開)。" } },
-        { "q_num": "23", "options": {"A": "simply", "B": "clumsily", "C": "closely", "D": "carefully"}, "answer": "C", "explanation": { "technique": "【搭配詞測驗】：慶祝活動與喝酒之間的連結是怎樣的連結？通常會說「緊密地連結 (closely linked)」。", "analysis": "❌ (A) simply (僅僅/簡單地)：語氣不夠強。\n❌ (B) clumsily (笨拙地)：邏輯不通。\n✅ (C) closely (緊密地)：be closely linked with 是超高頻搭配片語。\n❌ (D) carefully (小心地)：不會小心地連結。", "summary": "closely linked / closely related (密切相關 / 緊密連結) 是必背的黃金搭配詞。" } },
-        { "q_num": "24", "options": {"A": "Few", "B": "Little", "C": "Small", "D": "Many"}, "answer": "A", "explanation": { "technique": "【雙重否定邏輯】：後面的 without seeing the adults... (不會看不到大人喝酒) 帶有否定意味。為了形成「每個小孩都會看到」的語意，前面必須用否定字 Few (幾乎沒有)。", "analysis": "✅ (A) Few：幾乎沒有 (接可數名詞 children)。Few children can attend... without seeing... 意即「幾乎沒有小孩參加聚會不會看到... (大家都看得到)」。\n❌ (B) Little：幾乎沒有 (接不可數名詞)。\n❌ (C) Small：小的。\n❌ (D) Many：許多 (會變成許多小孩看不到，語意相反)。", "summary": "Few 和 Little 自帶「否定」光環，翻譯成「幾乎沒有」。可數用 Few，不可數用 Little。" } },
-        { "q_num": "25", "options": {"A": "drink", "B": "to drink", "C": "drinking", "D": "drunk"}, "answer": "D", "explanation": { "technique": "【連綴動詞用法】：get 在這裡是連綴動詞 (變得...)，後面必須接形容詞。喝醉的形容詞是 drunk。", "analysis": "❌ (A/B/C)：皆為動詞形式，不合 get 的連綴動詞文法。\n✅ (D) drunk：形容詞，喝醉的。get drunk (喝醉)。", "summary": "get drunk = become intoxicated，跨年夜的傳統就是大家都喝醉。" } },
-        { "q_num": "26", "options": {"A": "almost", "B": "mostly", "C": "altogether", "D": "hardly"}, "answer": "A", "explanation": { "technique": "【副詞修飾】：空格後是 every (每一個)，用來修飾 every / all / no 這種極端字眼的副詞，最常見的就是 almost (幾乎)。", "analysis": "✅ (A) almost：almost every soap opera (幾乎每一部肥皂劇)。\n❌ (B) mostly (大部分地)：不可直接修飾 every。\n❌ (C) altogether (完全地)：不可修飾 every。\n❌ (D) hardly (幾乎不)：語意矛盾。", "summary": "almost 是一個專門用來逼近極端的副詞，必背搭配：almost all (幾乎全部)、almost every (幾乎每個)、almost nobody (幾乎沒有人)。" } },
-        { "q_num": "27", "options": {"A": "Stories", "B": "Drinks", "C": "Characters", "D": "Messages"}, "answer": "C", "explanation": { "technique": "【主詞判斷】：空格是這句話的主詞，動作是 sit in bars (坐在酒吧裡)。會坐在酒吧裡的是什麼？當然是「影片中的角色 (Characters)」。", "analysis": "❌ (A) Stories：故事不會坐在酒吧。\n❌ (B) Drinks：飲料不會坐。\n✅ (C) Characters：影片中的人物/角色，完全符合邏輯。\n❌ (D) Messages：訊息不會坐。", "summary": "character 有三大常考意思：1. 性格/品格； 2. (電影/小說的) 角色； 3. 中文字。" } },
-        { "q_num": "28", "options": {"A": "furthermore", "B": "<span class='lvl3-word' data-word='consequently' data-pron='/ˈkɑːn.sə.kwənt.li/' data-def='adv. 因此；結果' data-colloc='consequently lead to (因此導致); consequently result in (結果造成)'>consequently</span>", "C": "moreover", "D": "however"}, "answer": "D", "explanation": { "technique": "【語氣轉折】：前面列舉了「社會習俗」、「電視節目」，最後突然說「最強烈的鼓勵，___，是來自廣告商」。這裡是用來帶出最終、最意想不到的重點，帶有語氣轉折，故選 however。", "analysis": "❌ (A) furthermore：此外 (用於補充同等份量的資訊)。\n❌ (B) consequently：因此 (表因果)。\n❌ (C) moreover：此外。\n✅ (D) however：然而。放在兩個逗號中間，語氣轉折，強調「最厲害的其實是廣告商」。", "summary": "however 可以夾在句中 (S, however, V...)，用來製造懸念並強調該句的重要性。" } },
-        { "q_num": "29", "options": {"A": "attentive", "B": "<span class='lvl3-word' data-word='attributive' data-pron='/əˈtrɪb.jə.t̬ɪv/' data-def='adj. 定語的；屬性的' data-colloc='attributive adjective (定語形容詞); attributive use (定語用法)'>attributive</span>", "C": "<span class='lvl3-word' data-word='attractive' data-pron='/əˈtræk.tɪv/' data-def='adj. 吸引人的' data-colloc='highly attractive (極具吸引力的); attractive feature (吸引人的特徵); visually attractive (視覺上吸引人的); find someone attractive (覺得某人有吸引力)'>attractive</span>", "D": "accustomed"}, "answer": "C", "explanation": { "technique": "【語意搭配】：廣告商的目的是什麼？就是要把情境拍得對年輕人「很有吸引力 (attractive)」。", "analysis": "❌ (A) attentive (專注的)：形容人，如 be attentive to...。\n❌ (B) attributive (定語的/歸屬的)：文法專有名詞。\n✅ (C) attractive (吸引人的)：be attractive to the young (對年輕人有吸引力)。\n❌ (D) accustomed (習慣的)：若用此字，語意為廣告習慣年輕人，邏輯不通。", "summary": "attract (動詞：吸引) ➔ attractive (形容詞：吸引人的) ➔ attraction (名詞：景點/吸引力)。" } },
-        { "q_num": "30", "options": {"A": "where", "B": "while", "C": "what", "D": "why"}, "answer": "B", "explanation": { "technique": "【時間副詞子句】：前面是 hoist their glasses (舉杯)，後面是 they are sitting... (他們正坐著...)。這兩個動作是「同時發生」的，所以用 while (當...的時候)。", "analysis": "❌ (A) where：在哪裡。\n✅ (B) while：當...的時候 (連接兩個同時進行的動作)。\n❌ (C) what：什麼。\n❌ (D) why：為什麼。", "summary": "while 引導的子句中，動詞極常使用「進行式 (be + Ving)」，強調動作正在持續中。" } }
+        { "q_num": "21", "options": {"A": "By and by", "B": "Luckily", "C": "In general", "D": "Even so"}, "answer": "C", "explanation": { "technique": "【語氣轉折】：前面講了兩句客觀的心理學事實，此處需要一個副詞片語來做「總結」，帶出文章主旨，故選 In general。", "analysis": "❌ (A) By and by：不久後。\n❌ (B) Luckily：幸運地。\n✅ (C) In general：一般而言 / 總的來說。非常適合作為引言後的總結。\n❌ (D) Even so：即使如此 (表讓步轉折)。", "summary": "作文神兵利器 In general = Generally speaking (總的來說)，放在句首可讓語氣看起來極具權威感。" } },
+        { "q_num": "22", "options": {"A": "have", "B": "having", "C": "to have", "D": "has"}, "answer": "D", "explanation": { "technique": "【主動詞一致】：這題是找主詞大賽！真正的單數主詞是 the way，後面的 (people think about themselves) 是修飾它的子句。單數主詞要配單數動詞 has。", "analysis": "❌ (A) have：複數動詞，錯誤。\n❌ (B/C)：分詞與不定詞不能當本句主要動詞。\n✅ (D) has：與單數主詞 the way 完美呼應。", "summary": "常考搭配詞：have a profound effect on... (對...有深遠的影響)。" } },
+        { "q_num": "23", "options": {"A": "positive", "B": "common", "C": "weak", "D": "normal"}, "answer": "A", "explanation": { "technique": "【語境推導】：後文說他們表現得充滿自信 (with confidence)，可見這是一種「正向的 (positive)」自尊。", "analysis": "✅ (A) positive：正面的/積極的。\n❌ (B) common：常見的。\n❌ (C) weak：脆弱的 (邏輯相反)。\n❌ (D) normal：正常的。", "summary": "positive thinking (正向思考) 與 negative attitude (消極態度) 是高中大考閱測常客。" } },
+        { "q_num": "24", "options": {"A": "Until", "B": "Because", "C": "Unless", "D": "However"}, "answer": "B", "explanation": { "technique": "【因果邏輯】：「有自信」是原因，「不需要別人讚美」是結果。這是一個完美的因果關係。", "analysis": "❌ (A) Until：直到。\n✅ (B) Because：因為。引導原因副詞子句。\n❌ (C) Unless：除非。\n❌ (D) However：然而 (副詞，不能連接兩個子句)。", "summary": "However 是副詞，後面要打逗號，絕對不能像 Because 一樣當連接詞串聯兩個句子！" } },
+        { "q_num": "25", "options": {"A": "best", "B": "correct", "C": "well", "D": "good"}, "answer": "D", "explanation": { "technique": "【連綴動詞】：feel 是連綴動詞，後方要接形容詞。feel good about oneself 是一個固定的心理學搭配，表示「對自己感覺良好 / 充滿自信」。", "analysis": "❌ (C) well：當形容詞時專指「身體健康」，不適用於心理狀態。\n✅ (D) good：feel good about oneself 完美契合語境。", "summary": "feel well 指的是你沒生病；feel good 才是指你心情好或對自己有自信。" } },
+        { "q_num": "26", "options": {"A": "to", "B": "at", "C": "in", "D": "on"}, "answer": "C", "explanation": { "technique": "【必考搭配詞】：participate in (參與) 是高中英文絕對要刻在骨子裡的固定搭配詞！", "analysis": "✅ (C) in：participate 永遠綁定 in。", "summary": "【參與的三大片語】：participate in = take part in = join in。" } },
+        { "q_num": "27", "options": {"A": "which", "B": "how", "C": "why", "D": "what"}, "answer": "D", "explanation": { "technique": "【名詞子句分析】：介系詞 by 後面必須接名詞子句。觀察 others think they 'should' do 發現 do 後面缺了受詞 (做「什麼」)，所以要填入複合關係代名詞 what (所...的事物)。", "analysis": "✅ (D) what：等於 the things which，完美補足動詞 do 缺少的受詞。\n❌ (A) which：前面沒有先行詞。\n❌ (B) how：不當受詞。", "summary": "what 引導的名詞子句具備「雙重身份」：既當前面介系詞的受詞，又當後面動詞的受詞。" } },
+        { "q_num": "28", "options": {"A": "losing", "B": "by", "C": "with", "D": "have"}, "answer": "C", "explanation": { "technique": "【介系詞片語修飾】：這裡要修飾名詞 People，因為本句已經有主要動詞 (are not hurt)，所以這裡只能填介系詞。with 表「擁有、帶有」。", "analysis": "❌ (D) have：若放 have 就會有兩個主要動詞，文法大錯。\n✅ (C) with：People with high self-esteem (帶有高自尊的人)。", "summary": "介系詞 with 常常等於 who have，用來精簡句子結構。例如：a girl with long hair。" } },
+        { "q_num": "29", "options": {"A": "like", "B": "look", "C": "watch", "D": "regard"}, "answer": "D", "explanation": { "technique": "【搭配詞直覺】：看到空格後面有一個關鍵的 as，你的直覺就該大喊：regard A as B (把 A 視為 B)！", "analysis": "✅ (D) regard：搭配 as 組成黃金片語。\n❌ (B) look：必須搭配 at，look upon A as B 才對。", "summary": "【視 A 為 B 大集合】：regard A as B = see A as B = view A as B = think of A as B。" } },
+        { "q_num": "30", "options": {"A": "Instead", "B": "In addition", "C": "Thus", "D": "In case"}, "answer": "A", "explanation": { "technique": "【轉折語氣】：前一句是「否定狀態」(they do NOT...)，後一句提出「相反的正面做法」，這時最適合用轉折副詞 Instead (相反地 / 取而代之地)。", "analysis": "✅ (A) Instead：承接上文的否定，帶出他們實際的積極作為。\n❌ (B) In addition：此外 (表遞進)。\n❌ (C) Thus：因此 (表因果)。", "summary": "Instead 是一個非常棒的起手式，用來告訴閱卷老師：「我不是要這樣做，『相反地』我要那樣做」。" } }
       ]
     },
     {
-      "group_id": "cloze_31_40",
-      "type": "cloze",
-      "tags": ["綜合測驗"],
-      "passage": "Although Grants Pass, Oregon, is a fairly small town, it offers much to <span class='lvl3-word' data-word='amuse' data-pron='/əˈmjuːz/' data-def='v. 逗樂；使開心' data-colloc='amuse oneself (自娛); easily amused (很容易被逗樂); amuse the audience (娛樂觀眾); hardly amused (覺得不好笑)'>amuse</span> summer visitors. Water sports are [BLANK_31] the most popular tourist <span class='lvl3-word' data-word='attraction' data-pron='/əˈtræk.ʃən/' data-def='n. 景點；吸引力' data-colloc='tourist attraction (旅遊景點); main attraction (主要景點); fatal attraction (致命的吸引力); center of attraction (眾所矚目的焦點)'>attraction</span>. Visitors can go rafting down the Rogue River [BLANK_32] swimming in the Applegate River. Fishing in the area is another popular activity. Lots of people also go hunting for wild berries that grow along the roadsides. [BLANK_33], there are lovely, clean campgrounds where campers can park their <span class='lvl3-word' data-word='vehicle' data-pron='/ˈviː.ə.kəl/' data-def='n. 車輛；交通工具' data-colloc='motor vehicle (機動車輛); commercial vehicle (商用車輛); an electric vehicle (電動車); launch vehicle (運載火箭)'>vehicles</span>. [BLANK_34] those who prefer to stay in town, Grants Pass offers several nice hotels. In town, tourists can browse through [BLANK_35] number of interesting shops, such as <span class='lvl3-word' data-word='antique' data-pron='/ænˈtiːk/' data-def='n./adj. 古董；古老的' data-colloc='antique store (古董店); valuable antique (珍貴的古董); antique furniture (古董傢俱)'>antique</span> stores and the shop that sells items [BLANK_36] from Oregon's beautiful myrtlewood. Another fun [BLANK_37] is shopping at the open market where local folks sell <span class='lvl3-word' data-word='produce' data-pron='/ˈproʊ.duːs/' data-def='n. 農產品 (注意發音與動詞不同)' data-colloc='fresh produce (新鮮農產品); local produce (當地農產品); organic produce (有機農產品)'>produce</span> grown in their gardens. And [BLANK_38], Grants Pass has a lot of places to eat, ranging from a low-<span class='lvl3-word' data-word='calorie' data-pron='/ˈkæl.ɚ.i/' data-def='n. 卡路里' data-colloc='low-calorie diet (低卡飲食); burn calories (燃燒卡路里); count calories (計算卡路里)'>calorie</span> <span class='lvl3-word' data-word='dessert' data-pron='/dɪˈzɝːt/' data-def='n. 甜點' data-colloc='delicious dessert (美味的甜點); order dessert (點甜點); make a dessert (做甜點)'>dessert</span> place to lovely restaurants, some of which offer good food and <span class='lvl3-word' data-word='gorgeous' data-pron='/ˈɡɔːr.dʒəs/' data-def='adj. 華麗的；絕美的' data-colloc='gorgeous view (絕美的景色); look gorgeous (看起來很美); absolutely gorgeous (美極了)'>gorgeous</span> views. [BLANK_39] you can see, Grants Pass offers a lot to do in the summer. [BLANK_40] you want to give your family a nice, <span class='lvl3-word' data-word='wholesome' data-pron='/ˈhoʊl.səm/' data-def='adj. 有益健康的；純潔的' data-colloc='wholesome food (健康的食物); wholesome entertainment (有益身心的娛樂); wholesome family fun (健康的家庭樂趣)'>wholesome</span> vacation, try visiting this <span class='lvl3-word' data-word='charming' data-pron='/ˈtʃɑːr.mɪŋ/' data-def='adj. 迷人的；有魅力的' data-colloc='charming smile (迷人的微笑); charming personality (迷人的個性); a charming little town (迷人的小鎮)'>charming</span> town.",
-      "passage_translation": "雖然俄勒岡州的格蘭茨帕斯是個相當小的小鎮，但它卻有很多能讓夏季遊客玩得開心的活動。水上運動「絕對是」最受歡迎的旅遊景點。遊客可以順著羅格河泛舟，「或」在阿普爾蓋特河游泳。在該地區釣魚是另一項受歡迎的活動。許多人也會去尋找生長在路邊的野莓。「此外」，這裡有可愛、乾淨的露營地，露營者可以停放他們的車輛。「對於」那些寧願留在鎮上的人，格蘭茨帕斯提供了幾家不錯的飯店。在鎮上，遊客可以逛逛「許多」有趣的商店，例如古董店以及販售由俄勒岡州美麗的香桃木「製成」的物品的商店。「另一項」有趣的「活動」是在露天市場購物，當地人會在那裡販售他們自家花園種植的農產品。「最後」，格蘭茨帕斯有很多吃東西的地方，從低卡路里甜點店到可愛的餐廳都有，其中一些還提供美食和絕美的景色。「如」你所見，格蘭茨帕斯在夏天提供了很多可以做的事。「如果」你想給家人一個美好、健康的假期，試著來這座迷人的小鎮逛逛吧。",
-      "questions": [
-        { "q_num": "31", "options": {"A": "far from", "B": "by far", "C": "a bit far", "D": "as far"}, "answer": "B", "explanation": { "technique": "【最高級修飾語】：空格後是 the most popular (最受歡迎的最高級)。在英文中，要強調最高級「絕對是 / 遠遠超過其他」，必須使用 by far。", "analysis": "❌ (A) far from：一點也不 (Far from perfect 一點也不完美)。\n✅ (B) by far：(配合最高級使用) 絕對是、無疑地。by far the most popular (絕對是最受歡迎的)。\n❌ (C) a bit far：有點遠。\n❌ (D) as far：as far as I know (就我所知)。", "summary": "超級必考文法：by far 專門用來修飾「最高級」，much/even/a lot 用來修飾「比較級」。" } },
-        { "q_num": "32", "options": {"A": "also", "B": "but", "C": "for", "D": "or"}, "answer": "D", "explanation": { "technique": "【對等連接詞】：前面是 go rafting (泛舟)，後面是 swimming (游泳)。這兩個是提供給遊客選擇的水上活動，表示「或者」，故選 or。", "analysis": "❌ (A) also：也是 (副詞，不能連接兩動名詞)。\n❌ (B) but：但是 (無轉折關係)。\n❌ (C) for：因為。\n✅ (D) or：或者 (連接 rafting 與 swimming 兩個選擇)。", "summary": "go + Ving 是從事戶外休閒活動的必備句型，如 go shopping, go fishing, go hiking。" } },
-        { "q_num": "33", "options": {"A": "In addition", "B": "In due time", "C": "For instance", "D": "By and large"}, "answer": "A", "explanation": { "technique": "【轉折語氣】：前面列舉了泛舟、釣魚、採野莓等活動，現在又拋出「有乾淨的露營地」，這是在「補充說明/增加選項」，故選 In addition。", "analysis": "✅ (A) In addition：此外 / 還有。\n❌ (B) In due time：在適當的時候 / 時候到了。\n❌ (C) For instance：舉例來說。\n❌ (D) By and large：大體上 / 總的來說。", "summary": "寫作擴充論點神器：In addition = Additionally = Besides = Moreover = Furthermore (此外)。" } },
-        { "q_num": "34", "options": {"A": "About", "B": "For", "C": "With", "D": "In"}, "answer": "B", "explanation": { "technique": "【介系詞搭配】：「對於」那些寧願留在鎮上的人。表示「針對某一特定對象」的介系詞是 For。", "analysis": "❌ (A) About：關於。\n✅ (B) For：對於 (For those who prefer...)。\n❌ (C) With：帶著 / 伴隨。\n❌ (D) In：在...裡面。", "summary": "【For those who + V】是極為常見的句型，意思是「對於那些...的人來說」。" } },
-        { "q_num": "35", "options": {"A": "the", "B": "this", "C": "a", "D": "that"}, "answer": "C", "explanation": { "technique": "【數量詞片語】：後面接的是複數名詞 shops。表示「許多的」，標準片語是 a number of。", "analysis": "❌ (A) the：the number of 意思是「...的數量」，後面動詞需配單數。\n✅ (C) a：a number of = a lot of (許多的)，後面動詞配複數。\n❌ (B/D)：無此搭配。", "summary": "多益與學測必考魔王題：A number of students **are** absent. (許多學生缺席) vs. The number of students **is** 50. (學生的數量是50)。" } },
-        { "q_num": "36", "options": {"A": "to make", "B": "make", "C": "made", "D": "making"}, "answer": "C", "explanation": { "technique": "【分詞構句/後位修飾】：修飾前面的名詞 items (物品)。物品是被木頭「製成」的，需使用被動語態的過去分詞 (P.P.)。", "analysis": "❌ (A) to make：表目的 (為了去製造)。\n❌ (B) make：動詞原形不能直接放在名詞後。\n✅ (C) made：等於 which are made (被製成的)，省略了關代與 be 動詞。\n❌ (D) making：主動的現在分詞。", "summary": "名詞後面的 V-ing 表「主動/正在進行」，P.P. 表「被動/已完成」。" } },
-        { "q_num": "37", "options": {"A": "activity", "B": "advice", "C": "<span class='lvl3-word' data-word='proposal' data-pron='/prəˈpoʊ.zəl/' data-def='n. 提案；求婚' data-colloc='business proposal (商業提案); marriage proposal (求婚); reject a proposal (拒絕提案)'>proposal</span>", "D": "sport"}, "answer": "A", "explanation": { "technique": "【語意連貫】：第一段有提到 Fishing is another popular activity (釣魚是另一項受歡迎的活動)，這裡接著列舉露天市場購物，自然也是另一項「活動 (activity)」。", "analysis": "✅ (A) activity：活動。\n❌ (B) advice：建議。\n❌ (C) proposal：提案。\n❌ (D) sport：運動 (購物不是運動)。", "summary": "戶外與休閒必備單字：outdoor activities (戶外活動)、leisure activities (休閒活動)。" } },
-        { "q_num": "38", "options": {"A": "fairly", "B": "happily", "C": "gorgeously", "D": "finally"}, "answer": "D", "explanation": { "technique": "【文章架構邏輯】：作者從泛舟、露營、逛街一路列舉下來，到了介紹餐廳時，這是這段文章列舉的「最後一個亮點」，故用 finally 帶出。", "analysis": "❌ (A) fairly：相當地 (fairly small)。\n❌ (B) happily：快樂地。\n❌ (C) gorgeously：華麗地。\n✅ (D) finally：最後。作為列舉結束的標誌語。", "summary": "在寫作中列舉事項：First... Second... Finally, ... 能讓文章結構極度清晰。" } },
-        { "q_num": "39", "options": {"A": "As", "B": "Since", "C": "Until", "D": "Then"}, "answer": "A", "explanation": { "technique": "【慣用語】：要進入文章結尾了。「正如你所看到的」，標準慣用語是 As you can see。", "analysis": "✅ (A) As：正如 / 依照。As you can see 完美起手式。\n❌ (B) Since：自從 / 因為。\n❌ (C) Until：直到。\n❌ (D) Then：然後。", "summary": "As you can see / As we all know (正如我們所知) 都是口語與寫作常用的引言。" } },
-        { "q_num": "40", "options": {"A": "Where", "B": "What", "C": "If", "D": "That"}, "answer": "C", "explanation": { "technique": "【條件子句】：「____你想給家人一個美好的假期，試試來拜訪這個小鎮」。這是一個明顯的假設語氣：「如果...，就...」。", "analysis": "❌ (A) Where：哪裡。\n❌ (B) What：什麼。\n✅ (C) If：如果。引導條件副詞子句。\n❌ (D) That：不作此用法。", "summary": "If 引導的條件句中，若主要子句是祈使句 (try visiting...)，是極度道地的英文勸說法。" } }
-      ]
-    },
-    {
-      "group_id": "reading_41_43",
+      "group_id": "reading_31_33",
       "type": "reading",
       "tags": ["閱讀測驗"],
-      "passage": "<p class='mb-4'>Breaking into the computer codes (known as '<span class='lvl3-word' data-word='hack' data-pron='/hæk/' data-def='v. 駭入；劈砍' data-colloc='hack into a computer (駭入電腦); hack to death (砍死); cleverly hacked (巧妙地駭入)'>hacking</span>') of banks, large companies or even government departments is the latest game for super-<span class='lvl3-word' data-word='intellectual' data-pron='/ˌɪn.t̬əlˈek.tʃu.əl/' data-def='adj. 智力的；理智的' data-colloc='intellectual property (智慧財產權); intellectual development (智力發展); highly intellectual (高智商的)'>intellectual</span> teenagers. One young hacker said, \"Hacking is just intellectual. It's your brain against the computer. It's like climbing Mount Everest—it's something you have to do. You don't even need a very expensive computer—but you must understand everything about all kinds of computers.\"</p><p class='mb-4'>At the moment most of these games are just fun for young people. But how long will it be before <span class='lvl3-word' data-word='criminal' data-pron='/ˈkrɪm.ə.nəl/' data-def='adj./n. 犯罪的；罪犯' data-colloc='criminal record (犯罪紀錄); criminal behavior (犯罪行為); hardened criminal (慣犯); master criminal (犯罪主謀)'>criminal</span> gangs, like the Mafia, start to use computer experts to help them in their crimes? Future bank robbers will not need <span class='lvl3-word' data-word='explosive' data-pron='/ɪkˈsploʊ.sɪv/' data-def='n./adj. 炸藥；爆炸性的' data-colloc='high explosive (高爆炸藥); highly explosive (極易爆炸的); an explosive situation (一觸即發的局勢)'>explosives</span> to blow open bank safes—all they will need is someone who can break computer codes. Already in Britain people say that computer crimes are costing companies between 500 million pounds and 2.5 billion pounds a year.</p>",
-      "passage_translation": "破解銀行、大公司甚至政府部門的電腦密碼（被稱為「駭客行為」）是超級聰明的青少年最新的遊戲。一位年輕的駭客說：「駭客行為只是一種智力活動。這是你的大腦在對抗電腦。這就像攀登聖母峰一樣——那是你必須去做的事。你甚至不需要一台非常昂貴的電腦——但你必須了解關於各種電腦的一切。」<br><br>目前，大多數這類遊戲對年輕人來說只是好玩。但還要多久，像黑手黨這樣的犯罪集團就會開始利用電腦專家來協助他們犯罪呢？未來的銀行搶匪將不需要炸藥來炸開銀行保險箱——他們需要的只是一個能破解電腦密碼的人。在英國，已經有人說電腦犯罪每年讓公司損失 5 億到 25 億英鎊。",
+      "passage": "<p class='mb-4'>Most heroes are people like you. But what makes them heroes? They find special <span class='lvl3-word' data-word='courage' data-pron='/ˈkɝː.ɪdʒ/' data-def='n. 勇氣' data-colloc='muster the courage (鼓起勇氣); lack courage (缺乏勇氣); moral courage (道德勇氣)'>courage</span> when they need it. They are brave enough to help in an <span class='lvl3-word' data-word='emergency' data-pron='/ɪˈmɝː.dʒən.si/' data-def='n. 緊急情況' data-colloc='in case of emergency (發生緊急情況時); emergency room (急診室); state of emergency (緊急狀態)'>emergency</span> while others may stand by. A hero sees what needs to be done and does it.</p><p class='mb-4'>Sometimes heroes are <span class='lvl3-word' data-word='reward' data-pron='/rɪˈwɔːrd/' data-def='v./n. 獎勵；報酬' data-colloc='rewarding job (有成就感的工作); offer a reward (提供懸賞); justly rewarded (得到應有的回報)'>rewarded</span> for their brave acts. One such reward is the Carnegie Medal. <span id='clue-31' class='transition-colors duration-500 rounded font-semibold'>It is given to people who act bravely and face danger to save the lives of others.</span></p><p class='mb-4'>The medal was named after Andrew Carnegie. In 1886, <span id='clue-33' class='transition-colors duration-500 rounded font-semibold'>Carnegie heard about a young man by the name of William Hunter</span> who lost his life trying to save two other boys from <span class='lvl3-word' data-word='drown' data-pron='/draʊn/' data-def='v. 溺水；淹沒' data-colloc='drown in debt (債台高築); rescue from drowning (把...從溺水中救出); drown out the sound (淹沒聲音)'>drowning</span>. Carnegie became a very rich businessman and set aside money to honor heroes like William.</p>",
+      "passage_translation": "大多數的英雄都是像你我一樣的普通人。但到底是什麼讓他們成為英雄呢？他們在需要的時候會找到特別的勇氣。在緊急情況下，當其他人可能只會袖手旁觀時，他們卻夠勇敢去幫忙。英雄看見需要被完成的事情，並且付諸實行。<br><br>有時候，英雄們會因為他們的勇敢行為而獲得獎勵。其中一項獎勵就是卡內基獎章。它是頒發給那些勇敢行動，並面對危險以拯救他人生命的人。<br><br>這枚獎章是以安德魯·卡內基的名字命名的。在1886年，卡內基聽說了一位名叫威廉·亨特的年輕人，他為了救另外兩個快溺水的男孩而失去了自己的生命。卡內基後來成為了一位非常富有的商人，並撥出一筆錢來表揚像威廉這樣的英雄。",
       "questions": [
-        { "q_num": "41", "q_text": "The preceding passage refers to the word 'hacking' in the context of", "options": {"A": "climbing Mount Everest.", "B": "a game for young individuals.", "C": "breaking into computer codes.", "D": "physically <span class='lvl3-word' data-word='dismantle' data-pron='/dɪsˈmæn.t̬əl/' data-def='v. 拆解；廢除' data-colloc='dismantle a machine (拆解機器); completely dismantle (徹底拆除); dismantle an organization (解散組織)'>dismantling</span> a solid object."}, "answer": "C", "explanation": { "technique": "【字義定位】：直接看文章第一句話的破題。", "analysis": "✅ (C) 文章第一句 \"Breaking into the computer codes (known as 'hacking')\" 直接定義了 hacking 等於破解電腦密碼。\n❌ (A) 攀登聖母峰只是駭客用來比喻挑戰性的比喻 (It's like...)。\n❌ (B/D) 皆非定義。", "summary": "閱讀測驗中，括號 ( ) 或破折號 — 後面的文字，90% 都是對前面生字的重要解釋！" } },
-        { "q_num": "42", "q_text": "According to the passage, breaking into computer codes of banks, large companies, and government departments is", "options": {"A": "a widespread criminal practice.", "B": "a game for computer literate individuals.", "C": "being studied by the Mafia for fun.", "D": "soon to replace coding bank safes."}, "answer": "B", "explanation": { "technique": "【細節推敲】：根據第一段第一句與第二段第一句推斷這行為目前的定位。", "analysis": "✅ (B) 第一段說這是 teenagers 的 game，第二段說 \"At the moment most of these games are just fun for young people.\"，因此目前它是一種遊戲 (game)。\n❌ (A) 這是「未來」的隱憂，目前還沒成為黑手黨的 widespread criminal practice。\n❌ (C) Mafia 不是為了 fun。\n❌ (D) 文章沒說要取代製造保險箱。", "summary": "computer literate 指的是「精通電腦的 / 有電腦素養的」。literate (識字的/有素養的) 是多益與學測高頻字。" } },
-        { "q_num": "43", "q_text": "Based on the passage, in order to break into computer codes, one needs", "options": {"A": "an <span class='lvl3-word' data-word='elaborate' data-pron='/iˈlæb.ɚ.ət/' data-def='adj. 精心製作的；詳盡的' data-colloc='elaborate plan (周密的計畫); elaborate detail (詳盡的細節); highly elaborate (極為精巧的)'>elaborate</span> and expensive multi-media computer.", "B": "a group of computer science students.", "C": "the help and <span class='lvl3-word' data-word='financial' data-pron='/faɪˈnæn.ʃəl/' data-def='adj. 財務的；金融的' data-colloc='financial support (財務支援); financial crisis (金融危機); independent financially (經濟獨立的)'>financial</span> support from the Mafia.", "D": "a <span class='lvl3-word' data-word='thorough' data-pron='/ˈθɝː.oʊ/' data-def='adj. 徹底的；完全的' data-colloc='thorough understanding (徹底的了解); thorough investigation (徹底的調查); be very thorough (非常仔細)'>thorough</span> understanding of a variety of computers."}, "answer": "D", "explanation": { "technique": "【條件定位】：尋找文中提到駭客「需要 (need/must)」什麼的句子。", "analysis": "✅ (D) 定位第一段最後一句 \"but you must understand everything about all kinds of computers.\" 完全對應 D 選項的 a thorough understanding of a variety of computers。\n❌ (A) 文章說 you don't even need a very expensive computer。\n❌ (B/C) 文章未提及。", "summary": "a thorough understanding (徹底的了解) 是非常高級的名詞片語，寫作時用它來替換 know a lot about 會非常加分。" } }
+        { "q_num": "31", "q_text": "The Carnegie Medal is given to those who are _______", "options": {"A": "sick and poor.", "B": "rich and famous.", "C": "young and brave.", "D": "unselfish and courageous."}, "answer": "D", "explanation": { "technique": "【細節定位法】：題目問 given to those who...，對應文章第二段最後一句「save the lives of others (救別人=無私)」。", "analysis": "✅ (D) 文章指出獎章頒給冒險救人的人，這正展現了 <b>unselfish (無私)</b> 與 <b>courageous (勇敢)</b> 的特質。\n❌ (C) 雖然勇敢，但沒有限制必須是 young (年輕的)。", "summary": "courage (勇氣) 的形容詞是 courageous，字尾 ous 代表「充滿...的」。", "clue_ref": "clue-31" } },
+        { "q_num": "32", "q_text": "What is the main idea of the passage?", "options": {"A": "William Hunter was a very brave boy.", "B": "Hunter saved Carnegie from drowning.", "C": "Some heroes have been rewarded for their bravery.", "D": "Carnegie was a rich businessman and liked to help people."}, "answer": "C", "explanation": { "technique": "【主旨推斷法】：主旨題看每段的第一句話。第一段講英雄定義，第二段破題「英雄會獲得獎勵 (rewarded)」，第三段舉卡內基為例。", "analysis": "✅ (C) 貫穿全文，首段講英雄特質，後段介紹卡內基獎章如何<b>「獎勵英雄的勇敢」</b>。\n❌ (A/D) 只涵蓋了第三段的局部細節，不能代表全文主旨。", "summary": "主旨題 (main idea) 切忌選「太過細節 (too specific)」的選項，例如 A 和 D。" } },
+        { "q_num": "33", "q_text": "Which of the following statements is NOT true?", "options": {"A": "Carnegie knew Hunter in person.", "B": "Brave deeds can take many different forms.", "C": "Over 6,000 people are Carnegie Medal recipients.", "D": "Some heroes have received money as well as the Medal."}, "answer": "A", "explanation": { "technique": "【逆向排除法】：這題是找錯誤選項。定位 Carnegie 和 Hunter 的關係。文章第三段寫 'heard about' (聽說過)。", "analysis": "✅ (A) 文章說 Carnegie <b>'heard about' (聽說過)</b> Hunter，代表他們<b>並不認識 (not in person)</b>。此為錯誤敘述，故選A。\n❌ (C/D) 皆在文章第四段被明確提及 (在原始長文中)。", "summary": "in person 是一個很常考的片語，意思是「親自 / 面對面地」。", "clue_ref": "clue-33" } }
       ]
     },
     {
-      "group_id": "reading_44_46",
+      "group_id": "reading_34_36",
       "type": "reading",
       "tags": ["閱讀測驗"],
-      "passage": "<p class='mb-4'>There is increasing scientific evidence that large cars cause more highway <span class='lvl3-word' data-word='accident' data-pron='/ˈæk.sə.dənt/' data-def='n. 意外；事故' data-colloc='car accident (車禍); fatal accident (致命意外); by accident (不小心/意外地); avoid an accident (避免意外)'>accidents</span> than small cars. In the news recently was the story of a woman who died of a heart attack while driving her station wagon. The car was moving so fast that it went through the highway-dividing fence, resulting in a <span class='lvl3-word' data-word='collision' data-pron='/kəˈlɪʒ.ən/' data-def='n. 碰撞；衝突' data-colloc='head-on collision (正面相撞); collision with (與...相撞); avoid a collision (避免碰撞); a fatal collision (致命車禍)'>collision</span> in which five people died. Those unnecessary deaths are <span class='lvl3-word' data-word='attributable' data-pron='/əˈtrɪb.jə.t̬ə.bəl/' data-def='adj. 可歸因於...的' data-colloc='be attributable to (可歸咎於); largely attributable (主要歸因於); directly attributable (直接歸因於)'>attributable</span> in part to the woman's choice of a large automobile. A lighter and smaller car probably wouldn't have gone through the fence, its remaining energy would have been much less, and this would have reduced the chances of serious injury or death. Because of its small size, it might have missed the other car completely. The present design of the <span class='lvl3-word' data-word='oversized' data-pron='/ˈoʊ.vɚ.saɪzd/' data-def='adj. 超大的' data-colloc='oversized shirt (Oversize的襯衫); oversized luggage (超大行李)'>oversized</span> automobile is largely responsible not only for increasing death toll on the highways but also for the rapid <span class='lvl3-word' data-word='depletion' data-pron='/dɪˈpliː.ʃən/' data-def='n. 消耗；耗盡' data-colloc='ozone depletion (臭氧層破耗); resource depletion (資源枯竭); serious depletion (嚴重的損耗)'>depletion</span> of our resources of <span class='lvl3-word' data-word='petroleum' data-pron='/pəˈtroʊ.li.əm/' data-def='n. 石油' data-colloc='petroleum industry (石油工業); petroleum products (石油產品)'>petroleum</span>, for the <span class='lvl3-word' data-word='pollution' data-pron='/pəˈluː.ʃən/' data-def='n. 污染' data-colloc='air pollution (空氣污染); water pollution (水污染); reduce pollution (減少污染)'>pollution</span> of our <span class='lvl3-word' data-word='environment' data-pron='/ɪnˈvaɪ.rən.mənt/' data-def='n. 環境' data-colloc='protect the environment (保護環境); friendly environment (友善的環境); harsh environment (惡劣的環境)'>environment</span>, and for the <span class='lvl3-word' data-word='congestion' data-pron='/kənˈdʒes.tʃən/' data-def='n. 擁擠；塞車' data-colloc='traffic congestion (交通壅塞); nasal congestion (鼻塞); relieve congestion (舒緩擁擠)'>congestion</span> and <span class='lvl3-word' data-word='inconvenience' data-pron='/ˌɪn.kənˈviː.ni.əns/' data-def='n. 不便' data-colloc='cause inconvenience (造成不便); apologize for the inconvenience (為不便道歉)'>inconvenience</span> of our cities.</p>",
-      "passage_translation": "越來越多的科學證據顯示，大型車比小型車造成更多的公路事故。最近新聞報導了一名婦女在駕駛她的旅行車時心臟病發作死亡的故事。車子行駛得非常快，以至於衝破了公路的中央分隔護欄，導致了一場五人死亡的碰撞。這些不必要的死亡部分原因可歸咎於該名婦女選擇了大型汽車。一輛較輕、較小的車可能不會衝破護欄，它剩餘的動能會小得多，這將減少嚴重受傷或死亡的機會。由於體積小，它甚至可能完全避開另一輛車。目前超大尺寸汽車的設計不僅要對公路上不斷增加的死亡人數負很大責任，還要對我們石油資源的迅速枯竭、環境的污染，以及城市的擁擠和不便負很大責任。",
+      "passage": "<p class='mb-4'>On May 26, 1977, George Willig traveled to the top of the 1,350-foot-tall World Trade Center in New York City. He did not take the elevator, however. Instead, like a human fly, George Willig climbed the outside of the <span class='lvl3-word' data-word='immense' data-pron='/ɪˈmens/' data-def='adj. 巨大的' data-colloc='immense pressure (巨大的壓力); immense wealth (巨額財富); immense value (極大的價值)'>immense</span> 110-story building. His climb, which began at 6:30 a.m., took three and a half hours to finish.</p><p class='mb-4'>At the top, Willig was greeted by both police and reporters. Some of the police officers asked him for his autograph. Then they wanted to put him in jail and charged him with <span class='lvl3-word' data-word='violation' data-pron='/ˌvaɪ.əˈleɪ.ʃən/' data-def='n. 違反' data-colloc='in violation of (違反...); human rights violation (侵犯人權); traffic violation (交通違規)'>violation</span> of law for climbing the building without a <span class='lvl3-word' data-word='permit' data-pron='/ˈpɝː.mɪt/' data-def='n. 許可證' data-colloc='work permit (工作證); parking permit (停車證); building permit (建築許可)'>permit</span>.</p><p class='mb-4'>By the next day, city officials had <span class='lvl3-word' data-word='evaluate' data-pron='/ɪˈvæl.ju.eɪt/' data-def='v. 評估' data-colloc='evaluate the performance (評估表現); carefully evaluate (仔細評估); evaluate the impact (評估影響)'>reevaluated</span> the situation... Beame announced that the city would not punish \"The Human Fly.\" Instead, he would be fined a penny for each of the 110 floors he had climbed.</p>",
+      "passage_translation": "1977年5月26日，喬治·威利格到了紐約市1350英尺高的世貿中心頂樓。然而，他沒有搭乘電梯。相反地，他就像一隻「人蠅」一樣，徒手攀爬了這棟高達110層樓的巨大建築的外部。他的攀登行動從早上6點30分開始，花了三個半小時才完成。<br><br>到達頂樓時，迎接威利格的是警察和記者。有些警察甚至向他要了簽名。但隨後他們就想把他關進監獄，並以無照攀爬建築物而指控他違法...<br><br>到了第二天，市府官員重新評估了情況。市長宣布不會懲罰「人蠅」。相反地，他每爬一層樓只被象徵性地罰款一便士。",
       "questions": [
-        { "q_num": "44", "q_text": "For the five highway deaths, the author blames", "options": {"A": "a large heavy station wagon.", "B": "the lack of more smaller vehicles.", "C": "the woman's ill-timed heart attack.", "D": "a weak highway-dividing fence."}, "answer": "A", "explanation": { "technique": "【因果推論定位】：尋找文中提到這起死亡車禍「原因歸咎於」哪裡的句子。", "analysis": "✅ (A) 文中第四句明言：\"Those unnecessary deaths are attributable in part to the woman's choice of a large automobile.\" (歸咎於選擇大型車)。\n❌ (B/C/D) 作者雖然提到心臟病和護欄，但他的核心論點是抨擊「大型車 (large car)」。", "summary": "be attributable to... (可歸因於...) = be caused by...，這兩個片語是閱讀測驗找因果關係的超強線索。" } },
-        { "q_num": "45", "q_text": "What is the author's main point in the passage above?", "options": {"A": "Large cars should be banned by the government.", "B": "Large cars are less safe and less <span class='lvl3-word' data-word='economical' data-pron='/ˌek.əˈnɑː.mɪ.kəl/' data-def='adj. 經濟實惠的；節約的' data-colloc='economical car (省油的車); highly economical (非常經濟實惠的)'>economical</span> than small cars.", "C": "Small cars are safer for the <span class='lvl3-word' data-word='occupant' data-pron='/ˈɑː.kjə.pənt/' data-def='n. 佔有者；乘客' data-colloc='vehicle occupant (車內乘客); previous occupant (前任住戶)'>occupants</span> than large cars.", "D": "A woman's heart attack caused the death of five people."}, "answer": "B", "explanation": { "technique": "【主旨歸納法】：這題大考中心給的標準答案為 (B) 或 (C) 皆可。但 (B) 更為全面。", "analysis": "✅ (B) 文章不只講了大型車危險 (less safe)，最後一句還提到了消耗石油與污染環境 (less economical)，故 B 涵蓋了全文精華。\n✅ (C) 如果只看前半段的安全論述，C 也算正確，因此大考中心當年判定兩者皆給分。\n❌ (A) 文章未呼籲政府禁止。\n❌ (D) 這只是用來引出論點的舉例故事。", "summary": "主旨題一定要看文章的「第一句(破題)」與「最後一句(結論)」。最後一句提到環保與能源耗竭，選 B 最完美。" } },
-        { "q_num": "46", "q_text": "The author's statement about the highway fence's ability to retain a smaller and lighter car", "options": {"A": "is the author's <span class='lvl3-word' data-word='assumption' data-pron='/əˈsʌmp.ʃən/' data-def='n. 假設；假定' data-colloc='make an assumption (做出假設); false assumption (錯誤的假設); on the assumption that (基於...的假設)'>assumption</span>.", "B": "derives from scientific evidence.", "C": "rests upon fact.", "D": "can never be <span class='lvl3-word' data-word='verify' data-pron='/ˈver.ə.faɪ/' data-def='v. 證實；核對' data-colloc='verify the information (核實資訊); verify the identity (核對身分); independently verified (被獨立證實的)'>verified</span>."}, "answer": "A", "explanation": { "technique": "【語氣判斷法】：觀察作者描述小型車撞護欄時所使用的動詞時態與副詞。", "analysis": "✅ (A) 作者使用了 \"probably wouldn't have\" (可能不會) 和 \"might have\" (或許會) 的假設語氣，這代表這是作者的「推測/假設 (assumption)」，並非已發生的事實。\n❌ (B) 雖然開頭有提 scientific evidence，但撞護欄這段是作者的假設推理。\n❌ (C) 這並非 fact (事實)。", "summary": "would have + p.p. / might have + p.p. 是經典的「與過去事實相反的假設語氣」，代表事情並沒有這樣發生！" } }
+        { "q_num": "34", "q_text": "George Willig reached the top of the World Trade Center in New York at", "options": {"A": "six thirty in the morning.", "B": "six thirty in the evening.", "C": "ten o'clock in the morning.", "D": "ten o'clock in the evening."}, "answer": "C", "explanation": { "technique": "【細節推算】：這是簡單的數學計算題！定位第一段最後一句：6:30 a.m. 開始，花了三個半小時 (3.5 hours)。", "analysis": "早上 6:30 + 3.5小時 = <b>早上 10 點 (ten o'clock in the morning)</b>，故選 C。" } },
+        { "q_num": "35", "q_text": "This passage is a story about", "options": {"A": "a man who enjoys dangers and risks.", "B": "a human being who can fly like a fly.", "C": "a man who has escaped from the jail.", "D": "a fly which climbs like a human being."}, "answer": "A", "explanation": { "technique": "【主旨推斷】：文章描述一個男人徒手攀爬 110 層高樓，明顯是在描述一個喜歡冒險的人。", "analysis": "✅ (A) 關於一個<b>享受危險與冒險的男人</b>。\n❌ (B)與(D)的 fly 只是修辭(human fly)，不是真的蒼蠅。" } },
+        { "q_num": "36", "q_text": "According to the passage, which of the following statements is true?", "options": {"A": "Willig was fined $250,000.", "B": "Willig was sent to prison for a year.", "C": "Willig was honored in a party and fined only $1.10.", "D": "Willig climbed the World Trade Center with permission."}, "answer": "C", "explanation": { "technique": "【細節定位】：定位文章最後一句：fined a penny for each of the 110 floors (110層樓，每層罰 1 便士，共 110 便士 = 1.10 美元)。", "analysis": "✅ (C) 市長不但沒懲罰他，反而每層樓只罰一便士(共$1.10)。\n❌ (A) 這是原本預計起訴的金額，後來並未執行。\n❌ (D) 文章說他 without a permit (未經許可)。" } }
       ]
     },
     {
-      "group_id": "reading_47_50",
+      "group_id": "reading_37_40",
       "type": "reading",
       "tags": ["閱讀測驗"],
-      "passage": "<p class='mb-4'>Three pilot whales are believed to be swimming freely off the Atlantic Coast today. Their names are Tag, Notch, and Baby. These seagoing <span class='lvl3-word' data-word='mammal' data-pron='/ˈmæm.əl/' data-def='n. 哺乳動物' data-colloc='marine mammal (海洋哺乳類); flying mammal (會飛的哺乳類)'>mammals</span> are among the lucky <span class='lvl3-word' data-word='survivor' data-pron='/sɚˈvaɪ.vɚ/' data-def='n. 倖存者' data-colloc='sole survivor (唯一的生還者); earthquake survivor (地震生還者); miracle survivor (奇蹟生還者)'>survivors</span> of a whale-<span class='lvl3-word' data-word='strand' data-pron='/strænd/' data-def='v. 擱淺；處於困境' data-colloc='be stranded on a desert island (被困在荒島上); stranded passengers (滯留的旅客)'>stranding</span> last December at Cape Cod.</p><p class='mb-4'>As many as 60 pilot whales swam <span class='lvl3-word' data-word='ashore' data-pron='/əˈʃɔːr/' data-def='adv. 在岸上；向岸上' data-colloc='wash ashore (被沖上岸); go ashore (上岸)'>ashore</span>. Scientists are still trying to find out why whales have this <span class='lvl3-word' data-word='self-destructive' data-pron='/ˌself.dɪˈstrʌk.tɪv/' data-def='adj. 自我毀滅的' data-colloc='self-destructive behavior (自我毀滅的行為)'>self-destructive</span> behavior. Many of the whales died on the beach—<span class='lvl3-word' data-word='crush' data-pron='/krʌʃ/' data-def='v. 壓碎；壓垮' data-colloc='crush the garlic (壓碎大蒜); completely crushed (徹底壓垮); crush the rebellion (鎮壓叛亂)'>crushed</span> by their own weight. Whale experts found Tag, Notch, Baby alive. The three were believed to be too young to survive on their own if returned to sea.</p><p class='mb-4'>The three whales were taken in a van to the New England <span class='lvl3-word' data-word='aquarium' data-pron='/əˈkwer.i.əm/' data-def='n. 水族館' data-colloc='visit the aquarium (參觀水族館); public aquarium (公共水族館)'>Aquarium</span> in Boston, Mass. They were kept in a 60,000-gallon tank for seven months. Only a few people worked with the whales so that they would not become too accustomed to human beings.</p><p class='mb-4'>Early this past summer the three whales were pronounced fit enough to be returned to the Atlantic Ocean. A month after their <span class='lvl3-word' data-word='release' data-pron='/rɪˈliːs/' data-def='v./n. 釋放；發行' data-colloc='release a prisoner (釋放囚犯); new release (新發行); press release (新聞稿)'>release</span>, the whales were <span class='lvl3-word' data-word='spot' data-pron='/spɑːt/' data-def='v. 發現；認出' data-colloc='be spotted by (被...發現); spot a mistake (發現錯誤); accidentally spot (意外發現)'>spotted</span>. They were found in a group of 50 whales about 60 miles from where they had been set free.</p>",
-      "passage_translation": "有三隻領航鯨今天被認為正在大西洋海岸外自由游動。牠們的名字是 Tag, Notch 和 Baby。這些海洋哺乳動物是去年十二月在鱈魚角發生的鯨魚擱淺事件中的幸運倖存者。<br><br>多達60隻領航鯨游上了岸。科學家們仍在試圖找出鯨魚為什麼會有這種自我毀滅行為的原因。許多鯨魚死在海灘上——被牠們自身的重量壓死。鯨魚專家發現 Tag, Notch 和 Baby 還活著。這三隻鯨魚被認為太年輕，如果放回海裡將無法獨自生存。<br><br>這三隻鯨魚被一輛廂型車帶到了麻州波士頓的新英格蘭水族館。牠們被養在一個六萬加侖的水槽裡長達七個月。只有少數幾個人與這些鯨魚接觸，以防牠們變得太過習慣人類。<br><br>在剛過去的初夏，這三隻鯨魚被宣告健康狀況足以回到大西洋。在牠們被釋放一個月後，這幾隻鯨魚被發現了。人們在距離牠們被釋放處大約60英里的地方，發現牠們身處在一個50隻鯨魚的群體中。",
+      "passage": "<p class='mb-4'>Printing is one of the most important means of <span class='lvl3-word' data-word='communication' data-pron='/kəˌmjuː.nəˈkeɪ.ʃən/' data-def='n. 溝通；通訊' data-colloc='effective communication (有效的溝通); communication skills (溝通技巧); means of communication (通訊方式)'>communication</span>. Without it you would not now be reading this passage. Even the development of radio and television has not <span class='lvl3-word' data-word='diminish' data-pron='/dɪˈmɪn.ɪʃ/' data-def='v. 減少；削弱' data-colloc='diminish the impact (減輕影響); greatly diminish (大幅減少); slowly diminish (逐漸消退)'>diminished</span> the importance of printing.</p><p class='mb-4'>The first printing was done from wood blocks one letter at a time by hand. This was a slow process, requiring much skill and <span class='lvl3-word' data-word='patience' data-pron='/ˈpeɪ.ʃəns/' data-def='n. 耐心' data-colloc='lose patience (失去耐心); require patience (需要耐心); infinite patience (極大的耐心)'>patience</span>... A great step forward was the use of movable type. The Chinese discovered this in the 11th century...</p><p class='mb-4'>One of the first European books to be printed in movable type was Johannes Gutenberg's 42-line Bible. The first book to be printed likewise in English was about the history of Troy. It was printed in Flanders in 1474 by an Englishman, William Caxton...</p>",
+      "passage_translation": "印刷術是最重要的通訊方式之一。沒有它，你現在就不會讀到這篇文章。即使是廣播和電視的發展，也沒有削弱印刷術的重要性。<br><br>最早的印刷是用木塊手工一次刻一個字母。這是一個緩慢的過程，需要大量的技巧和耐心... 向前邁出的一大步是活字印刷的使用。中國人在11世紀發現了這個技術...<br><br>歐洲第一批用活字印刷的書籍之一是約翰尼斯·谷登堡的四十二行聖經。第一本同樣用活字印刷的英文書是關於特洛伊的歷史。它是由英國人威廉·卡克斯頓於1474年在法蘭德斯印刷的...",
       "questions": [
-        { "q_num": "47", "q_text": "The 60 pilot whales swam ashore as a result of", "options": {"A": "a large winter storm off the coast of Cape Cod.", "B": "a behavior currently unknown to scientists.", "C": "a genetic <span class='lvl3-word' data-word='phenomenon' data-pron='/fəˈnɑː.mə.nɑːn/' data-def='n. 現象' data-colloc='natural phenomenon (自然現象); rare phenomenon (罕見的現象); unexplained phenomenon (無法解釋的現象)'>phenomenon</span> currently being studied by whale experts.", "D": "the return to their annual spawning ground near Cape Cod."}, "answer": "B", "explanation": { "technique": "【細節定位法】：尋找文章中提到 60 隻鯨魚游上岸(擱淺)原因的句子。", "analysis": "✅ (B) 第二段第二句寫道：\"Scientists are still trying to find out why whales have this self-destructive behavior.\" (科學家仍在試圖找出原因)，代表目前原因未知 (unknown to scientists)。\n❌ (A/C/D) 文章中完全沒有提到暴風雨、基因現象或產卵地。", "summary": "are still trying to find out = currently unknown (仍在試著找出 = 目前未知)，這是閱讀測驗最愛的「換句話說」同義轉換！" } },
-        { "q_num": "48", "q_text": "The pilot whales died on the beaches of Cape Cod due to", "options": {"A": "the lack of salt water to facilitate their <span class='lvl3-word' data-word='respiration' data-pron='/ˌres.pəˈreɪ.ʃən/' data-def='n. 呼吸' data-colloc='artificial respiration (人工呼吸); cellular respiration (細胞呼吸)'>respiration</span>.", "B": "the lack of <span class='lvl3-word' data-word='nutrition' data-pron='/nuːˈtrɪʃ.ən/' data-def='n. 營養' data-colloc='poor nutrition (營養不良); good nutrition (良好的營養); daily nutrition (日常營養)'>nutrition</span> to maintain their <span class='lvl3-word' data-word='enormous' data-pron='/əˈnɔːr.məs/' data-def='adj. 巨大的；龐大的' data-colloc='enormous amount (巨大的數量); enormous pressure (極大的壓力)'>enormous</span> body weight.", "C": "their body structure unable to support their body weight out of water.", "D": "a phenomenon yet to be figured out by scientists."}, "answer": "C", "explanation": { "technique": "【因果定位】：尋找文中明確點出鯨魚「死在海灘上(died on the beach)」的真正死因。", "analysis": "✅ (C) 第二段第三句破折號後寫道：\"crushed by their own weight\" (被牠們自己的重量壓碎/死)。這對應了 C 選項的身體結構無法在離開水後支撐體重。\n❌ (A/B) 文章沒提到缺鹽水或缺營養。\n❌ (D) 科學家不知道的是「為何要游上岸」，但知道牠們是怎麼「死在沙灘上」的。", "summary": "crush (壓碎/壓垮)。Candy crush 這個遊戲就是「糖果壓碎」。鯨魚失去了海水的浮力(buoyancy)，就會被自身體重 crush。" } },
-        { "q_num": "49", "q_text": "The three whales Tag, Notch, and Baby were <span class='lvl3-word' data-word='rescue' data-pron='/ˈres.kjuː/' data-def='v./n. 救援' data-colloc='rescue team (救援隊); rescue mission (救援任務); come to the rescue (趕來救援)'>rescued</span> because", "options": {"A": "younger whales have a greater chance of survival than the others.", "B": "amongst the many whales found beached, these three were deemed the healthiest.", "C": "they were alive when the rescue team found them.", "D": "the rescue crew liked them very much."}, "answer": "C", "explanation": { "technique": "【細節抓取】：尋找文中描述救這三隻小鯨魚的段落。", "analysis": "✅ (C) 第二段提到：\"Many of the whales died... Whale experts found Tag, Notch, Baby alive.\" (許多鯨魚死了...專家發現這三隻還活著)。救牠們的根本原因就是因為牠們被發現時還活著 (alive)。\n❌ (A) 不是因為年輕存活率高，反而文後說牠們太年輕無法獨自在海中存活。\n❌ (B) 未比較健康度，只是剛好發現牠們活著。", "summary": "alive (活著的) 是表語形容詞，只能放在 be 動詞或 find/keep 後面，不能放在名詞前面 (不可說 an alive whale)。" } },
-        { "q_num": "50", "q_text": "Which of the following is NOT true?", "options": {"A": "Scientists are studying the <span class='lvl3-word' data-word='suicidal' data-pron='/ˌsuː.əˈsaɪ.dəl/' data-def='adj. 自殺的；極具毀滅性的' data-colloc='suicidal thoughts (自殺的念頭); suicidal tendency (自殺傾向)'>suicidal</span> behavior of pilot whales.", "B": "Tag, Notch, and Baby were too young to survive by themselves in the sea.", "C": "Pilot Whales are mammals that can become used to human beings.", "D": "After their release, Tag, Notch, and Baby were never seen again."}, "answer": "D", "explanation": { "technique": "【逆向排除法】：尋找文章中與選項矛盾的錯誤敘述。", "analysis": "✅ (D) 文章最後一段明確指出：\"A month after their release, the whales were spotted.\" (釋放一個月後，牠們被發現/看到了)。選項說 never seen again 是錯的。\n❌ (A) 第一段說 trying to find out why... self-destructive behavior (自我毀滅/自殺行為)。\n❌ (B) 第二段末提及 too young to survive on their own。\n❌ (C) 第三段提到為了不讓牠們 become too accustomed to human beings，代表牠們是有能力習慣人類的哺乳動物。", "summary": "spot 在這裡當動詞，意思是「發現 / 認出」。例如：He was spotted at the airport. (他在機場被人看見。)" } }
+        { "q_num": "37", "q_text": "Printing is important because", "options": {"A": "it is a Chinese invention.", "B": "it has made reading books possible.", "C": "it has helped to develop radio and television.", "D": "William Caxton printed 80 books in English."}, "answer": "B", "explanation": { "technique": "【細節定位】：定位第一段第二句：Without it you would not now be reading this passage (沒有它你就讀不到這文章)。", "analysis": "✅ (B) 印刷術讓閱讀書籍成為可能。" } },
+        { "q_num": "38", "q_text": "The use of movable type was first introduced by", "options": {"A": "William Caxton.", "B": "the Europeans.", "C": "Johannes Gutenberg.", "D": "The Chinese."}, "answer": "D", "explanation": { "technique": "【關鍵字掃描】：尋找關鍵字 movable type，定位第二段最後一句：The Chinese discovered this...。", "analysis": "✅ (D) 第二段指出 The Chinese discovered this in the 11th century。" } },
+        { "q_num": "39", "q_text": "According to the passage, the use of movable type was considered as a \"great step forward\" because", "options": {"A": "it did not need a lot of wood.", "B": "it required less skill and patience.", "C": "the printing letters could be reused.", "D": "every page of every book required individual carving."}, "answer": "C", "explanation": { "technique": "【語意推斷】：相比於 wood blocks (木板一次只能刻一頁)，活字印刷(movable type) 的精髓就是字母可以移動重組來重複使用。", "analysis": "✅ (C) 因為舊方法每頁都要獨立雕刻，而活字印刷可以重新排列字母(reused)。" } },
+        { "q_num": "40", "q_text": "The first English book printed in movable type was", "options": {"A": "done from wood blocks one letter at a time.", "B": "done in a printing press at Westminster.", "C": "Johannes Gutenberg's 42-line Bible.", "D": "about the history of Troy."}, "answer": "D", "explanation": { "technique": "【細節抓取】：尋找關鍵字 first book... in English，定位第三段第二句。", "analysis": "✅ (D) 第三段提到 The first book to be printed likewise in English was <b>about the history of Troy</b>。" } }
+      ]
+    },
+    {
+      "group_id": "matching_41_50",
+      "type": "matching",
+      "tags": ["文意選填"],
+      "passage": "<div id='matching-options-block' class='bg-purple-50 border border-purple-200 p-4 mb-5 rounded-lg grid grid-cols-2 md:grid-cols-5 gap-3 text-sm font-bold text-purple-900 shadow-sm'><div>(A) <span class='lvl3-word' data-word='activate' data-pron='/ˈæk.tə.veɪt/' data-def='v. 啟動；活化' data-colloc='activate the alarm (啟動警報); voice-activated (聲控的)'>activated</span></div><div>(B) cough</div><div>(C) breathing</div><div>(D) <span class='lvl3-word' data-word='adopt' data-pron='/əˈdɑːpt/' data-def='v. 採用；收養' data-colloc='adopt a policy (採取政策); adopt a child (收養小孩)'>adopting</span></div><div>(E) <span class='lvl3-word' data-word='indicate' data-pron='/ˈɪn.də.keɪt/' data-def='v. 指出；表明' data-colloc='studies indicate that (研究指出); clearly indicate (清楚表明)'>indicated</span></div><div>(F) <span class='lvl3-word' data-word='symptom' data-pron='/ˈsɪmp.təm/' data-def='n. 症狀' data-colloc='flu symptoms (流感症狀); relieve symptoms (緩解症狀)'>symptoms</span></div><div>(G) near</div><div>(H) harmful</div><div>(I) damages</div><div>(J) limited</div><div>(K) to</div><div>(L) by</div><div>(M) weak</div><div>(N) teenage</div><div>(O) public</div></div>For many years, people thought the [BLANK_41] of smoking were [BLANK_42] to smokers. But new studies have found that smoke from cigarettes can be [BLANK_43] to non-smokers too.<br><br>In December 1987, a U.S. Government report [BLANK_44] that non-smokers could risk getting lung cancer from [BLANK_45] in other people's cigarette smoke.<br><br>Another study looked at non-smoking [BLANK_46] athletes who had smoking parents or friends. Being [BLANK_47] cigarette smoke hurt the athletes' lungs, and made them [BLANK_48] more than athletes who did not have smokers close [BLANK_49], the study said. Studies like these have <span class='lvl3-word' data-word='promote' data-pron='/prəˈmoʊt/' data-def='v. 促進；推廣' data-colloc='promote health (促進健康); promote sales (促銷); highly promoted (大力推廣的)'>promoted</span> the banning of smoking in [BLANK_50] places.",
+      "passage_translation": "多年來，人們認為吸菸的**損害**僅**限於**吸菸者。但新的研究發現，香菸的煙霧對非吸菸者也可能是**有害的**。<br><br>在1987年12月，一份美國政府的報告**指出**，非吸菸者可能會因為**吸入**他人的香菸煙霧而有罹患肺癌的風險。<br><br>另一項研究觀察了父母或朋友會吸菸的非吸菸**青少年**運動員。研究指出，**靠近**香菸煙霧會傷害這些運動員的肺部，並使他們比身邊沒有吸菸者的運動員更容易**咳嗽**。像這樣的諸多研究，已經促成了在**公共**場所禁止吸菸的規定。",
+      "questions": [
+        { "q_num": "41", "options": {"A": "activated","B": "cough","C": "breathing","D": "adopting","E": "indicated","F": "symptoms","G": "near","H": "harmful","I": "damages","J": "limited","K": "to","L": "by","M": "weak","N": "teenage","O": "public"}, "answer": "I", "explanation": { "technique": "【詞性判斷法】：the 後面必接名詞，且後方動詞為 were (複數)，因此空格必須填入複數名詞。選 damages (損害)。", "analysis": "需要複數名詞作為 thought 子句的主詞。damages 符合吸菸造成的負面影響。", "summary": "damage 作為不可數名詞指「破壞」；加上 s 變成 damages 時，常指「賠償金」或多重的損害。" } },
+        { "q_num": "42", "options": {"A": "activated","B": "cough","C": "breathing","D": "adopting","E": "indicated","F": "symptoms","G": "near","H": "harmful","I": "damages","J": "limited","K": "to","L": "by","M": "weak","N": "teenage","O": "public"}, "answer": "J", "explanation": { "technique": "【必背搭配詞】：be limited to + N (侷限於...)，此處指損害僅限於吸菸者本身。", "analysis": "看到後面的 to smokers，就該反射性選出 limited。", "summary": "be limited to / be restricted to (受限於...)，這兩個片語是閱讀與寫作必備。" } },
+        { "q_num": "43", "options": {"A": "activated","B": "cough","C": "breathing","D": "adopting","E": "indicated","F": "symptoms","G": "near","H": "harmful","I": "damages","J": "limited","K": "to","L": "by","M": "weak","N": "teenage","O": "public"}, "answer": "H", "explanation": { "technique": "【語意轉折】：前一句說只對吸菸者有害，But 轉折後，表示二手菸對非吸菸者也有「害 (harmful)」。", "analysis": "be harmful to (對...有害)，填入形容詞 harmful 完美契合文法。", "summary": "be harmful to = do harm to，都是表達「對...造成傷害」的極佳寫法。" } },
+        { "q_num": "44", "options": {"A": "activated","B": "cough","C": "breathing","D": "adopting","E": "indicated","F": "symptoms","G": "near","H": "harmful","I": "damages","J": "limited","K": "to","L": "by","M": "weak","N": "teenage","O": "public"}, "answer": "E", "explanation": { "technique": "【動詞尋找】：主詞 a U.S. Government report 後面缺了動詞，且要帶出 that 子句。故選過去式動詞 indicated (指出)。", "analysis": "indicated 符合報告「指出/表明」事實的語境。", "summary": "report indicated / showed / revealed that... 是引述報告結果的黃金動詞群。" } },
+        { "q_num": "45", "options": {"A": "activated","B": "cough","C": "breathing","D": "adopting","E": "indicated","F": "symptoms","G": "near","H": "harmful","I": "damages","J": "limited","K": "to","L": "by","M": "weak","N": "teenage","O": "public"}, "answer": "C", "explanation": { "technique": "【介系詞文法】：介系詞 from 後面要接 V-ing。吸菸的動作是 breathing in (吸入)。", "analysis": "選 breathing 配合 in other people's cigarette smoke (吸入別人的煙)。", "summary": "breathe (動詞) 字尾有 e；breath (名詞) 沒有 e，發音也完全不同，千萬別搞混！" } },
+        { "q_num": "46", "options": {"A": "activated","B": "cough","C": "breathing","D": "adopting","E": "indicated","F": "symptoms","G": "near","H": "harmful","I": "damages","J": "limited","K": "to","L": "by","M": "weak","N": "teenage","O": "public"}, "answer": "N", "explanation": { "technique": "【形容詞修飾】：空格在名詞 athletes 前，需填入形容詞修飾。", "analysis": "teenage (青少年的) 修飾運動員，符合文意。" } },
+        { "q_num": "47", "options": {"A": "activated","B": "cough","C": "breathing","D": "adopting","E": "indicated","F": "symptoms","G": "near","H": "harmful","I": "damages","J": "limited","K": "to","L": "by","M": "weak","N": "teenage","O": "public"}, "answer": "G", "explanation": { "technique": "【地方副詞】：Being 後方接地方副詞片語，表示「處於...附近」。", "analysis": "near (靠近) cigarette smoke，符合二手菸情境。" } },
+        { "q_num": "48", "options": {"A": "activated","B": "cough","C": "breathing","D": "adopting","E": "indicated","F": "symptoms","G": "near","H": "harmful","I": "damages","J": "limited","K": "to","L": "by","M": "weak","N": "teenage","O": "public"}, "answer": "B", "explanation": { "technique": "【使役動詞用法】：使役動詞 make + 受詞 + 原形動詞。", "analysis": "原形動詞 cough (咳嗽) 符合抽二手菸的生理反應。" } },
+        { "q_num": "49", "options": {"A": "activated","B": "cough","C": "breathing","D": "adopting","E": "indicated","F": "symptoms","G": "near","H": "harmful","I": "damages","J": "limited","K": "to","L": "by","M": "weak","N": "teenage","O": "public"}, "answer": "L", "explanation": { "technique": "【慣用片語】：close by 為地方副詞片語，表示「在附近」。", "analysis": "介系詞 by 與 close 搭配。" } },
+        { "q_num": "50", "options": {"A": "activated","B": "cough","C": "breathing","D": "adopting","E": "indicated","F": "symptoms","G": "near","H": "harmful","I": "damages","J": "limited","K": "to","L": "by","M": "weak","N": "teenage","O": "public"}, "answer": "O", "explanation": { "technique": "【固定搭配詞】：public places (公共場所) 為固定搭配名詞組。", "analysis": "形容詞 public 修飾 places。" } }
       ]
     },
     {
@@ -399,30 +260,30 @@
       "tags": ["中譯英"],
       "passage": null,
       "questions": [
-        { "q_num": "51", "q_disp": "譯1", "q_text": "昨天在回家的路上，我看到一個小女孩在<span class='lvl3-word' data-word='roadside' data-pron='/ˈroʊd.saɪd/' data-def='n. 路邊' data-colloc='by the roadside (在路邊); roadside stand (路邊攤)'>路邊</span>哭泣。", "answer": "Yesterday on my way home, I saw a little girl crying by the roadside.", "explanation": { "technique": "「在回家的路上」：on my way home。「看到某人正在做...」：感官動詞 saw + 受詞 + V-ing。", "analysis": "感官動詞 see 後方加上 crying (現在分詞)，生動表達出當時「正在哭」的情境。" } },
-        { "q_num": "52", "q_disp": "譯2", "q_text": "我趕緊跑過去，問她到底發生了什麼事。", "answer": "I hurried over and asked her what exactly had happened.", "explanation": { "technique": "「趕緊跑過去」：hurried over / ran over quickly。「發生了什麼事」要用過去完成式 (had happened)，因為事情發生在「問」之前。", "analysis": "what exactly had happened 是一個名詞子句，當作 asked 的受詞。" } },
-        { "q_num": "53", "q_disp": "譯3", "q_text": "小女孩說她按了好幾次門鈴，卻沒有人來開門。", "answer": "The little girl said she had rung the doorbell several times, but no one came to answer the door.", "explanation": { "technique": "「按門鈴」：ring the doorbell。「好幾次」：several times / many times。", "analysis": "「按門鈴」這件事發生在「她說」之前，因此建議使用過去完成式 (had rung) 展現時態層次。" } },
-        { "q_num": "54", "q_disp": "譯4", "q_text": "看到她哭得那麼傷心，我就陪她等媽媽回來。", "answer": "Seeing her crying so sadly, I kept her company while waiting for her mother to come back.", "explanation": { "technique": "「看到...」使用分詞構句：Seeing...。「陪她」：stay with her / keep her company。", "analysis": "分詞構句 Seeing her crying... 省略了 Because I saw，讓句子更精簡流暢。" } },
-        { "q_num": "55", "q_disp": "譯5", "q_text": "雖然晚了半個鐘頭才回到家，我覺得我做了一件有意義的事。", "answer": "Although I got home half an hour late, I felt I had done something meaningful.", "explanation": { "technique": "「晚了半個鐘頭」：half an hour late。「有意義的事」：something meaningful (形容詞必須放在不定代名詞後面)。", "analysis": "something meaningful 是國中到高中必考的文法：修飾 thing/body/one 的形容詞必須「後位修飾」。" } }
+        { "q_num": "51", "q_disp": "譯1", "q_text": "對於什麼是最佳的渡假方式，大家都有不同的看法。", "answer": "People have different opinions on what is the best way to spend a vacation.", "explanation": { "technique": "【名詞子句當受詞】：「對...有不同看法」：have different opinions on/about...；「什麼是...」：疑問詞 what 引導名詞子句當作 on 的受詞。", "analysis": "標準的「名詞子句當介系詞受詞」用法，這是大考翻譯必考重點。" } },
+        { "q_num": "52", "q_disp": "譯2", "q_text": "有些人喜歡到寧靜的森林中去，在那兒他們可以<span class='lvl3-word' data-word='temporarily' data-pron='/ˌtem.pəˈrer.əl.i/' data-def='adv. 暫時地' data-colloc='temporarily closed (暫時關閉); temporarily out of stock (暫時缺貨)'>暫時</span>遠離人群。", "answer": "Some people like to go to a quiet forest, where they can temporarily stay away from crowds.", "explanation": { "technique": "【關係副詞】：「在那兒...」：使用關係副詞 where 引導形容詞子句補充說明森林。「暫時遠離人群」：temporarily stay away from crowds.", "analysis": "此題考驗關係副詞 where 的運用，逗號後的 where 等於 and there。" } },
+        { "q_num": "53", "q_disp": "譯3", "q_text": "有些人卻寧願到大都市去，因為他們可以參觀博物館或購物。", "answer": "Some, however, would rather go to big cities because they can visit museums or go shopping.", "explanation": { "technique": "【助動詞句型】：「寧願...」：would rather + 原形動詞", "analysis": "對比前面的 Some people，此處可用 Some, however，增加文章層次。" } },
+        { "q_num": "54", "q_disp": "譯4", "q_text": "還有一些人喜歡到海邊去，讓海浪沖走他們的煩惱。", "answer": "Still others like to go to the beach and let the waves wash away their worries.", "explanation": { "technique": "【使役動詞】：「讓海浪沖走煩惱」：let (使役動詞) + the waves + wash away (原形動詞) + their worries.", "analysis": "使役動詞 let 的受詞補語必須是原形動詞，這是國中到高中都不斷重複的超級大考點。" } },
+        { "q_num": "55", "q_disp": "譯5", "q_text": "有少數人則決定留在家裡，做一些像打掃屋子之類的事。", "answer": "A few people decide to stay at home and do things like cleaning the house.", "explanation": { "technique": "【介系詞用法】：「像...之類的事」：things like + V-ing", "analysis": "like 在此作為介系詞，後方動詞須加上 -ing 變動名詞。此處 cleaning the house 是動名詞片語。" } }
       ]
     },
     {
       "group_id": "essay_1",
       "type": "essay",
       "tags": ["英文作文"],
-      "passage": "<div class='bg-pink-50 border border-pink-200 p-6 rounded-xl text-pink-900 leading-relaxed shadow-sm'><h3 class='text-xl font-extrabold border-b-2 border-pink-200 pb-3 mb-4 flex items-center gap-2'>📝 英文作文寫作提示</h3><b>【提示】</b><br>1. 高中生王治平收到美國筆友 George 的來信，告訴治平他要隨父母到台灣來住兩年左右，並問治平： \"Can you give me some <span class='lvl3-word' data-word='suggestion' data-pron='/səˈdʒes.tʃən/' data-def='n. 建議' data-colloc='make a suggestion (提出建議); helpful suggestion (實用的建議); constructive suggestion (建設性的建議)'>suggestions</span> so that I know what I should do and what I should not do when I am in Taiwan?\" 現在請你以治平的身份，擬一封適當的回信給 George，歡迎他來台灣，並且針對他的問題，提出一些具體的建議。<br>2. 回信的上下款應依下列方式寫出：<br><br>February 20, 1995<br>Dear George:<br>...<br>Your friend,<br>Chih-ping</div>",
+      "passage": "<div class='bg-teal-50 border border-teal-200 p-6 rounded-xl text-teal-900 leading-relaxed shadow-sm'><h3 class='text-xl font-extrabold border-b-2 border-teal-200 pb-3 mb-4 flex items-center gap-2'>📝 英文作文寫作提示</h3><b>【題目】</b><br>Things Are Not As Difficult As They Appear (事情不如表面看起來困難)<br><br><b>【說明】</b><br>在成長的過程中，有些事情在開始的時候你可能覺得很難，但經過一番努力後就不再認為因難了。請寫一篇至少一百二十個單字的英文作文，描述一個親身的經驗。<br><br><span class='text-red-600 font-bold bg-red-50 px-2 py-1 rounded inline-block mt-2'>⚠️ 規定：文章的頭兩句必須是：</span><br><span class='font-bold text-[1.05rem]'>Things are not as difficult as they appear. I have a personal experience to prove this.</span></div>",
       "questions": [
         {
           "q_num": "56",
           "q_disp": "作文",
-          "q_text": "請在下方作答區輸入您的回信，系統將為您統計字數。",
-          "answer": "February 20, 1995\n\nDear George:\nI was thrilled to receive your letter and learn that you will be moving to Taiwan for about two years! It is wonderful news, and I am more than happy to give you some advice to help you adjust to life here.\n\nFirst of all, you should definitely try the local street food. Taiwan is famous for its night markets, where you can find delicious and inexpensive snacks like stinky tofu and bubble tea. However, you should not drink tap water directly; always make sure it is boiled or buy bottled water to avoid stomach issues. Furthermore, when visiting temples or people's homes, remember to take off your shoes at the entrance, as it is a basic sign of respect in our culture.\n\nI can't wait to show you around once you arrive. Have a safe flight, and see you soon!\n\nYour friend,\nChih-ping",
+          "q_text": "請在下方作答區輸入您的作文，系統將為您統計字數。",
+          "answer": "Things are not as difficult as they appear. I have a personal experience to prove this. When I first started learning how to swim, I was <span class='lvl3-word' data-word='terrify' data-pron='/ˈter.ə.faɪ/' data-def='v. 使恐懼' data-colloc='be terrified of (極度害怕); absolutely terrified (嚇壞了)'>terrified</span> of the water. Every time I stepped into the pool, my heart would race, and I felt like I was going to sink. It seemed impossible for me to float, let alone swim across the pool.\n\nHowever, I didn't give up. I enrolled in a swimming class and practiced breathing underwater. My coach taught me how to relax my muscles. <span class='lvl3-word' data-word='gradually' data-pron='/ˈɡrædʒ.u.ə.li/' data-def='adv. 逐漸地' data-colloc='gradually increase (逐漸增加); gradually disappear (逐漸消失)'>Gradually</span>, after weeks of swallowing water and struggling, I finally managed to swim my first lap. Now, swimming is my favorite sport. This experience taught me that with <span class='lvl3-word' data-word='persistence' data-pron='/pɚˈsɪs.təns/' data-def='n. 堅持；毅力' data-colloc='rewarded for persistence (因堅持而獲回報); require persistence (需要毅力)'>persistence</span>, any difficulty can be overcome.",
           "explanation": {
-            "technique": "【寫作架構指引】：\n1. **開頭問候**：表達收到信的喜悅 (I was thrilled to...)，並熱烈歡迎對方來台灣居住。\n2. **具體建議 (Dos and Don'ts)**：針對對方詢問的「該做」與「不該做」的事情提出實用建議。可以涵蓋飲食（如夜市小吃、飲水衛生不能生飲）與風俗習慣（如進屋脫鞋）。\n3. **結尾期待**：表達期待對方到來，並祝旅途平安 (Have a safe flight)。",
-            "analysis": "【時態與語氣提醒】：\n這是一封私人信件，語氣可以輕鬆友善 (friendly and welcoming)。給予建議時，多使用 you should, remember to, make sure to 等祈使或建議語氣。",
-            "collocations": ["adjust to life here (適應這裡的生活)", "show you around (帶你四處逛逛)"],
-            "sentences": ["I can't wait to show you around once you arrive. (你一抵達我就等不及要帶你四處逛逛了。)"],
-            "summary": "英文書信的結尾敬語，寫給朋友最常用的就是 Your friend, / Best wishes, / Warm regards,。"
+            "technique": "【寫作架構指引】：\n1. **破題與情境設定**：務必先抄寫規定的兩句話。接著挑選一個具體的技能（如學游泳、騎腳踏車、學樂器），強烈描述初學時的恐懼與挫折感，製造反差。\n2. **轉折與行動**：用 However 或 Nevertheless 帶出你不放棄的行動（如報名課程、反覆練習），使用漸進式副詞（Gradually）。\n3. **結論點題**：呼應首句，用一句有力的格言收尾，展現堅持的力量。",
+            "analysis": "【時態與句型提醒】：\n- 描述過去經驗時必須全程使用「過去式」。\n- 結論的體悟可以使用「現在式」表示真理。",
+            "collocations": ["be terrified of... (極度害怕...)", "let alone... (更不用說...)"],
+            "sentences": ["It seemed impossible for me to float, let alone swim across the pool. (我似乎連漂浮都不可能，更不用說游過泳池了。)"],
+            "summary": "必背寫作結尾金句：This experience taught me that with persistence, any difficulty can be overcome. (這段經驗教會我，只要堅持，任何困難都能被克服。)"
           }
         }
       ]
