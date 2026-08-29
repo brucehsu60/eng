@@ -6,7 +6,6 @@
     <title>高中英文歷屆題庫系統 (名師旗艦版)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 移除所有內層捲軸限制，讓整個 body 自然滾動 (一頁到底) */
         body { margin: 0; padding: 0; min-height: 100vh; background-color: #f1f5f9; scroll-behavior: smooth; }
         
         .lvl3-word { 
@@ -19,7 +18,7 @@
         #dict-tooltip {
             position: absolute; z-index: 9999; background: #0f172a; color: white;
             padding: 16px; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5);
-            width: 340px; display: none; font-size: 0.95rem; line-height: 1.6;
+            width: 350px; display: none; font-size: 0.95rem; line-height: 1.6;
             border: 1px solid #334155; pointer-events: auto;
         }
         
@@ -41,11 +40,9 @@
     <!-- 互動式字典 -->
     <div id="dict-tooltip"></div>
 
-    <!-- 頂部導航 -->
     <header class="bg-white shadow-md border-b border-gray-200 relative z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center gap-6">
-                <!-- 移除了年份的顯示，只留下考試類別與科目 -->
                 <h1 id="exam-title" class="text-xl font-extrabold text-blue-800 tracking-wide whitespace-nowrap">高中英文歷屆題庫</h1>
                 <div class="flex flex-wrap gap-2 text-sm font-bold" id="category-filters">
                     <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-blue-600 text-white border border-blue-600" data-color="blue" onclick="changeMode('practice', '全部', this)">全部</button>
@@ -76,14 +73,11 @@
             </div>
         </div>
 
-        <!-- 題號導航區 -->
         <div class="max-w-7xl mx-auto px-4 py-3 bg-white flex flex-wrap items-center gap-2 border-t border-gray-200 shadow-sm" id="nav-container"></div>
     </header>
 
-    <!-- 一頁式主要內容區 -->
     <main id="main-content-area" class="max-w-7xl mx-auto px-4 py-8 w-full flex flex-col gap-10 mb-20"></main>
 
-    <!-- 工具視圖 (重點、單字、錯題本) -->
     <div id="tools-view" class="max-w-7xl mx-auto px-4 py-8 w-full flex flex-col hidden mb-20">
         <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
             <div class="px-6 py-4 border-b bg-gray-50 flex justify-between items-center">
@@ -104,7 +98,7 @@
             }
         };
 
-        let state = { exam: '學測', year: 83, type: '全部', mode: 'practice' };
+        let state = { exam: '學測', year: 84, type: '全部', mode: 'practice' };
         let examData = null;
         let isSpeaking = false;
         let speechUtterance = new SpeechSynthesisUtterance();
@@ -155,7 +149,6 @@
                 if (!res.ok) throw new Error();
                 examData = await res.json();
                 
-                // 【修改點】不再顯示具體的年分，只顯示考試類別與科目
                 document.getElementById('exam-title').innerText = `${state.exam} ${examData.subject} 歷屆題庫`;
                 
                 if(state.mode === 'practice') {
@@ -265,14 +258,12 @@
                     </div>
                 `;
 
-                // 翻譯與作文 (非選擇題) 採用全寬度上下排版
                 let isFullWidthLayout = (!group.passage || group.type === 'essay' || group.type === 'translation');
                 
                 let bodyHtml = `<div class="${isFullWidthLayout ? 'flex flex-col' : 'flex flex-col lg:flex-row'} w-full">`;
 
                 let passageContent = '';
                 if (group.passage && !isFullWidthLayout) {
-                    // 選擇題文章區 (佔 55% 寬)
                     let html = group.passage;
                     if(group.type === 'cloze' || group.type === 'matching'){
                         group.questions.forEach(q => {
@@ -291,7 +282,6 @@
                         });
                     }
 
-                    // 【修改點】為翻譯按鈕加上專屬 ID
                     passageContent = `
                         <div class="lg:w-[55%] p-6 border-b lg:border-b-0 lg:border-r border-gray-200 bg-gray-50/40 relative">
                             <div class="flex gap-2 mb-4">
@@ -303,7 +293,6 @@
                         </div>
                     `;
                 } else if (group.passage && isFullWidthLayout) {
-                    // 作文的提示區 (佔 100% 寬，題目在上)
                     passageContent = `
                         <div class="w-full p-6 border-b border-gray-200 bg-gray-50/40 relative">
                             <div class="text-[1.08rem] leading-loose text-gray-800 tracking-wide" id="passage-content-${group.group_id}">${group.passage}</div>
@@ -311,7 +300,6 @@
                     `;
                 }
 
-                // 題目作答區
                 let qWidthClass = isFullWidthLayout ? 'w-full' : 'lg:w-[45%]';
                 let questionsHtml = `<div class="${qWidthClass} p-6 space-y-10 bg-white">`;
 
@@ -396,7 +384,7 @@
             bindVocabEvents();
         }
 
-        // 【修改點】強化顯示翻譯按鈕的樣式切換邏輯
+        // 強制穩定切換翻譯顯示，並變更按鈕樣式
         function toggleTranslation(groupId) { 
             const el = document.getElementById(`passage-translation-${groupId}`);
             const btn = document.getElementById(`btn-translate-${groupId}`);
@@ -532,7 +520,11 @@
                         </div>
                         <div class="text-sm text-gray-500 mb-3 bg-gray-50 inline-block px-2 py-1 rounded">${v.pron}</div>
                         <div class="text-[1rem] text-gray-800 font-medium leading-relaxed">${v.def}</div>
-                        ${v.colloc ? `<div class="bg-amber-50 p-3 rounded-lg border border-amber-200 text-[0.9rem] text-amber-900 mt-4 shadow-inner"><span class="font-extrabold text-amber-600 mb-1 flex items-center gap-1">📌 常見搭配詞:</span>${v.colloc.replace(/;/g, '<br>')}</div>` : ''}
+                        
+                        <!-- 渲染儲存的搭配詞與衍生字 -->
+                        ${v.colloc ? `<div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-[0.9rem] text-blue-200 mt-4 shadow-inner"><span class="font-extrabold text-amber-400 mb-1 flex items-center gap-1">📌 常見搭配詞:</span>${v.colloc.replace(/;/g, '<br>')}</div>` : ''}
+                        ${v.deriv ? `<div class="bg-emerald-900/50 p-3 rounded-lg border border-emerald-700/50 text-[0.9rem] text-emerald-200 mt-2 shadow-inner"><span class="font-extrabold text-emerald-400 mb-1 flex items-center gap-1">🌿 衍生字:</span>${v.deriv.replace(/;/g, '<br>')}</div>` : ''}
+
                         <div class="text-xs text-gray-400 mt-5 text-right border-t border-gray-100 pt-2">收藏日期: ${v.addedAt}</div>
                     </div>`;
                 });
@@ -576,7 +568,8 @@
             renderToolsView('vocabBook');
         }
 
-        function toggleVocabWord(word, pron, def, colloc) {
+        // 修改：加入 deriv 參數存入 LocalStorage
+        function toggleVocabWord(word, pron, def, colloc, deriv) {
             let vocabs = JSON.parse(localStorage.getItem('vocabBook') || '[]');
             const exists = vocabs.some(v => v.word === word);
             
@@ -584,7 +577,7 @@
                 vocabs = vocabs.filter(v => v.word !== word);
                 document.getElementById('btn-vocab-star').innerText = '☆ 收藏';
             } else {
-                vocabs.push({ word, pron, def, colloc, addedAt: new Date().toLocaleDateString() });
+                vocabs.push({ word, pron, def, colloc, deriv, addedAt: new Date().toLocaleDateString() });
                 document.getElementById('btn-vocab-star').innerText = '★ 已收藏';
             }
             localStorage.setItem('vocabBook', JSON.stringify(vocabs));
@@ -652,6 +645,7 @@
             isSpeaking = false; 
         }
 
+        // 修改：讀取並渲染 data-deriv 屬性
         function bindVocabEvents() {
             const words = document.querySelectorAll('.lvl3-word');
             const tooltip = document.getElementById('dict-tooltip');
@@ -662,6 +656,7 @@
                     const pron = e.target.dataset.pron || '';
                     const def = e.target.dataset.def || '';
                     const colloc = e.target.dataset.colloc || '';
+                    const deriv = e.target.dataset.deriv || ''; // 新增：讀取衍生字
                     
                     speakWord(word); 
                     
@@ -673,8 +668,10 @@
                     const isAdded = vocabs.some(v => v.word === word);
                     const btnText = isAdded ? '★ 已收藏' : '☆ 收藏';
                     
+                    // 防呆處理跳脫字元
                     const safeDef = def.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                     const safeColloc = colloc.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                    const safeDeriv = deriv.replace(/'/g, "\\'").replace(/"/g, "&quot;"); // 新增
                     
                     tooltip.innerHTML = `
                         <div class="flex justify-between items-start border-b border-slate-600 pb-3 mb-3">
@@ -682,10 +679,11 @@
                                 <div class="font-extrabold text-blue-400 text-[1.3rem]">${word}</div>
                                 <div class="text-[0.8rem] text-slate-400 mt-1 font-mono">${pron}</div>
                             </div>
-                            <button id="btn-vocab-star" onclick="toggleVocabWord('${word}', '${pron}', '${safeDef}', '${safeColloc}')" class="text-xs bg-slate-700 hover:bg-slate-600 text-amber-400 px-3 py-1.5 rounded-full transition border border-slate-500 font-bold shadow-md">${btnText}</button>
+                            <button id="btn-vocab-star" onclick="toggleVocabWord('${word}', '${pron}', '${safeDef}', '${safeColloc}', '${safeDeriv}')" class="text-xs bg-slate-700 hover:bg-slate-600 text-amber-400 px-3 py-1.5 rounded-full transition border border-slate-500 font-bold shadow-md">${btnText}</button>
                         </div>
                         <div class="text-slate-100 text-[1rem] leading-relaxed mb-3 font-medium">${def}</div>
-                        ${colloc ? `<div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-[0.9rem] text-blue-200 mt-2 shadow-inner"><span class="font-extrabold text-amber-400 mb-1 block flex items-center gap-1">📌 常見搭配詞:</span>${colloc.replace(/;/g, '<br>')}</div>` : ''}
+                        ${colloc ? `<div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-[0.9rem] text-blue-200 mt-2 shadow-inner"><span class="font-extrabold text-amber-400 mb-1 flex items-center gap-1">📌 常見搭配詞:</span>${colloc.replace(/;/g, '<br>')}</div>` : ''}
+                        ${deriv ? `<div class="bg-emerald-900/50 p-3 rounded-lg border border-emerald-700/50 text-[0.9rem] text-emerald-200 mt-2 shadow-inner"><span class="font-extrabold text-emerald-400 mb-1 flex items-center gap-1">🌿 衍生字:</span>${deriv.replace(/;/g, '<br>')}</div>` : ''}
                     `;
                 });
                 
