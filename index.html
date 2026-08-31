@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高中英文歷屆題庫系統 (名師旗艦版)</title>
+    <title>高中英文歷屆題庫系統 (Pro)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { margin: 0; padding: 0; min-height: 100vh; background-color: #f1f5f9; scroll-behavior: smooth; }
+        body { margin: 0; padding: 0; min-height: 100vh; background-color: #f8fafc; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
         .lvl3-word { 
             cursor: pointer; border-bottom: 2px dashed #3b82f6; 
-            color: #1d4ed8; font-weight: bold; transition: all 0.2s ease; padding: 0 3px;
+            color: #1d4ed8; font-weight: bold; transition: background-color 0.2s; padding: 0 2px;
         }
-        .lvl3-word:hover { background-color: #dbeafe; border-radius: 4px; transform: scale(1.05); }
+        .lvl3-word:hover { background-color: #dbeafe; border-radius: 4px; }
 
-        /* 升級版互動式字典框 */
+        /* 互動式字典框 */
         #dict-tooltip {
-            position: absolute; z-index: 9999; background: #0f172a; color: white;
-            padding: 16px; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5);
-            width: 350px; display: none; font-size: 0.95rem; line-height: 1.6;
-            border: 1px solid #334155; pointer-events: auto;
+            position: absolute; z-index: 9999; background: #1e293b; color: white;
+            padding: 14px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            width: 280px; display: none; font-size: 0.95rem; line-height: 1.5;
         }
         
         .cloze-select {
@@ -31,8 +34,8 @@
         .cloze-select.correct { background-color: #dcfce7; border-color: #22c55e; color: #15803d; }
         .cloze-select.wrong { background-color: #fee2e2; border-color: #ef4444; color: #b91c1c; }
         
-        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="text-gray-800 font-sans flex flex-col">
@@ -40,53 +43,79 @@
     <!-- 互動式字典 -->
     <div id="dict-tooltip"></div>
 
-    <header class="bg-white shadow-md border-b border-gray-200 relative z-50">
+    <!-- 頂部導航 -->
+    <header class="bg-white shadow-sm border-b border-gray-200 z-10 flex-shrink-0 relative">
         <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center gap-6">
-                <h1 id="exam-title" class="text-xl font-extrabold text-blue-800 tracking-wide whitespace-nowrap">高中英文歷屆題庫</h1>
+                <h1 id="exam-title" class="text-xl font-bold text-blue-700 tracking-wide whitespace-nowrap">高中英文歷屆題庫</h1>
                 <div class="flex flex-wrap gap-2 text-sm font-bold" id="category-filters">
                     <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-blue-600 text-white border border-blue-600" data-color="blue" onclick="changeMode('practice', '全部', this)">全部</button>
-                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-green-600 border border-green-500 hover:bg-green-50" data-color="green" onclick="changeMode('practice', '詞彙題', this)">詞彙題</button>
-                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-blue-600 border border-blue-500 hover:bg-blue-50" data-color="blue" onclick="changeMode('practice', '綜合測驗', this)">綜合測驗</button>
-                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-purple-600 border border-purple-500 hover:bg-purple-50" data-color="purple" onclick="changeMode('practice', '文意選填', this)">文意選填</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-green-600 border border-green-500 hover:bg-green-50" data-color="green" onclick="changeMode('practice', '詞彙', this)">詞彙</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-blue-600 border border-blue-500 hover:bg-blue-50" data-color="blue" onclick="changeMode('practice', '綜合測驗', this)">克漏字</button>
                     <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-orange-600 border border-orange-500 hover:bg-orange-50" data-color="orange" onclick="changeMode('practice', '閱讀測驗', this)">閱讀測驗</button>
-                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-teal-600 border border-teal-500 hover:bg-teal-50" data-color="teal" onclick="changeMode('practice', '中譯英', this)">中譯英</button>
-                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-pink-600 border border-pink-500 hover:bg-pink-50" data-color="pink" onclick="changeMode('practice', '英文作文', this)">英文作文</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-purple-600 border border-purple-500 hover:bg-purple-50" data-color="purple" onclick="changeMode('practice', '文意選填', this)">文意選填</button>
+                    <button class="filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-teal-600 border border-teal-500 hover:bg-teal-50" data-color="teal" onclick="changeMode('practice', '非選擇題', this)">非選擇題</button>
                 </div>
             </div>
             
-            <div class="flex gap-3">
-                <button onclick="changeMode('summary', null, this)" class="bg-indigo-600 hover:bg-indigo-700 text-white shadow-md font-bold px-4 py-2 rounded-lg transition text-sm flex items-center gap-1">📋 考前重點摘要</button>
-                <button onclick="changeMode('vocabBook', null, this)" class="bg-amber-100 hover:bg-amber-200 text-amber-800 border border-amber-300 font-bold px-3 py-2 rounded-lg transition text-sm flex items-center gap-1">⭐ 單字庫</button>
-                <button onclick="changeMode('mistakes', null, this)" class="bg-rose-100 hover:bg-rose-200 text-rose-800 border border-rose-300 font-bold px-3 py-2 rounded-lg transition text-sm flex items-center gap-1">📓 錯題本</button>
+            <!-- 學習工具列 -->
+            <div class="flex gap-2">
+                <button onclick="changeMode('summary', null, this)" class="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 border border-indigo-300 font-bold px-3 py-1.5 rounded transition text-sm flex items-center gap-1">📋 重點摘要</button>
+                <button onclick="changeMode('vocabBook', null, this)" class="bg-yellow-100 hover:bg-yellow-200 text-yellow-700 border border-yellow-300 font-bold px-3 py-1.5 rounded transition text-sm flex items-center gap-1">⭐ 單字庫</button>
+                <button onclick="changeMode('mistakes', null, this)" class="bg-red-100 hover:bg-red-200 text-red-700 border border-red-300 font-bold px-3 py-1.5 rounded transition text-sm flex items-center gap-1">📓 錯題本</button>
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto px-4 py-2 bg-gray-50 flex flex-col gap-2 border-t border-gray-100" id="exam-selector-bar">
+        <div class="max-w-7xl mx-auto px-4 py-2 bg-white flex flex-col gap-2 border-t border-gray-100" id="exam-selector-bar">
             <div class="flex items-center gap-2 text-sm">
                 <span class="font-bold text-gray-500 w-16">考試：</span>
                 <div class="flex flex-wrap gap-1" id="filter-exam"></div>
             </div>
             <div class="flex items-center gap-2 text-sm">
                 <span class="font-bold text-gray-500 w-16">年份：</span>
-                <div class="flex flex-wrap gap-1" id="filter-year"></div>
+                <div class="flex flex-wrap gap-1 max-h-24 overflow-y-auto custom-scrollbar pr-2" id="filter-year"></div>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 py-3 bg-white flex flex-wrap items-center gap-2 border-t border-gray-200 shadow-sm" id="nav-container"></div>
+        <div class="max-w-7xl mx-auto px-4 py-2 bg-gray-50 flex flex-wrap items-center gap-2 border-t border-gray-200" id="nav-container"></div>
     </header>
 
-    <main id="main-content-area" class="max-w-7xl mx-auto px-4 py-8 w-full flex flex-col gap-10 mb-20"></main>
-
-    <div id="tools-view" class="max-w-7xl mx-auto px-4 py-8 w-full flex flex-col hidden mb-20">
-        <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-            <div class="px-6 py-4 border-b bg-gray-50 flex justify-between items-center">
-                <h2 id="tools-title" class="text-2xl font-extrabold text-gray-800 tracking-wide">載入中...</h2>
-                <button onclick="changeMode('practice', state.type, null)" class="text-gray-400 hover:text-red-500 font-bold text-2xl transition">✖</button>
+    <main class="max-w-7xl mx-auto px-4 py-4 flex-1 w-full flex flex-col mb-10 relative">
+        
+        <!-- 【模式 1】：作答區 (Split-Screen) -->
+        <div id="practice-view" class="w-full flex flex-col lg:flex-row gap-4 h-[70vh] min-h-[600px]">
+            <!-- 左欄 -->
+            <div id="passage-section" class="w-full bg-white rounded-lg shadow flex flex-col h-full hidden transition-colors duration-300">
+                <div class="px-4 py-2 border-b flex justify-between items-center bg-white/50">
+                    <span id="part-name" class="font-bold text-gray-700 text-sm">文章閱讀</span>
+                    <div class="flex gap-2">
+                        <button id="btn-read-passage" onclick="readPassageAloud()" class="text-xs bg-white text-blue-600 border border-blue-300 px-2 py-1 rounded shadow-sm hover:bg-blue-50 transition font-bold">🗣️ 朗讀文章</button>
+                        <button onclick="toggleTranslation()" class="text-xs bg-gray-700 text-white border border-gray-700 px-2 py-1 rounded shadow-sm hover:bg-gray-800 transition">顯示翻譯</button>
+                    </div>
+                </div>
+                <div class="p-5 overflow-y-auto custom-scrollbar flex-1 text-[1.05rem] leading-relaxed text-gray-800" id="passage-content"></div>
+                <div id="passage-translation" class="hidden p-4 bg-yellow-100/50 border-t border-yellow-200 text-sm text-gray-800 h-2/5 overflow-y-auto custom-scrollbar leading-relaxed"></div>
             </div>
-            <div class="p-6 bg-slate-50 min-h-[60vh]" id="tools-content"></div>
+
+            <!-- 右欄 -->
+            <div id="question-section" class="w-full bg-white rounded-lg shadow flex flex-col h-full mx-auto transition-colors duration-300">
+                <div class="px-4 py-2 border-b flex justify-between bg-white/50 font-bold text-gray-700 text-sm">
+                    <span id="q-section-title">題目與作答區</span>
+                </div>
+                <div class="p-5 overflow-y-auto custom-scrollbar flex-1 relative space-y-6" id="questions-container"></div>
+            </div>
         </div>
-    </div>
+
+        <!-- 【模式 2】：重點摘要 / 單字庫 / 錯題本 (全螢幕工具視圖) -->
+        <div id="tools-view" class="w-full bg-white rounded-lg shadow flex flex-col hidden min-h-[600px] border border-gray-200">
+            <div class="px-6 py-4 border-b bg-gray-50 flex justify-between items-center rounded-t-lg">
+                <h2 id="tools-title" class="text-2xl font-bold text-gray-800 tracking-wide">載入中...</h2>
+                <button onclick="changeMode('practice', state.type, null)" class="text-gray-500 hover:text-red-500 font-bold text-xl">✖ 關閉</button>
+            </div>
+            <div class="p-6 overflow-y-auto custom-scrollbar flex-1 bg-gray-50/30" id="tools-content"></div>
+        </div>
+
+    </main>
 
     <script>
         const config = {
@@ -98,15 +127,18 @@
             }
         };
 
-        let state = { exam: '學測', year: 84, type: '全部', mode: 'practice' };
+        let state = { exam: '學測', year: 83, type: '全部', mode: 'practice' };
         let examData = null;
+        let activeGroup = null;
         let isSpeaking = false;
         let speechUtterance = new SpeechSynthesisUtterance();
 
+        // ======= 系統初始化 =======
         window.onload = () => {
             renderDashboard();
             fetchData();
             
+            // 點擊空白處關閉字典
             document.addEventListener('click', (e) => {
                 const tooltip = document.getElementById('dict-tooltip');
                 if (!e.target.classList.contains('lvl3-word') && !tooltip.contains(e.target)) {
@@ -118,21 +150,23 @@
         speechUtterance.onend = () => {
             isSpeaking = false;
             document.querySelectorAll('.btn-speak').forEach(b => {
-                if(b.id && b.id.startsWith('btn-read-passage')) b.innerText = '🗣️ 朗讀文章';
-                else b.innerText = '🗣️ 朗讀題目';
+                if(b.id === 'btn-read-passage') b.innerText = '🗣️ 朗讀文章';
+                else b.innerText = '🗣️ 朗讀';
             });
         };
 
+        // ======= 儀表板控制 =======
         function renderDashboard() {
             const examHTML = config.exams.map(ex => `
-                <button onclick="setExam('${ex}')" class="px-4 py-1 text-sm font-bold rounded-full border transition ${state.exam === ex ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white text-gray-600 border-gray-300 hover:bg-gray-100'}">${ex}</button>
+                <button onclick="setExam('${ex}')" class="px-3 py-0.5 text-sm font-bold rounded-full border transition ${state.exam === ex ? 'bg-blue-500 text-white border-blue-500' : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'}">${ex}</button>
             `).join('');
             document.getElementById('filter-exam').innerHTML = examHTML;
 
             let yearHTML = '';
             const range = config.years[state.exam];
+            // 年份改為由小到大
             for (let y = range.min; y <= range.max; y++) {
-                yearHTML += `<button onclick="setYear(${y})" class="px-3 py-1 text-sm font-bold rounded-full border transition ${state.year === y ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white text-gray-600 border-gray-300 hover:bg-gray-100'}">${y}</button>`;
+                yearHTML += `<button onclick="setYear(${y})" class="px-3 py-0.5 text-sm font-bold rounded-full border transition ${state.year === y ? 'bg-blue-500 text-white border-blue-500' : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'}">${y}</button>`;
             }
             document.getElementById('filter-year').innerHTML = yearHTML;
         }
@@ -148,35 +182,33 @@
                 let res = await fetch(`data/${targetFile}`);
                 if (!res.ok) throw new Error();
                 examData = await res.json();
+                document.getElementById('exam-title').innerText = `${examData.exam_year} ${examData.subject} 歷屆題庫`;
                 
-                document.getElementById('exam-title').innerText = `${state.exam} ${examData.subject} 歷屆題庫`;
-                
-                if(state.mode === 'practice') {
-                    renderNavigator(state.type);
-                    renderExamPaper(state.type);
-                } else {
-                    renderToolsView(state.mode);
-                }
+                if(state.mode === 'practice') renderNavigator(state.type);
+                else renderToolsView(state.mode); 
                 
             } catch(e) {
                 examData = null;
                 document.getElementById('nav-container').innerHTML = `<span class="text-red-500 text-sm mt-1 font-bold">⚠️ 無法讀取：data/${targetFile}</span>`;
-                document.getElementById('main-content-area').innerHTML = `<div class="text-center text-gray-400 mt-20 text-xl font-bold">尚無此年份的資料，請選擇其他年份。</div>`;
+                document.getElementById('questions-container').innerHTML = `<div class="text-center text-gray-400 mt-10">尚無此年份的資料</div>`;
+                document.getElementById('passage-section').classList.add('hidden');
             }
         }
 
+        // ======= 視圖切換 (練習 vs 工具) =======
         function changeMode(mode, tag, btnElement) {
             state.mode = mode;
             window.speechSynthesis.cancel(); 
             isSpeaking = false;
             
             if (mode === 'practice') {
-                document.getElementById('main-content-area').classList.remove('hidden');
+                document.getElementById('practice-view').classList.remove('hidden');
                 document.getElementById('tools-view').classList.add('hidden');
                 document.getElementById('exam-selector-bar').classList.remove('hidden');
                 document.getElementById('nav-container').classList.remove('hidden');
                 
                 if(tag && btnElement) {
+                    // 處理標籤按鈕顏色
                     document.querySelectorAll('.filter-btn').forEach(btn => {
                         const color = btn.dataset.color;
                         if(color) btn.className = `filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-${color}-600 border border-${color}-500 hover:bg-${color}-50`;
@@ -185,277 +217,290 @@
                     btnElement.className = `filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-${activeColor}-600 text-white border border-${activeColor}-600`;
                     state.type = tag;
                     renderNavigator(tag);
-                    renderExamPaper(tag);
+                } else {
+                    renderNavigator(state.type);
                 }
             } else {
-                document.getElementById('main-content-area').classList.add('hidden');
+                document.getElementById('practice-view').classList.add('hidden');
                 document.getElementById('tools-view').classList.remove('hidden');
                 document.getElementById('exam-selector-bar').classList.add('hidden');
                 document.getElementById('nav-container').classList.add('hidden');
+                
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    const color = btn.dataset.color;
+                    if(color) btn.className = `filter-btn px-4 py-1.5 rounded-full transition shadow-sm bg-white text-${color}-600 border border-${color}-500 hover:bg-${color}-50`;
+                });
+                
                 renderToolsView(mode);
             }
         }
 
         function getThemeColors(type) {
-            if (type === 'vocabulary') return { bg: 'bg-green-100', text: 'text-green-800', border: 'border-green-300', actBg: 'bg-green-600', actText: 'text-white' };
-            if (type === 'cloze') return { bg: 'bg-blue-100', text: 'text-blue-800', border: 'border-blue-300', actBg: 'bg-blue-600', actText: 'text-white' };
-            if (type === 'matching') return { bg: 'bg-purple-100', text: 'text-purple-800', border: 'border-purple-300', actBg: 'bg-purple-600', actText: 'text-white' };
-            if (type === 'reading') return { bg: 'bg-orange-100', text: 'text-orange-800', border: 'border-orange-300', actBg: 'bg-orange-600', actText: 'text-white' };
-            if (type === 'translation') return { bg: 'bg-teal-100', text: 'text-teal-800', border: 'border-teal-300', actBg: 'bg-teal-600', actText: 'text-white' };
-            if (type === 'essay') return { bg: 'bg-pink-100', text: 'text-pink-800', border: 'border-pink-300', actBg: 'bg-pink-600', actText: 'text-white' };
+            if (type === 'vocabulary') return { bg: 'bg-green-100', text: 'text-green-700', border: 'border-green-300', actBg: 'bg-green-600', actText: 'text-white' };
+            if (type === 'cloze') return { bg: 'bg-blue-100', text: 'text-blue-700', border: 'border-blue-300', actBg: 'bg-blue-600', actText: 'text-white' };
+            if (type === 'matching') return { bg: 'bg-purple-100', text: 'text-purple-700', border: 'border-purple-300', actBg: 'bg-purple-600', actText: 'text-white' };
+            if (type === 'reading') return { bg: 'bg-orange-100', text: 'text-orange-700', border: 'border-orange-300', actBg: 'bg-orange-600', actText: 'text-white' };
+            if (type === 'translation' || type === 'essay') return { bg: 'bg-teal-100', text: 'text-teal-700', border: 'border-teal-300', actBg: 'bg-teal-600', actText: 'text-white' };
             return { bg: 'bg-gray-100', text: 'text-gray-700', border: 'border-gray-300', actBg: 'bg-gray-600', actText: 'text-white' };
         }
 
+        // ================= 題號導航 =================
         function renderNavigator(filterTag) {
             const nav = document.getElementById('nav-container');
             nav.innerHTML = '';
             if(!examData) return;
             
+            let firstGroupToLoad = null;
+
             examData.groups.forEach(group => {
                 if (filterTag === '全部' || group.tags.includes(filterTag)) {
+                    if (!firstGroupToLoad) firstGroupToLoad = group;
+
                     const tagLabel = document.createElement('span');
-                    tagLabel.className = 'text-xs font-bold text-white bg-slate-700 px-2 py-1 rounded mr-1 ml-3 mt-1 whitespace-nowrap shadow-sm';
-                    tagLabel.innerText = `${group.tags[0]}`;
+                    tagLabel.className = 'text-sm font-bold text-gray-500 mr-1 ml-3 mt-1.5 whitespace-nowrap';
+                    tagLabel.innerText = `[${group.tags[0]}]`;
                     nav.appendChild(tagLabel);
 
                     const theme = getThemeColors(group.type);
                     group.questions.forEach(q => {
                         const btn = document.createElement('button');
-                        btn.className = `nav-btn min-w-[2.2rem] px-2 h-8 text-sm rounded border ${theme.border} font-bold transition shadow-sm ${theme.bg} ${theme.text} hover:opacity-80 mt-1`;
+                        btn.className = `nav-btn min-w-[2rem] px-2 h-8 text-sm rounded-full border ${theme.border} font-bold transition shadow-sm ${theme.bg} ${theme.text}`;
                         btn.innerText = q.q_disp || q.q_num;
-                        btn.onclick = () => {
-                            const target = document.getElementById(`q-block-${q.q_num}`);
-                            if(target) {
-                                const y = target.getBoundingClientRect().top + window.scrollY - 30;
-                                window.scrollTo({ top: y, behavior: 'smooth' });
-                            }
-                        };
+                        btn.dataset.groupId = group.group_id; 
+                        btn.dataset.type = group.type;
+                        btn.dataset.qNum = q.q_num;
+                        btn.onclick = () => loadGroup(group, q.q_num, true); // 點擊時滾動
                         nav.appendChild(btn);
                     });
                 }
             });
+            
+            if(firstGroupToLoad) loadGroup(firstGroupToLoad, firstGroupToLoad.questions[0].q_num, false);
+            else document.getElementById('questions-container').innerHTML = '<div class="text-center text-gray-400 mt-10">此分類無題目</div>';
         }
 
-        function renderExamPaper(filterTag) {
-            const container = document.getElementById('main-content-area');
-            container.innerHTML = '';
-            window.speechSynthesis.cancel();
+        // ================= 載入題組 (包含修復文意選填 A) 問題) =================
+        function loadGroup(group, clickedQNum, shouldScroll = false) {
+            activeGroup = group;
+            window.speechSynthesis.cancel(); 
             isSpeaking = false;
 
-            let hasContent = false;
-
-            examData.groups.forEach(group => {
-                if (filterTag !== '全部' && !group.tags.includes(filterTag)) return;
-                hasContent = true;
-
-                const groupWrapper = document.createElement('div');
-                groupWrapper.className = 'w-full bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col';
-                groupWrapper.id = `group-${group.group_id}`;
-
-                const headerHtml = `
-                    <div class="px-5 py-3 border-b flex justify-between items-center bg-gray-50/80">
-                        <span class="font-extrabold text-gray-800 text-[1.1rem]">📖 ${group.tags[0]}</span>
-                    </div>
-                `;
-
-                let isFullWidthLayout = (!group.passage || group.type === 'essay' || group.type === 'translation');
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                const type = btn.dataset.type;
+                const theme = getThemeColors(type);
+                btn.className = `nav-btn min-w-[2rem] px-2 h-8 text-sm rounded-full border ${theme.border} font-bold transition shadow-sm ${theme.bg} ${theme.text}`;
                 
-                let bodyHtml = `<div class="${isFullWidthLayout ? 'flex flex-col' : 'flex flex-col lg:flex-row'} w-full">`;
-
-                let passageContent = '';
-                if (group.passage && !isFullWidthLayout) {
-                    let html = group.passage;
-                    if(group.type === 'cloze' || group.type === 'matching'){
-                        group.questions.forEach(q => {
-                            let optionsHtml = `<option value="" disabled selected>題 ${q.q_disp || q.q_num}</option>`;
-                            for (let key in q.options) {
-                                let optText = q.options[key].replace(/<[^>]+>/g, '');
-                                if (group.type === 'matching' && optText.length < 15) {
-                                    optionsHtml += `<option value="${key}">${optText}</option>`;
-                                } else {
-                                    let display = optText.startsWith('(') ? optText : `${key}) ${optText}`;
-                                    optionsHtml += `<option value="${key}">${display}</option>`;
-                                }
-                            }
-                            let selectHtml = `<select class="cloze-select shadow-sm" id="cloze-${q.q_num}" onchange="checkAnswer('${group.group_id}', '${q.q_num}', this.value)">${optionsHtml}</select>`;
-                            html = html.replace(`[BLANK_${q.q_num}]`, selectHtml);
-                        });
-                    }
-
-                    passageContent = `
-                        <div class="lg:w-[55%] p-6 border-b lg:border-b-0 lg:border-r border-gray-200 bg-gray-50/40 relative">
-                            <div class="flex gap-2 mb-4">
-                                <button type="button" id="btn-read-passage-${group.group_id}" onclick="readPassageAloud('${group.group_id}')" class="btn-speak text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold">🗣️ 朗讀文章</button>
-                                <button type="button" id="btn-translate-${group.group_id}" onclick="toggleTranslation('${group.group_id}')" class="text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold">📝 顯示翻譯</button>
-                            </div>
-                            <div class="text-[1.08rem] leading-loose text-gray-800 tracking-wide" id="passage-content-${group.group_id}">${html}</div>
-                            <div id="passage-translation-${group.group_id}" style="display: none;" class="mt-6 p-5 bg-amber-50 border-t-2 border-amber-200 text-[0.95rem] text-gray-800 leading-relaxed rounded-b-lg shadow-inner">${group.passage_translation || '暫無翻譯提供。'}</div>
-                        </div>
-                    `;
-                } else if (group.passage && isFullWidthLayout) {
-                    passageContent = `
-                        <div class="w-full p-6 border-b border-gray-200 bg-gray-50/40 relative">
-                            <div class="text-[1.08rem] leading-loose text-gray-800 tracking-wide" id="passage-content-${group.group_id}">${group.passage}</div>
-                        </div>
-                    `;
+                let isActive = false;
+                if (group.type === 'vocabulary') {
+                    if (btn.dataset.qNum === clickedQNum.toString()) isActive = true;
+                } else {
+                    if (btn.dataset.groupId === group.group_id) isActive = true;
                 }
 
-                let qWidthClass = isFullWidthLayout ? 'w-full' : 'lg:w-[45%]';
-                let questionsHtml = `<div class="${qWidthClass} p-6 space-y-10 bg-white">`;
-
-                group.questions.forEach(q => {
-                    let dispNum = q.q_disp || q.q_num;
-                    questionsHtml += `<div id="q-block-${q.q_num}" class="scroll-mt-10">`;
-                    
-                    questionsHtml += `<div class="flex items-center justify-between mb-4 border-b-2 border-slate-100 pb-2">
-                        <h3 class="text-lg font-extrabold text-slate-700 bg-slate-100 px-3 py-1 rounded-md shadow-sm">${group.type === 'essay' ? '英文作文作答區' : '第 ' + dispNum + ' 題'}</h3>`;
-                    
-                    if (group.type === 'vocabulary' || group.type === 'reading') {
-                        let cleanOption = q.options[q.answer].replace(/<[^>]+>/g, '');
-                        let textToRead = q.q_text.replace(/<[^>]+>/g, '').replace('_______', cleanOption).replace(/'/g, "\\'");
-                        questionsHtml += `<button class="btn-speak text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded shadow-sm hover:bg-blue-50 font-bold transition" onclick="toggleSpeakQuestion(this, '${textToRead}')">🗣️ 朗讀題目</button>`;
-                    }
-                    questionsHtml += `</div>`;
-
-                    if (group.type === 'vocabulary' || group.type === 'reading') {
-                        questionsHtml += `<div class="text-[1.05rem] font-medium text-gray-800 mb-4 leading-relaxed">${q.q_text}</div><div class="space-y-2 mb-3">`;
-                        for (let key in q.options) {
-                            questionsHtml += `
-                            <label class="flex items-center p-3 border border-gray-200 bg-white hover:bg-blue-50 rounded-lg cursor-pointer transition shadow-sm" id="label-${q.q_num}-${key}">
-                                <input type="radio" name="opt-${q.q_num}" value="${key}" class="mr-3 w-4 h-4 text-blue-600" onclick="checkAnswer('${group.group_id}', '${q.q_num}', '${key}')"> 
-                                <span class="font-bold text-gray-500 mr-2 w-6 text-lg">(${key})</span> <span class="flex-1 text-[1rem]">${q.options[key]}</span>
-                            </label>`;
-                        }
-                        questionsHtml += `</div>`;
-                    } else if (group.type === 'cloze' || group.type === 'matching') {
-                        questionsHtml += `<div class="text-amber-700 font-bold text-[0.95rem] mb-2 bg-amber-50 p-3 rounded border border-amber-200 shadow-sm flex items-center gap-2">👉 請在左側文章中的下拉選單進行作答。</div>`;
-                    } else if (group.type === 'translation' || group.type === 'essay') {
-                        if (group.type !== 'essay') {
-                            questionsHtml += `<div class="text-[1.1rem] font-medium text-gray-800 mb-3 leading-relaxed border-l-4 border-teal-500 pl-3">${q.q_text}</div>`;
-                        }
-                        let taClass = group.type === 'essay' ? 'h-64' : 'h-24';
-                        questionsHtml += `<textarea id="ta-${q.q_num}" oninput="updateWordCount('${q.q_num}')" class="w-full ${taClass} p-4 border border-teal-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-inner mb-2 text-[1rem] leading-relaxed" placeholder="請在此輸入您的作答..."></textarea>`;
-                        questionsHtml += `<div class="text-right text-sm text-gray-500 font-bold mb-4">字數統計: <span id="wc-${q.q_num}" class="text-teal-600">0</span> 字</div>`;
-                        questionsHtml += `<button class="w-full bg-teal-600 text-white font-bold py-3 rounded-lg shadow-md hover:bg-teal-700 transition" onclick="showNonChoiceAnswer('${q.q_num}')">✨ 點我查看名師參考解答與詳解 ✨</button>`;
-                    }
-
-                    questionsHtml += `<div id="exp-box-${q.q_num}" style="display: none;" class="bg-slate-50 border border-slate-200 rounded-xl p-5 fade-in shadow-md mt-4">
-                        <h4 class="font-extrabold text-[1.1rem] mb-4 pb-2 border-b border-gray-200 hidden" id="status-${q.q_num}"></h4>`; 
-                    
-                    if (group.type === 'translation' || group.type === 'essay') {
-                        questionsHtml += `<div class="mb-5"><span class="text-sm bg-teal-600 text-white px-3 py-1 rounded-full font-bold mr-1 block mb-3 w-max shadow-sm">💯 參考解答</span><p class="text-teal-900 bg-teal-50 p-4 rounded-lg border border-teal-200 whitespace-pre-line leading-relaxed text-[1.05rem] font-medium">${q.answer}</p></div>`;
-                    }
-
-                    if (q.explanation.translation) {
-                        questionsHtml += `<div class="mb-4 text-[0.95rem]"><span class="text-xs bg-blue-600 text-white px-2 py-1 rounded font-bold mr-2 shadow-sm">中譯</span><span class="text-gray-800 leading-relaxed font-medium">${q.explanation.translation}</span></div>`;
-                    }
-                    if (q.explanation.technique) {
-                        questionsHtml += `<div class="mb-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg text-[0.95rem] text-gray-800 shadow-sm leading-relaxed"><span class="font-extrabold text-yellow-800 flex items-center gap-1 mb-1">🎯 解題關鍵</span>${q.explanation.technique}</div>`;
-                    }
-                    if (q.explanation.analysis) {
-                        questionsHtml += `<div class="text-[0.95rem] leading-relaxed mb-4 bg-white p-4 border border-gray-200 rounded-lg shadow-sm"><span class="text-sm bg-indigo-100 text-indigo-800 px-2 py-1 rounded font-bold block mb-2 w-max">🧐 選項深度分析</span><span class="text-gray-700 block whitespace-pre-line">${q.explanation.analysis}</span></div>`;
-                    }
-                    if (q.explanation.roots) {
-                        questionsHtml += `<div class="text-[0.95rem] mb-3 bg-white p-3 rounded border border-gray-100 shadow-sm"><span class="font-bold text-emerald-700 flex items-center gap-1">🧬 字根字尾解析：</span> <span class="text-gray-700 mt-1 block">${q.explanation.roots}</span></div>`;
-                    }
-                    if (q.explanation.collocations) {
-                        questionsHtml += `<div class="text-[0.95rem] mb-3"><span class="font-bold text-rose-700">📚 常見搭配詞：</span> <ul class="list-disc pl-5 text-gray-700 mt-1 font-medium">${q.explanation.collocations.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
-                    }
-                    if (q.explanation.sentences) {
-                        questionsHtml += `<div class="text-[0.95rem] mb-4"><span class="font-bold text-blue-700">📝 示範造句：</span> <ul class="list-disc pl-5 text-gray-700 mt-1 italic">${q.explanation.sentences.map(s=>`<li>${s}</li>`).join('')}</ul></div>`;
-                    }
-                    if (q.explanation.summary) {
-                        questionsHtml += `<div class="text-[0.95rem] mt-2 p-4 bg-indigo-50 border border-indigo-200 rounded-lg shadow-sm"><span class="font-extrabold text-indigo-800 flex items-center gap-1 mb-1">💡 必背重點總結</span><span class="text-gray-800 font-medium">${q.explanation.summary}</span></div>`;
-                    }
-
-                    questionsHtml += `</div></div>`;
-                });
-                questionsHtml += `</div>`;
-                
-                bodyHtml += passageContent + questionsHtml + `</div>`;
-                groupWrapper.innerHTML = headerHtml + bodyHtml;
-                container.appendChild(groupWrapper);
+                if (isActive) {
+                    btn.classList.remove(theme.bg, theme.text);
+                    btn.classList.add(theme.actBg, theme.actText);
+                }
             });
 
-            if(!hasContent) {
-                container.innerHTML = '<div class="text-center text-gray-400 mt-20 text-xl font-bold">此分類無題目</div>';
+            const passageSec = document.getElementById('passage-section');
+            const questionSec = document.getElementById('question-section');
+            const container = document.getElementById('questions-container');
+            container.innerHTML = ''; 
+
+            passageSec.className = passageSec.className.replace(/bg-\w+-50\/40/g, 'bg-white');
+            questionSec.className = questionSec.className.replace(/bg-\w+-50\/40/g, 'bg-white');
+            passageSec.classList.remove('border-green-200', 'border-blue-200', 'border-purple-200', 'border-orange-200', 'border-teal-200');
+            questionSec.classList.remove('border-green-200', 'border-blue-200', 'border-purple-200', 'border-orange-200', 'border-teal-200');
+
+            if (group.type === 'vocabulary') questionSec.classList.add('bg-green-50/40', 'border-green-200');
+            else if (group.type === 'cloze') { passageSec.classList.add('bg-blue-50/40', 'border-blue-200'); questionSec.classList.add('bg-blue-50/40', 'border-blue-200'); }
+            else if (group.type === 'matching') { passageSec.classList.add('bg-purple-50/40', 'border-purple-200'); questionSec.classList.add('bg-purple-50/40', 'border-purple-200'); }
+            else if (group.type === 'reading') { passageSec.classList.add('bg-orange-50/40', 'border-orange-200'); questionSec.classList.add('bg-orange-50/40', 'border-orange-200'); }
+            else questionSec.classList.add('bg-teal-50/40', 'border-teal-200');
+
+            if (group.type === 'cloze' || group.type === 'matching' || (group.type === 'reading' && group.passage) || group.type === 'essay') {
+                passageSec.classList.remove('hidden');
+                passageSec.className = passageSec.className.replace(/lg:w-[^\s]+/g, 'lg:w-[60%]');
+                questionSec.className = questionSec.className.replace(/lg:w-[^\s]+/g, 'lg:w-[40%]');
+                
+                let pTitle = "閱讀測驗";
+                if(group.type === 'cloze') pTitle = "綜合測驗 (克漏字)";
+                if(group.type === 'matching') pTitle = "文意選填";
+                if(group.type === 'essay') pTitle = "寫作提示"; 
+                document.getElementById('part-name').innerText = pTitle;
+                document.getElementById('q-section-title').innerText = "題目與作答區";
+                
+                let html = group.passage;
+                if(group.type === 'cloze' || group.type === 'matching'){
+                    group.questions.forEach(q => {
+                        let optionsHtml = `<option value="" disabled selected>題 ${q.q_disp || q.q_num}</option>`;
+                        for (let key in q.options) {
+                            let rawOpt = q.options[key].replace(/<[^>]+>/g, '');
+                            // 💡 修正文意選填下拉選單：確保選項包含 (A) 但不重複 A) (A)
+                            let displayOpt = rawOpt.startsWith('(') ? rawOpt : `(${key}) ${rawOpt}`;
+                            optionsHtml += `<option value="${key}">${displayOpt}</option>`;
+                        }
+                        let selectHtml = `<select class="cloze-select shadow-sm" id="cloze-${q.q_num}" onchange="checkAnswer('${q.q_num}', this.value)">${optionsHtml}</select>`;
+                        html = html.replace(`[BLANK_${q.q_num}]`, selectHtml);
+                    });
+                }
+                document.getElementById('passage-content').innerHTML = html;
+                
+                if(group.type === 'essay'){
+                    document.getElementById('passage-translation').classList.add('hidden');
+                    document.getElementById('btn-read-passage').classList.add('hidden');
+                } else {
+                    document.getElementById('passage-translation').innerHTML = group.passage_translation || '';
+                    document.getElementById('passage-translation').classList.add('hidden');
+                    document.getElementById('btn-read-passage').classList.remove('hidden');
+                    document.getElementById('btn-read-passage').innerText = '🗣️ 朗讀文章';
+                }
+
+            } else {
+                passageSec.classList.add('hidden');
+                questionSec.className = questionSec.className.replace(/lg:w-[^\s]+/g, group.type === 'translation' ? 'lg:w-[70%]' : 'lg:w-[60%]');
+                document.getElementById('q-section-title').innerText = group.tags[0] + " 練習區";
             }
 
+            // 渲染題目
+            group.questions.forEach(q => {
+                let block = document.createElement('div');
+                block.id = `q-block-${q.q_num}`;
+                let dispNum = q.q_disp || q.q_num;
+                
+                let html = `<div class="flex items-center justify-between mb-2 border-b border-gray-300/50 pb-1">
+                                <h3 class="text-base font-bold text-blue-800">${group.type === 'essay' ? '英文作文' : '第 ' + dispNum + ' 題'}</h3>`;
+                
+                if (group.type === 'vocabulary' || group.type === 'reading') {
+                    let cleanOption = q.options[q.answer].replace(/<[^>]+>/g, '');
+                    let textToRead = q.q_text.replace(/<[^>]+>/g, '').replace('_______', cleanOption).replace(/'/g, "\\'");
+                    html += `<button id="btn-spk-${q.q_num}" class="btn-speak text-xs bg-white text-blue-600 border border-blue-300 px-2 py-0.5 rounded shadow-sm hover:bg-blue-50 font-bold transition" onclick="toggleSpeakQuestion(this, '${textToRead}')">🗣️ 朗讀</button>`;
+                }
+                html += `</div>`;
+                
+                if (group.type === 'vocabulary' || group.type === 'reading') {
+                    html += `<div class="text-[0.95rem] font-medium text-gray-800 mb-3">${q.q_text}</div><div class="space-y-1.5 mb-2">`;
+                    for (let key in q.options) {
+                        html += `
+                        <label class="flex items-center p-2 border border-gray-200 bg-white/80 rounded cursor-pointer hover:bg-blue-50 transition text-sm" id="label-${q.q_num}-${key}">
+                            <input type="radio" name="opt-${q.q_num}" value="${key}" class="mr-2 w-4 h-4 text-blue-600" onclick="checkAnswer('${q.q_num}', '${key}')"> 
+                            <span class="font-bold mr-1 w-6">(${key})</span> <span class="flex-1">${q.options[key]}</span>
+                        </label>`;
+                    }
+                    html += `</div>`;
+                } else if (group.type === 'cloze' || group.type === 'matching') {
+                    html += `<div class="text-gray-500 text-sm mb-2 bg-white/80 p-2 rounded border border-gray-200">👉 請在左側文章中的下拉選單作答。</div>`;
+                } else if (group.type === 'translation' || group.type === 'essay') {
+                    html += `<div class="text-[1.05rem] font-medium text-gray-800 mb-3 leading-relaxed">${q.q_text}</div>`;
+                    let taClass = group.type === 'essay' ? 'h-64' : 'h-24';
+                    html += `<textarea id="ta-${q.q_num}" oninput="updateWordCount('${q.q_num}')" class="w-full ${taClass} p-3 border border-teal-300 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-inner mb-2 bg-white/90" placeholder="請在此輸入您的作答..."></textarea>`;
+                    html += `<div class="text-right text-xs text-gray-500 font-bold mb-3">字數統計: <span id="wc-${q.q_num}" class="text-teal-600">0</span> 字</div>`;
+                    html += `<button class="w-full bg-teal-600 text-white font-bold py-2 rounded shadow hover:bg-teal-700 transition" onclick="showNonChoiceAnswer('${q.q_num}')">查看參考解答與解析</button>`;
+                }
+
+                html += `
+                <div id="exp-box-${q.q_num}" class="hidden bg-white/95 border border-gray-300 rounded p-5 fade-in shadow-sm mt-3">
+                    <h4 class="font-bold text-base mb-3 hidden" id="status-${q.q_num}"></h4>`; 
+                
+                if (group.type === 'translation' || group.type === 'essay') {
+                    html += `<div class="mb-4"><span class="text-sm bg-teal-100 text-teal-800 px-2 py-1 rounded font-bold mr-1 block mb-2 w-max">參考解答</span><p class="text-gray-800 whitespace-pre-line leading-relaxed text-[0.95rem] font-medium">${q.answer}</p></div>`;
+                }
+
+                if (q.explanation.translation) {
+                    html += `
+                    <div class="mb-3 text-[0.9rem]">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-bold mr-1">翻譯</span>
+                        <span class="text-gray-800 leading-relaxed">${q.explanation.translation}</span>
+                    </div>`;
+                }
+                
+                if (q.explanation.technique) {
+                    html += `
+                    <div class="mb-3 p-3 bg-yellow-50 border border-yellow-200 rounded text-[0.9rem] text-gray-800 leading-relaxed">
+                        <span class="font-bold text-yellow-700 block mb-1">💡 【解題切入點】</span>
+                        ${q.explanation.technique}
+                    </div>`;
+                }
+
+                html += `
+                    <div class="text-[0.95rem] leading-relaxed mb-4">
+                        <span class="text-xs bg-red-100 text-red-800 px-1.5 py-0.5 rounded font-bold mr-1 block mb-1 w-max">${group.type === 'essay' ? '寫作指引' : '解析'}</span>
+                        <span class="text-gray-700">${q.explanation.analysis}</span>
+                    </div>`;
+                    
+                if (q.explanation.roots) html += `<div class="text-[0.9rem] mb-2"><span class="font-bold text-indigo-700">🧬 字根字首：</span> <span class="text-gray-700">${q.explanation.roots}</span></div>`;
+                if (q.explanation.collocations) html += `<div class="text-[0.9rem] mb-2"><span class="font-bold text-indigo-700">📚 常見搭配：</span> <ul class="list-disc pl-5 text-gray-700 mt-1">${q.explanation.collocations.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
+                if (q.explanation.sentences) html += `<div class="text-[0.9rem]"><span class="font-bold text-indigo-700">📝 示範造句：</span> <ul class="list-disc pl-5 text-gray-700 mt-1">${q.explanation.sentences.map(s=>`<li>${s}</li>`).join('')}</ul></div>`;
+                if (q.explanation.summary) html += `<div class="text-[0.9rem] mt-3 p-2 bg-green-50 border-l-4 border-green-400 text-green-800 font-medium">📌 ${q.explanation.summary}</div>`;
+
+                html += `</div>`;
+                block.innerHTML = html;
+                container.appendChild(block);
+            });
+
+            if (shouldScroll) {
+                setTimeout(() => {
+                    const targetBlock = document.getElementById(`q-block-${clickedQNum}`);
+                    if (targetBlock) targetBlock.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+            
             bindVocabEvents();
         }
 
-        // 強制穩定切換翻譯顯示，並變更按鈕樣式
-        function toggleTranslation(groupId) { 
-            const el = document.getElementById(`passage-translation-${groupId}`);
-            const btn = document.getElementById(`btn-translate-${groupId}`);
-            if (el) {
-                if (el.style.display === 'none' || el.style.display === '') {
-                    el.style.display = 'block';
-                    if (btn) {
-                        btn.innerHTML = '📝 隱藏翻譯';
-                        btn.className = 'text-xs bg-blue-600 text-white border border-blue-600 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-700 transition font-bold';
-                    }
-                } else {
-                    el.style.display = 'none';
-                    if (btn) {
-                        btn.innerHTML = '📝 顯示翻譯';
-                        btn.className = 'text-xs bg-white text-blue-600 border border-blue-400 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-50 transition font-bold';
-                    }
-                }
-            }
-        }
-
-        function checkAnswer(groupId, qNum, selectedValue) {
-            const group = examData.groups.find(g => g.group_id === groupId);
-            const question = group.questions.find(q => q.q_num === qNum.toString());
+        // ======= 對答案與錯題記錄 =======
+        function checkAnswer(qNum, selectedValue) {
+            const question = activeGroup.questions.find(q => q.q_num === qNum.toString());
             const statusTitle = document.getElementById(`status-${qNum}`);
             const expBox = document.getElementById(`exp-box-${qNum}`);
             const isCorrect = selectedValue === question.answer;
 
             statusTitle.classList.remove('hidden');
 
-            if (group.type === 'cloze' || group.type === 'matching') {
+            if (activeGroup.type === 'cloze' || activeGroup.type === 'matching') {
                 let sel = document.getElementById(`cloze-${qNum}`);
                 sel.disabled = true; 
                 if(isCorrect) {
                     sel.classList.add('correct');
-                    statusTitle.innerHTML = `✅ 恭喜答對！`;
-                    statusTitle.className = 'font-extrabold text-green-600 text-[1.1rem] mb-4 pb-2 border-b border-green-200 block';
+                    statusTitle.innerHTML = `✅ 答對了！`;
+                    statusTitle.className = 'font-bold text-green-600 text-base mb-2';
                 } else {
                     sel.classList.add('wrong');
-                    let cleanAns = question.options[question.answer].replace(/<[^>]+>/g, '').replace(/^\([A-Z]\)\s*/, '');
-                    sel.options[sel.selectedIndex].text = `❌ 改為 ${question.answer}) ${cleanAns.substring(0, 10)}${cleanAns.length > 10 ? '...' : ''}`;
-                    statusTitle.innerHTML = `❌ 答錯了！正確答案為：(${question.answer})`;
-                    statusTitle.className = 'font-extrabold text-red-600 text-[1.1rem] mb-4 pb-2 border-b border-red-200 block';
+                    let cleanAns = question.options[question.answer].replace(/<[^>]+>/g, '');
+                    sel.options[sel.selectedIndex].text = `❌ 改為 ${cleanAns}`;
+                    statusTitle.innerHTML = `❌ 答錯！答案為：${cleanAns}`;
+                    statusTitle.className = 'font-bold text-red-600 text-base mb-2';
                     saveMistake(qNum, question, selectedValue);
                 }
             } else {
                 document.querySelectorAll(`input[name="opt-${qNum}"]`).forEach(i => i.disabled = true);
                 if (isCorrect) {
-                    statusTitle.innerHTML = `✅ 恭喜答對！ 正確答案：(${question.answer})`;
-                    statusTitle.className = 'font-extrabold text-green-600 text-[1.1rem] mb-4 pb-2 border-b border-green-200 block';
-                    document.getElementById(`label-${qNum}-${selectedValue}`).classList.add('bg-green-100', 'border-green-500', 'ring-2', 'ring-green-400');
+                    statusTitle.innerHTML = `✅ 答對了！答案：(${question.answer})`;
+                    statusTitle.className = 'font-bold text-green-600 text-base mb-2';
+                    document.getElementById(`label-${qNum}-${selectedValue}`).classList.add('bg-green-100', 'border-green-500');
                 } else {
-                    statusTitle.innerHTML = `❌ 答錯了！正確答案為：(${question.answer})`;
-                    statusTitle.className = 'font-extrabold text-red-600 text-[1.1rem] mb-4 pb-2 border-b border-red-200 block';
+                    statusTitle.innerHTML = `❌ 答錯了！答案為：(${question.answer})`;
+                    statusTitle.className = 'font-bold text-red-600 text-base mb-2';
                     document.getElementById(`label-${qNum}-${selectedValue}`).classList.add('bg-red-50', 'border-red-400');
-                    document.getElementById(`label-${qNum}-${question.answer}`).classList.add('bg-green-100', 'border-green-500', 'ring-2', 'ring-green-400');
+                    document.getElementById(`label-${qNum}-${question.answer}`).classList.add('bg-green-100', 'border-green-500');
                     saveMistake(qNum, question, selectedValue);
                 }
             }
 
-            expBox.style.display = 'block';
+            expBox.classList.remove('hidden');
 
             if (question.explanation.clue_ref) {
-                document.querySelectorAll('.bg-yellow-300').forEach(el => el.classList.remove('bg-yellow-300', 'shadow-sm', 'px-1', 'rounded'));
+                document.querySelectorAll('.bg-yellow-300').forEach(el => el.classList.remove('bg-yellow-300', 'shadow-sm'));
                 const clueEl = document.getElementById(question.explanation.clue_ref);
                 if(clueEl) {
-                    clueEl.classList.add('bg-yellow-300', 'shadow-sm', 'px-1', 'rounded');
+                    clueEl.classList.add('bg-yellow-300', 'shadow-sm');
                     clueEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             }
         }
 
+        // ======= LocalStorage 記錄系統 =======
         function saveMistake(qNum, questionData, wrongAnswer) {
             let mistakes = JSON.parse(localStorage.getItem('mistakeBook') || '[]');
             const recordId = `${state.exam}_${state.year}_${qNum}`;
@@ -465,7 +510,7 @@
                     id: recordId,
                     exam: state.exam, year: state.year,
                     q_num: qNum,
-                    q_text: questionData.q_text || '文章題型/文意選填',
+                    q_text: questionData.q_text || `[${activeGroup.tags[0]}] 題型`,
                     wrong_ans: wrongAnswer,
                     correct_ans: questionData.answer,
                     timestamp: new Date().toLocaleDateString()
@@ -474,13 +519,28 @@
             }
         }
 
+        function toggleVocabWord(word, pron, def) {
+            let vocabs = JSON.parse(localStorage.getItem('vocabBook') || '[]');
+            const exists = vocabs.some(v => v.word === word);
+            
+            if (exists) {
+                vocabs = vocabs.filter(v => v.word !== word);
+                document.getElementById('btn-vocab-star').innerText = '☆ 加入單字本';
+            } else {
+                vocabs.push({ word, pron, def, addedAt: new Date().toLocaleDateString() });
+                document.getElementById('btn-vocab-star').innerText = '★ 已加入';
+            }
+            localStorage.setItem('vocabBook', JSON.stringify(vocabs));
+        }
+
+        // ======= 重點摘要 / 單字庫 / 錯題本 渲染 =======
         function renderToolsView(mode) {
             const titleEl = document.getElementById('tools-title');
             const contentEl = document.getElementById('tools-content');
             contentEl.innerHTML = '';
 
             if (mode === 'summary') {
-                titleEl.innerHTML = `📋 ${state.exam} - 考前衝刺大補帖`;
+                titleEl.innerHTML = `📋 ${state.year} ${state.exam} - 考前衝刺秘笈 (重點摘要)`;
                 if (!examData) return contentEl.innerHTML = '<p class="text-gray-500">請先選擇一份有效的試卷。</p>';
                 
                 let summaryHtml = '<div class="space-y-6">';
@@ -489,43 +549,38 @@
                         const exp = q.explanation;
                         if(exp.roots || exp.collocations || exp.sentences || exp.summary) {
                             summaryHtml += `
-                            <div class="bg-white p-6 rounded-xl shadow-sm border border-indigo-200 border-l-8 hover:shadow-md transition">
-                                <h3 class="font-extrabold text-xl text-indigo-900 mb-4 border-b border-gray-100 pb-3 flex justify-between items-center">
-                                    <span>第 ${q.q_disp || q.q_num} 題重點精華</span>
-                                    <span class="text-sm bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full shadow-inner">${group.tags[0]}</span>
+                            <div class="bg-white p-5 rounded-lg shadow-sm border border-indigo-200 border-l-4">
+                                <h3 class="font-bold text-lg text-indigo-800 mb-3 border-b border-indigo-100 pb-2 flex justify-between items-center">
+                                    <span>第 ${q.q_disp || q.q_num} 題重點整理</span>
+                                    <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-1 rounded border border-indigo-200">${group.tags[0]}</span>
                                 </h3>
-                                ${exp.summary ? `<div class="text-[0.95rem] mb-4 bg-yellow-50 p-4 rounded-lg border border-yellow-200"><span class="font-extrabold text-yellow-800 flex items-center gap-1 mb-1">💡 名師提點：</span> <span class="text-gray-800 font-medium">${exp.summary}</span></div>` : ''}
-                                ${exp.roots ? `<p class="text-[0.95rem] mb-3"><span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">🧬 字根字首</span> ${exp.roots}</p>` : ''}
-                                ${exp.collocations ? `<div class="text-[0.95rem] mb-3"><span class="font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded">📚 實用搭配詞</span> <ul class="list-disc pl-6 mt-1.5 text-gray-700 font-medium">${exp.collocations.map(c=>`<li>${c}</li>`).join('')}</ul></div>` : ''}
-                                ${exp.sentences ? `<div class="text-[0.95rem]"><span class="font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">📝 經典例句</span> <ul class="list-disc pl-6 mt-1.5 text-gray-700 italic">${exp.sentences.map(s=>`<li>${s}</li>`).join('')}</ul></div>` : ''}
+                                ${exp.summary ? `<div class="mb-3 p-3 bg-red-50 border border-red-200 rounded text-[0.95rem] text-red-800 font-bold leading-relaxed">🎯 必考觀念：${exp.summary}</div>` : ''}
+                                ${exp.roots ? `<p class="text-[0.95rem] mb-2"><span class="font-bold text-indigo-700">🧬 字根字首：</span> ${exp.roots}</p>` : ''}
+                                ${exp.collocations ? `<div class="text-[0.95rem] mb-2"><span class="font-bold text-indigo-700">📚 常見搭配：</span> <ul class="list-disc pl-5 mt-1 text-gray-700">${exp.collocations.map(c=>`<li>${c}</li>`).join('')}</ul></div>` : ''}
+                                ${exp.sentences ? `<div class="text-[0.95rem]"><span class="font-bold text-indigo-700">📝 示範造句：</span> <ul class="list-disc pl-5 mt-1 text-gray-700">${exp.sentences.map(s=>`<li>${s}</li>`).join('')}</ul></div>` : ''}
                             </div>`;
                         }
                     });
                 });
                 summaryHtml += '</div>';
-                contentEl.innerHTML = summaryHtml === '<div class="space-y-6"></div>' ? '<p class="text-gray-500 text-center mt-10">此份試卷目前尚無標註重點資料。</p>' : summaryHtml;
+                contentEl.innerHTML = summaryHtml === '<div class="space-y-6"></div>' ? '<p class="text-gray-500">此份試卷目前尚無標註重點資料。</p>' : summaryHtml;
 
             } else if (mode === 'vocabBook') {
                 titleEl.innerHTML = `⭐ 我的專屬單字庫`;
                 const vocabs = JSON.parse(localStorage.getItem('vocabBook') || '[]');
-                if (vocabs.length === 0) return contentEl.innerHTML = '<p class="text-gray-500 text-center mt-10 text-lg font-bold">您的單字庫目前是空的。在閱讀文章時滑過藍色虛線單字即可加入收藏！</p>';
+                if (vocabs.length === 0) return contentEl.innerHTML = '<p class="text-gray-500">您的單字庫目前是空的。在閱讀文章時點擊單字即可加入收藏！</p>';
                 
-                let html = '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">';
+                let html = '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">';
                 vocabs.forEach(v => {
                     html += `
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-amber-300 border-t-8 relative hover:shadow-md transition">
-                        <button onclick="deleteVocab('${v.word}')" class="absolute top-3 right-3 text-gray-300 hover:text-red-500 font-bold text-lg">✖</button>
-                        <div class="font-extrabold text-blue-800 text-2xl flex items-center gap-2 mb-2">
-                            ${v.word} <button onclick="speakWord('${v.word}')" class="text-gray-400 hover:text-blue-500 text-lg">🔊</button>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-yellow-300 border-t-4 relative">
+                        <button onclick="toggleVocabWord('${v.word}'); renderToolsView('vocabBook')" class="absolute top-2 right-2 text-gray-400 hover:text-red-500 font-bold text-lg">✖</button>
+                        <div class="font-bold text-blue-700 text-lg flex items-center gap-2 mb-1">
+                            ${v.word} <button onclick="speakWord('${v.word}')" class="text-gray-400 hover:text-blue-500 text-sm">🔊</button>
                         </div>
-                        <div class="text-sm text-gray-500 mb-3 bg-gray-50 inline-block px-2 py-1 rounded">${v.pron}</div>
-                        <div class="text-[1rem] text-gray-800 font-medium leading-relaxed">${v.def}</div>
-                        
-                        <!-- 渲染儲存的搭配詞與衍生字 -->
-                        ${v.colloc ? `<div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-[0.9rem] text-blue-200 mt-4 shadow-inner"><span class="font-extrabold text-amber-400 mb-1 flex items-center gap-1">📌 常見搭配詞:</span>${v.colloc.replace(/;/g, '<br>')}</div>` : ''}
-                        ${v.deriv ? `<div class="bg-emerald-900/50 p-3 rounded-lg border border-emerald-700/50 text-[0.9rem] text-emerald-200 mt-2 shadow-inner"><span class="font-extrabold text-emerald-400 mb-1 flex items-center gap-1">🌿 衍生字:</span>${v.deriv.replace(/;/g, '<br>')}</div>` : ''}
-
-                        <div class="text-xs text-gray-400 mt-5 text-right border-t border-gray-100 pt-2">收藏日期: ${v.addedAt}</div>
+                        <div class="text-xs text-gray-500 mb-2">${v.pron}</div>
+                        <div class="text-[0.9rem] text-gray-700 font-medium">${v.def}</div>
+                        <div class="text-xs text-gray-400 mt-4 text-right">收藏日期: ${v.addedAt}</div>
                     </div>`;
                 });
                 contentEl.innerHTML = html + '</div>';
@@ -533,18 +588,18 @@
             } else if (mode === 'mistakes') {
                 titleEl.innerHTML = `📓 我的錯題本`;
                 const mistakes = JSON.parse(localStorage.getItem('mistakeBook') || '[]');
-                if (mistakes.length === 0) return contentEl.innerHTML = '<p class="text-gray-500 text-center mt-10 text-lg font-bold">太棒了！您目前沒有任何錯題記錄。</p>';
+                if (mistakes.length === 0) return contentEl.innerHTML = '<p class="text-gray-500">太棒了！您目前沒有任何錯題記錄。</p>';
                 
-                let html = '<div class="grid grid-cols-1 md:grid-cols-2 gap-5">';
+                let html = '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
                 mistakes.reverse().forEach((m, idx) => {
                     html += `
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-rose-300 border-l-8 hover:shadow-md transition">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="font-extrabold text-rose-800 bg-rose-50 px-3 py-1 rounded-full text-sm shadow-sm">${m.exam} - 第 ${m.q_num} 題</span>
-                            <button onclick="removeMistake(${idx})" class="text-xs text-gray-500 hover:text-white hover:bg-red-500 border border-gray-300 px-3 py-1.5 rounded-full transition shadow-sm font-bold">🗑 刪除紀錄</button>
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-red-300 border-l-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-bold text-red-700 bg-red-50 px-2 py-1 rounded text-sm">${m.year} ${m.exam} - 第 ${m.q_num} 題</span>
+                            <button onclick="removeMistake(${idx})" class="text-xs text-gray-500 hover:text-red-600 border border-gray-300 px-2 py-1 rounded shadow-sm bg-white">🗑 刪除</button>
                         </div>
-                        <div class="text-gray-800 font-medium mb-5 text-[1.05rem] leading-relaxed">${m.q_text}</div>
-                        <div class="flex flex-col gap-2 text-[0.95rem] bg-gray-50 p-4 rounded-lg border border-gray-100 shadow-inner">
+                        <div class="text-gray-800 font-medium mb-4 text-[0.95rem] leading-relaxed">${m.q_text}</div>
+                        <div class="flex flex-col gap-1 text-[0.9rem] bg-gray-50 p-3 rounded border border-gray-100">
                             <span class="text-red-600 font-bold">❌ 您的作答: (${m.wrong_ans})</span>
                             <span class="text-green-600 font-bold">✅ 正確答案: (${m.correct_ans})</span>
                         </div>
@@ -561,78 +616,44 @@
             renderToolsView('mistakes');
         }
 
-        function deleteVocab(word) {
-            let vocabs = JSON.parse(localStorage.getItem('vocabBook') || '[]');
-            vocabs = vocabs.filter(v => v.word !== word);
-            localStorage.setItem('vocabBook', JSON.stringify(vocabs));
-            renderToolsView('vocabBook');
-        }
-
-        // 修改：加入 deriv 參數存入 LocalStorage
-        function toggleVocabWord(word, pron, def, colloc, deriv) {
-            let vocabs = JSON.parse(localStorage.getItem('vocabBook') || '[]');
-            const exists = vocabs.some(v => v.word === word);
-            
-            if (exists) {
-                vocabs = vocabs.filter(v => v.word !== word);
-                document.getElementById('btn-vocab-star').innerText = '☆ 收藏';
-            } else {
-                vocabs.push({ word, pron, def, colloc, deriv, addedAt: new Date().toLocaleDateString() });
-                document.getElementById('btn-vocab-star').innerText = '★ 已收藏';
-            }
-            localStorage.setItem('vocabBook', JSON.stringify(vocabs));
-        }
-
-        function showNonChoiceAnswer(qNum) { 
-            document.getElementById(`exp-box-${qNum}`).style.display = 'block'; 
-        }
+        // ======= 語音與互動 =======
+        function showNonChoiceAnswer(qNum) { document.getElementById(`exp-box-${qNum}`).classList.remove('hidden'); }
         function updateWordCount(qNum) {
             const text = document.getElementById(`ta-${qNum}`).value.trim();
             document.getElementById(`wc-${qNum}`).innerText = text ? text.split(/\s+/).length : 0;
         }
+        function toggleTranslation() { document.getElementById('passage-translation').classList.toggle('hidden'); }
 
-        function readPassageAloud(groupId) {
-            const btn = document.getElementById(`btn-read-passage-${groupId}`);
+        // ================= 修正：文意選填朗讀過濾選項區塊 =================
+        function readPassageAloud() {
+            const btn = document.getElementById('btn-read-passage');
             if (isSpeaking) { window.speechSynthesis.cancel(); isSpeaking = false; btn.innerText = '🗣️ 朗讀文章'; return; } 
             
-            const group = examData.groups.find(g => g.group_id === groupId);
-            let tempDiv = document.createElement('div');
-            tempDiv.innerHTML = group.passage;
-            
-            let optBlock = tempDiv.querySelector('#matching-options-block');
-            if(optBlock) optBlock.remove();
-
-            let textHtml = tempDiv.innerHTML;
-            if (group.type === 'cloze' || group.type === 'matching') {
-                group.questions.forEach(q => {
+            let textToRead = activeGroup.passage;
+            if (activeGroup.type === 'cloze' || activeGroup.type === 'matching') {
+                // 如果是文意選填，把頂部的選項 div 區塊整個刪除，不發音
+                if (activeGroup.type === 'matching') {
+                    textToRead = textToRead.replace(/<div id=['"]matching-options-block.*?<\/div>/s, '');
+                }
+                
+                activeGroup.questions.forEach(q => {
                     let correctWord = q.options[q.answer].replace(/<[^>]+>/g, '').replace(/^\([A-Z]\)\s*/, '');
-                    textHtml = textHtml.replace(`[BLANK_${q.q_num}]`, correctWord);
+                    textToRead = textToRead.replace(`[BLANK_${q.q_num}]`, correctWord);
                 });
             }
+            textToRead = textToRead.replace(/<[^>]+>/g, ''); 
             
-            tempDiv.innerHTML = textHtml;
-            let textToRead = tempDiv.innerText || tempDiv.textContent; 
-            
-            speechUtterance.text = textToRead; 
-            speechUtterance.lang = 'en-US'; 
-            speechUtterance.rate = 0.9;
+            speechUtterance.text = textToRead; speechUtterance.lang = 'en-US'; speechUtterance.rate = 0.9;
             window.speechSynthesis.speak(speechUtterance);
-            isSpeaking = true; 
-            btn.innerText = '⏹️ 停止朗讀';
+            isSpeaking = true; btn.innerText = '⏹️ 停止朗讀';
         }
 
         function toggleSpeakQuestion(btn, text) {
             if (isSpeaking) {
                 window.speechSynthesis.cancel(); isSpeaking = false;
-                document.querySelectorAll('.btn-speak').forEach(b => {
-                    if(b.id && b.id.startsWith('btn-read-passage')) b.innerText = '🗣️ 朗讀文章';
-                    else b.innerText = '🗣️ 朗讀題目';
-                });
+                document.querySelectorAll('.btn-speak').forEach(b => b.innerText = '🗣️ 朗讀');
             } else {
-                document.querySelectorAll('.btn-speak').forEach(b => {
-                    if(b.id && b.id.startsWith('btn-read-passage')) b.innerText = '🗣️ 朗讀文章';
-                    else b.innerText = '🗣️ 朗讀題目';
-                });
+                document.querySelectorAll('.btn-speak').forEach(b => b.innerText = '🗣️ 朗讀');
                 speechUtterance.text = text; speechUtterance.lang = 'en-US'; speechUtterance.rate = 0.9;
                 window.speechSynthesis.speak(speechUtterance);
                 isSpeaking = true; btn.innerText = '⏹️ 停止';
@@ -643,56 +664,44 @@
             window.speechSynthesis.cancel(); 
             let u = new SpeechSynthesisUtterance(word); u.lang = 'en-US'; window.speechSynthesis.speak(u);
             isSpeaking = false; 
+            document.querySelectorAll('.btn-speak').forEach(b => b.innerText = '🗣️ 朗讀');
+            const pBtn = document.getElementById('btn-read-passage');
+            if(pBtn) pBtn.innerText = '🗣️ 朗讀文章';
         }
 
-        // 修改：讀取並渲染 data-deriv 屬性
         function bindVocabEvents() {
             const words = document.querySelectorAll('.lvl3-word');
             const tooltip = document.getElementById('dict-tooltip');
 
             words.forEach(el => {
-                el.addEventListener('mouseenter', (e) => {
+                el.addEventListener('click', (e) => {
+                    e.stopPropagation(); 
                     const word = e.target.dataset.word;
                     const pron = e.target.dataset.pron || '';
                     const def = e.target.dataset.def || '';
-                    const colloc = e.target.dataset.colloc || '';
-                    const deriv = e.target.dataset.deriv || ''; // 新增：讀取衍生字
                     
                     speakWord(word); 
                     
                     tooltip.style.display = 'block';
-                    tooltip.style.left = (e.pageX + 15) + 'px';
-                    tooltip.style.top = (e.pageY + 25) + 'px';
+                    tooltip.style.left = (e.pageX + 10) + 'px';
+                    tooltip.style.top = (e.pageY + 20) + 'px';
                     
                     const vocabs = JSON.parse(localStorage.getItem('vocabBook') || '[]');
                     const isAdded = vocabs.some(v => v.word === word);
-                    const btnText = isAdded ? '★ 已收藏' : '☆ 收藏';
-                    
-                    // 防呆處理跳脫字元
-                    const safeDef = def.replace(/'/g, "\\'").replace(/"/g, "&quot;");
-                    const safeColloc = colloc.replace(/'/g, "\\'").replace(/"/g, "&quot;");
-                    const safeDeriv = deriv.replace(/'/g, "\\'").replace(/"/g, "&quot;"); // 新增
+                    const btnText = isAdded ? '★ 已加入' : '☆ 加入單字本';
                     
                     tooltip.innerHTML = `
-                        <div class="flex justify-between items-start border-b border-slate-600 pb-3 mb-3">
+                        <div class="flex justify-between items-start border-b border-gray-600 pb-2 mb-2">
                             <div>
-                                <div class="font-extrabold text-blue-400 text-[1.3rem]">${word}</div>
-                                <div class="text-[0.8rem] text-slate-400 mt-1 font-mono">${pron}</div>
+                                <div class="font-bold text-blue-300 text-xl">${word}</div>
+                                <div class="text-xs text-gray-400 mt-1">${pron}</div>
                             </div>
-                            <button id="btn-vocab-star" onclick="toggleVocabWord('${word}', '${pron}', '${safeDef}', '${safeColloc}', '${safeDeriv}')" class="text-xs bg-slate-700 hover:bg-slate-600 text-amber-400 px-3 py-1.5 rounded-full transition border border-slate-500 font-bold shadow-md">${btnText}</button>
+                            <button id="btn-vocab-star" onclick="toggleVocabWord('${word}', '${pron}', '${def}')" class="text-xs bg-gray-700 hover:bg-gray-600 text-yellow-400 px-2 py-1 rounded transition border border-gray-500">${btnText}</button>
                         </div>
-                        <div class="text-slate-100 text-[1rem] leading-relaxed mb-3 font-medium">${def}</div>
-                        ${colloc ? `<div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-[0.9rem] text-blue-200 mt-2 shadow-inner"><span class="font-extrabold text-amber-400 mb-1 flex items-center gap-1">📌 常見搭配詞:</span>${colloc.replace(/;/g, '<br>')}</div>` : ''}
-                        ${deriv ? `<div class="bg-emerald-900/50 p-3 rounded-lg border border-emerald-700/50 text-[0.9rem] text-emerald-200 mt-2 shadow-inner"><span class="font-extrabold text-emerald-400 mb-1 flex items-center gap-1">🌿 衍生字:</span>${deriv.replace(/;/g, '<br>')}</div>` : ''}
+                        <div class="text-gray-100 text-[0.95rem] leading-relaxed">${def}</div>
                     `;
                 });
-                
-                el.addEventListener('mouseleave', (e) => {
-                    setTimeout(() => { if (!tooltip.matches(':hover')) tooltip.style.display = 'none'; }, 200);
-                });
             });
-            
-            tooltip.addEventListener('mouseleave', () => tooltip.style.display = 'none');
         }
     </script>
 </body>
